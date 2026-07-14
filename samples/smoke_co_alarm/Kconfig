@@ -29,6 +29,10 @@ config CHIP_ICD_REPORT_ON_ACTIVE_MODE
 config MATTER_TEST_EVENT_TRIGGERS_MAX
 	default 12
 
+# Default triggers register ICD and OTA handlers; this sample adds its own handler.
+config MATTER_TEST_EVENT_TRIGGERS_MAX_TRIGGERS_DELEGATES
+	default 3
+
 # Reduce Thread TX output power to 0 dBm for SED device
 config OPENTHREAD_DEFAULT_TX_POWER
 	default 0
