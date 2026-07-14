@@ -18,6 +18,10 @@ endchoice
 
 endif # OPENTHREAD
 
+# Default triggers register OTA handler; this sample adds its own handler.
+config MATTER_TEST_EVENT_TRIGGERS_MAX_TRIGGERS_DELEGATES
+	default 3
+
 config CHIP_WIFI
 	default y if SHIELD_NRF7002EB2
 

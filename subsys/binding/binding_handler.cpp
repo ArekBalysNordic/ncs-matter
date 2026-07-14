@@ -26,7 +26,8 @@ void BindingHandler::RunBoundClusterAction(BindingData *bindingData)
 	VerifyOrReturn(bindingData != nullptr, LOG_ERR("Invalid binding data"));
 	VerifyOrReturn(bindingData->InvokeCommandFunc != nullptr, LOG_ERR("No valid InvokeCommandFunc assigned"););
 
-	DeviceLayer::PlatformMgr().ScheduleWork(DeviceWorkerHandler, reinterpret_cast<intptr_t>(bindingData));
+	CHIP_ERROR err = DeviceLayer::PlatformMgr().ScheduleWork(DeviceWorkerHandler, reinterpret_cast<intptr_t>(bindingData));
+	VerifyOrReturn(err == CHIP_NO_ERROR, LOG_ERR("ScheduleWork failed: %" CHIP_ERROR_FORMAT, err.Format()));
 }
 
 void BindingHandler::OnInvokeCommandSucces(BindingData *bindingData)
@@ -48,6 +49,9 @@ void BindingHandler::OnInvokeCommandFailure(BindingData *bindingData, CHIP_ERROR
 
 	if (Error == CHIP_ERROR_TIMEOUT && !bindingData->CaseSessionRecovered) {
 		LOG_INF("Response timeout for invoked command, trying to recover CASE session.");
+		CHIP_ERROR err = DeviceLayer::PlatformMgr().ScheduleWork(DeviceWorkerHandler,
+									 reinterpret_cast<intptr_t>(bindingData));
+		VerifyOrReturn(err == CHIP_NO_ERROR, LOG_ERR("ScheduleWork failed: %" CHIP_ERROR_FORMAT, err.Format()));
 
 		/* Set flag to not try recover session multiple times. */
 		bindingData->CaseSessionRecovered = true;
@@ -150,8 +154,11 @@ void BindingHandler::DeviceWorkerHandler(intptr_t context)
 
 	if (Binding::Table::GetInstance().Size() != 0) {
 		LOG_INF("Notify Bounded Cluster | endpoint: %d cluster: %d", data->EndpointId, data->ClusterId);
-		Binding::Manager::GetInstance().NotifyBoundClusterChanged(data->EndpointId, data->ClusterId,
-									  static_cast<void *>(data));
+		CHIP_ERROR err = Binding::Manager::GetInstance().NotifyBoundClusterChanged(
+			data->EndpointId, data->ClusterId, static_cast<void *>(data));
+		if (CHIP_NO_ERROR != err) {
+			LOG_ERR("NotifyBoundClusterChanged failed due to: %" CHIP_ERROR_FORMAT, err.Format());
+		}
 	} else {
 		LOG_INF("NO DEVICE BOUND");
 	}
