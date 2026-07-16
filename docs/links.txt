@@ -17,6 +17,8 @@
 .. _`Matter nRF Connect releases`: https://github.com/nrfconnect/sdk-connectedhomeip/releases
 .. _`Thread tools`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/tools.html
 .. _`Running OTBR using Docker`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/tools.html#ug-thread-tools-tbr-docker
+.. _`nRF Sniffer for 802.15.4`: https://docs.nordicsemi.com/bundle/ug_sniffer_802154/page/UG/sniffer_802154/intro_802154.html
+.. _`nRF Thread Topology Monitor`: https://docs.nordicsemi.com/bundle/ug_nrf_ttm/page/UG/nrf_ttm/ttm_introduction.html
 .. _`Testing Matter in the NCS`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/getting_started/testing/index.html
 .. _`Matter controller`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/network_topologies.html#ug-matter-configuring-controller
 .. _`Onboarding information formats`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/matter/overview/commissioning.html#ug-matter-network-topologies-commissioning-onboarding-formats
@@ -26,6 +28,7 @@
 .. _`Connectivity Standards Alliance`: https://csa-iot.org
 .. _`Migration notes for nRF Connect SDK v2.6.0`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/migration/migration_guide_2.6.html
 .. _`How to work with build configurations`: https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/guides/ncs_configure_app.html
+.. _`Software maturity levels`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/software_maturity.html
 
 .. ### NCS Zephyr documentation set
 
@@ -34,6 +37,16 @@
 
 .. ### Matter add-on external :ref: targets
 
+.. _app_approtect: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/security/ap_protect.html
+.. _ug_thread_tools: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/tools.html
+.. _ug_thread_tools_tbr: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/tools.html#ug-thread-tools-tbr
+.. _partition_manager: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/scripts/partition_manager/partition_manager.html
+.. _migration_partitions: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/migration/migration_partitions.html
+.. _ncs_release_notes_340: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/releases/release-notes-3.4.0.html
+.. _`Power optimization recommendations`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/test_and_optimize/optimizing/power_general.html
+.. _`Disable unused pins and peripherals`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/test_and_optimize/optimizing/power_general.html#disable-unused-pins-and-peripherals
+.. _`Enable Device Power Management module`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/test_and_optimize/optimizing/power_general.html#enable-device-power-management-module
+.. _`Configure radio transmitter power`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/test_and_optimize/optimizing/power_general.html#configure-radio-transmitter-power
 
 .. ### Matter documentation backtick links (from sdk-nrf links.txt)
 
@@ -149,7 +162,7 @@
 .. _MPSL FEM output support: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/device_guides/fem/fem_nRF21540_optional_properties.html
 .. _Matter SDK's Logging header_: https://github.com/nrfconnect/sdk-connectedhomeip/blob/v3.4.0/src/lib/support/logging/CHIPLogging.h
 .. _Matter Simple Setup for Wi-Fi Overview_: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-wifi-overview.html
-.. _Matter Weather Station sample: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/applications/matter_weather_station/README.html
+.. _Matter weather station sample: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/applications/matter_weather_station/README.html
 .. _Matter add-on index: matter/index.html
 .. _Matter bridge sample: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/applications/matter_bridge/README.html
 .. _Matter closure sample: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/samples/matter/closure/README.html

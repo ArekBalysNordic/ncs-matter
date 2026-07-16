@@ -16,7 +16,7 @@ Adding MCUboot to application
 *****************************
 
 Read :ref:`ug_bootloader_adding_sysbuild_immutable_mcuboot` to learn how to add MCUboot to an |NCS| application.
-Some Matter samples include :term:`Device Firmware Update (DFU)` support out of the box, as listed in the :ref:`sample feature matrix table <matter_samples>`.
+Some Matter samples include Device Firmware Update (DFU) support out of the box, as listed in the :ref:`sample feature matrix table <matter_samples>`.
 
 MCUboot minimal configuration
 *****************************
@@ -24,7 +24,7 @@ MCUboot minimal configuration
 MCUboot is by default configured to enable debug features, such as logs.
 You can reduce the size of the bootloader image by disabling unnecessary features.
 
-See the following files for the MCUboot minimal configuration used by :ref:`Matter samples <matter_samples>` in the |NCS|:
+See the following files for the MCUboot minimal configuration used by :ref:`matter_samples` in the |NCS|:
 
 * :file:`prj.conf` file located in each sample's :file:`sysbuild/mcuboot` directory
 * Board files located in each sample's :file:`sysbuild/mcuboot/boards` directory
@@ -37,7 +37,17 @@ This configuration allows to reduce the flash partition occupied by MCUboot to 2
 Partition layout
 ****************
 
-.. include:: ../../../includes/pm_deprecation.txt
+.. note::
+   The :ref:`partition_manager` is a component in the |NCS| and is responsible for handling the memory partitioning at build time.
+
+   This functionality is in the process of being deprecated and replaced by Zephyr's default devicetree-based memory partitioning.
+   It is recommended that all new designs using Nordic devices are to be built with DTS instead of Partition Manager.
+   Partition Manager will be removed from the |NCS| by the end of 2026 from the main branch.
+
+   For more information on how to configure partitions using DTS and how to migrate your existing configuration to DTS, see the following pages:
+
+   * :ref:`migration_partitions`
+   * :ref:`ncs_release_notes_340`
 
 A bootloader is a critical component in a Matter device, ensuring secure firmware updates and authenticating new application images.
 All Nordic Matter samples in the |NCS| use MCUboot as the primary bootloader, with configuration and partitioning adapted to application and device needs.
@@ -174,11 +184,11 @@ The following tables summarize the partitions by target.
 Settings partition
 ==================
 
-The nRF Connect platform in Matter uses Zephyr's :ref:`zephyr:settings_api` API to provide the storage capabilities to the Matter stack.
+The nRF Connect platform in Matter uses Zephyr's `Settings <Settings>`_ API to provide the storage capabilities to the Matter stack.
 This requires that you define the ``settings_storage`` partition in the flash.
 The recommended minimum size of the partition is 32 kB, but you can reserve even more space if your application uses the storage extensively.
 
-The Zephyr settings storage is implemented by the :ref:`Zephyr NVS (Non-Volatile Storage) <zephyr:nvs_api>` or :ref:`ZMS (Zephyr Memory Storage) <zephyr:zms_api>` backends.
+The Zephyr settings storage is implemented by the `Zephyr NVS (Non-Volatile Storage) <Non-Volatile Storage (NVS)>`_ or `ZMS (Zephyr Memory Storage) <ZMS (Zephyr Memory Storage)>`_ backends.
 You can select either backend, and the selection affects several factors, such as the operational performance or memory lifetime.
 To achieve the optimal experience, it is recommended to use:
 

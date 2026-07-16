@@ -153,10 +153,12 @@ Dedicating a separate partition for this purpose lets avoid recertification when
 
 For information about how to generate the factory data, read the detailed :ref:`ug_matter_device_factory_provisioning` guide in the Matter documentation.
 
+.. _ug_matter_device_attestation_secured_communication:
+
 Requirements for secured communication
 ======================================
 
-Before the commissioner can verify the DAC information, it must establish a secure PASE session, which is required for sending commissioning messages, including the `Device Attestation procedure`_.
+Before the commissioner can verify the DAC information, it must establish a secure PASE session, which is required for sending commissioning messages, including the :ref:`Device Attestation procedure <ug_matter_device_attestation_procedure>`.
 
 The Verifier is used for this purpose.
 This is one of the input values of the underlying SPAKE2+ protocol.
@@ -183,12 +185,12 @@ Product Attestation Intermediate certificate
 
 Verifier
   The Verifier itself is not a part of the DAC, although it is included in the factory data.
-  See `Requirements for secured communication`_.
+  See :ref:`Requirements for secured communication <ug_matter_device_attestation_secured_communication>`.
 
 Certification Declaration
   This is |matter_cd_definition|.
   It contains a series of information required for Device Attestation, including Vendor ID, Certificate ID, certification type, optional information related to DAC, and other.
-  CD is included in the attestation information packet send by the commissionee during the `Device Attestation procedure`_.
+  CD is included in the attestation information packet send by the commissionee during the :ref:`Device Attestation procedure <ug_matter_device_attestation_procedure>`.
 
   .. note::
       The CD information is not located in the factory data, but in the application itself.
@@ -197,6 +199,8 @@ Certification Declaration
       For this reason, you can :ref:`configure CD in firmware and modify it after the certification is done <ug_matter_device_configuring_cd>`.
 
 These are the elements that are checked and validated by the commissioner at the start of the commissioning procedure.
+
+.. _ug_matter_device_attestation_procedure:
 
 Device Attestation procedure
 ****************************

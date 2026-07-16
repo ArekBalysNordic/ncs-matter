@@ -24,7 +24,7 @@ It includes west for managing repositories, toolchain manager for managing toolc
 Finally, it integrates the OpenThread and Wi-Fi stacks, both of which can work in a multiprotocol scenario with the integrated Bluetooth LE stack.
 
 Nordic Semiconductor integrates the Matter stack in the |NCS| using a `dedicated Matter fork`_.
-The official Matter repository is fetched into the fork and the fork is included in the |NCS| as a Zephyr module, including files deployed in the :ref:`matter_index` tab.
+The official Matter repository is fetched into the fork and the fork is included in the |NCS| as a Zephyr module, including files deployed in the :ref:`ug_matter` tab.
 The fork is maintained and verified as a part of the |NCS| release process as an :ref:`OSS repository <dm_repo_types>`.
 
 For more information about Matter architecture and Matter in the |NCS|, read :ref:`ug_matter_overview_architecture_integration`.

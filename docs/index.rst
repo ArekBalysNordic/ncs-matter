@@ -11,8 +11,8 @@ In combination with the |NCS|, the |addon| allows for development of Matter acce
 
 For additional context on other solutions, refer to the following resources:
 
-* `Matter overview`_ — Introduction to the Matter protocol and its use in the |NCS|.
-* `Matter architecture`_ — How Matter accessories, controllers, and networks fit together.
+* :ref:`Matter overview <ug_matter_intro_overview>` — Introduction to the Matter protocol and its use in the |NCS|.
+* :ref:`ug_matter_overview_architecture` — How Matter accessories, controllers, and networks fit together.
 * `Matter add-on repository`_ — Source code for the Matter add-on.
 
 .. toctree::
@@ -21,7 +21,10 @@ For additional context on other solutions, refer to the following resources:
    :glob:
 
    setup
+   samples/index
+   snippets/index
    matter/index
    config
+   software_maturity
    release_notes
    known_issues

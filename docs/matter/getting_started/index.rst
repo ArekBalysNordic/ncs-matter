@@ -25,7 +25,7 @@ The pages will guide you through the following getting started process:
 #. :ref:`ug_matter_gs_testing` will guide you through the process of setting up the development environment for Matter.
    Several options are available based on your choice of the IPv6 network and the Matter controller type.
    During this process, you will have to program a Matter sample.
-   It is recommended to use the :ref:`Matter light bulb <matter_light_bulb_sample>` sample.
+   It is recommended to use the `Matter light bulb <Matter light bulb sample>`_ sample.
    You will also use some of the :ref:`ug_matter_tools` for this process.
 #. :ref:`ug_matter_gs_kconfig` describes the basic Kconfig configuration if you want to start developing your own Matter application.
 #. In :ref:`ug_matter_device_advanced_kconfigs`, you will learn about more advanced Kconfig options related to Matter.
@@ -35,7 +35,7 @@ The pages will guide you through the following getting started process:
 #. In :ref:`ug_matter_device_low_power_configuration` and :ref:`ug_matter_device_optimizing_memory`, you can find information about how to optimize your application's resource usage.
 #. Finally, in :ref:`ug_matter_gs_ecosystem_compatibility_testing`, you will set up and test multiple Matter fabrics, each belonging to a different commercial ecosystem, and test their interoperability.
 
-Some of the pages will make reference to external documentation pages available in the |NCS| documentation under the :ref:`matter_index` section.
+Some of the pages will make reference to external documentation pages available in the |NCS| documentation under the :ref:`ug_matter` section.
 These are built from the files available in the official `Matter GitHub repository`_ and refer to the nRF Connect platform.
 
 .. toctree::

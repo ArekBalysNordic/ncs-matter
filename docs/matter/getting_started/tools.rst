@@ -37,7 +37,7 @@ If you are updating from the |NCS| version earlier than v1.5.0, see the followin
          1. Download the latest version of the GN binary archive for Windows from the `GN website`_.
          2. Extract the :file:`zip` archive.
          3. Ensure that the GN tool is added to your :envvar:`PATH` environment variable.
-            For the exact instructions, see :ref:`zephyr:env_vars`.
+            For the exact instructions, see `Zephyr environment variables <Zephyr environment variables>`_.
 
       .. group-tab:: Linux
 
@@ -154,7 +154,7 @@ You can use the ZAP tool for the following Matter use cases:
 All the relevant data for these use cases is stored in the ZAP file of your Matter application, which you can edit using the ZAP tool GUI.
 A ZAP file is a JSON file that contains the data model configuration of clusters, commands, and attributes that are enabled for a given application.
 It is not used directly by the application, but it is used to generate global and customized source files for handling requests enabled by the user.
-In the |NCS|, the ZAP file is provided in the :file:`src` directory for each :ref:`Matter sample <matter_samples>`.
+In the |NCS|, the ZAP file is provided in the :file:`src` directory for each :ref:`matter_samples`.
 
 For an example of how to use the ZAP tool to edit a ZAP file, see the :ref:`ug_matter_creating_accessory_edit_zap` in the :ref:`ug_matter_creating_accessory` user guide.
 For more information about the ZAP tool, see the official `ZCL Advanced Platform`_ documentation.
@@ -211,7 +211,7 @@ You can install the ZAP tool either automatically or manually:
 Matter west commands
 ********************
 
-Matter west commands are a set of commands dedicated for Matter-related purposes and integrated with :ref:`zephyr:west`.
+Matter west commands are a set of commands dedicated for Matter-related purposes and integrated with `West tool <West tool>`_.
 You can use them to simplify work with the Matter application project.
 
 .. _ug_matter_gs_tools_matter_west_commands_zap_tool:
@@ -417,7 +417,7 @@ To install the chip-cert tool, complete the following steps:
 Generating custom certificates in factory data
 ==============================================
 
-Adding the chip-cert tool to the system :envvar:`PATH` allows you to build :ref:`matter_samples`, the :ref:`Matter weather station <matter_weather_station_app>`, and the :ref:`Matter bridge <matter_bridge_app>` applications with custom certificates included in the factory data.
+Adding the chip-cert tool to the system :envvar:`PATH` allows you to build :ref:`matter_samples`, the `Matter weather station sample <Matter weather station sample>`_, and the `Matter bridge <Matter bridge sample>`_ applications with custom certificates included in the factory data.
 This lets you for example change the test Vendor ID, Product ID, or other data.
 
 To build a Matter application in the |NCS| with custom certification data, make sure to set the :kconfig:option:`CONFIG_CHIP_FACTORY_DATA_USE_DEFAULT_CERTS` to ``n`` when :doc:`building an example with factory data <matter:nrfconnect_factory_data_configuration>`.
@@ -445,25 +445,23 @@ You can use the following :ref:`ug_thread_tools` when working with Matter in the
 Thread Border Router
 ====================
 
-.. include:: ../../thread/tools.rst
-    :start-after: tbr_shortdesc_start
-    :end-before: tbr_shortdesc_end
+The Thread Border Router provides connectivity from the IEEE 802.15.4 network to adjacent networks on other physical layers (such as Wi-Fi® or Ethernet).
 
-See the :ref:`ug_thread_tools_tbr` documentation for configuration instructions.
+See :ref:`ug_thread_tools_tbr` for configuration instructions.
 
 nRF Sniffer for 802.15.4
 ========================
 
-.. include:: ../../thread/tools.rst
-    :start-after: sniffer_shortdesc_start
-    :end-before: sniffer_shortdesc_end
+The nRF Sniffer for 802.15.4 is a tool for learning about and debugging applications that are using protocols based on IEEE 802.15.4, like Thread or Zigbee.
+
+See `nRF Sniffer for 802.15.4`_ for documentation.
 
 nRF Thread Topology Monitor
 ===========================
 
-.. include:: ../../thread/tools.rst
-    :start-after: ttm_shortdesc_start
-    :end-before: ttm_shortdesc_end
+nRF Thread Topology Monitor is a desktop application that connects to a Thread network through a serial connection to visualize the topology of Thread devices.
+
+See `nRF Thread Topology Monitor`_ for documentation.
 
 .. _ug_matter_gs_tools_opp:
 

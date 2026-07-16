@@ -7,7 +7,7 @@ Matter integration in the |NCS|
    :local:
    :depth: 2
 
-Matter is included in the |NCS| as one of the submodule repositories managed with the :ref:`zephyr:west` tool, using a `dedicated Matter fork`_.
+Matter is included in the |NCS| as one of the submodule repositories managed with the `West tool <West tool>`_ tool, using a `dedicated Matter fork`_.
 That is, the code used for the |NCS| and Matter integration is stored in the Matter repository (nRF Connect platform) and is compiled when building one of the available :ref:`matter_samples`.
 
 .. figure:: images/matter_components_integration_ncs.svg
@@ -19,7 +19,7 @@ Both instances depend on each other, but their development is independent to ens
 The fork is maintained and verified as a part of the |NCS| release process as an :ref:`OSS repository <dm_repo_types>`.
 
 The Matter repository fetched into the fork also includes documentation files.
-A selection of these pages is included in the |NCS| documentation under the :ref:`matter_index` tab.
+A selection of these pages is included in the |NCS| documentation under the :ref:`ug_matter` tab.
 
 .. _ug_matter_overview_architecture_integration_stack:
 
@@ -56,19 +56,19 @@ This platform design is suitable for the following development kits:
 
 .. table-from-rows:: /includes/sample_board_rows.txt
    :header: heading
-   :rows: nrf52840dk_nrf52840, nrf5340dk_nrf5340_cpuapp, nrf54l15dk_nrf54l15_cpuapp_and_cpuapp_ns, nrf54lc10dk_nrf54lc10a_cpuapp, nrf54lm20dk_nrf54lm20a_cpuapp, nrf54lm20dk_nrf54lm20b_cpuapp
+   :rows: nrf52840dk_nrf52840, nrf5340dk_nrf5340_cpuapp, nrf54l15dk_nrf54l15_cpuapp_and_cpuapp_ns, nrf54lm20dk_nrf54lm20a_cpuapp, nrf54lm20dk_nrf54lm20b_cpuapp
 
 The design differences between the supported SoCs are the following:
 
 * On the nRF5340, SoC the network core runs both the Bluetooth LE Controller and the 802.15.4 IEEE Radio Driver.
-* On the nRF52840, nRF54L15, nRF54LC10, and nRF54LM20 SoCs, all components are located on the application core.
+* On the nRF52840, nRF54L15 and nRF54LM20 SoCs, all components are located on the application core.
 
-.. figure:: ../../thread/overview/images/thread_platform_design_multi.svg
+.. figure:: images/thread/overview/images/thread_platform_design_multi.svg
    :alt: Multiprotocol Thread and Bluetooth LE architecture (nRF52, nRF54L)
 
    Multiprotocol Thread and Bluetooth LE architecture on nRF52 Series and nRF54L Series devices
 
-.. figure:: ../../thread/overview/images/thread_platform_design_nRF53_multi.svg
+.. figure:: images/thread/overview/images/thread_platform_design_nRF53_multi.svg
    :alt: Multiprotocol Thread and Bluetooth LE architecture (nRF53)
 
    Multiprotocol Thread and Bluetooth LE architecture on nRF53 Series devices

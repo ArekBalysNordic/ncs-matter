@@ -10,7 +10,7 @@
 .. |Third Button| replace:: `Third Button <#buttons-and-leds-map>`__
 .. |Fourth Button| replace:: `Fourth Button <#buttons-and-leds-map>`__
 
-.. |matter_dfu| replace:: To upgrade the device firmware, complete the steps listed for the selected method in the the `Matter software update guide`_ tutorial in the Matter documentation.
+.. |matter_dfu| replace:: To upgrade the device firmware, complete the steps listed for the selected method in the `Matter software update guide`_ tutorial in the Matter documentation.
 .. |matter_ble_advertising_auto| replace:: Before starting the commissioning procedure, make sure that the device is discoverable over Bluetooth LE.
                                            The device becomes discoverable automatically upon the device startup, but only for a predefined period of time (one hour by default).
                                            If the Bluetooth LE advertising times out, enable it again.

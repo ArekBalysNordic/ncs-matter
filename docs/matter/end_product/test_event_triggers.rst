@@ -37,7 +37,7 @@ Default test event triggers
 ***************************
 
 You can use the pre-defined common test event triggers in your application.
-To disable them, set the :option:`CONFIG_NCS_SAMPLE_MATTER_TEST_EVENT_TRIGGERS_REGISTER_DEFAULTS` Kconfig option to ``n``.
+To disable them, set the :option:`CONFIG_MATTER_TEST_EVENT_TRIGGERS_REGISTER_DEFAULTS` Kconfig option to ``n``.
 
 The following table lists the available triggers and their activation codes:
 
@@ -65,7 +65,7 @@ The following table lists the available triggers and their activation codes:
       The maximum time delay is UINT16_MAX ms.
       The value is provided in HEX format.
   * - Block the Matter thread
-    - :option:`CONFIG_NCS_SAMPLE_MATTER_WATCHDOG` = ``y``, and :option:`CONFIG_NCS_SAMPLE_MATTER_WATCHDOG_DEFAULT` = ``y``
+    - :option:`CONFIG_MATTER_WATCHDOG` = ``y``, and :option:`CONFIG_MATTER_WATCHDOG_DEFAULT` = ``y``
     - Block the Matter thread for specific amount of time.
       You can use this event trigger to check the :ref:`Matter Watchdog <ug_matter_device_watchdog>` functionality.
     - ``0xFFFFFFFF20000000`` - ``0xFFFFFFFF2000FFFF``
@@ -73,7 +73,7 @@ The following table lists the available triggers and their activation codes:
       The maximum time is UINT16_MAX s.
       The value is provided in HEX format.
   * - Block the Main thread
-    - :option:`CONFIG_NCS_SAMPLE_MATTER_WATCHDOG` = ``y``, and :option:`CONFIG_NCS_SAMPLE_MATTER_WATCHDOG_DEFAULT` = ``y``
+    - :option:`CONFIG_MATTER_WATCHDOG` = ``y``, and :option:`CONFIG_MATTER_WATCHDOG_DEFAULT` = ``y``
     - Block the Main thread for specific amount of time.
       You can use this event trigger to check the :ref:`Matter Watchdog <ug_matter_device_watchdog>` functionality.
     - ``0xFFFFFFFF30000000`` - ``0xFFFFFFFF3000FFFF``
@@ -81,21 +81,21 @@ The following table lists the available triggers and their activation codes:
       The maximum time is UINT16_MAX s.
       The value is provided in HEX format.
   * - Diagnostic Logs User Data
-    - Enabled ``Diagnostic Logs`` cluster, and either the snippet ``matter-diagnostic-logs`` attached (``-D<application_name>_SNIPPET=matter-diagnostic-logs``) or both :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS` = ``y`` and :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS_END_USER_LOGS` = ``y``.
+    - Enabled ``Diagnostic Logs`` cluster, and either the snippet ``matter-diagnostic-logs`` attached (``-D<application_name>_SNIPPET=matter-diagnostic-logs``) or both :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS` = ``y`` and :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS_END_USER_LOGS` = ``y``.
     - Trigger writing a specific number of ``u`` characters to the user diagnostics logs.
       The number of characters is determined by the value at the end of the event trigger value.
       The current supported maximum is 1023 bytes for single trigger call, and 4096 bytes of total data written.
     - ``0xFFFFFFFF40000000`` - ``0xFFFFFFFF40000400``
     - The range of ``0x0000`` - ``0x0400`` (from 1 Bytes to 1024 Bytes), ``0x0000`` to clear logs.
   * - Diagnostic Logs Network Data
-    - Enabled ``Diagnostic Logs`` cluster, and either the snippet ``matter-diagnostic-logs`` attached (``-D<application_name>_SNIPPET=matter-diagnostic-logs``) or both :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS` = ``y`` and :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS_NETWORK_LOGS` = ``y``.
+    - Enabled ``Diagnostic Logs`` cluster, and either the snippet ``matter-diagnostic-logs`` attached (``-D<application_name>_SNIPPET=matter-diagnostic-logs``) or both :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS` = ``y`` and :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS_NETWORK_LOGS` = ``y``.
     - Trigger writing a specific number of ``n`` characters to the network diagnostics logs.
       The number of characters is determined by the value at the end of the event trigger value.
       The current supported maximum is 1023 bytes for single trigger call, and 4096 bytes of total data written.
     - ``0xFFFFFFFF50000000`` - ``0xFFFFFFFF50000400``
     - The range of ``0x0000`` - ``0x0400`` (from 1 Bytes to 1024 Bytes), ``0x0000`` to clear logs.
   * - Diagnostic Crash Logs
-    - Either the snippet ``matter-diagnostic-logs`` attached (``-D<application_name>_SNIPPET=matter-diagnostic-logs``) or both :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS` = ``y`` and :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS_CRASH_LOGS` = ``y``, and enabled ``Diagnostic Logs`` cluster.
+    - Either the snippet ``matter-diagnostic-logs`` attached (``-D<application_name>_SNIPPET=matter-diagnostic-logs``) or both :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS` = ``y`` and :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS_CRASH_LOGS` = ``y``, and enabled ``Diagnostic Logs`` cluster.
     - Trigger a simple crash that relies on execution of the undefined instruction attempt.
     - ``0xFFFFFFFF60000000``
     - No additional value supported.
@@ -106,69 +106,69 @@ The following table lists the available triggers and their activation codes:
     - The range of ``0x00`` - ``0xFF`` is the fabric index value.
       The maximum fabric index value depends on the current device's settings.
   * - Smoke CO alarm - Smoke critical alarm
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger a smoke alarm with critical severity level.
     - ``0x005c00000000009c``
     - No additional value supported.
   * - Smoke CO alarm - Smoke alarm clean
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger an action that ceases smoke alarm.
     - ``0x005c0000000000a0``
     - No additional value supported.
   * - Smoke CO alarm - CO critical alarm
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger a CO alarm with critical severity level.
     - ``0x005c00000000009d``
     - No additional value supported.
   * - Smoke CO alarm - CO alarm clean
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger an action that ceases CO alarm.
     - ``0x005c0000000000a1``
     - No additional value supported.
   * - Smoke CO alarm - battery low level alarm
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger a battery low level alarm.
     - ``0x005c00000000009e``
     - No additional value supported.
   * - Smoke CO alarm - battery low level alarm clean
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger an action that ceases battery low level alarm.
     - ``0x005c0000000000a5``
     - No additional value supported.
   * - Smoke CO alarm - hardware fault alarm
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger a hardware fault alarm.
     - ``0x005c000000000093``
     - No additional value supported.
   * - Smoke CO alarm - hardware fault alarm clean
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger an action that ceases hardware fault alarm.
     - ``0x005c0000000000a3``
     - No additional value supported.
   * - Smoke CO alarm - end of service alarm
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger an end of service alarm.
     - ``0x005c00000000009a``
     - No additional value supported.
   * - Smoke CO alarm - end of service alarm clean
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger an action that ceases end of service alarm.
     - ``0x005c0000000000aa``
     - No additional value supported.
   * - Power source on
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger an action that changes power source state to active.
     - ``0xFFFFFFFF80000000`` - ``0xFFFFFFFF80000001``
     - The range of ``0x0`` - ``0x1`` is the endpoint ID that has power source cluster instance enabled.
       An endpoint with ID ``0x0`` uses a wired power source and endpoint with ID ``0x1`` uses a battery power source.
   * - Power source off
-    - Only for :ref:`Matter Smoke CO Alarm <matter_smoke_co_alarm_sample>`
+    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample>`_
     - Trigger an action that changes power source state to unavailable.
     - ``0xFFFFFFFF80010000`` - ``0xFFFFFFFF80010001``
     - The range of ``0x0`` - ``0x1`` is the endpoint ID that has power source cluster instance enabled.
       An endpoint with ID ``0x0`` uses a wired power source and endpoint with ID ``0x1`` uses a battery power source.
   * - Door lock jammed
-    - Only for :ref:`Matter Lock <matter_lock_sample>`
+    - Only for `Matter Lock <Matter lock sample>`_
     - Simulate the jammed lock state.
     - ``0xFFFFFFF327740000``
     - This activation code does not contain any value.
@@ -298,7 +298,7 @@ A new event trigger consists of two fields: ``Mask``, and ``Callback``.
 * The ``Callback`` field is a callback function that will be invoked when the device receives a corresponding activation code.
 
 The maximum number of event triggers that can be registered is configurable.
-To adjust this limit, set the :option:`CONFIG_NCS_SAMPLE_MATTER_TEST_EVENT_TRIGGERS_MAX` Kconfig option to the desired value.
+To adjust this limit, set the :option:`CONFIG_MATTER_TEST_EVENT_TRIGGERS_MAX` Kconfig option to the desired value.
 
 To register a new test event trigger, follow these steps:
 
@@ -347,7 +347,7 @@ To register a new test event trigger, follow these steps:
 
      /* Remember to check the CHIP_ERROR return code */
 
-   If the returning ``CHIP_ERROR`` code is equal to ``CHIP_ERROR_NO_MEMORY``, you need to increase the value of the :option:`CONFIG_NCS_SAMPLE_MATTER_TEST_EVENT_TRIGGERS_MAX_TRIGGERS_DELEGATES` Kconfig option.
+   If the returning ``CHIP_ERROR`` code is equal to ``CHIP_ERROR_NO_MEMORY``, you need to increase the value of the :option:`CONFIG_MATTER_TEST_EVENT_TRIGGERS_MAX_TRIGGERS_DELEGATES` Kconfig option.
 
    Here's an example to handle the ``0xFFFFFFFF00011234`` activation code, where 1234 is the event trigger value field:
 
@@ -378,7 +378,7 @@ Use the following example as a guide to register an existing event trigger handl
 
   /* Remember to check the CHIP_ERROR return code */
 
-If the returning ``CHIP_ERROR`` code is equal to ``CHIP_ERROR_NO_MEMORY``, you need to increase the value of the :option:`CONFIG_NCS_SAMPLE_MATTER_TEST_EVENT_TRIGGERS_MAX_TRIGGERS_DELEGATES` Kconfig option.
+If the returning ``CHIP_ERROR`` code is equal to ``CHIP_ERROR_NO_MEMORY``, you need to increase the value of the :option:`CONFIG_MATTER_TEST_EVENT_TRIGGERS_MAX_TRIGGERS_DELEGATES` Kconfig option.
 
 For example, you can register and use the ``OTATestEventTriggerHandler`` handler and trigger pre-defined Matter OTA DFU behaviors using the following code:
 
@@ -394,7 +394,7 @@ Usage
 *****
 
 The Matter test event triggers feature is enabled by default for all Matter samples.
-To disable it, set the :option:`CONFIG_NCS_SAMPLE_MATTER_TEST_EVENT_TRIGGERS` Kconfig option to ``n``.
+To disable it, set the :option:`CONFIG_MATTER_TEST_EVENT_TRIGGERS` Kconfig option to ``n``.
 
 To trigger a specific event on the device, run the following command:
 
