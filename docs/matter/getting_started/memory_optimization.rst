@@ -12,7 +12,7 @@ You can use different approaches to optimizing the memory usage of your Matter a
 Reducing memory usage on the |NCS| side
 ***************************************
 
-See the :ref:`app_memory` guide for information about how to reduce memory usage for the |NCS| generally and for specific subsystems in particular, including Bluetooth® LE, Matter, and Thread.
+See the `Application memory <Application memory>`_ guide for information about how to reduce memory usage for the |NCS| generally and for specific subsystems in particular, including Bluetooth® LE, Matter, and Thread.
 
 .. _ug_matter_device_optimizing_memory_logs:
 
@@ -48,8 +48,8 @@ LTO is an advanced compilation technique that performs optimization across all c
 
 LTO is enabled by default for the following:
 
-* The :ref:`matter_bridge_app` application.
-* The ``release`` configuration of the :ref:`matter_samples` and the :ref:`matter_weather_station_app`.
+* The `Matter bridge sample <Matter bridge sample>`_ application.
+* The ``release`` configuration of the :ref:`matter_samples` and the `Matter weather station sample <Matter weather station sample>`_.
 
 
 To enable LTO, set the :kconfig:option:`CONFIG_LTO` and :kconfig:option:`CONFIG_ISR_TABLES_LOCAL_DECLARATION` Kconfig options to ``y``.
@@ -72,7 +72,7 @@ Alternatively, you can enable each option separately.
 
 The Kconfig option enables the following functionalities on the Matter device:
 
-- :ref:`ug_matter_configuring_settings_shell` by setting the :option:`CONFIG_NCS_SAMPLE_MATTER_SETTINGS_SHELL` Kconfig option to ``y``.
+- :ref:`ug_matter_configuring_settings_shell` by setting the :option:`CONFIG_MATTER_SETTINGS_SHELL` Kconfig option to ``y``.
 - :doc:`Command-line interface <matter:nrfconnect_examples_cli>` by setting the :kconfig:option:`CONFIG_CHIP_LIB_SHELL` Kconfig option to ``y``.
 - Zephyr Kernel commands by setting the :kconfig:option:`CONFIG_KERNEL_SHELL` Kconfig option to ``y``.
 - Zephyr Settings shell by setting the :kconfig:option:`CONFIG_SETTINGS_SHELL` Kconfig option to ``y``.
@@ -147,7 +147,7 @@ To do this, you need to set the following in your application :file:`prj.conf` f
    :class: highlight
 
     CONFIG_SHELL=y
-    CONFIG_NCS_SAMPLE_MATTER_SETTINGS_SHELL=y
+    CONFIG_MATTER_SETTINGS_SHELL=y
     CONFIG_SHELL_MINIMAL=n
     CONFIG_SETTINGS_SHELL=y
 
@@ -327,7 +327,7 @@ Settings usage
     The data used within this partition may increase with updates to Matter and the |NCS|.
 
 To adjust the settings usage, you need to modify the :file:`boards/<board_name>.overlay` board file related to your target board.
-For example, to modify the ``storage_partition`` partition in the :ref:`Matter Template <matter_template_sample>` sample for the ``nrf54l15dk/nrf54l15/cpuapp`` target, complete the following steps:
+For example, to modify the ``storage_partition`` partition in the `Matter Template <Matter template sample>`_ sample for the ``nrf54l15dk/nrf54l15/cpuapp`` target, complete the following steps:
 
 1. Locate the base partition for the ``nrf54l15dk/nrf54l15/cpuapp`` board target file :file:`nrf54l15_cpuapp_partitions.dtsi` located under the :file:`nrf/dts/samples/matter` directory.
 2. Copy the content of this file to your :file:`boards/nrf54l15dk_nrf54l15_cpuapp.overlay` board file.
@@ -433,7 +433,7 @@ You can adjust the pool size to reduce the memory usage of your application, but
 
 .. note::
    The Thread protocol has a separate configuration for memory allocation.
-   See :ref:`thread_configuring_messagepool` in the Thread documentation for more information.
+   See `Thread message pool configuration <Thread message pool configuration>`_ in the Thread documentation for more information.
 
 Memory profiling troubleshooting
 ================================

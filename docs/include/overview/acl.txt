@@ -7,4 +7,4 @@ Access Control List
    The list contains rules for managing and enforcing access control for a node's endpoints and their associated cluster instances.
    In this |matter_type|'s case, this allows the lighting devices to receive messages from the light switch and run them.
 
-   For more details about ACLs, see the the `Matter access control guide`_ in the Matter documentation.
+   For more details about ACLs, see the `Matter access control guide`_ in the Matter documentation.

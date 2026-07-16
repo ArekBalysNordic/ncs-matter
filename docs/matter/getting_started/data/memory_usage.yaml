@@ -4,7 +4,7 @@ legend_threshold_kb: 8
 boards:
 - board_id: nrf52840dk/nrf52840
   tab_title: nRF52840 DK
-  tab_intro_rst: Memory requirements for samples running on the :zephyr:board:`nrf52840dk`.
+  tab_intro_rst: Memory requirements for samples running on the `nrf52840dk <nrf52840dk>`_.
   nvm_total_kb: 1024.0
   ram_total_kb: 256.0
   samples:
@@ -892,7 +892,7 @@ boards:
     external_nvm_total_kb: 65536.0
 - board_id: nrf5340dk/nrf5340/cpuapp
   tab_title: nRF5340 DK
-  tab_intro_rst: Memory requirements for samples running on the :zephyr:board:`nrf5340dk`.
+  tab_intro_rst: Memory requirements for samples running on the `nrf5340dk <nrf5340dk>`_.
   nvm_total_kb: 1024.0
   ram_total_kb: 448.0
   samples:
@@ -1878,7 +1878,7 @@ boards:
     external_nvm_total_kb: 65536.0
 - board_id: thingy53/nrf5340/cpuapp
   tab_title: Nordic Thingy:53
-  tab_intro_rst: Memory requirements for samples running on the :zephyr:board:`thingy53`.
+  tab_intro_rst: Memory requirements for samples running on the `thingy53 <thingy53>`_.
   nvm_total_kb: 1024.0
   ram_total_kb: 448.0
   samples:
@@ -1982,7 +1982,7 @@ boards:
     external_nvm_total_kb: 65536.0
 - board_id: nrf54l15dk/nrf54l15/cpuapp
   tab_title: nRF54L15 DK
-  tab_intro_rst: Memory requirements for samples running on the :zephyr:board:`nrf54l15dk`.
+  tab_intro_rst: Memory requirements for samples running on the `nrf54l15dk <nrf54l15dk>`_.
   nvm_total_kb: 1524.0
   ram_total_kb: 256.0
   samples:
@@ -2912,7 +2912,7 @@ boards:
     external_nvm_total_kb: 65536.0
 - board_id: nrf54l15tag/nrf54l15/cpuapp
   tab_title: nRF54L15 TAG
-  tab_intro_rst: Memory requirements for samples running on the :zephyr:board:`nrf54l15tag`.
+  tab_intro_rst: Memory requirements for samples running on the `nrf54l15tag <nrf54l15tag>`_.
   nvm_total_kb: 1524.0
   ram_total_kb: 256.0
   samples:
@@ -3170,7 +3170,7 @@ boards:
     external_nvm_total_kb: null
 - board_id: nrf54lm20dk/nrf54lm20a/cpuapp
   tab_title: nRF54LM20 DK
-  tab_intro_rst: Memory requirements for samples running on the :zephyr:board:`nrf54lm20dk`.
+  tab_intro_rst: Memory requirements for samples running on the `nrf54lm20dk <nrf54lm20dk>`_.
   nvm_total_kb: 2036.0
   ram_total_kb: 511.0
   samples:
@@ -4240,9 +4240,7 @@ boards:
     external_nvm_total_kb: 65536.0
 - board_id: nrf54lm20dk/nrf54lm20a/cpuapp+nrf7002eb2
   tab_title: nRF54LM20 DK with nRF7002 EB2
-  tab_intro_rst: >
-    Memory requirements for samples running on the :zephyr:board:`nrf54lm20dk`
-    with the nRF7002 EB2.
+  tab_intro_rst: Memory requirements for samples running on the `nrf54lm20dk <nrf54lm20dk>`_ with the nRF7002 EB2.
   nvm_total_kb: 2036.0
   ram_total_kb: 511.0
   samples:
@@ -4836,7 +4834,7 @@ boards:
     external_nvm_total_kb: 65536.0
 - board_id: nrf54l15dk/nrf54l10/cpuapp
   tab_title: nRF54L10 emulation on nRF54L15 DK
-  tab_intro_rst: Memory requirements for samples running on the :zephyr:board:`nrf54l15dk`.
+  tab_intro_rst: Memory requirements for samples running on the `nrf54l15dk <nrf54l15dk>`_.
   nvm_total_kb: 1012.0
   ram_total_kb: 192.0
   samples:
@@ -4891,7 +4889,7 @@ boards:
     external_nvm_total_kb: 65536.0
   - title: ':ref:`Smoke CO Alarm <matter_smoke_co_alarm_sample>` (Release)'
     nvm_total_kb: 1012.0
-    ram_total_kb: 192.0
+    ram_total_kb: 256.0
     ram_used_kb: 164.0
     nvm_partitions:
     - id: boot
@@ -4940,7 +4938,7 @@ boards:
     external_nvm_total_kb: 65536.0
   - title: ':ref:`Template <matter_template_sample>` (Debug)'
     nvm_total_kb: 1012.0
-    ram_total_kb: 192.0
+    ram_total_kb: 256.0
     ram_used_kb: 165.0
     nvm_partitions:
     - id: boot
@@ -4989,7 +4987,7 @@ boards:
     external_nvm_total_kb: 65536.0
   - title: ':ref:`Template <matter_template_sample>` (Release)'
     nvm_total_kb: 1012.0
-    ram_total_kb: 192.0
+    ram_total_kb: 256.0
     ram_used_kb: 160.0
     nvm_partitions:
     - id: boot
@@ -5032,237 +5030,6 @@ boards:
       label: Free
       size_kb: 64620.0
       used_kb: 64620.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    external_nvm_total_kb: 65536.0
-- board_id: nrf54l15dk/nrf54l15/cpuapp/ns
-  tab_title: nRF54L15 DK with CMSE enabled
-  tab_intro_rst: Memory requirements for samples running on the :zephyr:board:`nrf54l15dk`
-    with CMSE enabled.
-  nvm_total_kb: 1524.0
-  ram_total_kb: 256.0
-  samples:
-  - title: :ref:`Light Bulb <matter_light_bulb_sample>` (TF-M)
-    nvm_total_kb: 1524.0
-    ram_total_kb: 256.0
-    ram_used_kb: 164.0
-    nvm_partitions:
-    - id: boot
-      label: MCUboot
-      size_kb: 52.0
-      used_kb: 40.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: slot0
-      label: Application
-      size_kb: 1396.0
-      used_kb: 724.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: factory_data
-      label: Factory data
-      size_kb: 4.0
-      used_kb: 4.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: storage
-      label: Settings
-      size_kb: 40.0
-      used_kb: 40.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: tfm_storage
-      label: TF-M Storage
-      size_kb: 32.0
-      used_kb: 32.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    external_nvm_partitions:
-    - id: slot1
-      label: Application DFU
-      size_kb: 1396.0
-      used_kb: 857.4
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: padding
-      label: Free
-      size_kb: 64140.0
-      used_kb: 64140.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    external_nvm_total_kb: 65536.0
-  - title: :ref:`Light Switch <matter_light_switch_sample>` (TF-M)
-    nvm_total_kb: 1524.0
-    ram_total_kb: 256.0
-    ram_used_kb: 152.0
-    nvm_partitions:
-    - id: boot
-      label: MCUboot
-      size_kb: 52.0
-      used_kb: 40.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: slot0
-      label: Application
-      size_kb: 1396.0
-      used_kb: 689.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: factory_data
-      label: Factory data
-      size_kb: 4.0
-      used_kb: 4.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: storage
-      label: Settings
-      size_kb: 40.0
-      used_kb: 40.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: tfm_storage
-      label: TF-M Storage
-      size_kb: 32.0
-      used_kb: 32.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    external_nvm_partitions:
-    - id: slot1
-      label: Application DFU
-      size_kb: 1396.0
-      used_kb: 822.8
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: padding
-      label: Free
-      size_kb: 64140.0
-      used_kb: 64140.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    external_nvm_total_kb: 65536.0
-  - title: :ref:`Template <matter_template_sample>` (TF-M)
-    nvm_total_kb: 1524.0
-    ram_total_kb: 256.0
-    ram_used_kb: 149.0
-    nvm_partitions:
-    - id: boot
-      label: MCUboot
-      size_kb: 52.0
-      used_kb: 40.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: slot0
-      label: Application
-      size_kb: 1396.0
-      used_kb: 648.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: factory_data
-      label: Factory data
-      size_kb: 4.0
-      used_kb: 4.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: storage
-      label: Settings
-      size_kb: 40.0
-      used_kb: 40.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: tfm_storage
-      label: TF-M Storage
-      size_kb: 32.0
-      used_kb: 32.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    external_nvm_partitions:
-    - id: slot1
-      label: Application DFU
-      size_kb: 1396.0
-      used_kb: 781.1
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: padding
-      label: Free
-      size_kb: 64140.0
-      used_kb: 64140.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    external_nvm_total_kb: 65536.0
-  - title: :ref:`Thermostat <matter_thermostat_sample>` (TF-M)
-    nvm_total_kb: 1524.0
-    ram_total_kb: 256.0
-    ram_used_kb: 151.0
-    nvm_partitions:
-    - id: boot
-      label: MCUboot
-      size_kb: 52.0
-      used_kb: 40.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: slot0
-      label: Application
-      size_kb: 1396.0
-      used_kb: 699.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: factory_data
-      label: Factory data
-      size_kb: 4.0
-      used_kb: 4.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: storage
-      label: Settings
-      size_kb: 40.0
-      used_kb: 40.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: tfm_storage
-      label: TF-M Storage
-      size_kb: 32.0
-      used_kb: 32.0
-      offset: null
-      region_type: nvm
-      legend_only: false
-    external_nvm_partitions:
-    - id: slot1
-      label: Application DFU
-      size_kb: 1396.0
-      used_kb: 832.2
-      offset: null
-      region_type: nvm
-      legend_only: false
-    - id: padding
-      label: Free
-      size_kb: 64140.0
-      used_kb: 64140.0
       offset: null
       region_type: nvm
       legend_only: false

@@ -25,11 +25,11 @@ The Matter samples delivered in the |NCS| have not received official certificate
 However, they have been tested against the Works with Google Home certification test cases and have successfully passed all of them.
 The following is a full list of Matter samples that were verified to pass the Works with Google certification test cases:
 
-* :ref:`matter_lock_sample`
-* :ref:`matter_light_bulb_sample`
-* :ref:`matter_thermostat_sample`
-* :ref:`matter_window_covering_sample`
-* :ref:`matter_weather_station_app`
+* `Matter Lock sample <Matter lock sample>`_
+* `Matter light bulb sample <Matter light bulb sample>`_
+* `Matter thermostat sample <Matter thermostat sample>`_
+* `Matter window covering sample <Matter window covering sample>`_
+* `Matter weather station sample <Matter weather station sample>`_
 
 .. _ug_matter_amazon_certification:
 
@@ -53,12 +53,12 @@ This means that if you create a Matter product based on the |NCS|, you can appro
 You can do this by filling the Reference APID field when you register your product on Amazon's developer page.
 Use one of the following values:
 
-+-----------------------------------------------------------+-----------------------+
-| Matter platform variant                                   | Reference Design APID |
-+===========================================================+=======================+
-| :ref:`nRF52840 DK <ug_nrf52>` (Matter over Thread)        | ZNwt                  |
-+-----------------------------------------------------------+-----------------------+
-| :ref:`nRF5340 DK <ug_nrf5340>` (Matter over Thread)       | xzNd                  |
-+-----------------------------------------------------------+-----------------------+
-| :ref:`nRF7002 DK <ug_nrf70>` (Matter over Wi-Fi®)         | jyjh                  |
-+-----------------------------------------------------------+-----------------------+
++-----------------------------------------------------------------------------+-----------------------+
+| Matter platform variant                                                     | Reference Design APID |
++=============================================================================+=======================+
+| `nRF52 Series <Developing with nRF52 Series>`_ (Matter over Thread)         | ZNwt                  |
++-----------------------------------------------------------------------------+-----------------------+
+| `nRF53 Series <Developing with nRF53 Series>`_ (Matter over Thread)         | xzNd                  |
++-----------------------------------------------------------------------------+-----------------------+
+| `nRF70 Series <Developing with nRF70 Series>`_ (Matter over Wi-Fi®)         | jyjh                  |
++-----------------------------------------------------------------------------+-----------------------+

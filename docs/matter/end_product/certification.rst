@@ -100,7 +100,7 @@ Reporting
 =========
 
 After the Matter component successfully passes all required test cases, the ATL sends a test report to both you and CSA.
-The test report summarizes the testing process and includes a variety of information, including details about the device, `Certification types`_, test plans, and Test Harness.
+The test report summarizes the testing process and includes a variety of information, including details about the device, :ref:`Certification types <ug_matter_device_certification_types>`, test plans, and Test Harness.
 
 Application
 ===========
@@ -401,6 +401,8 @@ In contrast, portfolio certification accommodates devices that may differ at the
 
 For more details, read a dedicated document in the `Matter Resource Kit`_.
 
+.. _ug_matter_device_product_family_certification:
+
 Product Family Certification
 ----------------------------
 
@@ -423,7 +425,7 @@ Certification by Similarity
 ---------------------------
 
 Certification by Similarity lets you certify products that derive from a previously certified product.
-This variant is meant for Matter components that use Matter software that was already certified as part of either the standard procedure or the `Product Family certification`_.
+This variant is meant for Matter components that use Matter software that was already certified as part of either the standard procedure or the :ref:`Product Family certification <ug_matter_device_product_family_certification>`.
 
 .. figure:: images/matter_device_certification_process_cbs.svg
    :alt: Matter certification by similarity overview

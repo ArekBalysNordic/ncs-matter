@@ -663,13 +663,13 @@ Preparing factory data partition on a device
 ============================================
 
 The factory data partition is an area in the device's persistent storage, where the factory data set is stored.
-This area is configured using the :ref:`partition_manager`, within which all partitions are declared in the :file:`pm_static.yml` file.
+This area is configured using the `Partition Manager <Partition Manager>`_, within which all partitions are declared in the :file:`pm_static.yml` file.
 
 To prepare an example that supports factory data, add a partition called ``factory_data`` to the :file:`pm_static.yml` file.
 The partition size should be a multiple of one flash page (for nRF52 and nRF53 SoCs, a single page size equals 4 kB).
 
 See the following code snippet for an example of a factory data partition in the :file:`pm_static.yml` file.
-The snippet is based on the :file:`pm_static.yml` file from the :ref:`matter_lock_sample` and uses the nRF52840 DK:
+The snippet is based on the :file:`pm_static.yml` file from the `Matter lock sample <Matter lock sample>`_ and uses the nRF52840 DK:
 
 .. parsed-literal::
    :class: highlight
@@ -694,7 +694,17 @@ The snippet is based on the :file:`pm_static.yml` file from the :ref:`matter_loc
 In this example, a ``factory_data`` partition has been placed between the application partition (``mcuboot_primary_app``) and the settings storage.
 Its size has been set to one flash page (4 kB).
 
-.. include:: ../../../includes/pm_deprecation.txt
+.. note::
+   The :ref:`partition_manager` is a component in the |NCS| and is responsible for handling the memory partitioning at build time.
+
+   This functionality is in the process of being deprecated and replaced by Zephyr's default devicetree-based memory partitioning.
+   It is recommended that all new designs using Nordic devices are to be built with DTS instead of Partition Manager.
+   Partition Manager will be removed from the |NCS| by the end of 2026 from the main branch.
+
+   For more information on how to configure partitions using DTS and how to migrate your existing configuration to DTS, see the following pages:
+
+   * :ref:`migration_partitions`
+   * :ref:`ncs_release_notes_340`
 
 Use Partition Manager's report tool to ensure you created the factory data partition correctly.
 Navigate to the example directory and run the following command:
@@ -895,8 +905,8 @@ Another way to program the factory data to a device is to use the nRF Connect pl
 
    $ west build -b nrf52840dk_nrf52840 -- \
    -DCONFIG_CHIP_FACTORY_DATA=y \
-   -DSB_CONFIG_MATTER_FACTORY_DATA_GENERATE=y \
-   -DSB_CONFIG_MATTER_FACTORY_DATA_MERGE_WITH_FIRMWARE=y
+   -DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=y \
+   -DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_MERGE_WITH_FIRMWARE=y
 
 You can also build an example with auto-generation of new CD, DAC and PAI certificates.
 The newly generated certificates will be added to factory data set automatically.

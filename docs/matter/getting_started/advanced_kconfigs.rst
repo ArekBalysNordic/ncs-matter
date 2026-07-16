@@ -70,7 +70,7 @@ Logging configuration
 =====================
 
 Logging is handled with the :kconfig:option:`CONFIG_LOG` option.
-This option enables logging for both the stack and Zephyr's :ref:`zephyr:logging_api` API.
+This option enables logging for both the stack and Zephyr's `Logging <Logging>`_ API.
 
 Logging level configuration
 ---------------------------
@@ -151,10 +151,10 @@ See :doc:`matter:nrfconnect_examples_cli` in the Matter documentation for the li
 Matter Settings shell commands
 ------------------------------
 
-You can enable the Matter Settings shell commands to monitor the current usage of the Zephyr Settings using :ref:`NVS (Non-Volatile Storage) <zephyr:nvs_api>` or :ref:`ZMS (Zephyr Memory Storage) <zephyr:zms_api>` backends.
+You can enable the Matter Settings shell commands to monitor the current usage of the Zephyr Settings using `NVS (Non-Volatile Storage) <Non-Volatile Storage (NVS)>`_ or `ZMS (Zephyr Memory Storage) <ZMS (Zephyr Memory Storage)>`_ backends.
 These commands are useful for verifying that the ``storage_partition`` partition has the proper size and meets the application requirements.
 
-To enable the Matter Settings shell module, set the :option:`CONFIG_NCS_SAMPLE_MATTER_SETTINGS_SHELL` Kconfig option to ``y``.
+To enable the Matter Settings shell module, set the :option:`CONFIG_MATTER_SETTINGS_SHELL` Kconfig option to ``y``.
 
 You can use the following shell commands:
 
@@ -253,7 +253,7 @@ Read Client functionality
 =========================
 
 The Read Client functionality is used for reading attributes from another device in the Matter network.
-This functionality is disabled by default for Matter samples in the |NCS|, except for ones that need to read attributes from the bound devices, such as the :ref:`matter_light_switch_sample` and :ref:`matter_thermostat_sample` samples, and the :ref:`matter_bridge_app` application.
+This functionality is disabled by default for Matter samples in the |NCS|, except for ones that need to read attributes from the bound devices, such as the `Matter light switch sample <Matter light switch sample>`_ and `Matter thermostat sample <Matter thermostat sample>`_ samples, and the `Matter bridge sample <Matter bridge sample>`_ application.
 Enable the feature if your device needs to be able to access attributes from a different device within the Matter network using, for example, bindings.
 
 .. _ug_matter_persistent_storage:
@@ -262,7 +262,7 @@ Persistent storage
 ==================
 
 The persistent storage module allows for the application data and configuration to survive a device reboot.
-|NCS| Matter applications use one generic Persistent Storage API that can be enabled by the :option:`CONFIG_NCS_SAMPLE_MATTER_PERSISTENT_STORAGE` Kconfig option.
+|NCS| Matter applications use one generic Persistent Storage API that can be enabled by the :option:`CONFIG_MATTER_PERSISTENT_STORAGE` Kconfig option.
 This API consists of methods with ``Secure`` and ``NonSecure`` prefixes, which handle secure (ARM Platform Security Architecture Persistent Storage) and non-secure (raw Zephyr settings) storage operations, respectively.
 
 You can learn more details about the Persistent Storage API from the :file:`ncs/nrf/samples/matter/common/src/persistent_storage/persistent_storage.h` header file.
@@ -270,9 +270,9 @@ You can learn more details about the Persistent Storage API from the :file:`ncs/
 The interface is implemented by two available backends.
 Both can be used simultaneously by controlling the following Kconfig options:
 
-* :option:`CONFIG_NCS_SAMPLE_MATTER_SETTINGS_STORAGE_BACKEND` - Activates the implementation that takes advantage of the raw :ref:`Zephyr settings<zephyr:settings_api>`.
+* :option:`CONFIG_MATTER_SETTINGS_STORAGE_BACKEND` - Activates the implementation that takes advantage of the raw `Zephyr settings <Settings>`_.
   This backend implements ``NonSecure`` methods of the Persistent Storage API and returns ``PSErrorCode::NotSupported`` for ``Secure`` methods.
-* :option:`CONFIG_NCS_SAMPLE_MATTER_SECURE_STORAGE_BACKEND` - Activates the module based on the ARM PSA Protected Storage API implementation from the :ref:`trusted_storage_readme` |NCS| library.
+* :option:`CONFIG_MATTER_SECURE_STORAGE_BACKEND` - Activates the module based on the ARM PSA Protected Storage API implementation from the `Trusted storage <Trusted storage>`_ |NCS| library.
   This backend implements ``Secure`` methods of the Persistent Storage API and returns ``PSErrorCode::NotSupported`` for ``NonSecure`` methods.
 
 .. note::
@@ -281,15 +281,15 @@ Both can be used simultaneously by controlling the following Kconfig options:
    Applications should use the ARM PSA Protected Storage API directly, instead.
 
 Both backends allow you to control the maximum length of a string-type key under which an asset can be stored.
-You can do this using the :option:`CONFIG_NCS_SAMPLE_MATTER_STORAGE_MAX_KEY_LEN` Kconfig option.
+You can do this using the :option:`CONFIG_MATTER_STORAGE_MAX_KEY_LEN` Kconfig option.
 
-If both backends are activated at the same time (:option:`CONFIG_NCS_SAMPLE_MATTER_SETTINGS_STORAGE_BACKEND` and :option:`CONFIG_NCS_SAMPLE_MATTER_SECURE_STORAGE_BACKEND` enabled), all methods of the generic interface are supported.
+If both backends are activated at the same time (:option:`CONFIG_MATTER_SETTINGS_STORAGE_BACKEND` and :option:`CONFIG_MATTER_SECURE_STORAGE_BACKEND` enabled), all methods of the generic interface are supported.
 
 Similarly to the non-secure backend, the secure backend leverages the Zephyr Settings to interface with the FLASH memory.
 
 Additionally, in case of the secure storage backend, the following Kconfig options control the storage limits:
 
-* :option:`CONFIG_NCS_SAMPLE_MATTER_SECURE_STORAGE_MAX_ENTRY_NUMBER` - Defines the maximum number or assets that can be stored in the secure storage.
+* :option:`CONFIG_MATTER_SECURE_STORAGE_MAX_ENTRY_NUMBER` - Defines the maximum number or assets that can be stored in the secure storage.
 * :kconfig:option:`CONFIG_TRUSTED_STORAGE_BACKEND_AEAD_MAX_DATA_SIZE` - Defines the maximum length of the secret that is stored.
 
 .. _ug_matter_configuration_diagnostic_logs:
@@ -323,7 +323,7 @@ After receiving the read request from the Matter controller, the device reads th
 The device sends converted logs to the Matter controller as a response.
 
 After the crash data is successfully read, it will be removed and further read attempts will notify the user that there is no available data to read.
-To keep the crash log in the memory after reading it, set the :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS_REMOVE_CRASH_AFTER_READ` Kconfig option to ``n``.
+To keep the crash log in the memory after reading it, set the :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS_REMOVE_CRASH_AFTER_READ` Kconfig option to ``n``.
 
 Network and end-user logs
 -------------------------
@@ -333,7 +333,7 @@ The logs are not removed after reading, but when attempting to write new logs to
 
 The diagnostic network and end-user logs are designed to be pushed when requested by the user.
 This can result in the same information being passed by multiple APIs, which is usually not desirable behavior.
-Because of this, for the network and the end-user logs the :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS_REDIRECT` Kconfig option is enabled by default.
+Because of this, for the network and the end-user logs the :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS_REDIRECT` Kconfig option is enabled by default.
 
 With the Kconfig option enabled, the redirect functionality takes logs passed to the Zephyr logger and saves them in the retained RAM as Matter diagnostic logs.
 Only the following logs are redirected:
@@ -341,7 +341,7 @@ Only the following logs are redirected:
 * Logs from the ``chip`` module are redirected into diagnostic network logs.
 * Logs from the ``app`` module are redirected into diagnostic end-user logs.
 
-You can disable the redirect functionality by disabling the :option:`CONFIG_NCS_SAMPLE_MATTER_DIAGNOSTIC_LOGS_REDIRECT` Kconfig option.
+You can disable the redirect functionality by disabling the :option:`CONFIG_MATTER_DIAGNOSTIC_LOGS_REDIRECT` Kconfig option.
 You can then push the network or end-user logs using dedicated API in your application, like in the following code snippet:
 
 .. code-block:: C++
@@ -364,4 +364,4 @@ The |NCS| supports two networking architectures for the Matter protocol:
   This architecture is not supported for Matter over Wi-Fi.
   To enable it, set the :kconfig:option:`CONFIG_CHIP_USE_OPENTHREAD_ENDPOINT` Kconfig option to ``y``.
 
-To learn more about the available architectures and suitable use cases for the presented options, see the :ref:`openthread_stack_architecture` user guide.
+To learn more about the available architectures and suitable use cases for the presented options, see the `OpenThread stack architecture <OpenThread stack architecture>`_ user guide.

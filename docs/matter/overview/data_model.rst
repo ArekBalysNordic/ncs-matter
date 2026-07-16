@@ -128,7 +128,7 @@ The following tables list the *application device types* that are supported in M
   The `Provisional` state indicates that the device type implementation is not yet fully tested and certified, even though the implementation may be ready and you can use it on your own risk.
 * The dedicated sample column provides the link to the sample in the |NCS| that implements the given device type, if available.
 
-You can add support for device types without a dedicated sample in the |NCS| by using the :ref:`matter_template_sample` and following the :ref:`ug_matter_creating_accessory` user guide, which describes how to edit clusters of a Matter application.
+You can add support for device types without a dedicated sample in the |NCS| by using the `Matter template sample <Matter template sample>`_ and following the :ref:`ug_matter_creating_accessory` user guide, which describes how to edit clusters of a Matter application.
 
 .. _ug_matter_device_types_lighting:
 
@@ -136,7 +136,7 @@ Lighting device types
 =====================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | On/Off Light      | The On/Off Light is a lighting device that is capable of being switched on   | Certifiable         |                                       |
 |                   | or off by means of a bound controller device such as an on/off light switch  |                     |                                       |
@@ -170,7 +170,7 @@ Smart Plugs/Outlets device types
 ================================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | On/Off Plug-in    | An On/Off Plug-in Unit is a device that is capable of being switched on      | Certifiable         |                                       |
 | Unit              | or off by means of a bound controller device such as an on/off light switch  |                     |                                       |
@@ -209,7 +209,7 @@ Switches and Controls device types
 ==================================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | On/Off Light      | An On/Off Light Switch is a controller device that,                          | Certifiable         |                                       |
 | Switch            | when bound to a lighting device such as an on/off light, is capable of       |                     |                                       |
@@ -247,7 +247,7 @@ Sensor device types
 ===================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+------------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|            |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK                  |
 +===================+==============================================================================+=====================+==========================================+
 | Contact Sensor    | A Contact Sensor device reports boolean state (open/close                    | Certifiable         | :ref:`matter_contact_sensor_sample`      |
 |                   | or contact/no-contact).                                                      |                     |                                          |
@@ -309,7 +309,7 @@ Entry Control device types
 ==========================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | Door Lock         | A Door Lock is a device used to secure a door. It is possible to actuate     | Certifiable         | :ref:`matter_lock_sample`             |
 |                   | a door lock either by means of a manual or a remote method.                  |                     |                                       |
@@ -341,7 +341,7 @@ HVAC device types
 =================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | Thermostat        | A Thermostat device is capable of having either built-in or separate sensors | Certifiable         | :ref:`matter_thermostat_sample`       |
 |                   | for temperature, humidity or occupancy. It allows the desired temperature to |                     |                                       |
@@ -366,7 +366,7 @@ Appliance device types
 ======================
 
 +--------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type        | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type        | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +====================+==============================================================================+=====================+=======================================+
 | Laundry Washer     | A Laundry Washer represents a device that is capable of laundering consumer  | Certifiable         |                                       |
 |                    | items. Any laundry washer product may utilize this device type.              |                     |                                       |
@@ -417,7 +417,7 @@ Robotic device types
 ======================
 
 +--------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type        | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type        | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +====================+==============================================================================+=====================+=======================================+
 | Robotic Vacuum     | A Robotic Vacuum Cleaner is a device that is capable of cleaning consumer    | Certifiable         |                                       |
 | Cleaner            | floor.                                                                       |                     |                                       |
@@ -429,7 +429,7 @@ Energy device types
 ===================
 
 +--------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type        | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type        | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +====================+==============================================================================+=====================+=======================================+
 | Electric Vehicle   | An EVSE (Electric Vehicle Supply Equipment) is a device that allows an EV    | Certifiable         |                                       |
 | Supply Equipment   | (Electric Vehicle) to be connected to the mains electricity supply to allow  |                     |                                       |
@@ -470,7 +470,7 @@ Media device types
 ==================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | Speaker           | A Speaker is a device that is capable of turning on and off the speaker and  | Certifiable         |                                       |
 |                   | adjusting the volume.                                                        |                     |                                       |
@@ -503,7 +503,7 @@ Network Infrastructure device types
 ===================================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | Network           | A Network Infrastructure Manager provides interfaces that allow              | Certifiable         |                                       |
 | Infrastructure    | for the management of the Wi-Fi, Thread, and Ethernet networks underlying    |                     |                                       |
@@ -519,7 +519,7 @@ Camera device types
 ===================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description (from Device Library Specification)                              | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | Camera            | A Camera device is a camera that provides interfaces for controlling         | Certifiable         |                                       |
 |                   | and transporting captured media, such as Audio, Video or Snapshots.          |                     |                                       |
@@ -558,7 +558,7 @@ Utility device types
 ====================
 
 +-------------------+------------------------------------------------------------------------------+---------------------+---------------------------------------+
-| Device type       | Description                                                                  | State of the device | Dedicated sample in the |NCS|         |
+| Device type       | Description                                                                  | State of the device | Dedicated sample in SDK               |
 +===================+==============================================================================+=====================+=======================================+
 | Bridged node      | The Matter bridge node is a device capable of representing non-Matter        | Certifiable         | :ref:`matter_bridge_app`              |
 |                   | bridged devices those are connected to a foreign network as dynamic          |                     |                                       |

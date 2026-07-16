@@ -8,7 +8,7 @@ Creating manufacturer-specific clusters in Matter application
    :local:
    :depth: 2
 
-This guide describes how you can create a manufacturer-specific cluster for the :ref:`matter_template_sample` sample.
+This guide describes how you can create a manufacturer-specific cluster for the `Matter template sample <Matter template sample>`_ sample.
 The :ref:`matter_manufacturer_specific_sample` sample already contains a custom ``NordicDevkit`` cluster that you can use as a reference.
 
 Overview
@@ -28,7 +28,7 @@ To take advantage of this guide, you need to be familiar with the :ref:`ug_matte
 Copy Matter template sample
 ***************************
 
-Use the :ref:`matter_template_sample` sample as the base for building a manufacturer-specific device as follows:
+Use the `Matter template sample <Matter template sample>`_ sample as the base for building a manufacturer-specific device as follows:
 
 1. Make sure that you meet the requirements for building the sample.
 #. Copy the contents of the :file:`samples/matter/template` directory to a new directory meant for your custom application.
@@ -80,13 +80,14 @@ You can create a new cluster description file in the following ways:
             * **Name** as ``MyCommand``
             * **Code** as ``0xFFF10000``
             * **Source** as ``client``
+            * **Response** as ``MyCommandResponse``
             * **Description** as ``Command that takes two uint8 arguments and returns their sum``
 
          #. Click :guilabel:`Arguments`.
          #. In the new edit box, click the plus icon to create a new argument.
-         #. Fill in :guilabel:`Name` as ``arg1``, :guilabel:`Type` as ``int8u``, :guilabel:`Max` as ``100``.
+         #. Fill in :guilabel:`Name` as ``arg1``, :guilabel:`Type` as ``int8u``.
          #. Click the plus icon again to create second argument.
-         #. Fill in :guilabel:`Name` as ``arg2``, :guilabel:`Type` as ``int8u``, :guilabel:`Max` as ``100``.
+         #. Fill in :guilabel:`Name` as ``arg2``, :guilabel:`Type` as ``int8u``.
 
             The following figure shows the filled in edit box dialog with two arguments added:
 
@@ -147,7 +148,6 @@ You can create a new cluster description file in the following ways:
             * **Field Id** as ``0x1``
             * **Name** as ``arg1``
             * **Type** as ``int8u``
-            * **Max** as ``10``
 
             The following figure shows the filled in edit box dialog with the new field added:
 
@@ -184,8 +184,6 @@ You can create a new cluster description file in the following ways:
             * **Name** as ``value1``
             * **Type** as ``int8u``
             * **Is Fabric Sensitive** as ``true``
-            * **Min** as ``5``
-            * **Max** as ``15``
 
             The following figure shows the filled in edit box dialog with the new item added:
 
@@ -718,12 +716,12 @@ However, you still need to provide the path to the :file:`zcl.json` file if you 
 
 .. rst-class:: numbered-step
 
-Align the configuration with the new cluster
-********************************************
+Align CMake configuration with the new cluster
+**********************************************
 
 Generating the :file:`.zap` files with the ``--full`` option creates new source files under :file:`zap-generated/app-common`.
 They need to override the default files located in the Matter SDK in the :file:`zzz_generated/app-common` directory.
-To override the path, set the :kconfig:option:`CONFIG_CHIP_APP_ZAP_DIR` option in the :file:`prj.conf` file to the ``"${APPLICATION_CONFIG_DIR}/src/default_zap/zap-generated"`` value, pointing to the parent of the generated :file:`app-common` directory, and set the ``CHIP_APP_ZAP_DIR`` variable in the :file:`CMakeLists.txt` file.
+To override the path, you need to set the ``CHIP_APP_ZAP_DIR`` variable in the :file:`CMakeLists.txt` file, pointing to the parent of the generated :file:`app-common` directory before initializing the Matter Data Model.
 
 As custom clusters are not part of the default Matter SDK, you need to additionally pass a list of all new cluster names in an ``EXTERNAL_CLUSTERS`` argument when calling ``ncs_configure_data_model``.
 

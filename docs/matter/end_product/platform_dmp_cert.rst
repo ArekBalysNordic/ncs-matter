@@ -56,11 +56,11 @@ This matrix lists the |NCS| versions, Matter versions, product names, certificat
 The table will be updated as new platform versions are certified.
 
 +-------------------+-------------------+---------------------+---------------------+-----------------------+----------------------------------------------------------+-------------------------------------------+
-| |NCS| version     | Matter version    | Product name        | Certification ID    | Transport             | CSA Certificate link                                     | Supported hardware (SOE)                  |
+| SDK version       | Matter version    | Product name        | Certification ID    | Transport             | CSA Certificate link                                     | Supported hardware (SOE)                  |
 +===================+===================+=====================+=====================+=======================+==========================================================+===========================================+
-| 3.1.1             | 1.4.2             | |NCS|               | CSA25001MCPM0001-24 | Thread, Bluetooth LE  | `Matter nRF Connect SDK Platform Certificate_1_4_2`_     | nRF52 Series, nRF53 Series, nRF54L Series |
+| 3.1.1             | 1.4.2             | nRF Connect SDK     | CSA25001MCPM0001-24 | Thread, Bluetooth LE  | `Matter nRF Connect SDK Platform Certificate_1_4_2`_     | nRF52 Series, nRF53 Series, nRF54L Series |
 +-------------------+-------------------+---------------------+---------------------+-----------------------+----------------------------------------------------------+-------------------------------------------+
-| 3.2.0             | 1.5.0             | |NCS|               | CSA26002MCPM0008-24 | Thread, Bluetooth LE  | `Matter nRF Connect SDK Platform Certificate_1_5_0`_     | nRF52 Series, nRF53 Series, nRF54L Series |
+| 3.2.0             | 1.5.0             | nRF Connect SDK     | CSA26002MCPM0008-24 | Thread, Bluetooth LE  | `Matter nRF Connect SDK Platform Certificate_1_5_0`_     | nRF52 Series, nRF53 Series, nRF54L Series |
 +-------------------+-------------------+---------------------+---------------------+-----------------------+----------------------------------------------------------+-------------------------------------------+
 
 .. note::

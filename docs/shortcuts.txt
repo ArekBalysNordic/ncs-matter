@@ -8,24 +8,24 @@
 .. |nRFVSC| replace:: nRF Connect for VS Code extension
 
 .. |matter_intro| replace:: `Matter`_ (formerly Project Connected Home over IP or Project CHIP) is an open-source application layer that aims at creating a unified communication standard across smart home devices, mobile applications, and cloud services.
-.. |matter_controller_def| replace:: The Matter controller is a node in the Matter network and a role within the `Testing Matter in the nRF Connect SDK`_ development environment.
+.. |matter_controller_def| replace:: The Matter controller is a node in the Matter network and a role within the :ref:`ug_matter_gs_testing` development environment.
 .. |matter_controller_def_nolink| replace:: The Matter controller is a node in the Matter network and a role within the Matter development environment.
-.. |matter_chip_tool_pc_default_line| replace:: CHIP Tool for Linux or macOS is the default implementation of the `Matter controller`_ role, recommended for the nRF Connect platform.
+.. |matter_chip_tool_pc_default_line| replace:: CHIP Tool for Linux or macOS is the default implementation of the :ref:`Matter controller <ug_matter_configuring_controller>` role, recommended for the nRF Connect platform.
 .. |matter_cd_definition| replace:: a cryptographic document created by the CSA for each device type, used to confirm that a given type of device was certified
 .. |open_terminal_window_with_environment| replace:: Start the toolchain environment in a terminal window. See `Installing the nRF Connect SDK`_ for details.
 
 
 .. |matter_gn_required_note| replace:: Matter requires the GN tool.
-   If you are updating from the |NCS| version earlier than v1.5.0, see the `Manual installation gn`_.
+   If you are updating from the |NCS| version earlier than v1.5.0, see the :ref:`Manual installation gn <manual_installation_gn>`.
 .. |matter_unique_discriminator_note| replace:: If you are working with multiple devices, set a unique discriminator for each one, or commission them one at a time.
-   See `Configuring device identification`_ for more information.
+   See :ref:`ug_matter_configuring_device_identification` for more information.
 
 .. |matter_factory_reset| replace:: To restore the device settings and state to factory defaults, press the **Button 0** for six seconds to initiate the factory reset of the device.
 .. |matter_ble_advertising_auto| replace:: Before starting the commissioning procedure, make sure that the device is discoverable over Bluetooth LE.
                                            The device becomes discoverable automatically upon the device startup, but only for a predefined period of time (one hour by default).
                                            If the Bluetooth LE advertising times out, enable it again.
 .. |matter_cd_info_note_for_samples| replace:: This data payload also includes test Device Attestation, with test Certification Declaration, Product ID, and Vendor ID.
-   These are used for `Device Attestation within commissioning`_, and you can generate your own test Certification Declaration when you `Testing Device Attestation during development`_.
+   These are used for :ref:`ug_matter_device_attestation_commissioning_info`, and you can generate your own test Certification Declaration when you :ref:`ug_matter_device_attestation_testing_da`.
 
 .. ### sdk-nrf sources
 

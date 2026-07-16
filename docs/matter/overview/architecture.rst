@@ -54,7 +54,7 @@ For more information about the Data Model, see :ref:`ug_matter_overview_data_mod
 Interaction Model
 *****************
 
-While the `Data Model`_ layer describes abstraction for handling data, the Interaction Model defines how to exchange this data between nodes through interactions.
+While the :ref:`Data Model <ug_matter_architecture_overview_dm>` layer describes abstraction for handling data, the Interaction Model defines how to exchange this data between nodes through interactions.
 
 .. include:: int_model.rst
    :start-after: ug_matter_int_model_desc_start
@@ -65,14 +65,14 @@ While the `Data Model`_ layer describes abstraction for handling data, the Inter
 Action Framing
 **************
 
-The Action Framing layer transforms messages that are part of interactions from the `Interaction Model`_ into serialized binary packets.
+The Action Framing layer transforms messages that are part of interactions from the :ref:`Interaction Model <ug_matter_architecture_overview_im>` into serialized binary packets.
 
 .. _ug_matter_architecture_overview_sec:
 
 Security
 ********
 
-The Security layer takes the encoded frames from the `Action Framing`_ layer, encrypts them and appends them with a message authentication code.
+The Security layer takes the encoded frames from the :ref:`Action Framing <ug_matter_architecture_overview_af>` layer, encrypts them and appends them with a message authentication code.
 
 .. _ug_matter_architecture_overview_routing:
 

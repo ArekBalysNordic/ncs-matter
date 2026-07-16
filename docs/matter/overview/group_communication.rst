@@ -159,7 +159,7 @@ Group Communication triggered from the controller
 
    .. group-tab:: Nodes
 
-      You need the `chip-tool`_ and the :ref:`matter_light_bulb_sample` sample to run through this use case.
+      You need the :ref:`CHIP Tool <ug_matter_gs_tools_chip>` and the `Matter light bulb sample <Matter light bulb sample>`_ sample to run through this use case.
 
    .. group-tab:: Precondition
 
@@ -223,9 +223,9 @@ The initial settings for this use case are the following:
 
       You need the following to run through this use case:
 
-      * The `chip-tool`_
-      * The :ref:`matter_light_bulb_sample` sample
-      * The :ref:`matter_light_switch_sample` sample
+      * The :ref:`CHIP Tool <ug_matter_gs_tools_chip>`
+      * The `Matter light bulb sample <Matter light bulb sample>`_ sample
+      * The `Matter light switch sample <Matter light switch sample>`_ sample
 
    .. group-tab:: Precondition
 
