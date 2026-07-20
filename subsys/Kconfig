@@ -122,17 +122,6 @@ config MATTER_USE_DEFAULT_BUTTON_HANDLER
 	  When enabled, the button handler responsible for factory reset and DFU is used alongside
 	  application handler. In order to override this handler, disable this config.
 
-choice MATTER_ZAP_GENERATION_MODE
-	prompt "Matter ZAP generation mode"
-	default MATTER_ZAP_GENERATION_STATIC
-
-config MATTER_ZAP_GENERATION_BUILD_TIME
-	bool "Generate ZAP artifacts at build time"
-
-config MATTER_ZAP_GENERATION_STATIC
-	bool "Use pre-generated ZAP artifacts"
-endchoice
-
 rsource "persistent_storage/Kconfig"
 rsource "watchdog/Kconfig"
 rsource "diagnostic/Kconfig"
