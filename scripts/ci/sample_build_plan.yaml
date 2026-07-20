@@ -1,0 +1,353 @@
+version: 1
+
+# On-demand full variant runs via PR comment:
+#   /matter.<sample_dir>.<variant>
+# Example: /matter.smoke_co_alarm.debug runs all integration_platforms from that scenario in sample.yaml,
+# in addition to the normal selective plan for the PR.
+#
+# Twister defaults used when generating a selective build plan.
+# scenario_prefix is prepended to each sample's scenario name (unless scenario already contains '.').
+twister:
+  integration: true
+  testcase_root: samples
+  scenario_prefix: sample.matter.
+
+# Scenarios always included in PR builds (in addition to path trigger matches).
+# The scenarios here must reflect the integration scope of the project.
+# platform: [] or omitted means all platforms allowed by the scenario in sample.yaml.
+always_build:
+  - scenario: template
+    variants:
+      - smp_dfu
+    platform:
+      - nrf54l15dk/nrf54l15/cpuapp
+      - nrf54lm20dk/nrf54lm20b/cpuapp
+  - scenario: template
+    variants:
+      - nrf7002eb2.smp_dfu
+    platform:
+      - nrf54lm20dk/nrf54lm20b/cpuapp
+
+# Changes to these paths trigger a full integration build of all samples.
+full_build_paths:
+  - west.yml
+  - .github/**
+  - CMakeLists.txt
+  - Kconfig
+  - Kconfig.*
+
+# Map changed paths to one or more samples/variants/platforms.
+path_triggers:
+  # ---------------------------------------------------------------------------
+  # Sample path triggers
+  # ---------------------------------------------------------------------------
+  contact-sensor-sample:
+    paths:
+      - samples/contact_sensor/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: contact_sensor
+        variants:
+          - release
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  light-bulb-sample:
+    paths:
+      - samples/light_bulb/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: light_bulb
+        variants:
+          - release
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  light-switch-sample:
+    paths:
+      - samples/light_switch/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: light_switch
+        variants:
+          - release
+          - lit_icd
+        platform:
+          - nrf5340dk/nrf5340/cpuapp
+          - nrf54l15dk/nrf54l15/cpuapp
+
+  manufacturer-specific-sample:
+    paths:
+      - samples/manufacturer_specific/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: manufacturer_specific
+        variants:
+          - debug
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  closure-sample:
+    paths:
+      - samples/closure/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: closure
+        variants:
+          - release
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  window-covering-sample:
+    paths:
+      - samples/window_covering/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: window_cover
+        variants:
+          - release
+          - debug.ssed
+          - smp_dfu
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  thermostat-sample:
+    paths:
+      - samples/thermostat/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: thermostat
+        variants:
+          - release
+        platform:
+          - nrf5340dk/nrf5340/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  temperature-sensor-sample:
+    paths:
+      - samples/temperature_sensor/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: temperature_sensor
+        variants:
+          - release
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  smoke-co-alarm-sample:
+    paths:
+      - samples/smoke_co_alarm/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: smoke_co_alarm
+        variants:
+          - release
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  matter-bridge-sample:
+    paths:
+      - samples/bridge/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: applications.matter_bridge
+        variants:
+          - release
+        platform:
+          - nrf5340dk/nrf5340/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  matter-bridge-ble:
+    paths:
+      - samples/bridge/src/ble/**
+      - samples/bridge/bt_max_connections_app.conf
+    samples:
+      - scenario: applications.matter_bridge
+        variants:
+          - br_ble
+          - release.br_ble
+        platform:
+          - nrf5340dk/nrf5340/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+      - scenario: applications.matter_bridge
+        variants:
+          - br_ble.smp_dfu
+        platform:
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  matter-bridge-simulated:
+    paths:
+      - samples/bridge/src/simulated_providers/**
+    samples:
+      - scenario: applications.matter_bridge
+        variants:
+          - release
+          - debug
+        platform:
+          - nrf5340dk/nrf5340/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  matter-bridge-smart-plug:
+    paths:
+      - samples/bridge/onoff_plug.conf
+      - samples/bridge/src/onoff_plug_zap/**
+    samples:
+      - scenario: applications.matter_bridge
+        variants:
+          - smart_plug
+        platform:
+          - nrf5340dk/nrf5340/cpuapp
+
+  matter-weather-station-sample:
+    paths:
+      - samples/weather_station/**/*.{c,h,cpp,hpp,yml,yaml}
+    samples:
+      - scenario: applications.matter_weather_station
+        variants:
+          - release
+        platform:
+          - thingy53/nrf5340/cpuapp
+          - nrf54l15tag/nrf54l15/cpuapp
+
+  # ---------------------------------------------------------------------------
+  # Subsys path triggers — one representative sample per subsys area
+  # ---------------------------------------------------------------------------
+  subsys-common:
+    paths:
+      - subsys/CMakeLists.txt
+      - subsys/Kconfig
+      - subsys/app/**
+      - subsys/board/**
+      - subsys/persistent_storage/**
+      - subsys/dfu/ota/**
+      - subsys/test/**
+    samples:
+      - scenario: template
+        variants:
+          - debug
+          - release
+        platform:
+          - nrf52840dk/nrf52840
+          - nrf5340dk/nrf5340/cpuapp
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+          - nrf54l15tag/nrf54l15/cpuapp
+
+  subsys-binding:
+    paths:
+      - subsys/binding/**
+    samples:
+      - scenario: light_switch
+        variants:
+          - release
+        platform:
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  subsys-clusters:
+    paths:
+      - subsys/clusters/**
+    samples:
+      - scenario: manufacturer_specific
+        variants:
+          - debug
+        platform:
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  subsys-certification:
+    paths:
+      - subsys/certification/**
+      - subsys/diagnostic/**
+    samples:
+      - scenario: template
+        variants:
+          - certification
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  subsys-migration:
+    paths:
+      - subsys/migration/**
+    samples:
+      - scenario: template
+        variants:
+          - release
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+
+  subsys-event-triggers:
+    paths:
+      - subsys/event_triggers/**
+    samples:
+      - scenario: smoke_co_alarm
+        variants:
+          - release
+        platform:
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  subsys-dfu-smp:
+    paths:
+      - subsys/dfu/smp/**
+    samples:
+      - scenario: template
+        variants:
+          - smp_dfu
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+      - scenario: applications.matter_weather_station
+        variants:
+          - release
+        platform:
+          - thingy53/nrf5340/cpuapp
+          - nrf54l15tag/nrf54l15/cpuapp
+
+  subsys-util:
+    paths:
+      - subsys/util/**
+    samples:
+      - scenario: applications.matter_bridge
+        variants:
+          - release
+        platform:
+          - nrf5340dk/nrf5340/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  watchdog:
+    paths:
+      - subsys/watchdog/**
+    samples:
+      - scenario: template
+        variants:
+          - release
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+  pwm:
+    paths:
+      - subsys/pwm/**
+    samples:
+      - scenario: light_bulb
+        variants:
+          - debug
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+      - scenario: window_cover
+        variants:
+          - release
+        platform:
+          - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+
+# PR label behavior. Labels are matched case-insensitively.
+labels:
+  ci-all-test:
+    action: full_build
+  ci-disabled:
+    action: skip
+
+# Branch, tag, and scheduled builds run the full integration scope by default.
+non_pr:
+  action: full_build
+
+# When a PR has changes but no path trigger matches, still build always_build scenarios.
+fallback:
+  action: always_build
