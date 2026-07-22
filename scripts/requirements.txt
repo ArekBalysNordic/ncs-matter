@@ -1,2 +1,7 @@
--r requirements-base.txt
--r requirements-build.txt
+# Python dependencies for ncs-matter scripts (west ZAP commands and matter_sample_checker).
+west>=1.4.0
+PyYAML
+wget>=3.2
+jsonschema
+matter_idl
+python-path>=0.1.3
