@@ -34,10 +34,7 @@ jobs:
         with:
           python-version: 3.12
           cache: pip
-          cache-dependency-path: |
-            ncs-matter/scripts/requirements.txt
-            ncs-matter/scripts/requirements-base.txt
-            ncs-matter/scripts/requirements-build.txt
+          cache-dependency-path: ncs-matter/scripts/requirements.txt
 
       - name: Install packages
         run: |
