@@ -152,15 +152,17 @@ class CheckDocIndexTestCase(MatterSampleTestCase):
             after_release = line[line.find(release_tag) + len(release_tag) :]
             ncs_version = release_tag
             after_parts = [p.strip() for p in after_release.split('|')]
-            matter_spec = after_parts[1] if len(after_parts) > 1 else ""
-            matter_sdk = after_parts[2] if len(after_parts) > 2 else ""
+            # Table columns after |release|: NCS, Matter spec, Matter SDK
+            matter_spec = after_parts[2] if len(after_parts) > 2 else ""
+            matter_sdk = after_parts[3] if len(after_parts) > 3 else ""
         else:
             parts = [p.strip() for p in line.split('|')]
-            if len(parts) < 4:
+            # Matter Add-on | NCS | Matter spec | Matter SDK
+            if len(parts) < 5:
                 return None
-            ncs_version = parts[1].strip()
-            matter_spec = parts[2].strip()
-            matter_sdk = parts[3].strip()
+            ncs_version = parts[2].strip()
+            matter_spec = parts[3].strip()
+            matter_sdk = parts[4].strip()
         return (
             {
                 'ncs_version': ncs_version,
