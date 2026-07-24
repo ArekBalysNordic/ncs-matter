@@ -42,7 +42,7 @@ exclusions:
     - "sample.yaml"
 
   application:
-    matter_weather_station:
+    weather_station:
       - "File Structure"
       - Configuration consistency
 
