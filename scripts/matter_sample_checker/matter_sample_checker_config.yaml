@@ -46,7 +46,7 @@ exclusions:
       - "File Structure"
       - Configuration consistency
 
-    matter_bridge:
+    bridge:
       - "File Structure"
       - "Compare with template sample"
 
@@ -211,7 +211,7 @@ copy_paste_detection:
 
   # Allowed names for the specific sample
   skip_names:
-    matter_bridge:
+    bridge:
       - "temperature sensor"
       - "temperature_sensor"
       - "light switch"
