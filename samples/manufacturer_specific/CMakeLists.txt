@@ -10,7 +10,7 @@ find_package(Zephyr HINTS $ENV{ZEPHYR_BASE})
 
 project(matter-manufacturer_specific)
 
-include(${ZEPHYR_NRF_MODULE_DIR}/samples/matter/common/cmake/zap_helpers.cmake)
+include(${ZEPHYR_NCS_MATTER_MODULE_DIR}/cmake/zap_helpers.cmake)
 ncs_get_zap_parent_dir(ZAP_PARENT_DIR)
 
 # Override zap-generated directory.
@@ -18,11 +18,7 @@ get_filename_component(CHIP_APP_ZAP_DIR ${ZAP_PARENT_DIR}/zap-generated REALPATH
 
 # NORDIC SDK APP START
 
-# Include all source files that are located in the Matter common directory.
-include(${ZEPHYR_NCS_MATTER_MODULE_DIR}/cmake/sample.cmake)
-
-# Include Data Model utils
-include(${ZEPHYR_NRF_MODULE_DIR}/samples/matter/common/cmake/data_model.cmake)
+include(${ZEPHYR_NCS_MATTER_MODULE_DIR}/cmake/data_model.cmake)
 
 target_include_directories(app PRIVATE
   src
