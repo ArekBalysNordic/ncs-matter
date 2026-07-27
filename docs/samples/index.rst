@@ -13,17 +13,17 @@ The following table lists variants and extensions available out of the box for e
     :header-rows: 1
 
     * - Variant or extension
-      - Light bulb
-      - Light switch
-      - Template
-      - Window covering
-      - Thermostat
-      - Smoke CO alarm
-      - Temperature sensor
-      - Contact sensor
-      - Closure
-      - Matter Weather Station
-      - Matter Bridge
+      - :ref:`Light bulb <matter_light_bulb_sample_preview>`
+      - :ref:`Light switch <matter_light_switch_sample_preview>`
+      - :ref:`Template <matter_template_sample_preview>`
+      - :ref:`Window covering <matter_window_covering_sample_preview>`
+      - :ref:`Thermostat <matter_thermostat_sample_preview>`
+      - :ref:`Smoke CO alarm <matter_smoke_co_alarm_sample_preview>`
+      - :ref:`Temperature sensor <matter_temperature_sensor_sample_preview>`
+      - :ref:`Contact sensor <matter_contact_sensor_sample_preview>`
+      - :ref:`Closure <matter_closure_sample_preview>`
+      - :ref:`Weather Station <matter_weather_station_sample_preview>`
+      - :ref:`Bridge <matter_bridge_sample_preview>`
     * - FEM support
       - ✔
       - ✔
@@ -113,3 +113,10 @@ See the sample documentation pages for instructions about how to enable these va
 
 Additionally, a Matter Door Lock sample is available in the `nRF Door Lock and Access Control Add-on`_ repository.
 This add-on includes also samples with support for the Aliro protocol, and Matter and Aliro combined solution.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents
+   :glob:
+
+   */README

@@ -10,7 +10,7 @@
                           :width: 200px
                           :alt: QR code for commissioning the window covering device
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_window_covering_sample:
 
@@ -23,7 +23,7 @@ Matter: Window covering
 
 This sample demonstrates the usage of the :ref:`Matter <ug_matter>` application layer to build a window covering device.
 
-.. include:: /includes/matter/introduction/sleep_thread_sed_sit.txt
+.. include:: /includes/introduction/sleep_thread_sed_sit.txt
 
 Requirements
 ************
@@ -32,7 +32,7 @@ The sample supports the following development kits:
 
 .. table-from-sample-yaml::
 
-.. include:: /includes/matter/requirements/thread.txt
+.. include:: /includes/requirements/thread.txt
 
 Overview
 ********
@@ -54,7 +54,7 @@ The window covering sample implements the following features:
 
 .. _matter_window_covering_sample_ssed:
 
-.. include:: /includes/matter/overview/ssed.txt
+.. include:: /includes/overview/ssed.txt
 
 You can enable the Thread Synchronized Sleepy End Device (SSED) support by adding an extra argument to the build command.
 For details, see the :ref:`Thread SSED support <matter_window_covering_sample_ssed_support>` section.
@@ -62,20 +62,20 @@ For details, see the :ref:`Thread SSED support <matter_window_covering_sample_ss
 Configuration
 *************
 
-.. include:: /includes/matter/configuration/intro.txt
+.. include:: /includes/configuration/intro.txt
 The |matter_type| supports the following build configurations:
 
-.. include:: /includes/matter/configuration/basic_internal.txt
+.. include:: /includes/configuration/basic_internal.txt
 
 Advanced configuration options
 ==============================
 
-.. include:: /includes/matter/configuration/advanced/intro.txt
-.. include:: /includes/matter/configuration/advanced/dfu.txt
-.. include:: /includes/matter/configuration/advanced/tfm.txt
-.. include:: /includes/matter/configuration/advanced/factory_data.txt
-.. include:: /includes/matter/configuration/advanced/custom_board.txt
-.. include:: /includes/matter/configuration/advanced/internal_memory.txt
+.. include:: /includes/configuration/advanced/intro.txt
+.. include:: /includes/configuration/advanced/dfu.txt
+.. include:: /includes/configuration/advanced/tfm.txt
+.. include:: /includes/configuration/advanced/factory_data.txt
+.. include:: /includes/configuration/advanced/custom_board.txt
+.. include:: /includes/configuration/advanced/internal_memory.txt
 
 .. _matter_window_covering_sample_ssed_support:
 
@@ -105,14 +105,14 @@ Thread SSED support
 User interface
 **************
 
-.. include:: /includes/matter/interface/intro.txt
+.. include:: /includes/interface/intro.txt
 
-.. include:: /includes/matter/interface/interface_table.txt
+.. include:: /includes/interface/interface_table.txt
 
-.. include:: /includes/matter/interface/interface.txt
+.. include:: /includes/interface/interface.txt
 
 First LED:
-   .. include:: /includes/matter/interface/state_led.txt
+   .. include:: /includes/interface/state_led.txt
 
 Second LED:
    Indicates the lift position of the window cover, which is represented by the brightness of the LED.
@@ -126,7 +126,7 @@ Third LED:
    The brightness level ranges from ``0`` to ``255``, where the brightness level set to ``0`` (switched off LED) indicates a fully opened window cover (tilted to a horizontal position) and the brightness level set to ``255`` indicates a fully closed window cover (tilted to a vertical position).
 
 First Button:
-   .. include:: /includes/matter/interface/main_button.txt
+   .. include:: /includes/interface/main_button.txt
 
 Second Button:
    When pressed once and released, it moves the window cover towards the open position by one step.
@@ -140,8 +140,8 @@ Second and Third Buttons:
    When pressed at the same time, they toggle the cover movement mode between lift and tilt.
    After each device reset, the mode is set to lift by default.
 
-.. include:: /includes/matter/interface/segger_usb.txt
-.. include:: /includes/matter/interface/nfc.txt
+.. include:: /includes/interface/segger_usb.txt
+.. include:: /includes/interface/nfc.txt
 
 .. note::
    Completely opening and closing the cover requires 20 button presses (steps).
@@ -153,14 +153,14 @@ Second and Third Buttons:
 Building and running
 ********************
 
-.. include:: /includes/matter/building_and_running/intro.txt
+.. include:: /includes/building_and_running/intro.txt
 
 |matter_ble_advertising_auto|
 
 Testing
 *******
 
-.. include:: /includes/matter/testing/intro.txt
+.. include:: /includes/testing/intro.txt
 
 Testing with CHIP Tool
 ======================
@@ -169,9 +169,9 @@ Complete the following steps to test the |matter_name| device using CHIP Tool:
 
 .. |node_id| replace:: 1
 
-.. include:: /includes/matter/testing/1_prepare_matter_network_thread.txt
-.. include:: /includes/matter/testing/2_prepare_dk.txt
-.. include:: /includes/matter/testing/3_commission_thread.txt
+.. include:: /includes/testing/1_prepare_matter_network_thread.txt
+.. include:: /includes/testing/2_prepare_dk.txt
+.. include:: /includes/testing/3_commission_thread.txt
 
 .. rst-class:: numbered-step
 
@@ -256,9 +256,9 @@ The brightness of |Third LED| decreases with each button press until the LED tur
 Testing with commercial ecosystem
 =================================
 
-.. include:: /includes/matter/testing/ecosystem.txt
+.. include:: /includes/testing/ecosystem.txt
 
 Dependencies
 ************
 
-.. include:: /includes/matter/dependencies.txt
+.. include:: /includes/dependencies.txt

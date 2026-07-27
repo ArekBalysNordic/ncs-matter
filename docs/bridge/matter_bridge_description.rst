@@ -8,7 +8,7 @@
 .. |matter_pairing_code| replace:: 34970112332
 .. |matter_qr_code_image| image:: /images/matter_qr_code_bridge.png
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_bridge_app_description:
 
@@ -36,7 +36,7 @@ To test the Matter bridge application with the :ref:`Bluetooth® LE bridged devi
 * An additional development kit compatible with one of the following Bluetooth LE samples:
 
   * :ref:`peripheral_lbs`
-  * :zephyr:code-sample:`ble_peripheral_esp`
+  * `ble_peripheral_esp`_
 
 * A USB cable for every development kit to connect it to the PC.
 
@@ -98,7 +98,7 @@ The application supports two bridged device configurations that are mutually exc
 
   * Nordic Semiconductor's :ref:`LED Button Service <lbs_readme>` - represented by the Matter On/Off Light and Generic Switch device types.
     The service can be configured to use the On/Off Light Switch instead of the Generic Switch device type.
-  * Zephyr's :zephyr:code-sample:`ble_peripheral_esp` - represented by the Matter Temperature Sensor and Humidity Sensor device types.
+  * Zephyr's `ble_peripheral_esp`_ sample - represented by the Matter Temperature Sensor and Humidity Sensor device types.
 
 If the Bluetooth LE service required by your use case is not supported, you can extend the application.
 For information about how to add a new Bluetooth LE service support to the application, see the :ref:`matter_bridge_app_extending_ble_service` section.
@@ -111,20 +111,20 @@ The Matter bridge supports adding and removing bridged devices dynamically at ap
 User interface
 **************
 
-.. include:: /includes/matter/interface/intro.txt
+.. include:: /includes/interface/intro.txt
 
-.. include:: /includes/matter/interface/interface_table_70dk.txt
+.. include:: /includes/interface/interface_table_70dk.txt
 
-.. include:: /includes/matter/interface/interface.txt
+.. include:: /includes/interface/interface.txt
 
 First Button:
-   .. include:: /includes/matter/interface/main_button.txt
+   .. include:: /includes/interface/main_button.txt
 
 Second Button:
    If pressed while the Matter smart plug functionality is enabled, the button changes the state of the smart plug device.
 
 First LED:
-   .. include:: /includes/matter/interface/state_led.txt
+   .. include:: /includes/interface/state_led.txt
 
 Second LED:
    If the :option:`CONFIG_BRIDGED_DEVICE_BT` Kconfig option is set to ``y``, shows the current state of Bridge's Bluetooth LE connectivity.
@@ -138,8 +138,8 @@ Second LED:
 
    If used with the Matter smart plug functionality enabled, it shows the state of the smart plug device.
 
-.. include:: /includes/matter/interface/segger_usb.txt
-.. include:: /includes/matter/interface/nfc.txt
+.. include:: /includes/interface/segger_usb.txt
+.. include:: /includes/interface/nfc.txt
 
 .. _matter_bridge_cli:
 
@@ -416,11 +416,11 @@ Configuration
 
 .. _matter_bridge_app_custom_configs:
 
-.. include:: /includes/matter/configuration/intro.txt
+.. include:: /includes/configuration/intro.txt
 
 The |matter_type| supports the following build configurations:
 
-.. include:: /includes/matter/configuration/basic_internal_53ek.txt
+.. include:: /includes/configuration/basic_internal_53ek.txt
 
 .. _matter_bridge_app_bridged_support_configs:
 
@@ -580,7 +580,7 @@ Configuring the Bluetooth LE security
 Building and running
 ********************
 
-.. include:: /includes/matter/building_and_running/intro.txt
+.. include:: /includes/building_and_running/intro.txt
 
 |matter_ble_advertising_auto|
 
@@ -589,8 +589,8 @@ Building and running
 Advanced building options
 =========================
 
-.. include:: /includes/matter/building_and_running/advanced/intro.txt
-.. include:: /includes/matter/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
+.. include:: /includes/building_and_running/advanced/intro.txt
+.. include:: /includes/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
 
 Matter smart plug functionality
 -------------------------------
@@ -619,7 +619,7 @@ Matter smart plug functionality
 Testing
 *******
 
-.. include:: /includes/matter/testing/intro.txt
+.. include:: /includes/testing/intro.txt
 
 Testing with CHIP Tool
 ======================
@@ -630,9 +630,9 @@ Complete the following steps to test the |matter_name| device using CHIP Tool.
 
 .. _prepare_for_testing:
 
-.. include:: /includes/matter/testing/1_prepare_matter_network_thread_wifi.txt
-.. include:: /includes/matter/testing/2_prepare_dk.txt
-.. include:: /includes/matter/testing/3_commission_thread_wifi.txt
+.. include:: /includes/testing/1_prepare_matter_network_thread_wifi.txt
+.. include:: /includes/testing/2_prepare_dk.txt
+.. include:: /includes/testing/3_commission_thread_wifi.txt
 
 .. rst-class:: numbered-step
 
@@ -682,7 +682,7 @@ Depending on the chosen bridged devices configuration, complete the steps in one
       1. Build and program the one of the following Bluetooth LE samples to an additional development kit compatible with the sample:
 
          * :ref:`peripheral_lbs`
-         * :zephyr:code-sample:`ble_peripheral_esp`
+         * `ble_peripheral_esp`_
 
       #. Connect the development kit that is running the Bluetooth LE sample to the PC.
       #. |connect_terminal_ANSI|
@@ -971,12 +971,12 @@ Complete the following steps depending on your configuration:
 Testing with commercial ecosystem
 =================================
 
-.. include:: /includes/matter/testing/ecosystem.txt
+.. include:: /includes/testing/ecosystem.txt
 
 Dependencies
 ************
 
-.. include:: /includes/matter/dependencies.txt
+.. include:: /includes/dependencies.txt
 
 .. toctree::
    :maxdepth: 1

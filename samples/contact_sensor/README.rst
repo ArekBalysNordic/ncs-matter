@@ -9,7 +9,7 @@
                           :width: 200px
                           :alt: QR code for commissioning the contact sensor device
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_contact_sensor_sample:
 
@@ -22,7 +22,7 @@ Matter: Contact sensor
 
 This |matter_type| demonstrates how to use the :ref:`Matter <ug_matter>` application layer to build a device capable of detecting a contact.
 
-.. include:: /includes/matter/introduction/sleep_thread_sed_lit.txt
+.. include:: /includes/introduction/sleep_thread_sed_lit.txt
 
 Requirements
 ************
@@ -31,7 +31,7 @@ The |matter_type| supports the following development kits:
 
 .. table-from-sample-yaml::
 
-.. include:: /includes/matter/requirements/thread.txt
+.. include:: /includes/requirements/thread.txt
 
 Overview
 ********
@@ -44,7 +44,7 @@ You can test the device remotely over a Thread network, which requires more devi
 
 The remote control testing requires a Matter controller that you can configure either on a PC or a mobile device.
 
-.. include:: /includes/matter/overview/matter_quick_start.txt
+.. include:: /includes/overview/matter_quick_start.txt
 
 Contact sensor features
 =======================
@@ -54,39 +54,39 @@ Use the ``click to show`` toggle to expand the content.
 
 .. _matter_contact_sensor_sample_lit:
 
-.. include:: /includes/matter/overview/icd_lit.txt
+.. include:: /includes/overview/icd_lit.txt
 
 .. _matter_contact_sensor_custom_configs:
 
 Configuration
 *************
 
-.. include:: /includes/matter/configuration/intro.txt
+.. include:: /includes/configuration/intro.txt
 
 The |matter_type| supports the following build configurations:
 
-.. include:: /includes/matter/configuration/basic_internal.txt
+.. include:: /includes/configuration/basic_internal.txt
 
 Advanced configuration options
 ==============================
 
-.. include:: /includes/matter/configuration/advanced/intro.txt
-.. include:: /includes/matter/configuration/advanced/dfu.txt
-.. include:: /includes/matter/configuration/advanced/factory_data.txt
-.. include:: /includes/matter/configuration/advanced/custom_board.txt
-.. include:: /includes/matter/configuration/advanced/internal_memory.txt
+.. include:: /includes/configuration/advanced/intro.txt
+.. include:: /includes/configuration/advanced/dfu.txt
+.. include:: /includes/configuration/advanced/factory_data.txt
+.. include:: /includes/configuration/advanced/custom_board.txt
+.. include:: /includes/configuration/advanced/internal_memory.txt
 
 User interface
 **************
 
-.. include:: /includes/matter/interface/intro.txt
+.. include:: /includes/interface/intro.txt
 
-.. include:: /includes/matter/interface/interface_table.txt
+.. include:: /includes/interface/interface_table.txt
 
-.. include:: /includes/matter/interface/interface.txt
+.. include:: /includes/interface/interface.txt
 
 First LED:
-   .. include:: /includes/matter/interface/state_led.txt
+   .. include:: /includes/interface/state_led.txt
 
 Second LED:
    Shows the state of the contact detection.
@@ -99,7 +99,7 @@ Second LED:
    You can specify the duration of the effect using the command arguments.
 
 First Button:
-   .. include:: /includes/matter/interface/main_button.txt
+   .. include:: /includes/interface/main_button.txt
 
 Second Button:
    Simulates contact detection.
@@ -110,20 +110,20 @@ Third Button:
    Functions as the User Active Mode Trigger (UAT) button.
    For more information about Intermittently Connected Devices (ICD) and User Active Mode Trigger, see the :ref:`ug_matter_device_low_power_icd` documentation section.
 
-.. include:: /includes/matter/interface/segger_usb.txt
-.. include:: /includes/matter/interface/nfc.txt
+.. include:: /includes/interface/segger_usb.txt
+.. include:: /includes/interface/nfc.txt
 
 Building and running
 ********************
 
-.. include:: /includes/matter/building_and_running/intro.txt
+.. include:: /includes/building_and_running/intro.txt
 
 |matter_ble_advertising_auto|
 
 Testing
 *******
 
-.. include:: /includes/matter/testing/intro.txt
+.. include:: /includes/testing/intro.txt
 
 Testing with CHIP Tool
 ======================
@@ -132,9 +132,9 @@ Complete the following steps to test the |matter_name| device using CHIP Tool:
 
 .. |node_id| replace:: 1
 
-.. include:: /includes/matter/testing/1_prepare_matter_network_thread.txt
-.. include:: /includes/matter/testing/2_prepare_dk.txt
-.. include:: /includes/matter/testing/3_commission_thread.txt
+.. include:: /includes/testing/1_prepare_matter_network_thread.txt
+.. include:: /includes/testing/2_prepare_dk.txt
+.. include:: /includes/testing/3_commission_thread.txt
 
 .. rst-class:: numbered-step
 
@@ -208,9 +208,9 @@ Press and release the |Second Button| a few times and observe the state changes 
 Testing with commercial ecosystem
 =================================
 
-.. include:: /includes/matter/testing/ecosystem.txt
+.. include:: /includes/testing/ecosystem.txt
 
 Dependencies
 ************
 
-.. include:: /includes/matter/dependencies.txt
+.. include:: /includes/dependencies.txt

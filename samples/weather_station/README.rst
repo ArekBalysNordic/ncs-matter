@@ -4,7 +4,7 @@
 .. |matter_dks_wifi| replace:: ``thingy53/nrf5340/cpuapp`` board target with the ``nrf7002eb`` expansion board attached
 .. |sample path| replace:: :file:`applications/matter_weather_station`
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_weather_station_app:
 
@@ -18,7 +18,7 @@ Matter weather station
 The Matter weather station application demonstrates the usage of the :ref:`Matter <ug_matter>` application layer to build a weather station device using the Nordic Thingy:53 or nRF54L15 TAG.
 Such a device lets you remotely gather different kinds of data using the device sensors, such as temperature, air pressure, and relative humidity.
 
-.. include:: /includes/matter/introduction/sleep_thread_wifi.txt
+.. include:: /includes/introduction/sleep_thread_wifi.txt
 
 .. note::
    The `Matter weather station application from the v2.1.1`_ |NCS| release participated in Matter Specification Validation Event (SVE) and successfully passed all required test cases to be considered as a device compliant with Matter 1.0.
@@ -33,7 +33,7 @@ The measurement results are stored in the device memory and can be read using th
 The controller communicates with the weather station device over the Matter protocol and exchanges data using the Matter Data Model.
 The data model describes data measurements within the proper clusters that correspond to the measurement type.
 
-.. include:: /includes/matter/overview/matter_quick_start.txt
+.. include:: /includes/overview/matter_quick_start.txt
 
 Requirements
 ************
@@ -42,7 +42,7 @@ The application supports the following development kits:
 
 .. table-from-sample-yaml::
 
-.. include:: /includes/matter/requirements/thread_wifi.txt
+.. include:: /includes/requirements/thread_wifi.txt
 
 Programming requirements
 ========================
@@ -104,7 +104,7 @@ USB port:
     Used for getting logs from the device or communicating with it through the command-line interface.
     It is enabled only for the debug configuration of an application.
 
-.. include:: /includes/matter/interface/nfc.txt
+.. include:: /includes/interface/nfc.txt
 
 .. note::
 
@@ -114,11 +114,11 @@ USB port:
 Configuration
 *************
 
-.. include:: /includes/matter/configuration/intro.txt
+.. include:: /includes/configuration/intro.txt
 
 The |matter_type| supports the following build configurations:
 
-.. include:: /includes/matter/configuration/basic.txt
+.. include:: /includes/configuration/basic.txt
 
 .. note::
 
@@ -127,13 +127,13 @@ The |matter_type| supports the following build configurations:
 Advanced configuration options
 ==============================
 
-.. include:: /includes/matter/configuration/advanced/intro.txt
-.. include:: /includes/matter/configuration/advanced/dfu.txt
+.. include:: /includes/configuration/advanced/intro.txt
+.. include:: /includes/configuration/advanced/dfu.txt
 
 Building and running
 ********************
 
-.. include:: /includes/matter/building_and_running/intro.txt
+.. include:: /includes/building_and_running/intro.txt
 
 |matter_ble_advertising_auto|
 
@@ -225,7 +225,7 @@ Building for the nRF7002 Wi-Fi expansion board
 Testing
 *******
 
-.. include:: /includes/matter/testing/intro.txt
+.. include:: /includes/testing/intro.txt
 
 Testing with CHIP Tool
 ======================
@@ -246,7 +246,7 @@ If the device does not start advertising over Bluetooth LE and it is not blinkin
 
 .. rst-class:: numbered-step
 
-.. include:: /includes/matter/testing/3_commission_thread_wifi.txt
+.. include:: /includes/testing/3_commission_thread_wifi.txt
 
 Once the commissioning is complete and the device has full Thread or Wi-Fi connectivity, **LED** starts blinking purple (short flash on).
 
@@ -364,4 +364,4 @@ Use one of the following onboarding information formats to provide the commissio
 Dependencies
 ************
 
-.. include:: /includes/matter/dependencies.txt
+.. include:: /includes/dependencies.txt

@@ -11,7 +11,7 @@
                           :width: 200px
                           :alt: QR code for commissioning the template device
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_template_sample:
 
@@ -25,7 +25,7 @@ Matter: Template
 This sample demonstrates a minimal implementation of the :ref:`Matter <ug_matter>` application layer.
 This basic implementation enables the commissioning on the device, which allows it to join a Matter network built on top of a low-power, 802.15.4 Thread network or on top of a Wi-Fi® network.
 
-.. include:: /includes/matter/introduction/no_sleep_thread_mtd_wifi.txt
+.. include:: /includes/introduction/no_sleep_thread_mtd_wifi.txt
 
 Requirements
 ************
@@ -34,8 +34,8 @@ The sample supports the following development kits:
 
 .. table-from-sample-yaml::
 
-.. include:: /includes/matter/requirements/thread_wifi.txt
-.. include:: /includes/matter/requirements/hardware.txt
+.. include:: /includes/requirements/thread_wifi.txt
+.. include:: /includes/requirements/hardware.txt
 
 Overview
 ********
@@ -46,44 +46,44 @@ The sample uses an LED to show the state of the connection.
 Configuration
 *************
 
-.. include:: /includes/matter/configuration/intro.txt
+.. include:: /includes/configuration/intro.txt
 
 The |matter_type| supports the following build configurations:
 
-.. include:: /includes/matter/configuration/basic_internal_l15_tag.txt
+.. include:: /includes/configuration/basic_internal_l15_tag.txt
 
 Advanced configuration options
 ==============================
 
-.. include:: /includes/matter/configuration/advanced/intro.txt
+.. include:: /includes/configuration/advanced/intro.txt
 
-.. include:: /includes/matter/configuration/advanced/dfu.txt
-.. include:: /includes/matter/configuration/advanced/tfm.txt
-.. include:: /includes/matter/configuration/advanced/factory_data.txt
-.. include:: /includes/matter/configuration/advanced/custom_board.txt
-.. include:: /includes/matter/configuration/advanced/internal_memory.txt
+.. include:: /includes/configuration/advanced/dfu.txt
+.. include:: /includes/configuration/advanced/tfm.txt
+.. include:: /includes/configuration/advanced/factory_data.txt
+.. include:: /includes/configuration/advanced/custom_board.txt
+.. include:: /includes/configuration/advanced/internal_memory.txt
 
 User interface
 **************
 
-.. include:: /includes/matter/interface/intro.txt
+.. include:: /includes/interface/intro.txt
 
-.. include:: /includes/matter/interface/interface_table_70dk_l15_tag.txt
+.. include:: /includes/interface/interface_table_70dk_l15_tag.txt
 
-.. include:: /includes/matter/interface/interface.txt
+.. include:: /includes/interface/interface.txt
 
 First LED:
-   .. include:: /includes/matter/interface/state_led.txt
+   .. include:: /includes/interface/state_led.txt
 
 First Button:
-   .. include:: /includes/matter/interface/main_button.txt
+   .. include:: /includes/interface/main_button.txt
 
-.. include:: /includes/matter/interface/segger_usb.txt
+.. include:: /includes/interface/segger_usb.txt
 
 Building and running
 ********************
 
-.. include:: /includes/matter/building_and_running/intro.txt
+.. include:: /includes/building_and_running/intro.txt
 
 |matter_ble_advertising_auto|
 
@@ -91,13 +91,13 @@ Building and running
 Advanced building options
 =========================
 
-.. include:: /includes/matter/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
-.. include:: /includes/matter/building_and_running/advanced/wifi_flash.txt
+.. include:: /includes/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
+.. include:: /includes/building_and_running/advanced/wifi_flash.txt
 
 Testing
 *******
 
-.. include:: /includes/matter/testing/intro.txt
+.. include:: /includes/testing/intro.txt
 
 Testing with CHIP Tool
 ======================
@@ -106,9 +106,9 @@ Complete the following steps to test the |matter_name| device using CHIP Tool:
 
 .. |node_id| replace:: 1
 
-.. include:: /includes/matter/testing/1_prepare_matter_network_thread_wifi.txt
-.. include:: /includes/matter/testing/2_prepare_dk.txt
-.. include:: /includes/matter/testing/3_commission_thread_wifi.txt
+.. include:: /includes/testing/1_prepare_matter_network_thread_wifi.txt
+.. include:: /includes/testing/2_prepare_dk.txt
+.. include:: /includes/testing/3_commission_thread_wifi.txt
 
 .. rst-class:: numbered-step
 
@@ -130,9 +130,9 @@ Testing with commercial ecosystem
 
    |sample_not_in_ecosystem|
 
-.. include:: /includes/matter/testing/ecosystem.txt
+.. include:: /includes/testing/ecosystem.txt
 
 Dependencies
 ************
 
-.. include:: /includes/matter/dependencies.txt
+.. include:: /includes/dependencies.txt

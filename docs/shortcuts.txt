@@ -6,6 +6,7 @@
 .. |NCS| replace:: nRF Connect SDK
 .. |addon| replace:: Matter add-on
 .. |nRFVSC| replace:: nRF Connect for VS Code extension
+.. |Bluetoothsc| replace:: Bluetooth®
 
 .. |matter_intro| replace:: `Matter`_ (formerly Project Connected Home over IP or Project CHIP) is an open-source application layer that aims at creating a unified communication standard across smart home devices, mobile applications, and cloud services.
 .. |matter_controller_def| replace:: The Matter controller is a node in the Matter network and a role within the :ref:`ug_matter_gs_testing` development environment.

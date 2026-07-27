@@ -2,7 +2,7 @@
 .. |matter_type| replace:: sample
 .. |sample path| replace:: :file:`samples/matter/lock`
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_lock_sample:
 .. _chip_lock_sample:
@@ -24,4 +24,4 @@ The add-on allows you to test the applications that can be used as a reference f
 * Aliro-only Access Control Reader
 * Matter and Aliro Door Lock
 
-.. include:: /includes/matter/overview/matter_quick_start.txt
+.. include:: /includes/overview/matter_quick_start.txt

@@ -10,7 +10,7 @@
                           :width: 200px
                           :alt: QR code for commissioning the closure device
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_closure_sample:
 
@@ -23,7 +23,7 @@ Matter: Closure
 
 This sample demonstrates the usage of the :ref:`Matter <ug_matter>` application layer to build a closure device.
 
-.. include:: /includes/matter/introduction/no_sleep_thread_ftd_wifi.txt
+.. include:: /includes/introduction/no_sleep_thread_ftd_wifi.txt
 
 Requirements
 ************
@@ -32,7 +32,7 @@ The sample supports the following development kits:
 
 .. table-from-sample-yaml::
 
-.. include:: /includes/matter/requirements/thread_wifi.txt
+.. include:: /includes/requirements/thread_wifi.txt
 
 Overview
 ********
@@ -68,33 +68,33 @@ See `User interface`_ for information about LEDs and buttons.
 Configuration
 *************
 
-.. include:: /includes/matter/configuration/intro.txt
+.. include:: /includes/configuration/intro.txt
 
 The |matter_type| supports the following build configurations:
 
-.. include:: /includes/matter/configuration/basic_internal.txt
+.. include:: /includes/configuration/basic_internal.txt
 
 Advanced configuration options
 ==============================
 
-.. include:: /includes/matter/configuration/advanced/intro.txt
-.. include:: /includes/matter/configuration/advanced/dfu.txt
-.. include:: /includes/matter/configuration/advanced/fem.txt
-.. include:: /includes/matter/configuration/advanced/factory_data.txt
-.. include:: /includes/matter/configuration/advanced/custom_board.txt
-.. include:: /includes/matter/configuration/advanced/internal_memory.txt
+.. include:: /includes/configuration/advanced/intro.txt
+.. include:: /includes/configuration/advanced/dfu.txt
+.. include:: /includes/configuration/advanced/fem.txt
+.. include:: /includes/configuration/advanced/factory_data.txt
+.. include:: /includes/configuration/advanced/custom_board.txt
+.. include:: /includes/configuration/advanced/internal_memory.txt
 
 User interface
 **************
 
-.. include:: /includes/matter/interface/intro.txt
+.. include:: /includes/interface/intro.txt
 
-.. include:: /includes/matter/interface/interface_table.txt
+.. include:: /includes/interface/interface_table.txt
 
-.. include:: /includes/matter/interface/interface.txt
+.. include:: /includes/interface/interface.txt
 
 First LED:
-   .. include:: /includes/matter/interface/state_led.txt
+   .. include:: /includes/interface/state_led.txt
 
 Second LED:
    Shows the current state of the closure.
@@ -102,29 +102,29 @@ Second LED:
    The values in between are represented by dimmed light.)
 
 First Button:
-   .. include:: /includes/matter/interface/main_button.txt
+   .. include:: /includes/interface/main_button.txt
 
-.. include:: /includes/matter/interface/segger_usb.txt
+.. include:: /includes/interface/segger_usb.txt
 
-.. include:: /includes/matter/interface/nfc.txt
+.. include:: /includes/interface/nfc.txt
 
 Building and running
 ********************
 
-.. include:: /includes/matter/building_and_running/intro.txt
+.. include:: /includes/building_and_running/intro.txt
 
 |matter_ble_advertising_auto|
 
 Advanced building options
 =========================
 
-.. include:: /includes/matter/building_and_running/advanced/intro.txt
-.. include:: /includes/matter/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
+.. include:: /includes/building_and_running/advanced/intro.txt
+.. include:: /includes/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
 
 Testing
 *******
 
-.. include:: /includes/matter/testing/intro.txt
+.. include:: /includes/testing/intro.txt
 
 Testing with CHIP Tool
 ======================
@@ -133,9 +133,9 @@ Complete the following steps to test the |matter_name| device using CHIP Tool:
 
 .. |node_id| replace:: 1
 
-.. include:: /includes/matter/testing/1_prepare_matter_network_thread.txt
-.. include:: /includes/matter/testing/2_prepare_dk.txt
-.. include:: /includes/matter/testing/3_commission_thread.txt
+.. include:: /includes/testing/1_prepare_matter_network_thread.txt
+.. include:: /includes/testing/2_prepare_dk.txt
+.. include:: /includes/testing/3_commission_thread.txt
 
 .. rst-class:: numbered-step
 
@@ -220,9 +220,9 @@ Complete the following points by calling the corresponding commands in the CHIP 
 Testing with commercial ecosystem
 =================================
 
-.. include:: /includes/matter/testing/ecosystem.txt
+.. include:: /includes/testing/ecosystem.txt
 
 Dependencies
 ************
 
-.. include:: /includes/matter/dependencies.txt
+.. include:: /includes/dependencies.txt
