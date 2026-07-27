@@ -12,3 +12,6 @@ __pycache__/
 # docs
 /docs/_build*
 /docs/venv
+
+# Ignore backup zap files
+*.zap~
