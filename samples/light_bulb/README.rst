@@ -11,7 +11,7 @@
                           :width: 200px
                           :alt: QR code for commissioning the light bulb device
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_light_bulb_sample:
 .. _chip_light_bulb_sample:
@@ -25,7 +25,7 @@ Matter: Light bulb
 
 This light bulb sample demonstrates the usage of the :ref:`Matter <ug_matter>` application layer to build a white dimmable light bulb device.
 
-.. include:: /includes/matter/introduction/no_sleep_thread_ftd_wifi.txt
+.. include:: /includes/introduction/no_sleep_thread_ftd_wifi.txt
 
 .. note::
     This sample is self-contained and can be tested on its own.
@@ -38,7 +38,7 @@ The sample supports the following development kits:
 
 .. table-from-sample-yaml::
 
-.. include:: /includes/matter/requirements/thread_wifi.txt
+.. include:: /includes/requirements/thread_wifi.txt
 
 Overview
 ********
@@ -51,7 +51,7 @@ You can test it in the following ways:
 
 The remote control testing requires a Matter controller that you can configure either on a PC or a mobile device (for remote testing in a network).
 
-.. include:: /includes/matter/overview/matter_quick_start.txt
+.. include:: /includes/overview/matter_quick_start.txt
 
 Light bulb features
 ===================
@@ -64,34 +64,34 @@ The light bulb sample implements the following features:
 Configuration
 *************
 
-.. include:: /includes/matter/configuration/intro.txt
+.. include:: /includes/configuration/intro.txt
 
 The |matter_type| supports the following build configurations:
 
-.. include:: /includes/matter/configuration/basic_internal.txt
+.. include:: /includes/configuration/basic_internal.txt
 
 Advanced configuration options
 ==============================
 
-.. include:: /includes/matter/configuration/advanced/intro.txt
-.. include:: /includes/matter/configuration/advanced/dfu.txt
-.. include:: /includes/matter/configuration/advanced/tfm.txt
-.. include:: /includes/matter/configuration/advanced/fem.txt
-.. include:: /includes/matter/configuration/advanced/factory_data.txt
-.. include:: /includes/matter/configuration/advanced/custom_board.txt
-.. include:: /includes/matter/configuration/advanced/internal_memory.txt
+.. include:: /includes/configuration/advanced/intro.txt
+.. include:: /includes/configuration/advanced/dfu.txt
+.. include:: /includes/configuration/advanced/tfm.txt
+.. include:: /includes/configuration/advanced/fem.txt
+.. include:: /includes/configuration/advanced/factory_data.txt
+.. include:: /includes/configuration/advanced/custom_board.txt
+.. include:: /includes/configuration/advanced/internal_memory.txt
 
 User interface
 **************
 
-.. include:: /includes/matter/interface/intro.txt
+.. include:: /includes/interface/intro.txt
 
-.. include:: /includes/matter/interface/interface_table_70dk.txt
+.. include:: /includes/interface/interface_table_70dk.txt
 
-.. include:: /includes/matter/interface/interface.txt
+.. include:: /includes/interface/interface.txt
 
 First LED:
-   .. include:: /includes/matter/interface/state_led.txt
+   .. include:: /includes/interface/state_led.txt
 
 Second LED:
    Shows the state of the light bulb.
@@ -104,31 +104,31 @@ Second LED:
    The command's argument can be used to specify the duration of the effect.
 
 First Button:
-   .. include:: /includes/matter/interface/main_button.txt
+   .. include:: /includes/interface/main_button.txt
 
 Second Button:
    Changes the light bulb state to the opposite one.
 
-.. include:: /includes/matter/interface/segger_usb.txt
-.. include:: /includes/matter/interface/nfc.txt
+.. include:: /includes/interface/segger_usb.txt
+.. include:: /includes/interface/nfc.txt
 
 Building and running
 ********************
 
-.. include:: /includes/matter/building_and_running/intro.txt
+.. include:: /includes/building_and_running/intro.txt
 
 |matter_ble_advertising_auto|
 
 Advanced building options
 =========================
 
-.. include:: /includes/matter/building_and_running/advanced/intro.txt
-.. include:: /includes/matter/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
+.. include:: /includes/building_and_running/advanced/intro.txt
+.. include:: /includes/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
 
 Testing
 *******
 
-.. include:: /includes/matter/testing/intro.txt
+.. include:: /includes/testing/intro.txt
 
 .. _prepare_light_bulb_for_testing:
 
@@ -139,9 +139,9 @@ Complete the following steps to test the |matter_name| device using CHIP Tool:
 
 .. |node_id| replace:: 1
 
-.. include:: /includes/matter/testing/1_prepare_matter_network_thread_wifi.txt
-.. include:: /includes/matter/testing/2_prepare_dk.txt
-.. include:: /includes/matter/testing/3_commission_thread_wifi.txt
+.. include:: /includes/testing/1_prepare_matter_network_thread_wifi.txt
+.. include:: /includes/testing/2_prepare_dk.txt
+.. include:: /includes/testing/3_commission_thread_wifi.txt
 
 .. rst-class:: numbered-step
 
@@ -187,29 +187,16 @@ To prepare the light switch device, follow the first three steps in the :ref:`Ma
 
    In this guide, the light bulb device's node ID is ``1`` and the light switch device's node ID is ``2``.
 
-.. include:: ../light_switch/README.rst
+.. include:: /../samples/light_switch/README.rst
    :start-after: matter_light_switch_sample_testing_start
    :end-before: matter_light_switch_sample_testing_end
 
 Testing with commercial ecosystem
 =================================
 
-.. include:: /includes/matter/testing/ecosystem.txt
+.. include:: /includes/testing/ecosystem.txt
 
 Dependencies
 ************
 
-This sample uses the Matter library that includes the |NCS| platform integration layer:
-
-* `Matter`_
-
-In addition, it uses the following |NCS| components:
-
-* :ref:`dk_buttons_and_leds_readme`
-* :ref:`nfc_uri`
-* :ref:`lib_nfc_t2t`
-
-The sample depends on the following Zephyr libraries:
-
-* :ref:`zephyr:logging_api`
-* :ref:`zephyr:kernel_api`
+.. include:: /includes/dependencies.txt

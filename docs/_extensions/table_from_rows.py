@@ -223,12 +223,18 @@ class TableFromSampleYaml(TableFromRows):
         sample_yamls = []
         if (dir_path / 'sample.yaml').exists():
             sample_yamls.append(dir_path / 'sample.yaml')
-        elif rel_path.endswith('doc'):
-            parent_path = dir_path.parent / 'sample.yaml'
-            if parent_path.exists():
-                sample_yamls.append(parent_path)
         else:
-            sample_yamls += list(dir_path.glob('**/sample.yaml'))
+            samples_yaml = (
+                Path(self.config.table_from_rows_base_dir) / 'samples' / rel_path / 'sample.yaml'
+            )
+            if samples_yaml.exists():
+                sample_yamls.append(samples_yaml)
+            elif rel_path.endswith('doc'):
+                parent_path = dir_path.parent / 'sample.yaml'
+                if parent_path.exists():
+                    sample_yamls.append(parent_path)
+            else:
+                sample_yamls += list(dir_path.glob('**/sample.yaml'))
 
         if not sample_yamls:
             raise self.severe(f'"{path}" not found')

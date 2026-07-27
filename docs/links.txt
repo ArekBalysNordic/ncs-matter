@@ -40,6 +40,17 @@
 .. _app_approtect: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/security/ap_protect.html
 .. _ug_thread_tools: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/tools.html
 .. _ug_thread_tools_tbr: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/tools.html#ug-thread-tools-tbr
+.. _configuring_devicetree: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/config_and_build/hardware/index.html
+.. _lbs_readme: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/libraries/bluetooth/services/lbs.html
+.. _ug_radio_fem: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/device_guides/fem/index.html
+.. _ug_radio_fem_nrf21540ek: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/device_guides/fem/21540ek_dev_guide.html
+.. _ug_radio_fem_nrf21540ek_programming: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/device_guides/fem/21540ek_dev_guide.html#ug-radio-fem-nrf21540ek-programming
+.. _dk_buttons_and_leds_readme: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/libraries/others/dk_buttons_and_leds.html
+.. _nfc_uri: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/libraries/nfc/ndef/uri_msg.html
+.. _lib_nfc_t2t: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/libraries/nfc/t2t/index.html
+.. _cmake_options: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/config_and_build/cmake/index.html#cmake-options
+.. _kernel_api: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/kernel/services/index.html
+.. _logging_api: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/services/logging/index.html
 .. _partition_manager: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/scripts/partition_manager/partition_manager.html
 .. _migration_partitions: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/migration/migration_partitions.html
 .. _ncs_release_notes_340: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/releases/release-notes-3.4.0.html
@@ -223,7 +234,17 @@
 .. _nRF54L15 SoC Compatibility Matrix: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54l15/page/COMP/nrf54l15/nrf54l15_nrf_connect_sdk.html
 .. _nrf52840dk: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf52840dk/doc/index.html
 .. _nrf5340dk: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf5340dk/doc/index.html
+.. _nrf21540dk: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf21540dk/doc/index.html
 .. _thingy53: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/thingy53/doc/index.html
+.. _ble_peripheral_esp: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/samples/bluetooth/peripheral_esp/README.html
+.. _`Kernel API`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/kernel/services/index.html
+.. _Zephyr shields: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/develop/shields/index.html
+.. _Thread CSL support: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/overview/supported_features.html#thread-ug-supported-features-csl
+.. _Thread SED and SSED: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/sed_ssed.html
+.. _`DK Buttons and LEDs`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/libraries/others/dk_buttons_and_leds.html
+.. _`NFC URI`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/libraries/nfc/ndef/uri_msg.html
+.. _`NFC T2T library`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/libraries/nfc/t2t/index.html
+.. _Providing CMake options: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/config_and_build/cmake/index.html#cmake-options
 .. _Matter add-on repository: https://github.com/nrfconnect/ncs-matter
 .. _`Testing Matter in the nRF Connect SDK`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/matter/getting_started/testing/index.html
 .. _`Manual installation gn`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/matter/getting_started/tools.html#gn-tool
@@ -233,6 +254,10 @@
 
 .. _Release notes for the nRF Connect SDK: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/release_notes.html
 .. _Matter add-on: https://github.com/nrfconnect/ncs-matter
+.. _`How to build an application`: https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/get_started/build_app_ncs.html
+.. _`Thread 1.2 Base Features`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/overview/index.html#thread-1-2-base-features
+.. _`Actions View`: https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/build_config/build_config_overview.html#actions-view
+.. _`Matter weather station application from the v2.1.1`: https://docs.nordicsemi.com/bundle/ncs-2.1.1/page/nrf/applications/matter_weather_station/README.html
 .. _Matter Core Specification: https://csa-iot.org/developer-resource/specifications-download-request/
 
 .. ### Link aliases without trailing underscore

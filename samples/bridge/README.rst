@@ -1,7 +1,7 @@
 .. _matter_bridge_app:
 
-Matter bridge
-#############
+Matter: Bridge
+##############
 
 The Matter bridge application can be used to build a :ref:`bridge <ug_matter_overview_bridge>` device using the :ref:`Matter <ug_matter>` application layer.
 The bridge device allows the use of non-Matter devices in a :ref:`Matter fabric <ug_matter_network_topologies_structure>` by exposing them as Matter endpoints.
@@ -24,5 +24,5 @@ See the subpages for how to use the application and how to extend it.
    :maxdepth: 2
    :caption: Subpages:
 
-   doc/matter_bridge_description
-   doc/extending_bridge
+   ../../bridge/matter_bridge_description
+   ../../bridge/extending_bridge

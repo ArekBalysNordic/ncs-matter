@@ -9,7 +9,7 @@
 .. |matter_pairing_code| replace:: 34970112332
 .. |matter_qr_code_image| image:: /images/matter_qr_code_thermostat.png
 
-.. include:: /includes/matter/shortcuts.txt
+.. include:: /includes/shortcuts.txt
 
 .. _matter_thermostat_sample:
 
@@ -23,7 +23,7 @@ Matter: Thermostat
 This thermostat sample demonstrates the usage of the :ref:`Matter <ug_matter>` application layer to build a thermostat device for monitoring temperature values and controlling the temperature.
 This device works as a Matter accessory device, meaning it can be paired and controlled remotely over a Matter network built on top of a low-power, 802.15.4 Thread network or on top of a Wi-Fi® network.
 
-.. include:: /includes/matter/introduction/sleep_thread_wifi.txt
+.. include:: /includes/introduction/sleep_thread_wifi.txt
 
 Additionally, this example allows you to connect to a temperature sensor device that can also be used for temperature measurement.
 
@@ -34,7 +34,7 @@ The sample supports the following development kits:
 
 .. table-from-sample-yaml::
 
-.. include:: /includes/matter/requirements/thread_wifi.txt
+.. include:: /includes/requirements/thread_wifi.txt
 
 Similarly, if you want to test the sample with :ref:`matter_thermostat_sample_sensor`, you need additional hardware that incorporates a temperature sensor.
 For example, Nordic Thingy:53, used for the :ref:`Matter weather station <matter_weather_station_app>` application.
@@ -49,7 +49,7 @@ The sample can operate in one of the following modes:
 * Real temperature sensor mode - In this mode, the thermostat sample is bound to a remote Matter temperature sensor, which provides real temperature measurements.
   This mode requires :ref:`matter_thermostat_sample_sensor`.
 
-  .. figure:: ../../../doc/nrf/images/matter_external_thermostat_setup.png
+  .. figure:: /images/matter_external_thermostat_setup.png
      :alt: Real temperature sensor mode setup
 
      Real temperature sensor mode setup
@@ -72,20 +72,20 @@ The thermostat sample implements the following features:
 
 .. _matter_thermostat_sample_binding:
 
-.. include:: /includes/matter/overview/binding.txt
+.. include:: /includes/overview/binding.txt
 
 Configuration
 *************
 
-.. include:: /includes/matter/configuration/intro.txt
+.. include:: /includes/configuration/intro.txt
 The |matter_type| supports the following build configurations:
 
-.. include:: /includes/matter/configuration/basic_internal.txt
+.. include:: /includes/configuration/basic_internal.txt
 
 Advanced configuration options
 ==============================
 
-.. include:: /includes/matter/configuration/advanced/intro.txt
+.. include:: /includes/configuration/advanced/intro.txt
 
 .. _matter_thermostat_sample_sensor:
 
@@ -101,49 +101,49 @@ External sensor integration
    Additionally, you can enable periodic outdoor temperature measurements by binding the thermostat with an external temperature sensor device.
    To test this feature, follow the steps listed in the :ref:`matter_thermostat_sensor_testing` section.
 
-.. include:: /includes/matter/configuration/advanced/dfu.txt
-.. include:: /includes/matter/configuration/advanced/tfm.txt
-.. include:: /includes/matter/configuration/advanced/factory_data.txt
-.. include:: /includes/matter/configuration/advanced/custom_board.txt
-.. include:: /includes/matter/configuration/advanced/internal_memory.txt
+.. include:: /includes/configuration/advanced/dfu.txt
+.. include:: /includes/configuration/advanced/tfm.txt
+.. include:: /includes/configuration/advanced/factory_data.txt
+.. include:: /includes/configuration/advanced/custom_board.txt
+.. include:: /includes/configuration/advanced/internal_memory.txt
 
 User interface
 **************
 
-.. include:: /includes/matter/interface/intro.txt
+.. include:: /includes/interface/intro.txt
 
-.. include:: /includes/matter/interface/interface_table_70dk.txt
+.. include:: /includes/interface/interface_table_70dk.txt
 
-.. include:: /includes/matter/interface/interface.txt
+.. include:: /includes/interface/interface.txt
 
 First LED:
-   .. include:: /includes/matter/interface/state_led.txt
+   .. include:: /includes/interface/state_led.txt
 
 First Button:
-   .. include:: /includes/matter/interface/main_button.txt
+   .. include:: /includes/interface/main_button.txt
 
 Second Button:
    Prints the most recent thermostat data to terminal.
 
-.. include:: /includes/matter/interface/segger_usb.txt
-.. include:: /includes/matter/interface/nfc.txt
+.. include:: /includes/interface/segger_usb.txt
+.. include:: /includes/interface/nfc.txt
 
 Building and running
 ********************
 
-.. include:: /includes/matter/building_and_running/intro.txt
+.. include:: /includes/building_and_running/intro.txt
 
 |matter_ble_advertising_auto|
 
 Advanced building options
 =========================
 
-.. include:: /includes/matter/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
+.. include:: /includes/building_and_running/advanced/building_nrf54lm20dk_7002eb2.txt
 
 Testing
 *******
 
-.. include:: /includes/matter/testing/intro.txt
+.. include:: /includes/testing/intro.txt
 
 .. _matter_thermostat_sample_testing_start:
 
@@ -154,9 +154,9 @@ Complete the following steps to test the |matter_name| device using CHIP Tool:
 
 .. |node_id| replace:: 1
 
-.. include:: /includes/matter/testing/1_prepare_matter_network_thread_wifi.txt
-.. include:: /includes/matter/testing/2_prepare_dk.txt
-.. include:: /includes/matter/testing/3_commission_thread_wifi.txt
+.. include:: /includes/testing/1_prepare_matter_network_thread_wifi.txt
+.. include:: /includes/testing/2_prepare_dk.txt
+.. include:: /includes/testing/3_commission_thread_wifi.txt
 
 .. rst-class:: numbered-step
 
@@ -233,8 +233,8 @@ Press the |Second Button| to print the most recent temperature data from the the
 Testing with commercial ecosystem
 =================================
 
-.. include:: /includes/matter/testing/ecosystem.txt
+.. include:: /includes/testing/ecosystem.txt
 
 Dependencies
 ************
-.. include:: /includes/matter/dependencies.txt
+.. include:: /includes/dependencies.txt
