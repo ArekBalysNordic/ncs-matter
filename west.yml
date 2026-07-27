@@ -16,7 +16,7 @@ manifest:
       remote: ncs
       path: modules/lib/matter
       repo-path: sdk-connectedhomeip
-      revision: v3.4.0
+      revision: cec24184df86da6ecfcfac49c5f20b258810b6c5
       submodules:
         - name: nlio
           path: third_party/nlio/repo
@@ -26,10 +26,12 @@ manifest:
           path: third_party/pigweed/repo
         - name: jsoncpp
           path: third_party/jsoncpp/repo
+        - name: uriparser
+          path: third_party/uriparser/repo
       userdata:
         ncs:
           upstream-url: https://github.com/project-chip/connectedhomeip
-          upstream-sha: 181b0cb14ff007ec912f2ba6627e05dfb066c008
+          upstream-sha: badaac1eae0df6902c1d009981c0e0d18845aeea
           compare-by-default: false
 
   self:
