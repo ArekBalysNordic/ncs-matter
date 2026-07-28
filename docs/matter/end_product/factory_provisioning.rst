@@ -656,7 +656,7 @@ For example, the build command for the nRF52840 DK could look like this:
 
    $ west build -b nrf52840dk_nrf52840 -- \
    -DCONFIG_CHIP_FACTORY_DATA=y \
-   -DSB_CONFIG_MATTER_FACTORY_DATA_GENERATE=y \
+   -DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=y \
    -DCONFIG_CHIP_FACTORY_DATA_GENERATE_ONBOARDING_CODES=y
 
 Preparing factory data partition on a device
@@ -799,9 +799,9 @@ To enable generating the factory data set automatically, go to the example's dir
 .. parsed-literal::
    :class: highlight
 
-   $ west build -b nrf52840dk_nrf52840 -- -DCONFIG_CHIP_FACTORY_DATA=y -DSB_CONFIG_MATTER_FACTORY_DATA_GENERATE=y
+   $ west build -b nrf52840dk_nrf52840 -- -DCONFIG_CHIP_FACTORY_DATA=y -DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=y
 
-Alternatively, you can also add the :kconfig:option:`SB_CONFIG_MATTER_FACTORY_DATA_GENERATE=y` Kconfig setting to the example's :file:`sysbuild.conf` file.
+Alternatively, you can also add the :kconfig:option:`SB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=y` Kconfig setting to the example's :file:`sysbuild.conf` file.
 
 Each factory data parameter has a default value.
 These are described in the `Matter nRF Connect Kconfig`_.
@@ -817,7 +817,7 @@ For example (replace ``nrf52840dk_nrf52840`` with own board name):
 .. parsed-literal::
    :class: highlight
 
-   $ west build -b nrf52840dk_nrf52840 -- -DCONFIG_CHIP_FACTORY_DATA=y --DSB_CONFIG_MATTER_FACTORY_DATA_GENERATE=y --DCONFIG_CHIP_DEVICE_DISCRIMINATOR=0xF11
+   $ west build -b nrf52840dk_nrf52840 -- -DCONFIG_CHIP_FACTORY_DATA=y --DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=y --DCONFIG_CHIP_DEVICE_DISCRIMINATOR=0xF11
 
 Alternatively, you can add the relevant Kconfig option lines to the example's :file:`prj.conf` file.
 
@@ -917,7 +917,7 @@ To generate new certificates disable using default certificates by building an e
 
    $ west build -b nrf52840dk_nrf52840 -- \
    -DCONFIG_CHIP_FACTORY_DATA=y \
-   -DSB_CONFIG_MATTER_FACTORY_DATA_GENERATE=y \
+   -DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=y \
    -DSB_CONFIG_MATTER_FACTORY_DATA_MERGE_WITH_FIRMWARE=y \
    -DCONFIG_CHIP_FACTORY_DATA_USE_DEFAULT_CERTS=n
 
@@ -989,10 +989,10 @@ To override the inherited classes, complete the following steps:
 #. Disable building both the default and the nRF Connect implementations of factory data providers to start using your own implementation of factory data parser and provider.
    This can be done in one of the following ways:
 
-   * Set the :option:`CONFIG_CHIP_FACTORY_DATA_CUSTOM_BACKEND` Kconfig option to ``y`` in the :file:`prj.conf` file and the :kconfig:option:`SB_CONFIG_MATTER_FACTORY_DATA_GENERATE` Kconfig option to ``n``.
+   * Set the :option:`CONFIG_CHIP_FACTORY_DATA_CUSTOM_BACKEND` Kconfig option to ``y`` in the :file:`prj.conf` file and the :kconfig:option:`SB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE` Kconfig option to ``n``.
    * Build an example with the following option (replace ``<build_target>`` with your board name, for example ``nrf52840dk_nrf52840``):
 
      .. parsed-literal::
         :class: highlight
 
-        $ west build -b <build_target> -- -DCONFIG_CHIP_FACTORY_DATA_CUSTOM_BACKEND=y -DSB_CONFIG_MATTER_FACTORY_DATA_GENERATE=n
+        $ west build -b <build_target> -- -DCONFIG_CHIP_FACTORY_DATA_CUSTOM_BACKEND=y -DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=n
