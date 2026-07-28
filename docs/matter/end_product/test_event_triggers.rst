@@ -212,10 +212,10 @@ You cannot set the enable key to a specific value using factory data unless the 
 If it is not set, the default value ``00112233445566778899AABBCCDDEEFF`` will be used.
 For secure operation, you need to ensure that the enable key is unique for all of your devices.
 
-To specify the enable key through the build system, enable the :kconfig:option:`SB_CONFIG_MATTER_FACTORY_DATA_GENERATE` Kconfig option by setting it to ``y``.
+To specify the enable key through the build system, enable the :kconfig:option:`SB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE` Kconfig option by setting it to ``y``.
 Then, set the :kconfig:option:`CONFIG_CHIP_DEVICE_ENABLE_KEY` Kconfig option to a 32-byte hexadecimal string value.
 
-If :kconfig:option:`SB_CONFIG_MATTER_FACTORY_DATA_GENERATE` is set to ``n``, follow the :ref:`ug_matter_device_factory_provisioning` guide in the Matter documentation to generate the factory data set with the specific key value.
+If :kconfig:option:`SB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE` is set to ``n``, follow the :ref:`ug_matter_device_factory_provisioning` guide in the Matter documentation to generate the factory data set with the specific key value.
 
 If you do not use the |NCS| Matter common module, you need to read the enable key value manually from the factory data set and provide it to the ``TestEventTrigger`` class.
 

@@ -176,7 +176,7 @@ Building with factory data support
 
        .. group-tab:: |nRFVSC|
 
-          Add ``-DEXTRA_CONF_FILE=overlay-factory_data.conf -DSB_CONFIG_MATTER_FACTORY_DATA_GENERATE=y -DFILE_SUFFIX=factory_data`` to :guilabel:`Extra CMake arguments` in your build configuration.
+          Add ``-DEXTRA_CONF_FILE=overlay-factory_data.conf -DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=y -DFILE_SUFFIX=factory_data`` to :guilabel:`Extra CMake arguments` in your build configuration.
 
        .. group-tab:: Command line
 
@@ -184,7 +184,7 @@ Building with factory data support
 
           .. code-block:: console
 
-             west build -b <board_target> -- -DEXTRA_CONF_FILE=overlay-factory_data.conf -DSB_CONFIG_MATTER_FACTORY_DATA_GENERATE=y -DFILE_SUFFIX=factory_data
+             west build -b <board_target> -- -DEXTRA_CONF_FILE=overlay-factory_data.conf -DSB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=y -DFILE_SUFFIX=factory_data
 
           Where ``<board_target>`` is ``thingy53/nrf5340/cpuapp`` or ``nrf54l15tag/nrf54l15/cpuapp``.
 
