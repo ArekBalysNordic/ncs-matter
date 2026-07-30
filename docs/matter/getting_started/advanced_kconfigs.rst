@@ -37,9 +37,26 @@ You can configure when the device will start advertising and how long it will ad
 Commissioning with NFC
 ======================
 
-You can configure the Matter protocol to use NFC tag for commissioning, instead of the default QR code.
+The Matter protocol can be configured to use an NFC tag for the following purposes:
 
-To enable NFC for sharing the onboarding payload in an NFC tag, set the :kconfig:option:`CONFIG_CHIP_NFC_ONBOARDING_PAYLOAD` Kconfig option.
+* Device onboarding, as an alternative to using a QR code.
+* Complete device commissioning, providing an option other than Bluetooth LE.
+
+To share the onboarding payload in a simple NFC Type 2 Tag, set the :kconfig:option:`CONFIG_CHIP_NFC_ONBOARDING_PAYLOAD` Kconfig option.
+This mode only emulates the setup code in an NDEF message and still uses Bluetooth LE for the commissioning session.
+
+For full commissioning over NFC on Nordic Semiconductor DKs with the NFCT peripheral, set the :kconfig:option:`CONFIG_CHIP_NFC_BASED_COMMISSIONING` Kconfig option instead.
+This enables the Matter NFC Transport Layer (NTL) on the accessory side and serves the onboarding payload from the NDEF Tag Application, in addition to the regular Bluetooth LE commissioning.
+As soon as the Matter server finishes initializing, the onboarding payload with the NFC rendezvous flag is written to the NFC tag.
+Commission the device by tapping the tag with an NFC commissioner that supports Matter NTL; no button press is required.
+The setup code is also printed to the UART log with the NFC rendezvous flag.
+Once commissioning completes successfully, NFC tag emulation is automatically stopped.
+See the :ref:`matter_template_sample` for an example build configuration with the  :kconfig:option:`CONFIG_CHIP_NFC_BASED_COMMISSIONING` Kconfig option set to ``y``
+
+.. note::
+   :kconfig:option:`CONFIG_CHIP_NFC_BASED_COMMISSIONING` and :kconfig:option:`CONFIG_CHIP_NFC_ONBOARDING_PAYLOAD` are mutually exclusive.
+
+For more details about enabling and using NFC-based commissioning in |NCS| Matter samples, see the :ref:`matter_template_sample` advanced configuration section.
 
 .. _ug_matter_configuring_optional_persistent_subscriptions:
 

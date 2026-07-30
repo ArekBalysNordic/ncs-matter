@@ -19,5 +19,7 @@ Added:
    * The Matter samples and applications migrated from the |NCS|.
    * The Matter configuration options migrated from the |NCS|.
    * The Matter software maturity levels migrated from the |NCS|.
+   * The NFC Commissioning Manager implementation.
+     See :ref:`ug_matter_configuring_optional_nfc` for more details.
 
 * Integration of |addon| with the |NCS| v3.4.0.

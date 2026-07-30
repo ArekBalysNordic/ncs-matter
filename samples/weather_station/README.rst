@@ -129,6 +129,7 @@ Advanced configuration options
 
 .. include:: /includes/configuration/advanced/intro.txt
 .. include:: /includes/configuration/advanced/dfu.txt
+.. include:: /includes/configuration/advanced/nfc_commissioning.txt
 
 Building and running
 ********************

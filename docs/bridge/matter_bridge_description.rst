@@ -422,6 +422,12 @@ The |matter_type| supports the following build configurations:
 
 .. include:: /includes/configuration/basic_internal_53ek.txt
 
+Advanced configuration options
+==============================
+
+.. include:: /includes/configuration/advanced/intro.txt
+.. include:: /includes/configuration/advanced/nfc_commissioning.txt
+
 .. _matter_bridge_app_bridged_support_configs:
 
 Bridged device configuration
