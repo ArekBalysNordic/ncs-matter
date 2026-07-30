@@ -18,6 +18,10 @@
 #include <setup_payload/OnboardingCodesUtil.h>
 #endif
 
+#ifdef CONFIG_CHIP_NFC_BASED_COMMISSIONING
+#include <platform/internal/NFCCommissioningManager.h>
+#endif
+
 #include <zephyr/logging/log.h>
 
 LOG_MODULE_DECLARE(app, CONFIG_CHIP_APP_LOG_LEVEL);
@@ -52,6 +56,13 @@ void DefaultEventHandler(const ChipDeviceEvent *event, intptr_t /* unused */)
 			}
 		} else if (event->CHIPoBLEAdvertisingChange.Result == kActivity_Stopped) {
 			TEMPORARY_RETURN_IGNORED NFCOnboardingPayloadMgr().StopTagEmulation();
+		}
+#endif
+#ifdef CONFIG_CHIP_NFC_BASED_COMMISSIONING
+		if (event->CHIPoBLEAdvertisingChange.Result == kActivity_Started &&
+		    chip::DeviceLayer::Internal::NFCCommissioningMgrImpl().HasOnboardingPayload()) {
+			LOG_INF("BLE commissioning attempted while NFC commissioning is active; "
+				"the device tries NFC first and falls back to BLE, which may delay pairing");
 		}
 #endif
 		break;

@@ -63,6 +63,10 @@
 #include <platform/nrfconnect/ExternalFlashManager.h>
 #include <setup_payload/OnboardingCodesUtil.h>
 
+#ifdef CONFIG_CHIP_NFC_BASED_COMMISSIONING
+#include <platform/internal/NFCCommissioningManager.h>
+#endif
+
 #include <zephyr/logging/log.h>
 
 LOG_MODULE_DECLARE(app, CONFIG_CHIP_APP_LOG_LEVEL);
@@ -313,6 +317,10 @@ void DoInitChipServer(intptr_t /* unused */)
 	SetDeviceInstanceInfoProvider(&DeviceInstanceInfoProviderMgrImpl());
 	SetDeviceAttestationCredentialsProvider(Examples::GetExampleDACProvider());
 	/* The default CommissionableDataProvider is set internally in the GenericConfigurationManagerImpl::Init(). */
+#endif
+
+#ifdef CONFIG_CHIP_NFC_BASED_COMMISSIONING
+	TEMPORARY_RETURN_IGNORED chip::DeviceLayer::Internal::NFCCommissioningMgrImpl().ConfigureOnboardingPayload();
 #endif
 
 #if CHIP_SYSTEM_CONFIG_USE_OPENTHREAD_ENDPOINT
