@@ -1,8 +1,8 @@
 .. _ug_matter:
 .. _ug_chip:
 
-Matter
-######
+Matter description
+##################
 
 .. contents::
    :local:
@@ -17,7 +17,7 @@ If you want to go through a hands-on online training to familiarize yourself wit
 
 .. matter_intro_end
 
-|addon| |release| allows you to develop applications with Matter specification version 1.5.0 and `Matter SDK version`_ 1.5.0.0.
+|addon| |release| allows you to develop applications with Matter specification version 1.6.0 and `Matter SDK version`_ 1.6.0.0.
 For a full list of |NCS| and Matter versions, view the following table:
 
 .. toggle:: nRF Connect SDK, Matter specification, and Matter SDK versions
@@ -25,7 +25,7 @@ For a full list of |NCS| and Matter versions, view the following table:
    +-----------------------+--------------------------+-----------------------------------------------------+------------------------+
    | Matter Add-on version | nRF Connect SDK version  | Matter specification version                        | Matter SDK version     |
    +=======================+==========================+=====================================================+========================+
-   | |release|             | v3.4.0                   | :ref:`1.5.0 <ug_matter_overview_dev_model_support>` | 1.5.0.0                |
+   | 1.0.0                 | v3.4.0                   | :ref:`1.6.0 <ug_matter_overview_dev_model_support>` | 1.6.0.0                |
    +-----------------------+--------------------------+-----------------------------------------------------+------------------------+
 
 .. note::

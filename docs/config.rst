@@ -13,7 +13,6 @@ To use the add-on in a Matter application, enable the :kconfig:option:`CONFIG_CH
 This option enables the Matter protocol stack and other associated features and components.
 
 |config|
-|kconfig_search|
 
 .. _ncs_matter_kconfig:
 
