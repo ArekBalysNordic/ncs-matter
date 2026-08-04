@@ -20,7 +20,7 @@ Matter in the |NCS|
 *******************
 
 The |NCS| provides full toolchain for Linux, macOS, and Windows, and is built on top of the Zephyr RTOS.
-It includes west for managing repositories, toolchain manager for managing toolchain, Kconfig for feature configuration, and Devicetree for board description.
+It includes west for managing repositories, toolchain manager for managing toolchain, Kconfig for feature configuration, and devicetree for board description.
 Finally, it integrates the OpenThread and Wi-Fi stacks, both of which can work in a multiprotocol scenario with the integrated Bluetooth LE stack.
 
 Nordic Semiconductor integrates the Matter stack in the |NCS| using a `dedicated Matter fork`_.
@@ -31,11 +31,45 @@ For more information about Matter architecture and Matter in the |NCS|, read :re
 
 .. _ug_matter_overview_dev_model_support:
 
+Supported Matter versions in the |addon|
+========================================
+
+The table below lists the Matter versions supported in the |addon|, along with their main changes, release dates, and the corresponding |NCS| base version.
+Starting with Matter 1.6, support is provided through the |addon|.
+For earlier Matter versions, see :ref:`ug_matter_overview_dev_model_support_ncs`.
+
++-----------------+----------------------------------------------------------------------------------------------------------+-----------------------+------------------+-------------------------+
+|                 |                                                                                                          | Specification         | |NCS| version    | Matter Add-on version   |
+| Matter version  | Overview of changes                                                                                      | release date          |                  |                         |
++=================+==========================================================================================================+=======================+==================+=========================+
+| 1.6.0           | - Joint Fabric support graduated from provisional to certifiable                                         | June 17, 2026         | v3.4.0           | v1.0.0                  |
+|                 | - Added three new provisional clusters: Groupcast (group messaging), Ambient Context Sensing, and        |                       |                  |                         |
+|                 |   Temperature Alarm.                                                                                     |                       |                  |                         |
+|                 | - Energy Preference cluster graduated from provisional to certifiable.                                   |                       |                  |                         |
+|                 | - Updated Thermostat cluster with Thermostat Suggestions that replaces legacy schedule                   |                       |                  |                         |
+|                 |   configuration with controller-driven heating/cooling suggestions and related events.                   |                       |                  |                         |
+|                 | - Updated Occupancy Sensing cluster with Occupancy Event reporting.                                      |                       |                  |                         |
+|                 | - Updated Group Key Management cluster with Groupcast adoption support for multicast group               |                       |                  |                         |
+|                 |   messaging.                                                                                             |                       |                  |                         |
+|                 | - Updated Boolean State cluster with Change Event feature for state-transition notifications.            |                       |                  |                         |
+|                 | - Updated Access Control cluster with Auxiliary ACL support for extended access-control lists.           |                       |                  |                         |
+|                 | - Enhanced Camera AV Stream Management with configurable image rotation angles.                          |                       |                  |                         |
+|                 | - Measurement clusters harmonized (Flow, Illuminance, Pressure, Temperature, Water Content,              |                       |                  |                         |
+|                 |   Concentration Measurement) with aligned revisions and attribute sets.                                  |                       |                  |                         |
+|                 | - Added support for certifiable NFC Commissioning.                                                       |                       |                  |                         |
++-----------------+----------------------------------------------------------------------------------------------------------+-----------------------+------------------+-------------------------+
+
+.. _ug_matter_overview_dev_model_support_ncs:
+
 Supported Matter versions in the |NCS|
 ======================================
 
-The following table lists Matter versions supported in the |NCS|, with a brief overview of changes.
-The table also lists the release date for that Matter specification version, and the version of the |NCS| that added support for it.
+The table below shows which Matter versions are supported in the |NCS|, along with main changes, release dates, and the |NCS| version that starts supporting the Matter version.
+
+.. important::
+
+   Matter samples were removed from the |NCS| starting with the first major release after v3.4.0, and have been moved to the |addon|.
+   The table below lists the Matter versions supported in the |NCS| before the integration was transitioned to the |addon|.
 
 +-----------------+----------------------------------------------------------------------------------------------------------+-----------------------+------------------+
 |                 |                                                                                                          | Specification         | |NCS| version    |
