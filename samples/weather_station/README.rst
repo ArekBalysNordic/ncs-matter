@@ -1,5 +1,5 @@
 .. |matter_name| replace:: weather station
-.. |matter_type| replace:: application
+.. |matter_type| replace:: sample
 .. |matter_dks_thread| replace:: ``thingy53/nrf5340/cpuapp`` and ``nrf54l15tag/nrf54l15/cpuapp`` board targets
 .. |matter_dks_wifi| replace:: ``thingy53/nrf5340/cpuapp`` board target with the ``nrf7002eb`` expansion board attached
 .. |sample path| replace:: :file:`applications/matter_weather_station`
