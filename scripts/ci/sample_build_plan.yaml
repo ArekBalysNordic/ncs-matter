@@ -28,6 +28,7 @@ always_build:
     platform:
       - nrf54lm20dk/nrf54lm20b/cpuapp
 
+
 # Changes to these paths trigger a full integration build of all samples.
 full_build_paths:
   - west.yml
