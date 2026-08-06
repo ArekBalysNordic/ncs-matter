@@ -11,6 +11,10 @@ twister:
   integration: true
   testcase_root: samples
   scenario_prefix: sample.matter.
+  # Optional. Kconfig options added to every twister build as -x/--extra-args.
+  extra_args:
+    - CONFIG_RESET_ON_FATAL_ERROR=n
+    - CONFIG_OPENTHREAD_SHELL=y
 
 # Scenarios always included in PR builds (in addition to path trigger matches).
 # The scenarios here must reflect the integration scope of the project.
