@@ -105,8 +105,6 @@
 .. _Matter Simple Setup for Thread Overview: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-thread-overview.html
 .. _Matter factory data Kconfig options: https://nrfconnectdocs.nordicsemi.com/ncs/latest/kconfig/index.html#!CHIP_FACTORY_DATA
 .. _Matter nRF Connect Kconfig: https://github.com/nrfconnect/sdk-connectedhomeip/blob/5e2e5a02d6/config/nrfconnect/chip-module/Kconfig
-.. _Matter nRF Connect SDK Platform Certificate_1_4_2: https://csa-iot.org/csa_product/nrf-connect-sdk/
-.. _Matter nRF Connect SDK Platform Certificate_1_5_0: https://csa-iot.org/csa_product/nrf-connect-sdk-with-nrf52-nrf53-and-nrf54l-series-socs/
 .. _Matter nRF Connect platform source files: https://github.com/nrfconnect/sdk-connectedhomeip/tree/5e2e5a02d6/src/platform/nrfconnect
 .. _Matter nRF Connect scripts: https://github.com/nrfconnect/sdk-connectedhomeip/tree/5e2e5a02d6/scripts/tools/nrfconnect
 .. _Nordic Developer Academy: https://academy.nordicsemi.com/
@@ -130,9 +128,18 @@
 .. _nRF Connect for Desktop: https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop
 .. _nRF Door Lock and Access Control Add-on: https://nrfconnectdocs.nordicsemi.com/addons/door_lock_and_access_control/latest/index.html
 .. _nRF Util: https://docs.nordicsemi.com/bundle/nrfutil/page/README.html
-.. _nRF52840 Compatibility Matrix: https://docs.nordicsemi.com/bundle/comp_matrix_nrf52840/page/COMP/nrf52840/nrf52840_comp_matrix.html
-.. _nRF5340 Compatibility Matrix: https://docs.nordicsemi.com/bundle/comp_matrix_nrf5340/page/COMP/nrf5340/nrf5340_comp_matrix.html
-.. _nRF54L15 Compatibility Matrix: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54l15/page/COMP/nrf54l15/nrf54l15_nrf_connect_sdk.html
+.. _`nRF52840 Compatibility Matrix`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf52840/page/COMP/nrf52840/nrf52840_comp_matrix.html
+.. _`nRF5340 Compatibility Matrix`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf5340/page/COMP/nrf5340/nrf5340_comp_matrix.html
+.. _`nRF54LM20B Compatibility Matrix`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54lm20a/page/COMP/nrf54lm20a/nrf54lm20a_comp_matrix.html
+.. _`nRF54LM20A Compatibility Matrix`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54lm20a/page/COMP/nrf54lm20a/nrf54lm20a_comp_matrix.html
+.. _`nRF54L15 Compatibility Matrix`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54l15/page/COMP/nrf54l15/nrf54l15_comp_matrix.html
+.. _`nRF54L10 Compatibility Matrix`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54l10/page/COMP/nrf54l10/nrf54l10_comp_matrix.html
+.. _`Matter CIDs for nRF54LM20B`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54lm20a/page/COMP/nrf54lm20a/nrf54lm20a_matter_cids.html
+.. _`Matter CIDs for nRF54LM20A`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54lm20a/page/COMP/nrf54lm20a/nrf54lm20a_matter_cids.html
+.. _`Matter CIDs for nRF54L15`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54l15/page/COMP/nrf54l15/nrf54l15_matter_cids.html
+.. _`Matter CIDs for nRF54L10`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54l10/page/COMP/nrf54l10/nrf54l10_matter_cids.html
+.. _`Matter CIDs for nRF5340`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf5340/page/COMP/nrf5340/nrf5340_matter_cids.html
+.. _`Matter CIDs for nRF52840`: https://docs.nordicsemi.com/bundle/comp_matrix_nrf52840/page/COMP/nrf52840/nrf52840_matter_cids.html
 .. _other controller setups: https://github.com/nrfconnect/sdk-connectedhomeip/tree/5e2e5a02d6/src/controller
 .. _zcbor: https://github.com/NordicSemiconductor/zcbor
 
@@ -231,7 +238,7 @@
 .. _Join Thread Group: https://www.threadgroup.org/What-is-Thread/Join
 .. _Matter Resource Kit: https://community.csa-iot.org/page/matter-resource-kit
 .. _Bluetooth SIG's Assigned Numbers: https://www.bluetooth.com/specifications/assigned-numbers/
-.. _nRF54L15 SoC Compatibility Matrix: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54l15/page/COMP/nrf54l15/nrf54l15_nrf_connect_sdk.html
+.. _nRF54L15 SoC Compatibility Matrix: https://docs.nordicsemi.com/bundle/comp_matrix_nrf54l15/page/COMP/nrf54l15/nrf54l15_comp_matrix.html
 .. _nrf52840dk: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf52840dk/doc/index.html
 .. _nrf5340dk: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf5340dk/doc/index.html
 .. _nrf21540dk: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf21540dk/doc/index.html
