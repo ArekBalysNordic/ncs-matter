@@ -28,7 +28,7 @@ tests:
       - FILE_SUFFIX=release
       - CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE=n
       - CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE=y
-      - matter_bridge_SHIELD=nrf7002eb2
+      - bridge_SHIELD=nrf7002eb2
       - SB_CONFIG_WIFI_NRF70=y
     integration_platforms:
       - nrf54lm20dk/nrf54lm20b/cpuapp
@@ -56,7 +56,7 @@ tests:
     extra_args:
       - CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE=n
       - CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE=y
-      - matter_bridge_SHIELD=nrf7002eb2
+      - bridge_SHIELD=nrf7002eb2
       - SB_CONFIG_WIFI_NRF70=y
     integration_platforms:
       - nrf54lm20dk/nrf54lm20b/cpuapp
@@ -86,7 +86,7 @@ tests:
       - CONFIG_BRIDGED_DEVICE_BT=y
       - CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE=n
       - CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE=y
-      - matter_bridge_SHIELD=nrf7002eb2
+      - bridge_SHIELD=nrf7002eb2
       - SB_CONFIG_WIFI_NRF70=y
     integration_platforms:
       - nrf54lm20dk/nrf54lm20b/cpuapp
@@ -118,7 +118,7 @@ tests:
       - CONFIG_BRIDGED_DEVICE_BT=y
       - CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE=n
       - CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE=y
-      - matter_bridge_SHIELD=nrf7002eb2
+      - bridge_SHIELD=nrf7002eb2
       - SB_CONFIG_WIFI_NRF70=y
     integration_platforms:
       - nrf54lm20dk/nrf54lm20b/cpuapp
@@ -148,7 +148,7 @@ tests:
       - CONFIG_BRIDGED_DEVICE_BT=y
       - CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE=n
       - CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE=y
-      - matter_bridge_SHIELD=nrf7002eb2
+      - bridge_SHIELD=nrf7002eb2
       - SB_CONFIG_WIFI_NRF70=y
     integration_platforms:
       - nrf54lm20dk/nrf54lm20b/cpuapp

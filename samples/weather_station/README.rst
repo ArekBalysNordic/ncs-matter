@@ -213,7 +213,7 @@ Building for the nRF7002 Wi-Fi expansion board
 
          .. group-tab:: |nRFVSC|
 
-            To build the application in the |nRFVSC| IDE for Thingy:53 with the nRF7002 EB attached, add ``-Dmatter_weather_station_SHIELD=nrf7002eb -DFILE_SUFFIX=release -DSB_CONFIG_WIFI_NRF70=y`` to :guilabel:`Extra CMake arguments` in your build configuration.
+            To build the application in the |nRFVSC| IDE for Thingy:53 with the nRF7002 EB attached, add ``-Dweather_station_SHIELD=nrf7002eb -DFILE_SUFFIX=release -DSB_CONFIG_WIFI_NRF70=y`` to :guilabel:`Extra CMake arguments` in your build configuration.
 
          .. group-tab:: Command line
 
@@ -221,7 +221,7 @@ Building for the nRF7002 Wi-Fi expansion board
 
             .. code-block:: console
 
-               west build -b thingy53/nrf5340/cpuapp -- -Dmatter_weather_station_SHIELD=nrf7002eb -DFILE_SUFFIX=release -DSB_CONFIG_WIFI_NRF70=y
+               west build -b thingy53/nrf5340/cpuapp -- -Dweather_station_SHIELD=nrf7002eb -DFILE_SUFFIX=release -DSB_CONFIG_WIFI_NRF70=y
 
 Testing
 *******

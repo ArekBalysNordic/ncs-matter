@@ -31,7 +31,7 @@ Internal memory only
 
        .. group-tab:: |nRFVSC|
 
-          Add ``-DCONFIG_CHIP_DFU_OVER_BT_SMP=y -DFILE_SUFFIX=internal -D<sample_name>_EXTRA_CONF_FILE=prj_release.conf`` to :guilabel:`Extra CMake arguments` in your build configuration, replacing ``<sample_name>`` with the actual |matter_type| name (for example ``light_bulb`` or ``matter_bridge``).
+          Add ``-DCONFIG_CHIP_DFU_OVER_BT_SMP=y -DFILE_SUFFIX=internal -D<sample_name>_EXTRA_CONF_FILE=prj_release.conf`` to :guilabel:`Extra CMake arguments` in your build configuration, replacing ``<sample_name>`` with the actual |matter_type| directory name (for example ``light_bulb`` or ``bridge``).
 
        .. group-tab:: Command line
 

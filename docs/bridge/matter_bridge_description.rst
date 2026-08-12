@@ -501,7 +501,7 @@ Configuring the number of Bluetooth LE bridged devices
 
                   .. group-tab:: |nRFVSC|
 
-                     Add ``-DSB_CONFIG_WIFI_NRF70=y -Dmatter_bridge_SHIELD=nrf7002eb2 -DCONFIG_BRIDGED_DEVICE_BT=y -DEXTRA_CONF_FILE="bt_max_connections_app.conf"`` to :guilabel:`Extra CMake arguments` in your build configuration.
+                     Add ``-DSB_CONFIG_WIFI_NRF70=y -Dbridge_SHIELD=nrf7002eb2 -DCONFIG_BRIDGED_DEVICE_BT=y -DEXTRA_CONF_FILE="bt_max_connections_app.conf"`` to :guilabel:`Extra CMake arguments` in your build configuration.
 
                   .. group-tab:: Command line
 
@@ -510,7 +510,7 @@ Configuring the number of Bluetooth LE bridged devices
                      .. parsed-literal::
                         :class: highlight
 
-                        west build -b nrf54lm20dk/nrf54lm20b/cpuapp -- -DSB_CONFIG_WIFI_NRF70=y -Dmatter_bridge_SHIELD=nrf7002eb2 -DCONFIG_BRIDGED_DEVICE_BT=y -DEXTRA_CONF_FILE="bt_max_connections_app.conf"
+                        west build -b nrf54lm20dk/nrf54lm20b/cpuapp -- -DSB_CONFIG_WIFI_NRF70=y -Dbridge_SHIELD=nrf7002eb2 -DCONFIG_BRIDGED_DEVICE_BT=y -DEXTRA_CONF_FILE="bt_max_connections_app.conf"
 
             .. group-tab:: Matter bridge over Thread
 
