@@ -78,5 +78,5 @@ jobs:
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           issue-number: ${{ env.PR }}
-          body-path: comment.txt
+          body-path: docs/comment.txt
           edit-mode: replace

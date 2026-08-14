@@ -110,31 +110,28 @@ jobs:
           mv "${MONITOR}" "$PUBLISH"
           if [[ -f pr.txt ]]; then mv pr.txt "$PUBLISH"; fi
 
-      - name: Find Matter add-on edited documents
-        if: github.event_name == 'pull_request'
-        run: |
-          PUBLISH="docs/publish"
-          mkdir -p "$PUBLISH"
-          COMMENT="${PUBLISH}/comment.txt"
-          PREFIX="${{ vars.NCS_DOC_PR_HOSTING_URL }}addons/${{ env.DOC_ADDON_NAME }}/PR-${{ github.event.pull_request.number }}/"
-          CHANGED=$(git diff --name-only --diff-filter=d "${{ github.event.pull_request.base.sha }}..HEAD")
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            COMMENT="${PUBLISH}/comment.txt"
+            PREFIX="${{ vars.NCS_DOC_PR_HOSTING_URL }}addons/${{ env.DOC_ADDON_NAME }}/PR-${{ github.event.pull_request.number }}/"
+            CHANGED=$(git diff --name-only --diff-filter=d "${{ github.event.pull_request.base.sha }}..HEAD")
 
-          echo "You can find the documentation preview for this PR [here](${PREFIX})." > "${COMMENT}"
+            echo "You can find the documentation preview for this PR [here](${PREFIX})." > "${COMMENT}"
 
-          DOCS=$(echo "$CHANGED" | \
-                grep -e "^docs/" | \
-                grep -e ".rst$" | \
-                sed -e "s#^docs\(.*\)\.rst#${PREFIX}\1.html#g")
+            DOCS=$(echo "$CHANGED" | \
+                  grep -e "^docs/" | \
+                  grep -e ".rst$" | \
+                  sed -e "s#^docs\(.*\)\.rst#${PREFIX}\1.html#g" || true)
 
-          SAMPLES=$(echo "$CHANGED" | \
-                    grep -e "^samples/" | \
-                    grep -e ".rst$" | \
-                    sed -e "s#^samples\(.*\)\.rst#${PREFIX}samples\1.html#g")
+            SAMPLES=$(echo "$CHANGED" | \
+                      grep -e "^samples/" | \
+                      grep -e ".rst$" | \
+                      sed -e "s#^samples\(.*\)\.rst#${PREFIX}samples\1.html#g" || true)
 
-          DOCS_ALL=$(printf "%s\n%s" "$DOCS" "$SAMPLES" | sed '/^$/d')
+            DOCS_ALL=$(printf "%s\n%s" "$DOCS" "$SAMPLES" | sed '/^$/d')
 
-          if [ -n "$DOCS_ALL" ]; then
-            printf "\nPreview links for modified Matter add-on documents:\n\n%s" "$DOCS_ALL" >> "${COMMENT}"
+            if [ -n "$DOCS_ALL" ]; then
+              printf "\nPreview links for modified Matter add-on documents:\n\n%s" "$DOCS_ALL" >> "${COMMENT}"
+            fi
           fi
 
       - name: Store
