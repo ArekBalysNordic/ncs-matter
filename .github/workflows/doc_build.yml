@@ -112,26 +112,42 @@ jobs:
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             COMMENT="${PUBLISH}/comment.txt"
-            PREFIX="${{ vars.NCS_DOC_PR_HOSTING_URL }}addons/${{ env.DOC_ADDON_NAME }}/PR-${{ github.event.pull_request.number }}/"
+            HOST="${{ vars.NCS_DOC_PR_HOSTING_URL }}"
+            if [ -z "${HOST}" ]; then
+              HOST="https://ncsbmdoc.z6.web.core.windows.net/"
+            fi
+            HOST="${HOST%/}/"
+            PREFIX="${HOST}addons/${{ env.DOC_ADDON_NAME }}/PR-${{ github.event.pull_request.number }}/"
             CHANGED=$(git diff --name-only --diff-filter=d "${{ github.event.pull_request.base.sha }}..HEAD")
 
-            echo "You can find the documentation preview for this PR [here](${PREFIX})." > "${COMMENT}"
+            {
+              echo "You can find the documentation preview for this PR [here](${PREFIX})."
 
-            DOCS=$(echo "$CHANGED" | \
-                  grep -e "^docs/" | \
-                  grep -e ".rst$" | \
-                  sed -e "s#^docs\(.*\)\.rst#${PREFIX}\1.html#g" || true)
+              LINKS=""
+              while IFS= read -r file; do
+                [ -z "${file}" ] && continue
+                case "${file}" in
+                  docs/*.rst)
+                    html="${file#docs/}"
+                    html="${html%.rst}.html"
+                    ;;
+                  samples/*.rst)
+                    html="${file%.rst}.html"
+                    ;;
+                  *)
+                    continue
+                    ;;
+                esac
+                LINKS+="- [\`${file}\`](${PREFIX}${html})"$'\n'
+              done < <(echo "${CHANGED}" | grep -E '^(docs|samples)/.*\.rst$' || true)
 
-            SAMPLES=$(echo "$CHANGED" | \
-                      grep -e "^samples/" | \
-                      grep -e ".rst$" | \
-                      sed -e "s#^samples\(.*\)\.rst#${PREFIX}samples\1.html#g" || true)
-
-            DOCS_ALL=$(printf "%s\n%s" "$DOCS" "$SAMPLES" | sed '/^$/d')
-
-            if [ -n "$DOCS_ALL" ]; then
-              printf "\nPreview links for modified Matter add-on documents:\n\n%s" "$DOCS_ALL" >> "${COMMENT}"
-            fi
+              if [ -n "${LINKS}" ]; then
+                echo ""
+                echo "Preview links for modified Matter add-on documents:"
+                echo ""
+                printf "%s" "${LINKS}"
+              fi
+            } > "${COMMENT}"
           fi
 
       - name: Store
