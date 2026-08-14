@@ -8,3 +8,5 @@ Access Control List
    In this |matter_type|'s case, this allows the lighting devices to receive messages from the light switch and run them.
 
    For more details about ACLs, see the `Matter access control guide`_ in the Matter documentation.
+
+TEST

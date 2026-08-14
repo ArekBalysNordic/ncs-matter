@@ -23,6 +23,8 @@ Matter: Closure
 
 This sample demonstrates the usage of the :ref:`Matter <ug_matter>` application layer to build a closure device.
 
+TEST
+
 .. include:: /includes/introduction/no_sleep_thread_ftd_wifi.txt
 
 Requirements
