@@ -16,26 +16,27 @@ from unittest.mock import patch
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from zap_append import ZapAppend, add_cluster_to_zcl
-from zap_common import (DEFAULT_APP_TEMPLATES_RELATIVE_PATH, DEFAULT_RULES_RELATIVE_PATH, DEFAULT_ZAP_GENERATE_RELATIVE_PATH,
-                        DEFAULT_ZAP_VERSION_RELATIVE_PATH, DEFAULT_ZCL_JSON_RELATIVE_PATH, ZapInstaller, find_zap,
-                        post_process_generated_files, update_zcl_in_zap)
+from zap_common import (DEFAULT_APP_TEMPLATES_RELATIVE_PATH, DEFAULT_MATTER_PATH, DEFAULT_RULES_RELATIVE_PATH,
+                        DEFAULT_ZAP_GENERATE_RELATIVE_PATH, DEFAULT_ZAP_VERSION_RELATIVE_PATH, DEFAULT_ZCL_JSON_RELATIVE_PATH,
+                        ZapInstaller, find_zap, get_callback_templates_path, post_process_generated_files, update_zcl_in_zap)
 from zap_generate import ZapGenerate
 from zap_sync import ZapSync
 
 # fmt: on
 
 SCRIPT_DIR = Path(__file__).parent
-MATTER_BASE = SCRIPT_DIR.parent.parent.parent
+NCS_MATTER_BASE = SCRIPT_DIR.parent.parent.parent
+MATTER_SDK = DEFAULT_MATTER_PATH
 
-TEST_ZAP_FILE = SCRIPT_DIR.parent.parent.parent / "examples" / \
+TEST_ZAP_FILE = MATTER_SDK / "examples" / \
     "all-clusters-app" / "all-clusters-common" / "all-clusters-app.zap"
 TEST_ZAP_FILE_FULL = SCRIPT_DIR / "test_full.zap"
-BASE_ZCL_FILE = MATTER_BASE / DEFAULT_ZCL_JSON_RELATIVE_PATH
+BASE_ZCL_FILE = MATTER_SDK / DEFAULT_ZCL_JSON_RELATIVE_PATH
 TEST_ZCL_FILE = SCRIPT_DIR / "zcl_test.json"
 TEST_OBSOLETE_ZCL_FILE = SCRIPT_DIR / "zcl_obsolete.json"
 TEST_OBSOLETE_ZAP_FILE = SCRIPT_DIR / "test_obsolete.zap"
-APP_TEMPLATES_FILE = MATTER_BASE / DEFAULT_APP_TEMPLATES_RELATIVE_PATH
-VERSION_FILE = MATTER_BASE / DEFAULT_ZAP_VERSION_RELATIVE_PATH
+APP_TEMPLATES_FILE = MATTER_SDK / DEFAULT_APP_TEMPLATES_RELATIVE_PATH
+VERSION_FILE = MATTER_SDK / DEFAULT_ZAP_VERSION_RELATIVE_PATH
 TEST_SAMPLES_FILE = SCRIPT_DIR / "zap_samples.yml"
 
 
@@ -44,7 +45,7 @@ class TestWestZap(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.test_dir = MATTER_BASE / "test_dir"
+        cls.test_dir = NCS_MATTER_BASE / "test_dir"
         cls.test_zap_file = cls.test_dir / "test.zap"
         cls.test_zap_file_full = cls.test_dir / "test_full.zap"
         cls.zcl_json_file = cls.test_dir / "zcl.json"
@@ -78,6 +79,8 @@ class TestWestZap(unittest.TestCase):
         shutil.copy(TEST_ZAP_FILE, cls.test_zap_file)
         shutil.copy(VERSION_FILE, cls.version_file)
         shutil.copy(TEST_SAMPLES_FILE, cls.test_samples_file)
+
+        update_zcl_in_zap(cls.test_zap_file, cls.zcl_json_file, APP_TEMPLATES_FILE)
 
         with open(cls.version_file, 'r') as f:
             cls.recommended_version = f.read().strip()
@@ -146,7 +149,8 @@ class TestWestZap(unittest.TestCase):
         with open(self.test_zap_file, 'r') as f:
             updated_data = json.load(f)
             self.assertEqual(updated_data["package"][0]["path"], "zcl.json")
-            self.assertEqual(updated_data["package"][1]["path"], "../src/app/zap-templates/app-templates.json")
+            self.assertEqual(updated_data["package"][1]["path"],
+                             str(Path(self.app_templates).relative_to(self.test_zap_file.parent, walk_up=True)))
 
     def test_post_process_generated_files(self):
         """
@@ -272,7 +276,7 @@ class TestWestZap(unittest.TestCase):
             - The cluster is appended to the ZCL file correctly.
             - The custom attributes are added to the ZCL file correctly.
         """
-        add_cluster_to_zcl(BASE_ZCL_FILE, self.test_clusters, self.zcl_json_file, matter_path=MATTER_BASE)
+        add_cluster_to_zcl(BASE_ZCL_FILE, self.test_clusters, self.zcl_json_file, matter_path=MATTER_SDK)
 
         with open(self.zcl_json_file, 'r') as f:
             output_data = json.load(f)
@@ -334,16 +338,18 @@ class TestWestZap(unittest.TestCase):
         self.assertTrue(zap_installer.get_current_version() != "")
 
         # Run zap-generate command for simple generation
-        with patch('zap_generate.get_zap_generate_path', return_value=MATTER_BASE / DEFAULT_ZAP_GENERATE_RELATIVE_PATH):
-            with patch('zap_generate.get_app_templates_path', return_value=MATTER_BASE / DEFAULT_APP_TEMPLATES_RELATIVE_PATH):
-                with patch('zap_generate.ZapInstaller', return_value=zap_installer):
-                    ZapGenerate().do_run(Namespace(zap_file=self.test_zap_file,
-                                                   output=self.zap_output_dir,
-                                                   matter_path=self.test_dir,
-                                                   full=False,
-                                                   keep_previous=False,
-                                                   zcl=None,
-                                                   yaml=None), [])
+        with patch('zap_generate.get_zap_generate_path', return_value=MATTER_SDK / DEFAULT_ZAP_GENERATE_RELATIVE_PATH):
+            with patch('zap_generate.get_app_templates_path', return_value=MATTER_SDK / DEFAULT_APP_TEMPLATES_RELATIVE_PATH):
+                with patch('zap_generate.get_callback_templates_path',
+                           side_effect=lambda matter_path: get_callback_templates_path(MATTER_SDK)):
+                    with patch('zap_generate.ZapInstaller', return_value=zap_installer):
+                        ZapGenerate().do_run(Namespace(zap_file=self.test_zap_file,
+                                                       output=self.zap_output_dir,
+                                                       matter_path=self.test_dir,
+                                                       full=False,
+                                                       keep_previous=False,
+                                                       zcl=None,
+                                                       yaml=None), [])
 
         self.assertTrue(self.zap_output_dir.exists())
         self.assertTrue((self.zap_output_dir.parent / "test.matter").exists())
@@ -363,7 +369,7 @@ class TestWestZap(unittest.TestCase):
         if self.zcl_json_appended.exists():
             self.zcl_json_appended.unlink()
 
-        ZapAppend().do_run(Namespace(base=None, matter=MATTER_BASE, output=self.zcl_json_appended, clusters=self.test_clusters), [])
+        ZapAppend().do_run(Namespace(base=None, matter=MATTER_SDK, output=self.zcl_json_appended, clusters=self.test_clusters), [])
 
         self.assertTrue(self.zcl_json_appended.exists())
 
@@ -385,21 +391,29 @@ class TestWestZap(unittest.TestCase):
         """
 
         shutil.copy(TEST_ZAP_FILE_FULL, self.test_zap_file_full)
+        update_zcl_in_zap(self.test_zap_file_full, self.zcl_json_appended, APP_TEMPLATES_FILE)
 
         self.assertTrue(self.zcl_json_appended.exists())
 
+        # Mirror the yaml workflow: synchronize zap/zcl before generation.
+        with patch('zap_common.get_rules_path', return_value=MATTER_SDK / DEFAULT_RULES_RELATIVE_PATH):
+            ZapSync().do_run(Namespace(zap_file=self.test_zap_file_full, zcl_json=self.zcl_json_appended,
+                                       matter_path=MATTER_SDK, clusters=[str(c) for c in self.test_clusters]), [])
+
         # Run zap-generate command for full generation
         # Use the full zap file to generate the full data model.
-        with patch('zap_generate.get_zap_generate_path', return_value=MATTER_BASE / DEFAULT_ZAP_GENERATE_RELATIVE_PATH):
-            with patch('zap_generate.get_app_templates_path', return_value=MATTER_BASE / DEFAULT_APP_TEMPLATES_RELATIVE_PATH):
-                with patch('zap_generate.ZapInstaller', return_value=self.zap_installer):
-                    ZapGenerate().do_run(Namespace(zap_file=self.test_zap_file_full,
-                                                   output=self.zap_output_dir_full,
-                                                   matter_path=MATTER_BASE,
-                                                   full=True,
-                                                   keep_previous=False,
-                                                   zcl=self.zcl_json_appended,
-                                                   yaml=None), [])
+        with patch('zap_generate.get_zap_generate_path', return_value=MATTER_SDK / DEFAULT_ZAP_GENERATE_RELATIVE_PATH):
+            with patch('zap_generate.get_app_templates_path', return_value=MATTER_SDK / DEFAULT_APP_TEMPLATES_RELATIVE_PATH):
+                with patch('zap_generate.get_callback_templates_path',
+                           side_effect=lambda matter_path: get_callback_templates_path(MATTER_SDK)):
+                    with patch('zap_generate.ZapInstaller', return_value=self.zap_installer):
+                        ZapGenerate().do_run(Namespace(zap_file=self.test_zap_file_full,
+                                                       output=self.zap_output_dir_full,
+                                                       matter_path=MATTER_SDK,
+                                                       full=True,
+                                                       keep_previous=False,
+                                                       zcl=self.zcl_json_appended,
+                                                       yaml=None), [])
 
         # Check full generation
         self._check_full_generation(self.zap_output_dir_full, self.cluster_names)
@@ -420,16 +434,18 @@ class TestWestZap(unittest.TestCase):
             ZEPHYR_BASE = os.environ.get('ZEPHYR_BASE', "")
             samples_yml_content = f.read()
             samples_yml_content = samples_yml_content.replace(
-                "base_dir: ../modules/lib/matter/test_dir", f"base_dir: {self.test_dir.relative_to(Path(ZEPHYR_BASE), walk_up=True)}")
+                "base_dir: ../ncs-matter/test_dir", f"base_dir: {self.test_dir.relative_to(Path(ZEPHYR_BASE), walk_up=True)}")
             with open(self.test_samples_file, 'w') as f:
                 f.write(samples_yml_content)
 
             # Run generate using the yaml file
-        with patch('zap_generate.get_zap_generate_path', return_value=MATTER_BASE / DEFAULT_ZAP_GENERATE_RELATIVE_PATH):
-            with patch('zap_generate.get_app_templates_path', return_value=MATTER_BASE / DEFAULT_APP_TEMPLATES_RELATIVE_PATH):
-                with patch('zap_generate.ZapInstaller', return_value=self.zap_installer):
-                    ZapGenerate().do_run(Namespace(zap_file=None, output=self.zap_output_dir_samples_yml,
-                                                   matter_path=MATTER_BASE, full=None, keep_previous=False, zcl=None, yaml=self.test_samples_file), [])
+        with patch('zap_generate.get_zap_generate_path', return_value=MATTER_SDK / DEFAULT_ZAP_GENERATE_RELATIVE_PATH):
+            with patch('zap_generate.get_app_templates_path', return_value=MATTER_SDK / DEFAULT_APP_TEMPLATES_RELATIVE_PATH):
+                with patch('zap_generate.get_callback_templates_path',
+                           side_effect=lambda matter_path: get_callback_templates_path(MATTER_SDK)):
+                    with patch('zap_generate.ZapInstaller', return_value=self.zap_installer):
+                        ZapGenerate().do_run(Namespace(zap_file=None, output=self.zap_output_dir_samples_yml,
+                                                       matter_path=MATTER_SDK, full=None, keep_previous=False, zcl=None, yaml=self.test_samples_file), [])
 
         # Check full generation
         self._check_full_generation(self.zap_output_dir_samples_yml, self.cluster_names)
@@ -511,6 +527,7 @@ class TestWestZap(unittest.TestCase):
         # Input files should exist.
         self.assertTrue(self.zcl_json_appended.exists())
         shutil.copy(TEST_ZAP_FILE_FULL, self.test_zap_file_full)
+        update_zcl_in_zap(self.test_zap_file_full, self.zcl_json_appended, APP_TEMPLATES_FILE)
 
         # Copy the obsolete zcl.json file to the test directory.
         shutil.copy(TEST_OBSOLETE_ZCL_FILE, self.test_obsolete_zcl_file)
@@ -518,9 +535,9 @@ class TestWestZap(unittest.TestCase):
         shutil.copy(TEST_OBSOLETE_ZAP_FILE, self.test_obsolete_zap_file)
 
         # Run zap-sync command
-        with patch('zap_common.get_rules_path', return_value=MATTER_BASE / DEFAULT_RULES_RELATIVE_PATH):
+        with patch('zap_common.get_rules_path', return_value=MATTER_SDK / DEFAULT_RULES_RELATIVE_PATH):
             ZapSync().do_run(Namespace(zap_file=self.test_obsolete_zap_file, zcl_json=self.test_obsolete_zcl_file,
-                                       matter_path=MATTER_BASE, clusters=self.test_clusters), [])
+                                       matter_path=MATTER_SDK, clusters=self.test_clusters), [])
 
         # Check whether the custom clusters are still present in the ZAP file.
         with open(self.test_obsolete_zap_file, 'r') as f:
@@ -534,11 +551,13 @@ class TestWestZap(unittest.TestCase):
             self.assertIn("Cluster2", content)
 
         # Run zap-generate command
-        with patch('zap_generate.get_zap_generate_path', return_value=MATTER_BASE / DEFAULT_ZAP_GENERATE_RELATIVE_PATH):
-            with patch('zap_generate.get_app_templates_path', return_value=MATTER_BASE / DEFAULT_APP_TEMPLATES_RELATIVE_PATH):
-                with patch('zap_generate.ZapInstaller', return_value=self.zap_installer):
-                    ZapGenerate().do_run(Namespace(zap_file=self.test_obsolete_zap_file, output=self.zap_output_dir_synced,
-                                                   matter_path=MATTER_BASE, full=True, keep_previous=False, zcl=self.test_obsolete_zcl_file, yaml=None), [])
+        with patch('zap_generate.get_zap_generate_path', return_value=MATTER_SDK / DEFAULT_ZAP_GENERATE_RELATIVE_PATH):
+            with patch('zap_generate.get_app_templates_path', return_value=MATTER_SDK / DEFAULT_APP_TEMPLATES_RELATIVE_PATH):
+                with patch('zap_generate.get_callback_templates_path',
+                           side_effect=lambda matter_path: get_callback_templates_path(MATTER_SDK)):
+                    with patch('zap_generate.ZapInstaller', return_value=self.zap_installer):
+                        ZapGenerate().do_run(Namespace(zap_file=self.test_obsolete_zap_file, output=self.zap_output_dir_synced,
+                                                       matter_path=MATTER_SDK, full=True, keep_previous=False, zcl=self.test_obsolete_zcl_file, yaml=None), [])
 
         # Check full generation
         self._check_full_generation(self.zap_output_dir_synced, self.cluster_names)

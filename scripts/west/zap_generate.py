@@ -14,7 +14,8 @@ import yaml
 from west import log
 from west.commands import CommandError, WestCommand
 from zap_common import (DEFAULT_MATTER_PATH, ZapInstaller, existing_dir_path, existing_file_path, find_zap, get_app_templates_path,
-                        get_default_zcl_json_path, get_zap_generate_path, post_process_generated_files, update_zcl_in_zap)
+                        get_callback_templates_path, get_default_zcl_json_path, get_zap_generate_path, post_process_generated_files,
+                        update_zcl_in_zap)
 from zap_sync import ZapSync
 
 # fmt: off
@@ -78,6 +79,7 @@ class ZapGenerate(WestCommand):
     def do_run(self, args, unknown_args):
         self.zap_generate_path = get_zap_generate_path(args.matter_path)
         app_templates_path = get_app_templates_path(args.matter_path)
+        callback_templates_path = get_callback_templates_path(args.matter_path)
 
         if args.yaml and args.zap_file:
             raise CommandError("Cannot use both -y and -z at the same time")
@@ -173,6 +175,7 @@ class ZapGenerate(WestCommand):
             log.inf(f"ZAP file: {zap.zap_file.resolve()}")
             log.inf(f"Output path: {output_path}")
             log.inf(f"App templates path: {app_templates_path}")
+            log.inf(f"Callback templates path: {callback_templates_path}")
             log.inf(f"Full: {args.full}")
             log.inf(f"Keep previous: {args.keep_previous}")
             log.inf(f"ZCL file: {zap.zcl_file.resolve() if zap.zcl_file else get_default_zcl_json_path(args.matter_path).resolve()}")
@@ -185,6 +188,9 @@ class ZapGenerate(WestCommand):
 
             # Generate source files
             self.check_call(self.build_command(zap.zap_file, output_path, app_templates_path))
+
+            # Generate callback files omitted from upstream app-templates.json
+            self.check_call(self.build_command(zap.zap_file, output_path, callback_templates_path))
 
             # Generate .matter file
             self.check_call(self.build_command(zap.zap_file, output_path))
