@@ -9,6 +9,7 @@
 #include "app/fabric_table_delegate.h"
 #include "app/group_data_provider.h"
 #include "clusters/cluster_init.h"
+#include "clusters/thread_network_diagnostics.h"
 #include "migration/migration_manager.h"
 
 #ifdef CONFIG_MATTER_SETTINGS_SHELL
@@ -456,6 +457,8 @@ CHIP_ERROR StartServer()
 	if (!nrf_matter_cluster_init_run_all()) {
 		return CHIP_ERROR_INTERNAL;
 	}
+
+	ReturnErrorOnFailure(InitThreadNetworkDiagnosticsCluster());
 
 	return CHIP_NO_ERROR;
 }

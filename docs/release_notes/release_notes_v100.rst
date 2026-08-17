@@ -21,5 +21,8 @@ Added:
    * The Matter software maturity levels migrated from the |NCS|.
    * The NFC Commissioning Manager implementation.
      See :ref:`ug_matter_configuring_optional_nfc` for more details.
+   * Kconfig options to customize the Thread Network Diagnostics cluster attribute list.
+     The ``ExtAddress`` and ``Rloc16`` attributes are optional in the Matter 1.6 specification, but the default Matter SDK implementation still exposes them in the cluster attribute list.
+     Use the :option:`CONFIG_DISABLE_THREAD_DIAGNOSTIC_EXTADDR` or :option:`CONFIG_DISABLE_THREAD_DIAGNOSTIC_RLOC16` Kconfig options in your project configuration to omit them from the cluster attribute list.
 
 * Integration of |addon| with the |NCS| v3.4.0.
