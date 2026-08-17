@@ -115,6 +115,18 @@ config MATTER_CERTIFICATION
 	  It enables including software patches required for the Matter platform certification
 	  purposes. Currently it works only with the Matter template sample.
 
+config DISABLE_THREAD_DIAGNOSTIC_RLOC16
+	bool "Exclude Rloc16 from Thread Network Diagnostics attribute list"
+	help
+	  When enabled, the Thread Network Diagnostics cluster replaces the default Matter SDK
+	  implementation and omits the Rloc16 attribute from the published attribute list.
+
+config DISABLE_THREAD_DIAGNOSTIC_EXTADDR
+	bool "Exclude ExtAddress from Thread Network Diagnostics attribute list"
+	help
+	  When enabled, the Thread Network Diagnostics cluster replaces the default Matter SDK
+	  implementation and omits the ExtAddress attribute from the published attribute list.
+
 config MATTER_USE_DEFAULT_BUTTON_HANDLER
 	bool "Use default button handler alongside the application one"
 	default y
