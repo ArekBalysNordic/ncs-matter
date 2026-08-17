@@ -24,6 +24,8 @@ from west import log
 DEFAULT_MATTER_PATH = Path.resolve(Path(os.environ.get('ZEPHYR_BASE', "")) / '..' / 'modules' / 'lib' / 'matter')
 DEFAULT_ZCL_JSON_RELATIVE_PATH = Path('src/app/zap-templates/zcl/zcl.json')
 DEFAULT_APP_TEMPLATES_RELATIVE_PATH = Path('src/app/zap-templates/app-templates.json')
+NCS_ZAP_TEMPLATES_DIR = Path(__file__).resolve().parent / 'zap-templates'
+NCS_CALLBACK_TEMPLATES_PATH = NCS_ZAP_TEMPLATES_DIR / 'callback-templates.json'
 DEFAULT_MATTER_TYPES_RELATIVE_PATH = Path('src/app/zap-templates/zcl/data-model/chip/chip-types.xml')
 DEFAULT_ZAP_VERSION_RELATIVE_PATH = Path('scripts/setup/zap.version')
 DEFAULT_ZAP_GENERATE_RELATIVE_PATH = Path('scripts/tools/zap/generate.py')
@@ -49,6 +51,50 @@ def get_app_templates_path(matter_path: Path = DEFAULT_MATTER_PATH) -> Path:
     Returns absolute path to the app-templates.json file within the Matter SDK.
     """
     return matter_path.joinpath(DEFAULT_APP_TEMPLATES_RELATIVE_PATH).absolute()
+
+
+def get_callback_templates_path(matter_path: Path = DEFAULT_MATTER_PATH) -> Path:
+    """
+    Returns absolute path to callback-templates.json under scripts/west/zap-templates/.
+
+    The json is generated next to the NCS callback .zapt files. Helper scripts keep
+    the same short relative paths as upstream app-templates.json (ZAP resolves them
+    relative to the templates json directory). Other bundled resources that must come
+    from the Matter SDK tree use paths relative to the NCS zap-templates directory.
+    """
+    matter_zap_templates = matter_path.joinpath(DEFAULT_APP_TEMPLATES_RELATIVE_PATH).parent.absolute()
+
+    with open(matter_zap_templates / 'app-templates.json', 'r') as f:
+        templates = json.load(f)
+
+    def matter_relative(path: str) -> str:
+        return str((matter_zap_templates / path).resolve().relative_to(NCS_ZAP_TEMPLATES_DIR, walk_up=True))
+
+    templates['name'] = 'NCS Matter callback templates'
+    templates['override'] = matter_relative(templates['override'])
+    templates['resources'] = {key: matter_relative(value) for key, value in templates['resources'].items()}
+    templates['partials'] = [
+        {'name': partial['name'], 'path': matter_relative(partial['path'])}
+        for partial in templates['partials']
+    ]
+    templates['templates'] = [
+        {
+            'path': 'templates/app/callbacks/PluginApplicationCallbacks.zapt',
+            'name': 'Matter Application Callbacks header',
+            'output': 'PluginApplicationCallbacks.h',
+        },
+        {
+            'path': 'templates/app/callback-stub-src.zapt',
+            'name': 'ZCL callback-stub source',
+            'output': 'callback-stub.cpp',
+        },
+    ]
+
+    with open(NCS_CALLBACK_TEMPLATES_PATH, 'w') as f:
+        json.dump(templates, f, indent=4)
+        f.write('\n')
+
+    return NCS_CALLBACK_TEMPLATES_PATH.absolute()
 
 
 def get_default_zcl_json_path(matter_path: Path = DEFAULT_MATTER_PATH) -> Path:

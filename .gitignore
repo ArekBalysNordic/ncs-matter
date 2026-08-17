@@ -15,3 +15,6 @@ __pycache__/
 
 # Ignore backup zap files
 *.zap~
+
+# Generated at runtime by west zap-generate
+/scripts/west/zap-templates/callback-templates.json

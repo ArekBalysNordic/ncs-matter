@@ -74,4 +74,4 @@ jobs:
       - name: Run west ZAP unit tests
         run: |
           source zephyr/zephyr-env.sh
-          python3 modules/lib/matter/scripts/west/tests/zap_tests.py
+          python3 ncs-matter/scripts/west/tests/zap_tests.py

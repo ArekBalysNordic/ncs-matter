@@ -5,7 +5,7 @@
 #
 
 # Base dir related to ZEPHYR_BASE
-- base_dir: ../modules/lib/matter/test_dir
+- base_dir: ../ncs-matter/test_dir
 
 - name: test
   zap_file: test_full.zap
