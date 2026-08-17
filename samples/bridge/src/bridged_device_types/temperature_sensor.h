@@ -39,7 +39,7 @@ public:
 	CHIP_ERROR HandleAttributeChange(chip::ClusterId clusterId, chip::AttributeId attributeId, void *data,
 					 size_t dataSize) override;
 
-	static constexpr uint16_t GetTemperatureMeasurementClusterRevision() { return 4; }
+	static constexpr uint16_t GetTemperatureMeasurementClusterRevision() { return 6; }
 	static constexpr uint32_t GetTemperatureMeasurementFeatureMap() { return 0; }
 
 private:
