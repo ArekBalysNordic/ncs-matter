@@ -103,7 +103,7 @@ def upsert_pr_comment(*, repo: str, pr_number: int, body: str) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "nrfconnect/ncs-matter"))
+    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "ArekBalysNordic/ncs-matter"))
     parser.add_argument("--state-file", type=Path, required=True)
     parser.add_argument("--days", type=int, default=7)
     args = parser.parse_args()

@@ -20,8 +20,8 @@ GITHUB_API = "https://api.github.com"
 REPORT_MARKER = "<!-- sdk-sync-report -->"
 COPILOT_TRIGGER_MARKER = "<!-- sdk-sync-copilot-trigger -->"
 
-NRF_REPO = "nrfconnect/sdk-nrf"
-CHIP_REPO = "nrfconnect/sdk-connectedhomeip"
+NRF_REPO = "ArekBalysNordic/sdk-nrf"
+CHIP_REPO = "ArekBalysNordic/sdk-connectedhomeip"
 
 
 @dataclass

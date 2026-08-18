@@ -150,7 +150,7 @@ def store_pr_number(*, state_file: Path, pr_number: int | None) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "nrfconnect/ncs-matter"))
+    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "ArekBalysNordic/ncs-matter"))
     parser.add_argument("--command", choices=["prepare-branch", "open-pr"], required=True)
     parser.add_argument("--source-branch", default="sdk-nrf")
     parser.add_argument("--pr-branch", default="sdk-sync/test")

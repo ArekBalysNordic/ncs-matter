@@ -223,7 +223,7 @@ def build_agent_prompt(
     return f"""Analyze the SDK sync Twister build results for PR #{pr_number}.
 
 Context:
-- This is the weekly automated sync PR (`sdk-sync/test` -> `sdk-nrf`) for nrfconnect/ncs-matter.
+- This is the weekly automated sync PR (`sdk-sync/test` -> `sdk-nrf`) for ArekBalysNordic/ncs-matter.
 - Twister scenario: `sample.matter.template.debug` on all integration platforms.
 - Workflow run: {workflow_run_url}
 
@@ -245,7 +245,7 @@ Recent Twister log tail:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "nrfconnect/ncs-matter"))
+    parser.add_argument("--repo", default=os.environ.get("GITHUB_REPOSITORY", "ArekBalysNordic/ncs-matter"))
     parser.add_argument("--artifact-dir", type=Path, required=True)
     parser.add_argument("--workflow-run-id", required=True)
     parser.add_argument("--workflow-run-url", required=True)
