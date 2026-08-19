@@ -34,3 +34,6 @@
 #define CHIP_DEVICE_CONFIG_DEVICE_NAME "Nordic Platform"
 #define CHIP_DEVICE_CONFIG_PAIRING_INITIAL_INSTRUCTION "Reset device"
 #define CHIP_DEVICE_CONFIG_PAIRING_SECONDARY_INSTRUCTION "Visit Controller App"
+#define CHIP_DEVICE_CONFIG_PAIRING_SECONDARY_HINT                                                                      \
+	((1 << CHIP_COMMISSIONING_HINT_INDEX_CUSTOM_INSTRUCTION) |                                                     \
+	 (1 << CHIP_COMMISSIONING_HINT_INDEX_SEE_ADMINISTRATOR_UX) | (1 << CHIP_COMMISSIONING_HINT_INDEX_SEE_MANUAL))
