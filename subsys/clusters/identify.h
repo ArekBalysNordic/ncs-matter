@@ -9,15 +9,14 @@
 #include "app/task_executor.h"
 #include "board/board.h"
 
-#include <platform/DefaultTimerDelegate.h>
 #include <app/clusters/identify-server/IdentifyCluster.h>
-#include <app/server-cluster/ServerClusterInterfaceRegistry.h>
-#include <data-model-providers/codegen/CodegenDataModelProvider.h>
 #include <lib/support/TimerDelegate.h>
 
-#include <lib/support/logging/CHIPLogging.h>
-
 #include <functional>
+#include <memory>
+#include <optional>
+
+struct Identify;
 
 namespace Nrf
 {
@@ -111,77 +110,23 @@ namespace Matter
 	 */
 	class IdentifyCluster {
 	public:
-		/**
-		 * @brief Construct a new Identify Cluster with a custom timer delegate and identify delegate.
-		 *
-		 * @param endpoint The endpoint of the identify cluster
-		 * @param identifyDelegate Custom identify delegate to use.
-		 * @param timerDelegate Custom timer delegate to use.
-		 * @param identifyType The type of identify to use. By default, the visible indicator is used.
-		 */
 		IdentifyCluster(chip::EndpointId endpoint, chip::app::Clusters::IdentifyDelegate &identifyDelegate,
 				chip::TimerDelegate &timerDelegate,
 				chip::app::Clusters::Identify::IdentifyTypeEnum identifyType =
-					chip::app::Clusters::Identify::IdentifyTypeEnum::kVisibleIndicator)
-			: mEndpointId(endpoint),
-			  mIdentifyCluster(chip::app::Clusters::IdentifyCluster::Config(endpoint, timerDelegate)
-						   .WithIdentifyType(identifyType)
-						   .WithDelegate(&identifyDelegate))
-		{
-		}
+					chip::app::Clusters::Identify::IdentifyTypeEnum::kVisibleIndicator);
 
-		/**
-		 * @brief Construct a new Identify Cluster with the default behavior for nRF development
-		 * kits.
-		 *
-		 * The default behavior is to blink the LED2 on an nRF development kit.
-		 *
-		 * @note This constructor uses the nRF development kit identify delegate and the default timer
-		 * delegate by default.
-		 *
-		 * @param endpoint The endpoint of the identify cluster
-		 * @param identifyType The type of identify to use. By default, the visible indicator is used.
-		 */
 		explicit IdentifyCluster(chip::EndpointId endpoint, bool isTriggerEffectEnabled = false,
 					 std::function<void()> customIdentifyStopCallback = nullptr,
 					 chip::app::Clusters::Identify::IdentifyTypeEnum identifyType =
-						 chip::app::Clusters::Identify::IdentifyTypeEnum::kVisibleIndicator)
-			: mEndpointId(endpoint), mIdentifyDelegate(isTriggerEffectEnabled, customIdentifyStopCallback),
-			  mIdentifyCluster(chip::app::Clusters::IdentifyCluster::Config(endpoint, mTimerDelegate)
-						   .WithIdentifyType(identifyType)
-						   .WithDelegate(&mIdentifyDelegate))
-		{
-		}
+						 chip::app::Clusters::Identify::IdentifyTypeEnum::kVisibleIndicator);
 
-		/**
-		 * @brief Initialize and register the Identify cluster with the Matter server.
-		 *
-		 * This method registers the Identify cluster with the Matter server's
-		 * cluster registry. It is safe to call this method multiple times - if the
-		 * cluster is already registered, it will return CHIP_NO_ERROR without
-		 * performing any action.
-		 *
-		 * @note This method is not thread-safe. It must be called from the main thread.
-		 *
-		 * @return CHIP_NO_ERROR if the cluster was successfully registered or
-		 *         already exists, or an appropriate error code if registration failed.
-		 */
-		CHIP_ERROR Init()
-		{
-			if (chip::app::CodegenDataModelProvider::Instance().Registry().Get(
-				    { mEndpointId, chip::app::Clusters::Identify::Id }) != nullptr) {
-				// Already registered
-				return CHIP_NO_ERROR;
-			}
-			return chip::app::CodegenDataModelProvider::Instance().Registry().Register(
-				mIdentifyCluster.Registration());
-		}
+		~IdentifyCluster();
 
 	private:
 		chip::EndpointId mEndpointId;
-		IdentifyDelegateImplNrf mIdentifyDelegate;
-		chip::app::RegisteredServerCluster<chip::app::Clusters::IdentifyCluster> mIdentifyCluster;
-		chip::app::DefaultTimerDelegate mTimerDelegate;
+		std::optional<IdentifyDelegateImplNrf> mNrfDelegate;
+		chip::app::Clusters::IdentifyDelegate * mCustomDelegate = nullptr;
+		std::unique_ptr<Identify> mIdentify;
 	};
 
 } // namespace Matter

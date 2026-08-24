@@ -6,12 +6,11 @@
 
 #include "certification_hooks.h"
 #include "app/task_executor.h"
-#include "clusters/identify.h"
 
 #include <app-common/zap-generated/attributes/Accessors.h>
+#include <app/clusters/identify-server/identify-server.h>
 #include <app/server/Server.h>
 #include <platform/CHIPDeviceLayer.h>
-#include <platform/DefaultTimerDelegate.h>
 
 #include <zephyr/logging/log.h>
 
@@ -28,31 +27,25 @@ using namespace ::chip::DeviceLayer;
 
 namespace
 {
-class IdentifyDelegateImplCertification : public chip::app::Clusters::IdentifyDelegate {
-public:
-	void OnIdentifyStart(chip::app::Clusters::IdentifyCluster &cluster) override
-	{
-		LOG_INF("Identify started event received");
-	}
-
-	void OnIdentifyStop(chip::app::Clusters::IdentifyCluster &cluster) override
-	{
-		LOG_INF("Identify stopped event received");
-	}
-
-	void OnTriggerEffect(chip::app::Clusters::IdentifyCluster &cluster) override
-	{
-		LOG_INF("Trigger identify effect event received");
-	}
-
-	bool IsTriggerEffectEnabled() const override { return true; }
-};
-
 constexpr EndpointId kLightEndpointId = 1;
-IdentifyDelegateImplCertification sIdentifyDelegateImplCertification;
-DefaultTimerDelegate sTimerDelegate;
 
-Nrf::Matter::IdentifyCluster sIdentifyCluster(kLightEndpointId, sIdentifyDelegateImplCertification, sTimerDelegate);
+void OnIdentifyStart(Identify * identify)
+{
+	LOG_INF("Identify started event received");
+}
+
+void OnIdentifyStop(Identify * identify)
+{
+	LOG_INF("Identify stopped event received");
+}
+
+void OnEffectIdentifier(Identify * identify)
+{
+	LOG_INF("Trigger identify effect event received");
+}
+
+Identify sIdentify(kLightEndpointId, OnIdentifyStart, OnIdentifyStop,
+		   Clusters::Identify::IdentifyTypeEnum::kVisibleIndicator, OnEffectIdentifier);
 
 } // namespace
 
@@ -63,7 +56,7 @@ namespace Certification
 
 	void Init()
 	{
-		TEMPORARY_RETURN_IGNORED sIdentifyCluster.Init();
+		/* Nothing to do here */
 	}
 
 	void ButtonHandler(ButtonState state, ButtonMask hasChanged)

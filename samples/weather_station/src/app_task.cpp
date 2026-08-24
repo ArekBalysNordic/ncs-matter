@@ -450,10 +450,6 @@ CHIP_ERROR AppTask::Init()
 	}
 #endif
 
-	ReturnErrorOnFailure(sIdentifyTemperature.Init());
-	ReturnErrorOnFailure(sIdentifyHumidity.Init());
-	ReturnErrorOnFailure(sIdentifyPressure.Init());
-
 	/* Initialize timers */
 	k_timer_init(
 		&sMeasurementsTimer, [](k_timer *) { Nrf::PostTask([] { MeasurementsTimerHandler(); }); }, nullptr);

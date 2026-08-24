@@ -425,8 +425,6 @@ CHIP_ERROR AppTask::Init()
 		Nrf::Matter::TestEventTrigger::EventTrigger{ 0xFFFF, PowerSourceOffEventCallback }));
 #endif
 
-	ReturnErrorOnFailure(sIdentifyCluster.Init());
-
 	return Nrf::Matter::StartServer();
 }
 
