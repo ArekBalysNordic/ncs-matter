@@ -59,8 +59,6 @@ CHIP_ERROR AppTask::Init()
 
 	ReturnErrorOnFailure(Nrf::Matter::StartServer());
 
-	ReturnErrorOnFailure(sIdentifyCluster.Init());
-
 	if (Nrf::GetPersistentStorage().NonSecureInit(&mRootNode) != Nrf::PSErrorCode::Success) {
 		return CHIP_ERROR_PERSISTED_STORAGE_FAILED;
 	}

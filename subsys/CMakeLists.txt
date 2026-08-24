@@ -18,6 +18,7 @@ target_sources(app PRIVATE
     ${MATTER_COMMONS_SRC_DIR}/app/matter_init.cpp
     ${MATTER_COMMONS_SRC_DIR}/app/matter_event_handler.cpp
     ${MATTER_COMMONS_SRC_DIR}/clusters/cluster_init.cpp
+    ${MATTER_COMMONS_SRC_DIR}/clusters/identify.cpp
 )
 
 # Include linker script for cluster initialization iterable section

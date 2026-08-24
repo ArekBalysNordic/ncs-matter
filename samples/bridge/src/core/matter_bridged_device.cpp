@@ -7,7 +7,6 @@
 #include "matter_bridged_device.h"
 #include <app-common/zap-generated/callback.h>
 #include <app/AttributeValueDecoder.h>
-#include <app/clusters/identify-server/IdentifyCluster.h>
 #include <app/data-model/Encode.h>
 #include <lib/core/TLVReader.h>
 #include <lib/core/TLVWriter.h>
@@ -18,6 +17,23 @@ using namespace ::chip::app;
 
 namespace Nrf
 {
+
+void MatterBridgedDevice::OnBridgedIdentifyStart(Identify * identify)
+{
+	ChipLogError(DeviceLayer, "Starting bridged device identify on endpoint %d",
+		     identify->mCluster.Cluster().GetPaths()[0].mEndpointId);
+}
+
+void MatterBridgedDevice::OnBridgedIdentifyStop(Identify * identify)
+{
+	ChipLogError(DeviceLayer, "Stopping bridged device identify on endpoint %d",
+		     identify->mCluster.Cluster().GetPaths()[0].mEndpointId);
+}
+
+void MatterBridgedDevice::OnBridgedTriggerEffect(Identify * identify)
+{
+	ChipLogError(DeviceLayer, "Triggering effect on endpoint %d", identify->mCluster.Cluster().GetPaths()[0].mEndpointId);
+}
 
 CHIP_ERROR MatterBridgedDevice::CopyAttribute(const void *attribute, size_t attributeSize, void *buffer,
 					      uint16_t maxBufferSize)
@@ -88,6 +104,8 @@ CHIP_ERROR MatterBridgedDevice::HandleReadBridgedDeviceBasicInformation(Attribut
 
 CHIP_ERROR MatterBridgedDevice::HandleWriteIdentify(chip::AttributeId attributeId, void *data, size_t dataSize)
 {
+	VerifyOrReturnError(mIdentify != nullptr, CHIP_ERROR_INCORRECT_STATE);
+
 	switch (attributeId) {
 	case Clusters::Identify::Attributes::IdentifyTime::Id:
 		if (data && dataSize == sizeof(uint16_t)) {
@@ -120,7 +138,7 @@ CHIP_ERROR MatterBridgedDevice::HandleWriteIdentify(chip::AttributeId attributeI
 			DataModel::WriteAttributeRequest request(path, subjectDescriptor);
 
 			DataModel::ActionReturnStatus status =
-				mIdentifyCluster.Cluster().WriteAttribute(request, decoder);
+				mIdentify->mCluster.Cluster().WriteAttribute(request, decoder);
 			if (!status.IsSuccess()) {
 				return status.GetUnderlyingError();
 			}
@@ -134,6 +152,8 @@ CHIP_ERROR MatterBridgedDevice::HandleWriteIdentify(chip::AttributeId attributeI
 CHIP_ERROR MatterBridgedDevice::HandleReadIdentify(chip::AttributeId attributeId, uint8_t *buffer,
 						   uint16_t maxReadLength)
 {
+	VerifyOrReturnError(mIdentify != nullptr, CHIP_ERROR_INCORRECT_STATE);
+
 	switch (attributeId) {
 	case Clusters::Identify::Attributes::ClusterRevision::Id: {
 		uint16_t clusterRevision = GetIdentifyClusterRevision();
@@ -144,11 +164,11 @@ CHIP_ERROR MatterBridgedDevice::HandleReadIdentify(chip::AttributeId attributeId
 		return CopyAttribute(&featureMap, sizeof(featureMap), buffer, maxReadLength);
 	}
 	case Clusters::Identify::Attributes::IdentifyType::Id: {
-		MatterBridgedDevice::IdentifyType type = mIdentifyCluster.Cluster().GetIdentifyType();
+		MatterBridgedDevice::IdentifyType type = mIdentify->mCluster.Cluster().GetIdentifyType();
 		return CopyAttribute(&type, sizeof(type), buffer, maxReadLength);
 	}
 	case Clusters::Identify::Attributes::IdentifyTime::Id: {
-		uint16_t identifyTime = mIdentifyCluster.Cluster().GetIdentifyTime();
+		uint16_t identifyTime = mIdentify->mCluster.Cluster().GetIdentifyTime();
 		return CopyAttribute(&identifyTime, sizeof(identifyTime), buffer, maxReadLength);
 	}
 	default:

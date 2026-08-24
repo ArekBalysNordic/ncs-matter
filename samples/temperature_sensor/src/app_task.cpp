@@ -210,8 +210,6 @@ CHIP_ERROR AppTask::Init()
 	}
 #endif
 
-	ReturnErrorOnFailure(sIdentifyCluster.Init());
-
 	return Nrf::Matter::StartServer();
 }
 
