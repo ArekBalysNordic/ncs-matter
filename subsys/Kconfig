@@ -117,12 +117,14 @@ config MATTER_CERTIFICATION
 
 config DISABLE_THREAD_DIAGNOSTIC_RLOC16
 	bool "Exclude Rloc16 from Thread Network Diagnostics attribute list"
+	default y
 	help
 	  When enabled, the Thread Network Diagnostics cluster replaces the default Matter SDK
 	  implementation and omits the Rloc16 attribute from the published attribute list.
 
 config DISABLE_THREAD_DIAGNOSTIC_EXTADDR
 	bool "Exclude ExtAddress from Thread Network Diagnostics attribute list"
+	default y
 	help
 	  When enabled, the Thread Network Diagnostics cluster replaces the default Matter SDK
 	  implementation and omits the ExtAddress attribute from the published attribute list.
