@@ -1,3 +1,8 @@
-* @nrfconnect/ncs-matter
-*.rst @peknis @b-gent
-*.txt @peknis @b-gent
+*                       @nrfconnect/ncs-matter
+
+*.rst                   @nrfconnect/ncs-matter-doc
+*.txt                   @nrfconnect/ncs-matter-doc
+
+CMakeLists.txt          @nrfconnect/ncs-matter
+twister_ignore.txt      @nrfconnect/ncs-matter
+requirements.txt        @nrfconnect/ncs-matter
