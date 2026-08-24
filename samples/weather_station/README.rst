@@ -8,8 +8,8 @@
 
 .. _matter_weather_station_app:
 
-Matter weather station
-######################
+Matter: Weather Station
+#######################
 
 .. contents::
    :local:
@@ -311,6 +311,11 @@ Run the following command:
          [1675849714.537008][164896:164898] CHIP:TOO:   MeasuredValue: 1015
 
 This means that the current air pressure value is equal to 1015 hPa.
+
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
 
 Testing with commercial ecosystem
 =================================

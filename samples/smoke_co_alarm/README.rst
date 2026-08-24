@@ -238,6 +238,11 @@ In the interactive mode, stop the Smoke alarm by running the following command, 
 
 The |Second LED| will be turned off and the |Third LED| will start blinking evenly with 300 ms interval, to express the CO alarm, as the next one in the order.
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 

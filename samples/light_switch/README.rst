@@ -418,6 +418,11 @@ Control the light bulb device
 
 .. matter_light_switch_sample_testing_end
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 

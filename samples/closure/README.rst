@@ -218,6 +218,11 @@ Complete the following points by calling the corresponding commands in the CHIP 
 
    closurecontrol read-attribute countdown-time |node_id| 1
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 
