@@ -49,8 +49,8 @@ path_triggers:
         variants:
           - release
         platform:
-          - nrf54l15dk/nrf54l15/cpuapp
           - nrf54lm20dk/nrf54lm20b/cpuapp
+          - nrf54lm20dk/nrf54lm20a/cpuapp
 
   light-bulb-sample:
     paths:
@@ -60,8 +60,8 @@ path_triggers:
         variants:
           - release
         platform:
-          - nrf54l15dk/nrf54l15/cpuapp
           - nrf54lm20dk/nrf54lm20b/cpuapp
+          - nrf54lm20dk/nrf54lm20a/cpuapp
 
   light-switch-sample:
     paths:
@@ -70,6 +70,11 @@ path_triggers:
       - scenario: light_switch
         variants:
           - release
+        platform:
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+          - nrf54lm20dk/nrf54lm20a/cpuapp
+      - scenario: light_switch
+        variants:
           - lit_icd
         platform:
           - nrf5340dk/nrf5340/cpuapp
@@ -105,9 +110,14 @@ path_triggers:
         variants:
           - release
           - debug.ssed
-          - smp_dfu
         platform:
           - nrf54l15dk/nrf54l15/cpuapp
+          - nrf54lm20dk/nrf54lm20b/cpuapp
+      - scenario: window_cover
+        variants:
+          - smp_dfu
+        platform:
+          - nrf5340dk/nrf5340/cpuapp
           - nrf54lm20dk/nrf54lm20b/cpuapp
 
   thermostat-sample:
@@ -118,8 +128,8 @@ path_triggers:
         variants:
           - release
         platform:
-          - nrf5340dk/nrf5340/cpuapp
           - nrf54lm20dk/nrf54lm20b/cpuapp
+          - nrf54lm20dk/nrf54lm20a/cpuapp
 
   temperature-sensor-sample:
     paths:
@@ -129,8 +139,8 @@ path_triggers:
         variants:
           - release
         platform:
-          - nrf54l15dk/nrf54l15/cpuapp
           - nrf54lm20dk/nrf54lm20b/cpuapp
+          - nrf54lm20dk/nrf54lm20a/cpuapp
 
   smoke-co-alarm-sample:
     paths:
@@ -328,8 +338,8 @@ path_triggers:
         variants:
           - debug
         platform:
-          - nrf54l15dk/nrf54l15/cpuapp
           - nrf54lm20dk/nrf54lm20b/cpuapp
+          - nrf54lm20dk/nrf54lm20a/cpuapp
       - scenario: window_cover
         variants:
           - release
