@@ -231,6 +231,11 @@ Press the |Second Button|
 
 Press the |Second Button| to print the most recent temperature data from the thermostat device to the UART terminal.
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 

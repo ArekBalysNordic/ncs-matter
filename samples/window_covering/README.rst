@@ -254,6 +254,11 @@ Press the |Second Button| 20 times
 Press the |Second Button| 20 times to fully tilt the cover into the open position.
 The brightness of |Third LED| decreases with each button press until the LED turns off.
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 

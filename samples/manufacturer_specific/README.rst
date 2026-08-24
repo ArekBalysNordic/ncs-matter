@@ -298,6 +298,11 @@ In the interactive mode, read the ``Basic Information`` cluster's ``RandomNumber
 
    any read-event-by-id 0x0028 0x4 |node_id| 0
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 

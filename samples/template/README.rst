@@ -60,10 +60,10 @@ Advanced configuration options
 .. include:: /includes/configuration/advanced/dfu.txt
 .. include:: /includes/configuration/advanced/tfm.txt
 .. include:: /includes/configuration/advanced/factory_data.txt
-.. include:: /includes/configuration/advanced/nfc_commissioning.txt
 .. include:: /includes/configuration/advanced/custom_board.txt
 .. include:: /includes/configuration/advanced/internal_memory.txt
 .. include:: /includes/configuration/advanced/nfc_commissioning.txt
+
 
 User interface
 **************
@@ -124,6 +124,11 @@ To see if the communication with the device is working, run the following comman
    chip-tool basicinformation read product-id |node_id| 0
 
 See the output and verify that the product ID is set to ``32768`` (0x8000 in hexadecimal).
+
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
 
 Testing with commercial ecosystem
 =================================

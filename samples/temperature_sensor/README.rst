@@ -190,6 +190,11 @@ The received value will be different, for example:
    [1755081048.320] [99348:99350] [TOO] Endpoint: 1 Cluster: 0x0000_0402 Attribute 0x0000_0000 DataVersion: 1994139940
    [1755081048.320] [99348:99350] [TOO]   MeasuredValue: 1200
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 

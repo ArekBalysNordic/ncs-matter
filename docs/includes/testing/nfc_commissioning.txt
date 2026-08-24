@@ -1,0 +1,51 @@
+.. note::
+   Currently, no commercially available smartphone application supports Matter commissioner functionality using NFC transport.
+   To test NFC-based commissioning, you need a Matter commissioner that implements the Matter NFC Transport Layer (NTL).
+   You can develop your own commissioner application based on the Matter 1.6 specification (`Matter Core Specification`_).
+
+To commission the |matter_type| over NFC using a Nordic Semiconductor DK, complete the following steps:
+
+1. Build the |matter_type| with the NFC commissioning support.
+
+   See `NFC-based commissioning`_ for the required Kconfig options and supported DK targets.
+
+#. Ensure that a Thread dataset or Wi-Fi credentials are configured.
+#. Program the DK with the proper firmware and connect a terminal emulator to monitor the UART log.
+#. When the Matter server finishes initializing, the device automatically starts NFC tag emulation and serves an NDEF onboarding payload with the NFC rendezvous flag.
+   No button press is required to start NFC commissioning.
+
+#. On a smartphone with a Matter commissioner application that supports Matter NTL, tap the NFC antenna area on the DK to start the commissioning session.
+
+#. Keep the smartphone within NFC range for the duration of the commissioning exchange.
+
+   The required hold time depends on the network variant:
+
+   .. tabs::
+
+      .. group-tab:: Matter over Thread
+
+         Hold the tap for at least **9 seconds**.
+
+      .. group-tab:: Matter over Wi-Fi
+
+         Hold the tap for at least **20 seconds**.
+
+#. Keep the smartphone in the NFC field until the commissioner application indicates that commissioning has completed successfully.
+
+   Once device is commissioned the |Second LED| stops blinking and the light is solid and the NFC tag emulation on the DK stops automatically.
+
+   .. note::
+
+      If the commissioner loses connection with the device during the process, wait until the failsafe mechanism is triggered before attempting commissioning again.
+      You will see the following UART log messages:
+
+      .. code-block:: console
+
+         I: 5419 [DL]NFC field lost: the NFC Reader/Writer moved away
+         I: 5424 [DL]NFC tag emulation paused until fail-safe completes
+
+      The failsafe timeout depends on the commissioner configuration.
+
+      Press the reset button to clean-up the device faster and make it reachable over NFC again.
+
+#. Use the commissioner application to control the device and verify that the expected clusters and attributes are accessible.

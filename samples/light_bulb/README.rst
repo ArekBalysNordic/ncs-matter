@@ -192,6 +192,11 @@ To prepare the light switch device, follow the first three steps in the :ref:`Ma
    :start-after: matter_light_switch_sample_testing_start
    :end-before: matter_light_switch_sample_testing_end
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 

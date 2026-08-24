@@ -206,6 +206,11 @@ Observe the contact detection state changes
 
 Press and release the |Second Button| a few times and observe the state changes reported automatically in the CHIP Tool interactive mode.
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
+
 Testing with commercial ecosystem
 =================================
 

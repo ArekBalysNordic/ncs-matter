@@ -973,6 +973,10 @@ Complete the following steps depending on your configuration:
       a. On the Peripheral LBS device, press the |First Button| to turn on the |Second LED| located on the bound light bulb device.
       #. On the Peripheral LBS device, release the |First Button| to turn off the light again.
 
+Testing with Matter Commissioner over NFC
+=========================================
+
+.. include:: /includes/testing/nfc_commissioning.txt
 
 Testing with commercial ecosystem
 =================================

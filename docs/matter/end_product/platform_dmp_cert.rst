@@ -49,7 +49,7 @@ If you follow within the Matter Platform SOE and the platform's certified scope,
 .. _ug_matter_platform_and_dmp_matrix:
 
 Matter Compliant Platform certification information
-==================================================
+===================================================
 
 Use the following Matter CIDs compatibility matrices to find the current Matter Compliant Platform Certification IDs (CIDs), |NCS| release mappings, dependent certification references, and supported hardware within the SOE for each SoC that supports Matter in the |NCS|:
 
