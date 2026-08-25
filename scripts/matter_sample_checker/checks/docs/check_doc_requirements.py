@@ -14,8 +14,9 @@ and pm_static files.
 
 CONFIGURATION PARAMETERS:
 -------------------------
-• documentation.requirements.memory_layouts.path: memory_layouts.yaml (flash/RAM layout data).
-• documentation.requirements.memory_usage.path: memory_usage.yaml (RAM usage tables).
+• documentation.requirements.memory_board_data.dir: per-board YAML under docs/data/memory/.
+• documentation.requirements.board_yaml_to_overlay_stems:
+        board yaml stem -> overlay board_id list for flash layout validation.
 • documentation.requirements.diagnostic_ram.path: hw_requirements.rst (diagnostic logs RAM section).
 • documentation.requirements.diagnostic_logs_snippet.path: DTS overlay directory for diagnostic logs.
 • documentation.requirements.board_mappings:
@@ -42,7 +43,7 @@ VALIDATION STEPS:
 3. Flash partition DTSI validation:
    - Scans sample overlay files for ``#include <*_partitions.dtsi>``
      to map each board target to its partition DTSI file under workspace.partition_dtsi_dir
-   - Loads ``Reference Matter memory layouts`` from memory_layouts.yaml
+   - Loads ``Reference Matter memory layouts`` from docs/data/memory/*.yaml
    - Compares offset/size for each partition node against the documentation
 
 
@@ -217,10 +218,6 @@ def parse_partition_regs_from_dtsi(dtsi_text: str) -> dict[str, dict[str, int]]:
     return out
 
 
-def _board_id_to_overlay_stem(board_id: str) -> str:
-    return board_id.replace('/', '_')
-
-
 def _collect_partition_map_from_yaml_nodes(partitions: list) -> dict[str, dict[str, int]]:
     """Build partition_id -> {offset, size} from YAML partition nodes (recursive children)."""
     out: dict[str, dict[str, int]] = {}
@@ -241,48 +238,55 @@ def _collect_partition_map_from_yaml_nodes(partitions: list) -> dict[str, dict[s
     return out
 
 
-def _collect_board_flash_partitions_from_entry(board_entry: dict) -> dict[str, dict[str, int]]:
-    parts: dict[str, dict[str, int]] = {}
-    for region in board_entry.get('regions') or []:
-        if not isinstance(region, dict):
-            continue
-        parts.update(_collect_partition_map_from_yaml_nodes(region.get('partitions') or []))
-    return parts
-
-
-def _flash_layout_doc_tables_from_memory_layouts_yaml(
-    data: dict | None,
+def _flash_layout_doc_tables_from_per_board_yaml_dir(
+    memory_dir: Path,
+    board_yaml_to_overlay_stems: dict[str, list[str]],
     skip_tab_titles: frozenset[str],
 ) -> dict[str, dict[str, dict]]:
-    """Index tab_title and overlay board_id stem -> partition maps from memory_layouts.yaml."""
+    """Index tab_title and overlay board_id stem -> partition maps from per-board YAML files."""
     out: dict[str, dict[str, dict]] = {}
-    if not data or not isinstance(data, dict):
+    if not memory_dir.is_dir():
         return out
-    boards = data.get('boards')
-    if not isinstance(boards, list):
-        return out
-    for board_entry in boards:
-        if not isinstance(board_entry, dict):
+
+    for yaml_path in sorted(memory_dir.glob("*.yaml")):
+        try:
+            data = yaml.safe_load(yaml_path.read_text(encoding="utf-8")) or {}
+        except OSError:
             continue
-        tab_title = str(board_entry.get('tab_title') or '').strip()
-        board_id = str(board_entry.get('board_id') or '').strip()
+        if not isinstance(data, dict):
+            continue
+
+        board = data.get("board") or {}
+        tab_title = str(board.get("name") or "").strip()
         if tab_title in skip_tab_titles:
             continue
-        parts = _collect_board_flash_partitions_from_entry(board_entry)
-        if not parts:
+
+        flash_parts: dict[str, dict[str, int]] = {}
+        for region in data.get("reference_regions") or []:
+            if not isinstance(region, dict):
+                continue
+            region_id = str(region.get("id") or "")
+            if region_id != "flash_primary":
+                continue
+            flash_parts = _collect_partition_map_from_yaml_nodes(region.get("partitions") or [])
+            break
+        if not flash_parts:
             continue
+
         keys: list[str] = []
         if tab_title:
             keys.append(tab_title)
-        if board_id:
-            stem = _board_id_to_overlay_stem(board_id)
-            keys.append(stem)
-            if stem.endswith('_ns'):
-                keys.append(f'{stem}_tfm')
+        stems = board_yaml_to_overlay_stems.get(yaml_path.stem, [])
+        keys.extend(stems)
+        for stem in stems:
+            if stem.endswith("_ns"):
+                keys.append(f"{stem}_tfm")
+
         for key in keys:
             if key in skip_tab_titles:
                 continue
-            out[key] = parts
+            out[key] = flash_parts
+
     return out
 
 
@@ -301,8 +305,7 @@ class CheckDocRequirementsTestCase(MatterSampleTestCase):
 
     def __init__(self):
         super().__init__()
-        self.memory_layouts_data = None
-        self.memory_usage_data = None
+        self.memory_board_data_dir: Path | None = None
         self.diagnostic_ram_content = ""
         self._requirements_cache = None  # Cache for parsed diagnostic RAM tables
         self._flash_layout_doc_cache: dict[str, dict[str, dict]] | None = None
@@ -372,32 +375,26 @@ class CheckDocRequirementsTestCase(MatterSampleTestCase):
 
     def prepare(self):
         """Prepare the check by reading documentation data files from config."""
-        self.memory_layouts_data = None
-        self.memory_usage_data = None
+        self.memory_board_data_dir = None
         self.diagnostic_ram_content = ""
         self._requirements_cache = None
         self._flash_layout_doc_cache = None
         self._board_to_partition_dtsi_cache = None
         self._flash_doc_warned_keys: set[str] = set()
 
-        for key, attr in (
-            ('memory_layouts', 'memory_layouts_data'),
-            ('memory_usage', 'memory_usage_data'),
-        ):
-            rel_path = self._requirements_data_path(key)
-            if not rel_path:
-                self.issue(f"Missing documentation.requirements.{key}.path in config")
-                continue
-            try:
-                with open(self._doc_root() / rel_path, encoding='utf-8') as f:
-                    setattr(self, attr, yaml.safe_load(f))
-            except Exception as e:
-                if self._requirements_data_optional(key):
-                    self.warning(f"Optional {key} file not available ({rel_path}): {e}")
-                else:
-                    self.issue(f"Error reading {key} file {rel_path}: {e}")
+        memory_board_cfg = self._requirements_hw_doc_cfg().get("memory_board_data")
+        if isinstance(memory_board_cfg, dict):
+            rel_dir = memory_board_cfg.get("dir")
+            if rel_dir:
+                memory_dir = self._doc_root() / rel_dir
+                if memory_dir.is_dir():
+                    self.memory_board_data_dir = memory_dir
+                elif not memory_board_cfg.get("optional"):
+                    self.issue(f"Memory board data directory not found: {rel_dir}")
+                elif memory_board_cfg.get("optional"):
+                    self.warning(f"Optional memory board data directory not available ({rel_dir})")
 
-        diag_rel = self._requirements_data_path('diagnostic_ram')
+        diag_rel = self._requirements_data_path("diagnostic_ram")
         if not diag_rel:
             self.issue("Missing documentation.requirements.diagnostic_ram.path in config")
         else:
@@ -430,6 +427,16 @@ class CheckDocRequirementsTestCase(MatterSampleTestCase):
         """Return True when board-specific requirements validation should be skipped."""
         return board_id in self._skip_mappings()
 
+    def _board_yaml_to_overlay_stems(self) -> dict[str, list[str]]:
+        raw = self._requirements_hw_doc_cfg().get("board_yaml_to_overlay_stems")
+        if not isinstance(raw, dict):
+            return {}
+        out: dict[str, list[str]] = {}
+        for key, stems in raw.items():
+            if isinstance(stems, list):
+                out[str(key)] = [str(stem) for stem in stems]
+        return out
+
     def _board_id_to_doc_flash_tab(self) -> dict[str, str]:
         raw = self._requirements_hw_doc_cfg().get('board_id_to_doc_flash_tab')
         if isinstance(raw, dict):
@@ -452,7 +459,7 @@ class CheckDocRequirementsTestCase(MatterSampleTestCase):
 
     def check(self):
         """Run the comprehensive hardware requirements validation"""
-        if not self.memory_layouts_data and not self.diagnostic_ram_content:
+        if not self.memory_board_data_dir and not self.diagnostic_ram_content:
             self.issue("No documentation data to validate")
             return
 
@@ -676,10 +683,14 @@ class CheckDocRequirementsTestCase(MatterSampleTestCase):
         if self._flash_layout_doc_cache is not None:
             return self._flash_layout_doc_cache
         skip_flash_tabs = self._flash_doc_tabs_skip_dtsi_compare()
-        out = _flash_layout_doc_tables_from_memory_layouts_yaml(
-            self.memory_layouts_data,
-            skip_flash_tabs,
-        )
+        if self.memory_board_data_dir is not None:
+            out = _flash_layout_doc_tables_from_per_board_yaml_dir(
+                self.memory_board_data_dir,
+                self._board_yaml_to_overlay_stems(),
+                skip_flash_tabs,
+            )
+        else:
+            out = {}
         self._flash_layout_doc_cache = out
         return out
     def _build_board_to_partition_dtsi_map(self) -> dict[str, str]:
@@ -798,8 +809,8 @@ class CheckDocRequirementsTestCase(MatterSampleTestCase):
         flash_tabs = self._get_parsed_flash_layout_doc_tables()
         if not flash_tabs:
             self.warning(
-                'No parsed flash partition tables from memory_layouts.yaml '
-                '(empty or missing boards?)'
+                'No parsed flash partition tables from docs/data/memory/*.yaml '
+                '(empty or missing reference_regions?)'
             )
             return
 

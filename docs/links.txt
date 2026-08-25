@@ -33,6 +33,7 @@
 .. ### NCS Zephyr documentation set
 
 .. _`nrf54l15dk`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf54l15dk/doc/index.html
+.. _`nrf54l15tag`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf54l15tag/doc/index.html
 .. _`nrf54lm20dk`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf54lm20dk/doc/index.html
 
 .. ### Matter add-on external :ref: targets
@@ -51,6 +52,7 @@
 .. _cmake_options: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/app_dev/config_and_build/cmake/index.html#cmake-options
 .. _kernel_api: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/kernel/services/index.html
 .. _logging_api: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/services/logging/index.html
+.. _`Thread analyzer`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/services/debugging/thread-analyzer.html
 .. _partition_manager: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/scripts/partition_manager/partition_manager.html
 .. _migration_partitions: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/migration/migration_partitions.html
 .. _ncs_release_notes_340: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/releases/release-notes-3.4.0.html

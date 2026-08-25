@@ -63,12 +63,35 @@ documentation:
     table_toggle_title: "nRF Connect SDK, Matter specification, and Matter SDK versions"
     require_latest_entry: false
   requirements:
-    memory_layouts:
-      path: "docs/matter/getting_started/data/memory_layouts.yaml"
+    memory_board_data:
+      dir: "docs/data/memory"
       optional: true
-    memory_usage:
-      path: "docs/matter/getting_started/data/memory_usage.yaml"
-      optional: true
+    board_yaml_to_overlay_stems:
+      nrf52840:
+        - nrf52840dk_nrf52840
+      nrf5340:
+        - nrf5340dk_nrf5340_cpuapp
+      thingy53:
+        - thingy53_nrf5340_cpuapp
+      nrf54l15:
+        - nrf54l15dk_nrf54l15_cpuapp
+      nrf54l15_cmse:
+        - nrf54l15dk_nrf54l15_cpuapp_ns_tfm
+        - nrf54l15dk_nrf54l15_cpuapp_tfm
+      nrf54l10:
+        - nrf54l15dk_nrf54l10_cpuapp
+      nrf54l15tag:
+        - nrf54l15tag_nrf54l15_cpuapp
+      nrf54lm20:
+        - nrf54lm20dk_nrf54lm20a_cpuapp
+        - nrf54lm20dk_nrf54lm20b_cpuapp
+      nrf54lm20_nrf7002:
+        - nrf54lm20dk_nrf54lm20a_cpuapp
+      nrf54l15_internal:
+        - nrf54l15dk_nrf54l15_cpuapp_internal
+      nrf54lm20_internal:
+        - nrf54lm20dk_nrf54lm20a_cpuapp_internal
+        - nrf54lm20dk_nrf54lm20b_cpuapp_internal
     diagnostic_ram:
       path: "docs/matter/getting_started/hw_requirements.rst"
     diagnostic_logs_snippet:

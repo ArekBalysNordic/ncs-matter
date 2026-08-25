@@ -36,9 +36,10 @@ extensions = [
     'sphinx_copybutton',
     'page_filter',
     'ncs_matter_kconfig',
-    'memory_table',
+    'memory_data',
     'memory_viz',
     'memory_layout_viz',
+    'stack_viz',
     'options_from_kconfig',
 ]
 
