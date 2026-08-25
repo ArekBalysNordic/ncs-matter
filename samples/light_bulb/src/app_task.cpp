@@ -195,8 +195,6 @@ CHIP_ERROR AppTask::Init()
 	 * state. */
 	ReturnErrorOnFailure(Nrf::Matter::RegisterEventHandler(Nrf::Board::DefaultMatterEventHandler, 0));
 
-	ReturnErrorOnFailure(sIdentifyCluster.Init());
-
 	return Nrf::Matter::StartServer();
 }
 
