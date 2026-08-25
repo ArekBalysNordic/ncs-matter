@@ -53,7 +53,10 @@ RAM and flash memory requirement values differ depending on the DK and the progr
 
 The following tables and bar charts list memory requirement values for Matter samples.
 
+Memory layout is taken from the DTS files used by each sample variant, while memory usage is taken from the build output.
 Values are provided in kilobytes (KB).
+For static RAM usage only, see :ref:`RAM memory requirements <ug_matter_hw_requirements_ram>`.
+For per-thread stack usage, see :ref:`Stack memory requirements <ug_matter_hw_requirements_stack>`.
 
 Table columns are grouped by internal NVM, external NVM (when used), and RAM.
 Application, MCUboot, upgrade slot, and RAM cells show used and free space separated by ``/``.
@@ -63,13 +66,137 @@ Other NVM columns list the reserved partition size for that region.
 
    .. group-tab:: Charts
 
-      .. memory-usage::
-         :file: data/memory_usage.yaml
+      .. tabs::
+
+         .. group-tab:: nRF52840 DK
+
+            Memory requirements for samples running on the `nRF52840 DK <Programming board names>`_ (`nrf52840dk`_).
+
+            .. memory-board::
+               :board: nrf52840
+
+         .. group-tab:: nRF5340 DK
+
+            Memory requirements for samples running on the `nRF5340 DK <Programming board names>`_ (`nrf5340dk`_).
+
+            .. memory-board::
+               :board: nrf5340
+
+         .. group-tab:: Nordic Thingy:53
+
+            Memory requirements for samples running on the `Nordic Thingy:53 <Programming board names>`_ (`thingy53`_).
+
+            .. memory-board::
+               :board: thingy53
+
+         .. group-tab:: nRF54L15 DK
+
+            Memory requirements for samples running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_).
+
+            .. memory-board::
+               :board: nrf54l15
+
+         .. group-tab:: nRF54L15 DK + CMSE (TF-M)
+
+            Memory requirements for samples running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_) with Trusted Firmware-M (TF-M).
+
+            .. memory-board::
+               :board: nrf54l15_cmse
+
+         .. group-tab:: nRF54L10 emulation
+
+            Memory requirements for samples running on the `nRF54L10 emulation on the nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_).
+
+            .. memory-board::
+               :board: nrf54l10
+
+         .. group-tab:: nRF54L15 TAG
+
+            Memory requirements for samples running on the `nRF54L15 TAG <Programming board names>`_ (`nrf54l15tag`_).
+
+            .. memory-board::
+               :board: nrf54l15tag
+
+         .. group-tab:: nRF54LM20 DK
+
+            Memory requirements for samples running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_).
+
+            .. memory-board::
+               :board: nrf54lm20
+
+         .. group-tab:: nRF54LM20 DK + nRF7002 EB2
+
+            Memory requirements for samples running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_) with the nRF7002 EB2 shield.
+
+            .. memory-board::
+               :board: nrf54lm20_nrf7002
 
    .. group-tab:: Tables
 
-      .. memory-table::
-         :file: data/memory_usage.yaml
+      .. tabs::
+
+         .. group-tab:: nRF52840 DK
+
+            The following table lists memory requirements for samples running on the `nRF52840 DK <Programming board names>`_ (`nrf52840dk`_).
+
+            .. memory-table::
+               :board: nrf52840
+
+         .. group-tab:: nRF5340 DK
+
+            The following table lists memory requirements for samples running on the `nRF5340 DK <Programming board names>`_ (`nrf5340dk`_).
+
+            .. memory-table::
+               :board: nrf5340
+
+         .. group-tab:: Nordic Thingy:53
+
+            The following table lists memory requirements for samples running on the `Nordic Thingy:53 <Programming board names>`_ (`thingy53`_).
+
+            .. memory-table::
+               :board: thingy53
+
+         .. group-tab:: nRF54L15 DK
+
+            The following table lists memory requirements for samples running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_).
+
+            .. memory-table::
+               :board: nrf54l15
+
+         .. group-tab:: nRF54L15 DK + CMSE (TF-M)
+
+            The following table lists memory requirements for samples running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_) with Trusted Firmware-M (TF-M).
+
+            .. memory-table::
+               :board: nrf54l15_cmse
+
+         .. group-tab:: nRF54L10 emulation
+
+            The following table lists memory requirements for samples running on the `nRF54L10 emulation on the nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_).
+
+            .. memory-table::
+               :board: nrf54l10
+
+         .. group-tab:: nRF54L15 TAG
+
+            The following table lists memory requirements for samples running on the `nRF54L15 TAG <Programming board names>`_ (`nrf54l15tag`_).
+
+            .. memory-table::
+               :board: nrf54l15tag
+
+         .. group-tab:: nRF54LM20 DK
+
+            The following table lists memory requirements for samples running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_).
+
+            .. memory-table::
+               :board: nrf54lm20
+
+         .. group-tab:: nRF54LM20 DK + nRF7002 EB2
+
+            The following table lists memory requirements for samples running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_) with the nRF7002 EB2 shield.
+
+            .. memory-table::
+               :board: nrf54lm20_nrf7002
 
 .. note::
 
@@ -80,15 +207,176 @@ Other NVM columns list the reserved partition size for that region.
 Reference Matter memory layouts
 *******************************
 
-The following tabs show how the :ref:`Matter stack architecture in the nRF Connect SDK <ug_matter_overview_architecture_integration_stack>` translates to actual memory maps for each of the available :ref:`ug_matter_overview_architecture_integration_designs`.
+The following tables and bar charts show how the :ref:`Matter stack architecture in the nRF Connect SDK <ug_matter_overview_architecture_integration_stack>` translates to actual memory maps for each of the available :ref:`ug_matter_overview_architecture_integration_designs`.
 The memory values match :ref:`RAM and flash memory requirements <ug_matter_hw_requirements_ram_flash>` listed above.
 
 Each tab shows the memory maps for the development kits supported by the Matter protocol, including two memory maps for the `Matter weather station sample <Matter weather station sample>`_, which uses Nordic Thingy:53.
 
 For more information about configuration of memory layouts in Matter, see :ref:`ug_matter_device_bootloader_partition_layout`.
 
-.. memory-layouts::
-   :file: data/memory_layouts.yaml
+.. tabs::
+
+   .. group-tab:: Charts
+
+      .. tabs::
+
+         .. group-tab:: nRF52840 DK
+
+            The following memory map is valid for Matter applications running on the `nRF52840 DK <Programming board names>`_ (`nrf52840dk`_).
+
+            .. memory-layout-board::
+               :board: nrf52840
+
+         .. group-tab:: nRF5340 DK
+
+            The following memory map is valid for Matter applications running on the `nRF5340 DK <Programming board names>`_ (`nrf5340dk`_).
+
+            .. memory-layout-board::
+               :board: nrf5340
+
+         .. group-tab:: Nordic Thingy:53
+
+            The following memory map is valid for Matter applications running on the `Nordic Thingy:53 <Programming board names>`_ (`thingy53`_).
+
+            .. memory-layout-board::
+               :board: thingy53
+
+         .. group-tab:: nRF54L15 DK
+
+            The following memory map is valid for Matter applications running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_).
+
+            .. memory-layout-board::
+               :board: nrf54l15
+
+         .. group-tab:: nRF54L15 DK + CMSE (TF-M)
+
+            The following memory map is valid for Matter applications running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_) with Trusted Firmware-M (TF-M).
+
+            .. memory-layout-board::
+               :board: nrf54l15_cmse
+
+         .. group-tab:: nRF54L15 DK with internal memory only
+
+            The following memory map is valid for Matter applications running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_) with internal memory only.
+
+            .. memory-layout-board::
+               :board: nrf54l15_internal
+
+         .. group-tab:: nRF54L10 emulation
+
+            The following memory map is valid for Matter applications running on the `nRF54L10 emulation on the nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_).
+
+            .. memory-layout-board::
+               :board: nrf54l10
+
+         .. group-tab:: nRF54L15 TAG
+
+            The following memory map is valid for Matter applications running on the `nRF54L15 TAG <Programming board names>`_ (`nrf54l15tag`_).
+
+            .. memory-layout-board::
+               :board: nrf54l15tag
+
+         .. group-tab:: nRF54LM20 DK
+
+            The following memory map is valid for Matter applications running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_).
+
+            .. memory-layout-board::
+               :board: nrf54lm20
+
+         .. group-tab:: nRF54LM20 DK with internal memory only
+
+            The following memory map is valid for Matter applications running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_) with internal memory only.
+
+            .. memory-layout-board::
+               :board: nrf54lm20_internal
+
+         .. group-tab:: nRF54LM20 DK + nRF7002 EB2
+
+            The following memory map is valid for Matter applications running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_) with the nRF7002 EB2 shield.
+
+            .. memory-layout-board::
+               :board: nrf54lm20_nrf7002
+
+   .. group-tab:: Tables
+
+      .. tabs::
+
+         .. group-tab:: nRF52840 DK
+
+            The following table lists memory partitions for Matter applications running on the `nRF52840 DK <Programming board names>`_ (`nrf52840dk`_).
+
+            .. memory-layout-table::
+               :board: nrf52840
+
+         .. group-tab:: nRF5340 DK
+
+            The following table lists memory partitions for Matter applications running on the `nRF5340 DK <Programming board names>`_ (`nrf5340dk`_).
+
+            .. memory-layout-table::
+               :board: nrf5340
+
+         .. group-tab:: Nordic Thingy:53
+
+            The following table lists memory partitions for Matter applications running on the `Nordic Thingy:53 <Programming board names>`_ (`thingy53`_).
+
+            .. memory-layout-table::
+               :board: thingy53
+
+         .. group-tab:: nRF54L15 DK
+
+            The following table lists memory partitions for Matter applications running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_).
+
+            .. memory-layout-table::
+               :board: nrf54l15
+
+         .. group-tab:: nRF54L15 DK + CMSE (TF-M)
+
+            The following table lists memory partitions for Matter applications running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_) with Trusted Firmware-M (TF-M).
+
+            .. memory-layout-table::
+               :board: nrf54l15_cmse
+
+         .. group-tab:: nRF54L15 DK with internal memory only
+
+            The following table lists memory partitions for Matter applications running on the `nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_) with internal memory only.
+
+            .. memory-layout-table::
+               :board: nrf54l15_internal
+
+         .. group-tab:: nRF54L10 emulation
+
+            The following table lists memory partitions for Matter applications running on the `nRF54L10 emulation on the nRF54L15 DK <Programming board names>`_ (`nrf54l15dk`_).
+
+            .. memory-layout-table::
+               :board: nrf54l10
+
+         .. group-tab:: nRF54L15 TAG
+
+            The following table lists memory partitions for Matter applications running on the `nRF54L15 TAG <Programming board names>`_ (`nrf54l15tag`_).
+
+            .. memory-layout-table::
+               :board: nrf54l15tag
+
+         .. group-tab:: nRF54LM20 DK
+
+            The following table lists memory partitions for Matter applications running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_).
+
+            .. memory-layout-table::
+               :board: nrf54lm20
+
+         .. group-tab:: nRF54LM20 DK with internal memory only
+
+            The following table lists memory partitions for Matter applications running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_) with internal memory only.
+
+            .. memory-layout-table::
+               :board: nrf54lm20_internal
+
+         .. group-tab:: nRF54LM20 DK + nRF7002 EB2
+
+            The following table lists memory partitions for Matter applications running on the `nRF54LM20 DK <Programming board names>`_ (`nrf54lm20dk`_) with the nRF7002 EB2 shield.
+
+            .. memory-layout-table::
+               :board: nrf54lm20_nrf7002
 
 Diagnostic logs RAM memory requirements
 =======================================

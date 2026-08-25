@@ -38,6 +38,10 @@
   font-weight: 500;
 }
 
+.memory-req-table .memory-req-group-stack {
+  text-align: center;
+}
+
 .memory-req-table td.memory-req-sample {
   min-width: 14rem;
 }
