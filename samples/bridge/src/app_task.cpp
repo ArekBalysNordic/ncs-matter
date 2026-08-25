@@ -30,6 +30,7 @@
 
 #ifdef CONFIG_BRIDGED_DEVICE_BT
 #include <bluetooth/services/lbs.h>
+#include <zephyr/bluetooth/bluetooth.h>
 #endif /* CONFIG_BRIDGED_DEVICE_BT */
 #include <zephyr/logging/log.h>
 
@@ -105,6 +106,14 @@ void AppFactoryResetHandler(const ChipDeviceEvent *event, intptr_t /* unused */)
 	switch (event->Type) {
 	case DeviceEventType::kFactoryReset:
 		Nrf::BridgeStorageManager::Instance().FactoryReset();
+#if defined(CONFIG_BRIDGED_DEVICE_BT) && defined(CONFIG_BT_SMP)
+	{
+		int err = bt_unpair(BT_ID_DEFAULT, NULL);
+		if (err) {
+			LOG_WRN("Failed to clear Bluetooth bonds (err %d)", err);
+		}
+	}
+#endif
 		break;
 	default:
 		break;
