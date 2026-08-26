@@ -14,20 +14,15 @@ on:
       - '.github/actions/load-doc-config/**'
       - '.github/workflows/doc_build.yml'
       - 'docs/**'
+      - 'samples/**/*.rst'
+      - 'samples/**/Kconfig'
+      - 'samples/**/sample.yaml'
   push:
     branches:
       - main
       - 'v*-branch'
     tags:
       - v*
-    paths:
-      - '.github/doc-addon.env'
-      - '.github/actions/load-doc-config/**'
-      - '.github/workflows/doc_build.yml'
-      - 'docs/**'
-      - 'samples/**/*.rst'
-      - 'samples/**/Kconfig'
-      - 'samples/**/sample.yaml'
 
 env:
   DOXYGEN_VERSION: 1.12.0
