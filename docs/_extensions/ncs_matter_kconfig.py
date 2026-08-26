@@ -49,6 +49,9 @@ def _register_addon_options(app: Sphinx, *args) -> None:
 
 
 def setup(app: Sphinx):
+    import kconfig_domain
+
+    kconfig_domain.setup(app)
     app.add_config_value('ncs_matter_kconfig_base_dir', None, 'env')
     app.add_config_value('ncs_matter_kconfig_extra_dirs', [], 'env')
     app.add_domain(KconfigDomain)
