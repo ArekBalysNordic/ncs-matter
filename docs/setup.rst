@@ -9,12 +9,49 @@ Requirements and setup
 
 This page outlines the requirements that you need to meet before you start working with the |addon|.
 
+.. _ncs_matter_setup_hardware_requirements:
+
 Hardware requirements
 *********************
+
+This section outlines the hardware you need to develop and run Matter applications with the |addon|.
+
+Supported SoCs
+==============
+
+Currently, the following SoCs from Nordic Semiconductor are supported for use with the Matter protocol:
+
+* `nRF5340 <Programming board names>`_ (Matter over Thread)
+* `nRF52840 <Programming board names>`_ (Matter over Thread)
+* `nRF54L15 <Programming board names>`_ (Matter over Thread)
+* `nRF54L10 <Programming board names>`_ (Matter over Thread)
+* `nRF54LM20 <Programming board names>`_ (Matter over Thread and Matter over Wi-Fi through the ``nrf7002eb2`` shield)
 
 To use the |addon|, you need a development kit that supports the Matter protocol.
 
 .. table-from-sample-yaml::
+
+Front-End Modules
+=================
+
+SoCs from Nordic Semiconductor that can run the Matter protocol over Thread can also work with external Front-End Modules.
+For more information about the FEM support in the |NCS|, see `Developing with Front-End Modules <Developing with Front-End Modules>`_ and `nRF21540 DK <Programming board names>`_.
+
+.. _ncs_matter_hw_requirements_external_flash:
+
+External flash
+==============
+
+For the currently supported SoCs, you must use an external memory with at least 1 MB of flash for the nRF52840 and nRF54L10 devices, and 1.5 MB for nRF5340 and nRF54L15 devices.
+This is required to perform the DFU operation.
+
+.. note::
+   The nRF54L15 SoC supports DFU with image compression, which may eliminate the need for external flash.
+   For more details, see `MCUboot image compression <MCUboot image compression>`_.
+
+The development kits for the supported SoCs from Nordic Semiconductor are supplied with the MX25R64 type of external flash that meets these memory requirements.
+However, it is possible to configure the SoCs with different QSPI or SPI memory if it is supported by Zephyr.
+For this purpose, check the reference design for Nordic DKs for information about how to connect the external memory with SoC, specifically whether the pins are designed for the QSPI or the high-speed SPIM operations.
 
 Software requirements
 *********************

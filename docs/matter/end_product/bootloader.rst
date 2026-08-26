@@ -203,7 +203,7 @@ To configure the number of sectors used by the backend, set the corresponding Kc
 
 For example, to cover a settings partition of 32 kB in size, you require 8 sectors.
 
-As you can see in :ref:`ug_matter_hw_requirements_layouts`, Matter samples in the |NCS| reserve exactly 32 kB for the ``settings_storage`` partition.
+As shown in the :ref:`ncs_matter_memory_requirements_layouts` page, Matter samples in the |NCS| reserve exactly 32 kB for the ``settings_storage`` partition.
 
 Factory data partition
 ======================
@@ -219,7 +219,7 @@ For this reason, to effectively implement ``fprotect``, make sure that the parti
 * The ``factory_data`` partition is placed right after the ``app`` partition in the address space (that is, the ``factory_data`` partition offset must be equal to the last address of the ``app`` partition).
 * The ``settings_storage`` partition size is a multiple of :kconfig:option:`CONFIG_FPROTECT_BLOCK_SIZE`, which may differ depending on the SoC in use.
 
-See the following figure and check the :ref:`ug_matter_hw_requirements_layouts` to make sure your implementation is correct.
+See the following figure and check the :ref:`ncs_matter_memory_requirements_layouts` to make sure your implementation is correct.
 
 .. figure:: images/matter_memory_map_factory_data.svg
    :alt: Factory data partition implementation criteria for fprotect

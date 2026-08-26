@@ -21,4 +21,4 @@ Custom board with Nordic SoC
       * `board_porting_guide <Board porting guide>`_ and `custom_board_definition <Custom board definition>`_ to learn how to create a custom board directory.
       * :ref:`ug_matter_device_optimizing_memory` to learn how to optimize memory on your board.
       * :ref:`ug_matter_device_advanced_kconfigs` to learn about Matter configuration.
-      * :ref:`ug_matter_hw_requirements` to learn about hardware requirements for Nordic Development Kits and to use as a reference when planning your custom board.
+      * :ref:`ncs_matter_setup_hardware_requirements` and :ref:`ncs_matter_memory` to learn about hardware requirements for Nordic Development Kits and to use as a reference when planning your custom board.

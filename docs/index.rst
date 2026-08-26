@@ -21,6 +21,7 @@ For additional context on other solutions, refer to the following resources:
    samples/index
    snippets/index
    matter/index
+   memory
    config
    software_maturity
    release_notes
