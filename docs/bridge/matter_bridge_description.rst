@@ -67,16 +67,16 @@ For information about how to add a new bridged Matter device type to the applica
 Except for the On/Off Light Switch, all of the listed device types are enabled by default.
 To disable one of them, set any of the following configuration options:
 
-* :option:`CONFIG_BRIDGE_ONOFF_LIGHT_BRIDGED_DEVICE` to ``n`` to disable On/Off Light.
-* :option:`CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE` to ``n`` to disable Generic Switch
-* :option:`CONFIG_BRIDGE_TEMPERATURE_SENSOR_BRIDGED_DEVICE` to ``n`` to disable Temperature Sensor.
-* :option:`CONFIG_BRIDGE_HUMIDITY_SENSOR_BRIDGED_DEVICE` to ``n`` to disable Humidity Sensor.
+* :kconfig:option:`CONFIG_BRIDGE_ONOFF_LIGHT_BRIDGED_DEVICE` to ``n`` to disable On/Off Light.
+* :kconfig:option:`CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE` to ``n`` to disable Generic Switch
+* :kconfig:option:`CONFIG_BRIDGE_TEMPERATURE_SENSOR_BRIDGED_DEVICE` to ``n`` to disable Temperature Sensor.
+* :kconfig:option:`CONFIG_BRIDGE_HUMIDITY_SENSOR_BRIDGED_DEVICE` to ``n`` to disable Humidity Sensor.
 
 Additionally, you can choose to use the On/Off Light Switch implementation instead of the Generic Switch implementation for a switch device.
 To enable the On/Off Light Switch implementation, set the following configuration options:
 
-* :option:`CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE` to ``n`` to disable Generic Switch.
-* :option:`CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE` to ``y`` to enable On/Off Light Switch.
+* :kconfig:option:`CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE` to ``n`` to disable Generic Switch.
+* :kconfig:option:`CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE` to ``y`` to enable On/Off Light Switch.
 
 See :ref:`cmake_options` for instructions on how to add these options to your build.
 
@@ -127,7 +127,7 @@ First LED:
    .. include:: /includes/interface/state_led.txt
 
 Second LED:
-   If the :option:`CONFIG_BRIDGED_DEVICE_BT` Kconfig option is set to ``y``, shows the current state of Bridge's Bluetooth LE connectivity.
+   If the :kconfig:option:`CONFIG_BRIDGED_DEVICE_BT` Kconfig option is set to ``y``, shows the current state of Bridge's Bluetooth LE connectivity.
    The following states are possible:
 
    * Turned Off - The Bridge device is in the idle state and has no Bluetooth LE devices paired.
@@ -277,7 +277,7 @@ matter_bridge onoff
 
          uart:~$ matter_bridge onoff 1 3
 
-      Note that the above command will only work if the :option:`CONFIG_BRIDGED_DEVICE_SIMULATED_ONOFF_SHELL` option is selected in the build configuration.
+      Note that the above command will only work if the :kconfig:option:`CONFIG_BRIDGED_DEVICE_SIMULATED_ONOFF_SHELL` option is selected in the build configuration.
       If the Kconfig option is not selected, the simulated device changes its state periodically in autonomous manner and cannot be controlled by using shell commands.
 
 .. _matter_bridge_cli_onoff_switch:
@@ -435,15 +435,15 @@ Bridged device configuration
 
 You can enable the :ref:`matter_bridge_app_bridged_support` by using the following Kconfig options:
 
-* :option:`CONFIG_BRIDGED_DEVICE_SIMULATED` - For the simulated bridged device.
-* :option:`CONFIG_BRIDGED_DEVICE_BT` - For the Bluetooth LE bridged device.
+* :kconfig:option:`CONFIG_BRIDGED_DEVICE_SIMULATED` - For the simulated bridged device.
+* :kconfig:option:`CONFIG_BRIDGED_DEVICE_BT` - For the Bluetooth LE bridged device.
 
 The simulated On/Off Light bridged device can operate in the following modes:
 
 * Autonomous - The simulated device periodically changes its state.
-  To build the simulated On/Off Light data provider in this mode, select the :option:`CONFIG_BRIDGED_DEVICE_SIMULATED_ONOFF_AUTOMATIC` Kconfig option.
+  To build the simulated On/Off Light data provider in this mode, select the :kconfig:option:`CONFIG_BRIDGED_DEVICE_SIMULATED_ONOFF_AUTOMATIC` Kconfig option.
 * Controllable - The user can explicitly control the On/Off state by using shell commands.
-  To build the simulated On/Off Light data provider in this mode, select the :option:`CONFIG_BRIDGED_DEVICE_SIMULATED_ONOFF_SHELL` Kconfig option.
+  To build the simulated On/Off Light data provider in this mode, select the :kconfig:option:`CONFIG_BRIDGED_DEVICE_SIMULATED_ONOFF_SHELL` Kconfig option.
   This is enabled by default.
 
 Additionally, you can decide how many bridged devices the bridge application will support.
@@ -451,9 +451,9 @@ The decision will make an impact on the flash and RAM memory usage, and is verif
 The application uses dynamic memory allocation and stores bridged device objects on the heap, so it may be necessary to increase the heap size using the :kconfig:option:`CONFIG_CHIP_MALLOC_SYS_HEAP_SIZE` Kconfig option.
 Use the following configuration options to customize the number of supported bridged devices:
 
-* :option:`CONFIG_BRIDGE_MAX_BRIDGED_DEVICES_NUMBER` - For changing the maximum number of non-Matter bridged devices supported by the bridge application
-* :option:`CONFIG_BRIDGE_MAX_DYNAMIC_ENDPOINTS_NUMBER` - For changing the maximum number of Matter endpoints used for bridging devices by the bridge application.
-  This option does not have to be equal to :option:`CONFIG_BRIDGE_MAX_BRIDGED_DEVICES_NUMBER`, as it is possible to use non-Matter devices that are represented using more than one Matter endpoint.
+* :kconfig:option:`CONFIG_BRIDGE_MAX_BRIDGED_DEVICES_NUMBER` - For changing the maximum number of non-Matter bridged devices supported by the bridge application
+* :kconfig:option:`CONFIG_BRIDGE_MAX_DYNAMIC_ENDPOINTS_NUMBER` - For changing the maximum number of Matter endpoints used for bridging devices by the bridge application.
+  This option does not have to be equal to :kconfig:option:`CONFIG_BRIDGE_MAX_BRIDGED_DEVICES_NUMBER`, as it is possible to use non-Matter devices that are represented using more than one Matter endpoint.
 
 The following configuration options are available, click on the toggle to see the details:
 
@@ -539,16 +539,16 @@ Configuring Bluetooth LE connection and scan parameters
 .. toggle::
 
    You can set your own Bluetooth LE connection parameters instead of accepting the default ones requested by the peripheral device.
-   You can disable configuring the parameters by setting the :option:`CONFIG_BRIDGE_FORCE_BT_CONNECTION_PARAMS` Kconfig option to ``n``.
+   You can disable configuring the parameters by setting the :kconfig:option:`CONFIG_BRIDGE_FORCE_BT_CONNECTION_PARAMS` Kconfig option to ``n``.
 
    Use the following Kconfig options to set the desired parameters:
 
-   - :option:`CONFIG_BRIDGE_BT_SCAN_WINDOW` - The duration a central actively scans for devices within the scan interval.
-   - :option:`CONFIG_BRIDGE_BT_SCAN_INTERVAL` - Time between consecutive Bluetooth LE scan windows.
-   - :option:`CONFIG_BRIDGE_BT_CONNECTION_INTERVAL_MIN` - The minimum time requested by the central (the bridge) after which the peripheral device should wake up to communicate.
-   - :option:`CONFIG_BRIDGE_BT_CONNECTION_INTERVAL_MAX` - The maximum time requested by the central (the bridge) after which the peripheral device should wake up to communicate.
-   - :option:`CONFIG_BRIDGE_BT_CONNECTION_TIMEOUT` - The time since the last packet was successfully received until the devices consider the connection lost.
-   - :option:`CONFIG_BRIDGE_BT_CONNECTION_LATENCY` - Allows the peripheral to skip waking up for a certain number of connection events if it does not have any data to send.
+   - :kconfig:option:`CONFIG_BRIDGE_BT_SCAN_WINDOW` - The duration a central actively scans for devices within the scan interval.
+   - :kconfig:option:`CONFIG_BRIDGE_BT_SCAN_INTERVAL` - Time between consecutive Bluetooth LE scan windows.
+   - :kconfig:option:`CONFIG_BRIDGE_BT_CONNECTION_INTERVAL_MIN` - The minimum time requested by the central (the bridge) after which the peripheral device should wake up to communicate.
+   - :kconfig:option:`CONFIG_BRIDGE_BT_CONNECTION_INTERVAL_MAX` - The maximum time requested by the central (the bridge) after which the peripheral device should wake up to communicate.
+   - :kconfig:option:`CONFIG_BRIDGE_BT_CONNECTION_TIMEOUT` - The time since the last packet was successfully received until the devices consider the connection lost.
+   - :kconfig:option:`CONFIG_BRIDGE_BT_CONNECTION_LATENCY` - Allows the peripheral to skip waking up for a certain number of connection events if it does not have any data to send.
 
    The parameters in this application have been selected based on the :ref:`multiprotocol_bt_thread` information in the :ref:`ug_multiprotocol_support` section.
 
@@ -581,7 +581,7 @@ Configuring the Bluetooth LE security
    When selected, the Matter bridge will require setting the selected minimum level from the connected Bluetooth LE bridged device.
    If the bridged device supports also levels higher than the selected minimum, the devices may negotiate using the highest shared security level.
    In case the bridged device does not support the minimum required level, the connection will be terminated.
-   To select the minimum security level, set the :option:`CONFIG_BRIDGE_BT_MINIMUM_SECURITY_LEVEL` Kconfig option to ``2``, ``3`` or ``4``.
+   To select the minimum security level, set the :kconfig:option:`CONFIG_BRIDGE_BT_MINIMUM_SECURITY_LEVEL` Kconfig option to ``2``, ``3`` or ``4``.
 
 Building and running
 ********************

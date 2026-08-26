@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
 
-"""Minimal Kconfig Sphinx domain for add-on documentation builds."""
+"""Kconfig Sphinx domain for add-on documentation builds."""
 
 from collections.abc import Iterable
 from typing import Optional
@@ -17,7 +17,7 @@ from sphinx.util.nodes import make_refnode
 
 
 class KconfigDomain(Domain):
-    """Kconfig domain used with Intersphinx for NCS options."""
+    """Kconfig domain that links to the NCS Kconfig search page."""
 
     name = 'kconfig'
     label = 'Kconfig'
@@ -41,6 +41,12 @@ class KconfigDomain(Domain):
         node: pending_xref,
         contnode: nodes.Element,
     ) -> Optional[nodes.Element]:
+        base_url = getattr(env.config, 'kconfig_external_base_url', None)
+        if base_url:
+            ref_node = nodes.reference('', '', refuri=f'{base_url}#!{target}', internal=False)
+            ref_node.append(contnode)
+            return ref_node
+
         match = [
             (docname, anchor)
             for name, _, _, docname, anchor, _ in self.get_objects()
@@ -55,3 +61,13 @@ class KconfigDomain(Domain):
 
     def add_option(self, option: str, docname: str = 'index') -> None:
         self.data['options'].add((option, option, 'option', docname, option, 1))
+
+
+def setup(app):
+    app.add_config_value('kconfig_external_base_url', None, 'env')
+
+    return {
+        'version': '0.0.1',
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }

@@ -90,12 +90,17 @@ def _apply_substitutions(text: str, substitutions: dict[str, str]) -> str:
 
 _shortcuts_path = DOC_BASE / 'shortcuts.txt'
 _substitutions = _read_rst_substitutions(_shortcuts_path)
-_links = _apply_substitutions(
+_rst_epilog_links = _apply_substitutions(
     (DOC_BASE / 'links.txt').read_text(encoding='utf-8'),
     _substitutions,
 )
 
-rst_epilog = f"""{_links}
+_ncs_version = _substitutions.get('ncs_version', 'latest')
+kconfig_external_base_url = (
+    f'https://docs.nordicsemi.com/bundle/ncs-{_ncs_version}/page/kconfig/index.html'
+)
+
+rst_epilog = f"""{_rst_epilog_links}
 .. include:: /shortcuts.txt
 """
 
