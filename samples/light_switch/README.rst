@@ -351,10 +351,9 @@ Bind the light switch with the light bulb device
          .. parsed-literal::
             :class: highlight
 
-            chip-tool groupkeymanagement key-set-write {"groupKeySetID": 349, "groupKeySecurityPolicy": 0, "epochKey0": "a0a1a2a3a4a5a6a7a8a9aaabacad7531", "epochStartTime0": 1110000, "epochKey1": "b0b1b2b3b4b5b6b7b8b9babbbcbd7531", "epochStartTime1": 1110001, "epochKey2": "c0c1c2c3c4c5c6c7c8c9cacbcccd7531", "epochStartTime2": 1110002} 1 0
-            chip-tool groupkeymanagement write group-key-map [{"groupId": 258, "groupKeySetID": 349, "fabricIndex": 1}] 1 0
+            chip-tool groupkeymanagement key-set-write '{"groupKeySetID": 349, "groupKeySecurityPolicy": 0, "epochKey0": "a0a1a2a3a4a5a6a7a8a9aaabacad7531", "epochStartTime0": 1110000, "epochKey1": "b0b1b2b3b4b5b6b7b8b9babbbcbd7531", "epochStartTime1": 1110001, "epochKey2": "c0c1c2c3c4c5c6c7c8c9cacbcccd7531", "epochStartTime2": 1110002}' 1 0
+            chip-tool groupkeymanagement write group-key-map '[{"groupId": 258, "groupKeySetID": 349, "fabricIndex": 1}]' 1 0
             chip-tool groups add-group 258 Test_Group 1 1
-
             chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 3, "subjects": [258], "targets": [{"cluster": null, "endpoint": 1, "deviceType": null}]}]' 1 0
 
       #. Set up the light switch device:
@@ -362,10 +361,11 @@ Bind the light switch with the light bulb device
          .. parsed-literal::
             :class: highlight
 
-            chip-tool groupkeymanagement key-set-write {"groupKeySetID": 349, "groupKeySecurityPolicy": 0, "epochKey0": "a0a1a2a3a4a5a6a7a8a9aaabacad7531", "epochStartTime0": 1110000, "epochKey1": "b0b1b2b3b4b5b6b7b8b9babbbcbd7531", "epochStartTime1": 1110001, "epochKey2": "c0c1c2c3c4c5c6c7c8c9cacbcccd7531", "epochStartTime2": 1110002} 2 0
-            chip-tool groupkeymanagement write group-key-map [{"groupId": 258, "groupKeySetID": 349, "fabricIndex": 1}] 2 0
-            chip-tool accesscontrol write acl [{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 3, "subjects": [258], "targets": null}] 2 0
-            chip-tool binding write binding [{"fabricIndex": 1, "group": 258}] 2 1
+            chip-tool groupkeymanagement key-set-write '{"groupKeySetID": 349, "groupKeySecurityPolicy": 0, "epochKey0": "a0a1a2a3a4a5a6a7a8a9aaabacad7531", "epochStartTime0": 1110000, "epochKey1": "b0b1b2b3b4b5b6b7b8b9babbbcbd7531", "epochStartTime1": 1110001, "epochKey2": "c0c1c2c3c4c5c6c7c8c9cacbcccd7531", "epochStartTime2": 1110002}' 2 0
+            chip-tool groupkeymanagement write group-key-map '[{"groupId": 258, "groupKeySetID": 349, "fabricIndex": 1}]' 2 0
+            chip-tool groups add-group 258 Test_Group 2 1
+            chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null}, {"fabricIndex": 1, "privilege": 3, "authMode": 3, "subjects": [258], "targets": null}]' 2 0
+            chip-tool binding write binding '[{"fabricIndex": 1, "group": 258}]' 2 1
 
 All devices are now bound and ready for testing communication.
 
