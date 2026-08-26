@@ -8,7 +8,7 @@ Creating manufacturer-specific clusters in Matter application
    :local:
    :depth: 2
 
-This guide describes how you can create a manufacturer-specific cluster for the `Matter template sample <Matter template sample>`_ sample.
+This guide describes how you can create a manufacturer-specific cluster for the `Matter template sample`_ sample.
 The :ref:`matter_manufacturer_specific_sample` sample already contains a custom ``NordicDevkit`` cluster that you can use as a reference.
 
 Overview
@@ -28,7 +28,7 @@ To take advantage of this guide, you need to be familiar with the :ref:`ug_matte
 Copy Matter template sample
 ***************************
 
-Use the `Matter template sample <Matter template sample>`_ sample as the base for building a manufacturer-specific device as follows:
+Use the `Matter template sample`_ sample as the base for building a manufacturer-specific device as follows:
 
 1. Make sure that you meet the requirements for building the sample.
 #. Copy the contents of the :file:`samples/matter/template` directory to a new directory meant for your custom application.

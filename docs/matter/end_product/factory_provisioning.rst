@@ -663,13 +663,13 @@ Preparing factory data partition on a device
 ============================================
 
 The factory data partition is an area in the device's persistent storage, where the factory data set is stored.
-This area is configured using the `Partition Manager <Partition Manager>`_, within which all partitions are declared in the :file:`pm_static.yml` file.
+This area is configured using the `Partition Manager`_, within which all partitions are declared in the :file:`pm_static.yml` file.
 
 To prepare an example that supports factory data, add a partition called ``factory_data`` to the :file:`pm_static.yml` file.
 The partition size should be a multiple of one flash page (for nRF52 and nRF53 SoCs, a single page size equals 4 kB).
 
 See the following code snippet for an example of a factory data partition in the :file:`pm_static.yml` file.
-The snippet is based on the :file:`pm_static.yml` file from the `Matter lock sample <Matter lock sample>`_ and uses the nRF52840 DK:
+The snippet is based on the :file:`pm_static.yml` file from the `Matter lock sample`_ and uses the nRF52840 DK:
 
 .. parsed-literal::
    :class: highlight

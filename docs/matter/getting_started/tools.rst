@@ -37,7 +37,7 @@ If you are updating from the |NCS| version earlier than v1.5.0, see the followin
          1. Download the latest version of the GN binary archive for Windows from the `GN website`_.
          2. Extract the :file:`zip` archive.
          3. Ensure that the GN tool is added to your :envvar:`PATH` environment variable.
-            For the exact instructions, see `Zephyr environment variables <Zephyr environment variables>`_.
+            For the exact instructions, see `Zephyr environment variables`_.
 
       .. group-tab:: Linux
 
@@ -238,7 +238,7 @@ You can install the ZAP tool either automatically or manually:
 Matter west commands
 ********************
 
-Matter west commands are a set of commands dedicated for Matter-related purposes and integrated with `West tool <West tool>`_.
+Matter west commands are a set of commands dedicated for Matter-related purposes and integrated with `West tool`_.
 You can use them to simplify work with the Matter application project.
 
 .. _ug_matter_gs_tools_matter_west_commands_zap_tool:
@@ -444,7 +444,7 @@ To install the chip-cert tool, complete the following steps:
 Generating custom certificates in factory data
 ==============================================
 
-Adding the chip-cert tool to the system :envvar:`PATH` allows you to build :ref:`matter_samples`, the `Matter weather station sample <Matter weather station sample>`_, and the `Matter bridge <Matter bridge sample>`_ applications with custom certificates included in the factory data.
+Adding the chip-cert tool to the system :envvar:`PATH` allows you to build :ref:`matter_samples`, the `Matter weather station sample`_, and the `Matter bridge <Matter bridge sample_>`_ applications with custom certificates included in the factory data.
 This lets you for example change the test Vendor ID, Product ID, or other data.
 
 To build a Matter application in the |NCS| with custom certification data, make sure to set the :kconfig:option:`CONFIG_CHIP_FACTORY_DATA_USE_DEFAULT_CERTS` to ``n`` when :doc:`building an example with factory data <matter:nrfconnect_factory_data_configuration>`.

@@ -8,7 +8,7 @@ Adding clusters to Matter application
    :local:
    :depth: 2
 
-As part of this guide, you will modify the `Matter template <Matter template sample>`_ sample by adding new application clusters in order to create a Matter sensor device that measures temperature and can be turned on and off.
+As part of this guide, you will modify the `Matter template <Matter template sample_>`_ sample by adding new application clusters in order to create a Matter sensor device that measures temperature and can be turned on and off.
 The sensor will periodically generate the simulated temperature sensor value and update the corresponding cluster attributes.
 This application will form a Matter device within a Matter network.
 
@@ -76,7 +76,7 @@ To take advantage of this guide, you need to be familiar with :ref:`ug_matter_ar
 Copy Matter template sample
 ***************************
 
-Use the `Matter Template <Matter template sample>`_ sample as the base for building a sensor device:
+Use the `Matter Template <Matter template sample_>`_ sample as the base for building a sensor device:
 
 1. Make sure that you meet the requirements for building the sample.
 #. Build and test the sample as described on its documentation page.

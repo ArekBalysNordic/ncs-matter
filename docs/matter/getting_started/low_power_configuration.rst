@@ -14,17 +14,17 @@ See the following sections for more information.
 
 The following Matter samples and applications use the low power configuration by default and you can use them as reference designs:
 
-* `Matter door lock sample <Matter lock sample>`_
-* `Matter light switch sample <Matter light switch sample>`_
-* `Matter smoke CO alarm <Matter smoke CO alarm sample>`_
-* `Matter window covering sample <Matter window covering sample>`_
-* `Matter weather station application <Matter weather station sample>`_
-* `Matter temperature sensor sample <Matter temperature sensor sample>`_
-* `Matter contact sensor sample <Matter contact sensor sample>`_
+* `Matter door lock sample <Matter lock sample_>`_
+* `Matter light switch sample`_
+* `Matter smoke CO alarm <Matter smoke CO alarm sample_>`_
+* `Matter window covering sample`_
+* `Matter weather station application <Matter weather station sample_>`_
+* `Matter temperature sensor sample`_
+* `Matter contact sensor sample`_
 
 The following additional materials and tools might help you to optimize, estimate, and measure the power consumption of your device are:
 
-* `Online Power Profiler for Matter over Thread <Online Power Profiler for Matter over Thread>`_
+* `Online Power Profiler for Matter over Thread`_
 * :ref:`ug_matter_gs_tools_opp`
 
 .. _ug_matter_device_low_power_icd:
@@ -145,7 +145,7 @@ Matter over Thread
 
 The Thread protocol defines two types of devices working in a low power mode: Sleepy End Devices (SEDs) and Synchronized Sleepy End Devices (SSEDs).
 Both types are variants of Minimal Thread Device (MTD) type.
-For more information about MTD and SEDs, see `Thread device types <Thread device types>`_.
+For more information about MTD and SEDs, see `Thread device types`_.
 
 In a Thread network, :ref:`Matter ICD <ug_matter_device_low_power_icd>` behave like Thread SED, but the two terms are not interchangeable.
 
@@ -195,7 +195,7 @@ Matter over Wi-Fi
 The Wi-Fi protocol introduces the power save mechanism that allows the Station device (STA) to spend the majority of time in a sleep state and wake-up periodically to check for pending traffic.
 This is coordinated by the Access Point device (AP) using a mechanism called Delivery Traffic Indication Message (DTIM).
 The message is sent in a predefined subset of the beacons, so the STA device needs to wake up only to receive this message and not every beacon (as it would happen for the not-optimized case).
-For more information about the Wi-Fi power save mechanism, see the `Wi-Fi MAC layer <Wi-Fi MAC layer>`_ documentation.
+For more information about the Wi-Fi power save mechanism, see the `Wi-Fi MAC layer`_ documentation.
 
 To enable the Wi-Fi power save mode, set the :kconfig:option:`CONFIG_NRF_WIFI_LOW_POWER` Kconfig option to ``y``.
 
@@ -312,7 +312,7 @@ You can configure the calibration period using the following Kconfig options:
 Disable unused RAM sections
 ***************************
 
-The `RAM power-down <RAM power-down>`_ library allows you to disable unused sections of RAM and save power in low-power applications.
+The `RAM power-down`_ library allows you to disable unused sections of RAM and save power in low-power applications.
 Unused sections of RAM depend on the SoC architecture and the total amount of used static RAM.
 In Matter, you can use this feature by setting the :kconfig:option:`CONFIG_RAM_POWER_DOWN_LIBRARY` Kconfig option to ``y``.
 

@@ -25,11 +25,11 @@ The Matter samples delivered in the |NCS| have not received official certificate
 However, they have been tested against the Works with Google Home certification test cases and have successfully passed all of them.
 The following is a full list of Matter samples that were verified to pass the Works with Google certification test cases:
 
-* `Matter Lock sample <Matter lock sample>`_
-* `Matter light bulb sample <Matter light bulb sample>`_
-* `Matter thermostat sample <Matter thermostat sample>`_
-* `Matter window covering sample <Matter window covering sample>`_
-* `Matter weather station sample <Matter weather station sample>`_
+* `Matter Lock sample <Matter lock sample_>`_
+* `Matter light bulb sample`_
+* `Matter thermostat sample`_
+* `Matter window covering sample`_
+* `Matter weather station sample`_
 
 .. _ug_matter_amazon_certification:
 
@@ -56,9 +56,9 @@ Use one of the following values:
 +-----------------------------------------------------------------------------+-----------------------+
 | Matter platform variant                                                     | Reference Design APID |
 +=============================================================================+=======================+
-| `nRF52 Series <Developing with nRF52 Series>`_ (Matter over Thread)         | ZNwt                  |
+| `nRF52 Series <Developing with nRF52 Series_>`_ (Matter over Thread)        | ZNwt                  |
 +-----------------------------------------------------------------------------+-----------------------+
-| `nRF53 Series <Developing with nRF53 Series>`_ (Matter over Thread)         | xzNd                  |
+| `nRF53 Series <Developing with nRF53 Series_>`_ (Matter over Thread)        | xzNd                  |
 +-----------------------------------------------------------------------------+-----------------------+
-| `nRF70 Series <Developing with nRF70 Series>`_ (Matter over Wi-Fi®)         | jyjh                  |
+| `nRF70 Series <Developing with nRF70 Series_>`_ (Matter over Wi-Fi®)        | jyjh                  |
 +-----------------------------------------------------------------------------+-----------------------+
