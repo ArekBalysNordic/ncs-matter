@@ -22,7 +22,7 @@ The Kconfig options for Matter applications in the |NCS| are stored in the follo
 * :file:`prj.conf` files, which are specific to the application.
 * :file:`Kconfig.defaults` file, which is available in the :file:`module/lib/matter/config/nrfconnect/chip-module` directory and is used to populate :file:`prj.conf` with Kconfig option settings common to all samples.
 
-For an example configuration, see the `Matter Template sample's <Matter template sample>`_ :file:`prj.conf` files in the sample root directory.
+For an example configuration, see the `Matter Template sample's <Matter template sample_>`_ :file:`prj.conf` files in the sample root directory.
 
 Configuration options for other modules
 ***************************************

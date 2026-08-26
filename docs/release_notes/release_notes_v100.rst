@@ -27,5 +27,5 @@ This release provides Matter samples and documentation migrated from the |NCS| M
     You can use the app as a Matter controller for testing :ref:`matter_samples`.
   * Integration of |addon| with the |NCS| v3.4.0.
 
-* Removed the :c:function:`Init` function from the :c:struct:`Nrf::Matter::IdentifyCluster` class.
-  To add the Identify Matter cluster to your application, declare a new :c:struct:`Nrf::Matter::IdentifyCluster` object in your :file:`AppTask.c` file and fill all required constructor arguments.
+* Removed the ``Init`` function from the ``Nrf::Matter::IdentifyCluster`` class.
+  To add the Identify Matter cluster to your application, declare a new ``Nrf::Matter::IdentifyCluster`` object in your :file:`AppTask.cpp` file and fill all required constructor arguments.

@@ -184,11 +184,11 @@ The following tables summarize the partitions by target.
 Settings partition
 ==================
 
-The nRF Connect platform in Matter uses Zephyr's `Settings <Settings>`_ API to provide the storage capabilities to the Matter stack.
+The nRF Connect platform in Matter uses Zephyr's `Settings`_ API to provide the storage capabilities to the Matter stack.
 This requires that you define the ``settings_storage`` partition in the flash.
 The recommended minimum size of the partition is 32 kB, but you can reserve even more space if your application uses the storage extensively.
 
-The Zephyr settings storage is implemented by the `Zephyr NVS (Non-Volatile Storage) <Non-Volatile Storage (NVS)>`_ or `ZMS (Zephyr Memory Storage) <ZMS (Zephyr Memory Storage)>`_ backends.
+The Zephyr settings storage is implemented by the `Zephyr NVS (Non-Volatile Storage) <Non-Volatile Storage (NVS)_>`_ or `ZMS (Zephyr Memory Storage)`_ backends.
 You can select either backend, and the selection affects several factors, such as the operational performance or memory lifetime.
 To achieve the optimal experience, it is recommended to use:
 

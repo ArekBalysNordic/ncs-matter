@@ -57,7 +57,7 @@ Secure storage
 **************
 
 :ref:`secure_storage_in_ncs` lets you securely store and manage sensitive data.
-Currently, all :ref:`matter_samples` in the |NCS| use the `Trusted storage <Trusted storage>`_ library as the PSA Secure Storage API implementation for all supported platforms.
+Currently, all :ref:`matter_samples` in the |NCS| use the `Trusted storage`_ library as the PSA Secure Storage API implementation for all supported platforms.
 You can find an overview of the PSA Secure Storage configuration supported for each |NCS| Matter-enabled platform in the :ref:`matter_platforms_security_support` section.
 
 .. note::
@@ -65,7 +65,7 @@ You can find an overview of the PSA Secure Storage configuration supported for e
    This approach is less secure than using the :ref:`lib_hw_unique_key` library for key derivation as it only provides integrity of sensitive material.
    It is also possible to implement a custom AEAD key generation method when the :kconfig:option:`CONFIG_TRUSTED_STORAGE_BACKEND_AEAD_KEY_CUSTOM` Kconfig option is selected.
 
-For more details about AEAD key generation and backend configuration, see the `Trusted storage <Trusted storage>`_ readme.
+For more details about AEAD key generation and backend configuration, see the `Trusted storage`_ readme.
 
 .. _matter_platforms_security_support:
 

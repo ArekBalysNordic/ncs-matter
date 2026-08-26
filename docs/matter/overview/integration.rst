@@ -7,7 +7,7 @@ Matter integration in the |NCS|
    :local:
    :depth: 2
 
-Matter is included in the |NCS| as one of the submodule repositories managed with the `West tool <West tool>`_ tool, using a `dedicated Matter fork`_.
+Matter is included in the |NCS| as one of the submodule repositories managed with the `West tool`_ tool, using a `dedicated Matter fork`_.
 That is, the code used for the |NCS| and Matter integration is stored in the Matter repository (nRF Connect platform) and is compiled when building one of the available :ref:`matter_samples`.
 
 .. figure:: images/matter_components_integration_ncs.svg
