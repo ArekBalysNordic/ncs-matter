@@ -93,7 +93,7 @@ documentation:
         - nrf54lm20dk_nrf54lm20a_cpuapp_internal
         - nrf54lm20dk_nrf54lm20b_cpuapp_internal
     diagnostic_ram:
-      path: "docs/matter/getting_started/hw_requirements.rst"
+      path: "docs/memory.rst"
     diagnostic_logs_snippet:
       path: "snippets/diagnostic-logs/boards"
     skip_mappings:
