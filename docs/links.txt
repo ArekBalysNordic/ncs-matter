@@ -101,6 +101,9 @@
 .. _Matter Fundamentals course: https://academy.nordicsemi.com/courses/matter-fundamentals/
 .. _Matter GitHub repository: https://github.com/project-chip/connectedhomeip
 .. _Matter Quick Start app: https://docs.nordicsemi.com/bundle/swtools_docs/page/app/pc-nrfconnect-matter-quickstart/index.html
+.. _nRF Matter for Mobile: https://github.com/nordicsemi/kotlin-nrf-matter
+.. _nRF Matter on Google Play: https://play.google.com/store/apps/details?id=no.nordicsemi.nrf.matter&hl=en
+.. _nRF Matter on App Store: https://apps.apple.com/us/app/nrf-matter/id6786253679
 .. _Matter SDK version: https://github.com/project-chip/connectedhomeip/releases
 .. _Matter Simple Setup: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-getting-started.html
 .. _Matter Simple Setup for Thread Overview: https://developer.amazon.com/docs/frustration-free-setup/matter-simple-setup-for-thread-overview.html

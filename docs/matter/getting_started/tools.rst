@@ -118,7 +118,8 @@ The following figure shows the available Matter controllers in the |NCS|.
    Controllers used by Matter
 
 You can read more about the Matter controller on the :ref:`Matter network topologies <ug_matter_configuring_controller>` page.
-For information about how to build and configure the Matter controller, see the pages in the :ref:`ug_matter_gs_testing` section.
+For information about how to build and configure the Matter controller on PC, see the subpages listed in the :ref:`ug_matter_gs_testing` page.
+Alternatively, you can use the :ref:`nRF Matter for Mobile app <ug_matter_gs_tools_nrf_matter_mobile>` as a Matter controller on a smartphone.
 
 .. _ug_matter_gs_tools_chip:
 
@@ -137,6 +138,32 @@ Depending on your system, you can install the CHIP Tool in one of the following 
 .. note::
    To use CHIP Tool for macOS you need to have the appropriate Apple profile installed on your macOS machine.
    To learn how to install the profile and work with Apple devices see the `Testing with Apple Devices`_ user guide in the Matter documentation.
+
+.. _ug_matter_gs_tools_nrf_matter_mobile:
+
+nRF Matter for Mobile
+=====================
+
+The nRF Matter for Mobile app is a Matter commissioning and control companion app for Android and iOS.
+You can use it as a Matter controller to commission Nordic Semiconductor development kits programmed with :ref:`matter_samples` and to control commissioned devices over a local network.
+
+With the app, you can perform the following operations:
+
+* Commission Matter devices onto your fabric.
+* Control commissioned devices, such as door locks, lights, and switches.
+* Manage bindings between devices.
+* View logs for diagnosing commissioning and cluster interactions.
+
+For Matter over Thread, you need a Thread Border Router on the same local network as your phone.
+
+You can also use the application source code as a reference for creating your own Matter controller mobile application suited for your use cases.
+
+The nRF Matter for Mobile is available on both Android and iOS:
+
+* Android: `nRF Matter on Google Play`_
+* iOS: `nRF Matter on App Store`_
+
+For sources access, supported development kits, and detailed setup information, see the `nRF Matter for Mobile`_ repository on GitHub.
 
 .. _ug_matter_gs_tools_zap:
 
