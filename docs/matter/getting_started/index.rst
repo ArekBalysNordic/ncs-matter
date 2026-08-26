@@ -21,8 +21,7 @@ The following video showcases several aspects of the Matter setup, discussed in 
 
 The pages will guide you through the following getting started process:
 
-1. In :ref:`ug_matter_hw_requirements`, you will learn about Nordic Semiconductor's SoCs that are compatible with Matter and the RAM and flash memory requirements for each of the :ref:`matter_samples`.
-#. :ref:`ug_matter_gs_testing` will guide you through the process of setting up the development environment for Matter.
+1. :ref:`ug_matter_gs_testing` will guide you through the process of setting up the development environment for Matter.
    Several options are available based on your choice of the IPv6 network and the Matter controller type.
    During this process, you will have to program a Matter sample.
    It is recommended to use the `Matter light bulb <Matter light bulb sample>`_ sample.

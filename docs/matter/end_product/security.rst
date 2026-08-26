@@ -48,7 +48,7 @@ To configure the partition layout for your application, you can edit the :file:`
 To read more about the TF-M partitioning, see :ref:`ug_tfm_partition_alignment_requirements`.
 While using TF-M, the application partition size and available RAM space for the application is lower than without TF-M.
 You must keep this in mind and calculate the available space for the application partition.
-The recommended values are provided in the :ref:`ug_matter_hw_requirements_layouts` section.
+The recommended values are provided in the :ref:`ncs_matter_memory_requirements_layouts` section.
 
 By default, the DAC private key is stored in the KMU storage while using TF-M.
 See the :ref:`matter_platforms_security_dac_priv_key_kmu` section for more information.
