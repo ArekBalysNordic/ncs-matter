@@ -48,8 +48,8 @@ LTO is an advanced compilation technique that performs optimization across all c
 
 LTO is enabled by default for the following:
 
-* The `Matter bridge sample`_ application.
-* The ``release`` configuration of the :ref:`matter_samples` and the `Matter weather station sample`_.
+* The :ref:`matter_bridge_app` application.
+* The ``release`` configuration of the :ref:`matter_samples` and the :ref:`matter_weather_station_app`.
 
 
 To enable LTO, set the :kconfig:option:`CONFIG_LTO` and :kconfig:option:`CONFIG_ISR_TABLES_LOCAL_DECLARATION` Kconfig options to ``y``.
@@ -327,9 +327,9 @@ Settings usage
     The data used within this partition may increase with updates to Matter and the |NCS|.
 
 To adjust the settings usage, you need to modify the :file:`boards/<board_name>.overlay` board file related to your target board.
-For example, to modify the ``storage_partition`` partition in the `Matter Template <Matter template sample_>`_ sample for the ``nrf54l15dk/nrf54l15/cpuapp`` target, complete the following steps:
+For example, to modify the ``storage_partition`` partition in the :ref:`Matter Template <matter_template_sample>` sample for the ``nrf54l15dk/nrf54l15/cpuapp`` target, complete the following steps:
 
-1. Locate the base partition for the ``nrf54l15dk/nrf54l15/cpuapp`` board target file :file:`nrf54l15_cpuapp_partitions.dtsi` located under the :file:`nrf/dts/samples/matter` directory.
+1. Locate the base partition for the ``nrf54l15dk/nrf54l15/cpuapp`` board target file :file:`nrf54l15_cpuapp_partitions.dtsi` located under the :file:`dts` directory.
 2. Copy the content of this file to your :file:`boards/nrf54l15dk_nrf54l15_cpuapp.overlay` board file.
 #. In your :file:`boards/nrf54l15dk_nrf54l15_cpuapp.overlay` board file, locate the ``storage_partition`` partition.
 

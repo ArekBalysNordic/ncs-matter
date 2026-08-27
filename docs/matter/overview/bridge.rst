@@ -50,7 +50,7 @@ Implementation in the |NCS|
 
 The |NCS| includes a reference implementation of the Matter bridge core, located in the :file:`applications/matter_bridge/src/bridge` directory.
 The core implementation is not dependent on any specific connectivity technology, and provides basic bridge functionalities and a generic API.
-In addition to the core part, the |NCS| also includes an example `Matter bridge sample`_ application that you can use as a reference for creating your own application.
+In addition to the core part, the |NCS| also includes an example :ref:`matter_bridge_app` application that you can use as a reference for creating your own application.
 
 The Matter bridge translates between the Matter data model and the data representation specific for other protocols.
 It is not possible to provide a generic translation between Matter and all other IoT protocols.

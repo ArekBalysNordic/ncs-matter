@@ -35,7 +35,7 @@ To test the Matter bridge application with the :ref:`Bluetooth® LE bridged devi
 
 * An additional development kit compatible with one of the following Bluetooth LE samples:
 
-  * :ref:`peripheral_lbs`
+  * `ble_peripheral_lbs`_
   * `ble_peripheral_esp`_
 
 * A USB cable for every development kit to connect it to the PC.
@@ -687,7 +687,7 @@ Depending on the chosen bridged devices configuration, complete the steps in one
 
       1. Build and program the one of the following Bluetooth LE samples to an additional development kit compatible with the sample:
 
-         * :ref:`peripheral_lbs`
+         * `ble_peripheral_lbs`_
          * `ble_peripheral_esp`_
 
       #. Connect the development kit that is running the Bluetooth LE sample to the PC.
@@ -872,7 +872,7 @@ Complete the following steps to add a bridged light switch device using either a
 
       .. group-tab:: Testing with Bluetooth LE bridged light switch device
 
-         a. Build and program the :ref:`Peripheral LBS Bluetooth LE <peripheral_lbs>` sample to an additional development kit.
+         a. Build and program the :ref:`Peripheral LBS Bluetooth LE <ble_peripheral_lbs>` sample to an additional development kit.
          #. Connect the development kit that is running the Bluetooth LE sample to the PC.
          #. Using the terminal emulator connected to the bridge, run the following :ref:`Matter CLI command <matter_bridge_cli>` to scan for available Bluetooth LE devices:
 

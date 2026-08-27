@@ -174,7 +174,7 @@ Reference Matter memory layouts
 The following tables and bar charts show how the :ref:`Matter stack architecture in the nRF Connect SDK <ug_matter_overview_architecture_integration_stack>` translates to actual memory maps for each of the available :ref:`ug_matter_overview_architecture_integration_designs`.
 The memory values match the :ref:`RAM and flash memory requirements <ncs_matter_memory_requirements_ram_flash>` listed.
 
-Each tab shows the memory maps for the development kits supported by the Matter protocol, including two memory maps for the `Matter weather station sample`_, which uses Nordic Thingy:53.
+Each tab shows the memory maps for the development kits supported by the Matter protocol, including two memory maps for the :ref:`matter_weather_station_app`, which uses Nordic Thingy:53.
 
 For more information about configuration of memory layouts in Matter, see :ref:`ug_matter_device_bootloader_partition_layout`.
 
@@ -391,7 +391,7 @@ You can adjust the retained partitions for your needs by editing the :ref:`snipp
 
    .. tab:: Nordic Thingy:53
 
-    The following RAM memory layout for the `Matter weather station <Matter weather station sample_>`_ application running on the `thingy53`_.
+    The following RAM memory layout for the :ref:`Matter weather station <matter_weather_station_app>` application running on the `thingy53`_.
 
     Application core SRAM primary (size: 0x80000 = 512 kB)
     SRAM is located at the address ``0x20000000`` in the memory address space of the application.

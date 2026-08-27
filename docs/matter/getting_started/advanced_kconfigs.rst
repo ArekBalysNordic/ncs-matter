@@ -270,7 +270,7 @@ Read Client functionality
 =========================
 
 The Read Client functionality is used for reading attributes from another device in the Matter network.
-This functionality is disabled by default for Matter samples in the |NCS|, except for ones that need to read attributes from the bound devices, such as the `Matter light switch sample`_ and `Matter thermostat sample`_ samples, and the `Matter bridge sample`_ application.
+This functionality is disabled by default for Matter samples in the |NCS|, except for ones that need to read attributes from the bound devices, such as the :ref:`matter_light_switch_sample` and :ref:`matter_thermostat_sample` samples, and the :ref:`matter_bridge_app` application.
 Enable the feature if your device needs to be able to access attributes from a different device within the Matter network using, for example, bindings.
 
 .. _ug_matter_persistent_storage:
@@ -282,7 +282,7 @@ The persistent storage module allows for the application data and configuration 
 |NCS| Matter applications use one generic Persistent Storage API that can be enabled by the :option:`CONFIG_MATTER_PERSISTENT_STORAGE` Kconfig option.
 This API consists of methods with ``Secure`` and ``NonSecure`` prefixes, which handle secure (ARM Platform Security Architecture Persistent Storage) and non-secure (raw Zephyr settings) storage operations, respectively.
 
-You can learn more details about the Persistent Storage API from the :file:`ncs/nrf/samples/matter/common/src/persistent_storage/persistent_storage.h` header file.
+You can learn more details about the Persistent Storage API from the :file:`subsys/persistent_storage/persistent_storage.h` header file.
 
 The interface is implemented by two available backends.
 Both can be used simultaneously by controlling the following Kconfig options:

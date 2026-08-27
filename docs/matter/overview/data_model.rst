@@ -128,7 +128,7 @@ The following tables list the *application device types* that are supported in M
   The `Provisional` state indicates that the device type implementation is not yet fully tested and certified, even though the implementation may be ready and you can use it on your own risk.
 * The dedicated sample column provides the link to the sample in the |NCS| that implements the given device type, if available.
 
-You can add support for device types without a dedicated sample in the |NCS| by using the `Matter template sample`_ and following the :ref:`ug_matter_creating_accessory` user guide, which describes how to edit clusters of a Matter application.
+You can add support for device types without a dedicated sample in the |NCS| by using the :ref:`matter_template_sample` and following the :ref:`ug_matter_creating_accessory` user guide, which describes how to edit clusters of a Matter application.
 
 .. _ug_matter_device_types_lighting:
 

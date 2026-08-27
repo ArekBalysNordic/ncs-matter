@@ -29,7 +29,7 @@ The Matter application code in the |NCS| can be divided into the following steps
 #. Interaction between the application and the Matter Data Model.
    This is based on the Zigbee Cluster Library (ZCL) callbacks.
 
-Steps 1 to 3 can be implemented with the use of the nRF Connect Matter API and the utilities provided as a part of |NCS| Matter samples' ``common`` modules (:file:`ncs/nrf/samples/matter/common`).
+Steps 1 to 3 can be implemented with the use of the nRF Connect Matter API and the utilities provided as a part of Matter add-on's ``subsys`` modules (:file:`subsys`).
 Step 4 requires ZCL callback functions that must be provided to interact with the Matter Data Model.
 These callbacks are specific to the particular configuration of the Data Model (in other words, the supported clusters) and therefore cannot be generalized or abstracted in a more user-friendly form.
 
@@ -126,7 +126,7 @@ The nRF Connect Matter API contains the following functions that can be used to 
 
   This function is only available if the :kconfig:option:`CONFIG_CHIP_FACTORY_DATA` Kconfig option is selected.
 
-For more details regarding nRF Connect Matter initialization API, refer to the Doxygen commentary in the :file:`ncs/nrf/samples/matter/common/src/app/matter_init.h` header file.
+For more details regarding nRF Connect Matter initialization API, refer to the Doxygen commentary in the :file:`subsys/app/matter_init.h` header file.
 
 Event handler API
 =================
@@ -150,7 +150,7 @@ The nRF Connect Matter API contains of the following functions that can be used 
   This is an nRF Connect Matter event handler function that is registered in the nRF Connect Matter Initialization API by default.
   You can unregister this handler with the :c:func:`UnregisterEventHandler` function in the application if needed.
 
-For more details regarding nRF Connect Matter event handler API, refer to the Doxygen commentary in the :file:`ncs/nrf/samples/matter/common/src/app/matter_event_handler.h` header file.
+For more details regarding nRF Connect Matter event handler API, refer to the Doxygen commentary in the :file:`subsys/app/matter_event_handler.h` header file.
 
 nRF Connect Matter API usage example
 ====================================

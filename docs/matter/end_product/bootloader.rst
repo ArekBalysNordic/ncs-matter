@@ -46,8 +46,8 @@ Partition layout
 
    For more information on how to configure partitions using DTS and how to migrate your existing configuration to DTS, see the following pages:
 
-   * :ref:`migration_partitions`
-   * :ref:`ncs_release_notes_340`
+   * `Migration Partitions from PM`_
+   * `nRF Connect SDK v3.4.0 release notes`_
 
 A bootloader is a critical component in a Matter device, ensuring secure firmware updates and authenticating new application images.
 All Nordic Matter samples in the |NCS| use MCUboot as the primary bootloader, with configuration and partitioning adapted to application and device needs.
@@ -56,7 +56,7 @@ All Nordic Matter samples in the |NCS| use MCUboot as the primary bootloader, wi
 
 Consider the following when defining partitions for your end product:
 
-* Use the default partition layout for your target SoC by including the base partition file :file:`<soc_name>_cpuapp_partitions.dtsi` located under the :file:`nrf/dts/samples/matter` directory.
+* Use the default partition layout for your target SoC by including the base partition file :file:`<soc_name>_cpuapp_partitions.dtsi` located under the :file:`dts` directory.
   Include the base partition file in your :file:`boards/<board_name>.overlay` board file using the following line:
 
   .. code-block:: dts
