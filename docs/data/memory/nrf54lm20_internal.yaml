@@ -6,51 +6,64 @@ board:
   nvm_total_kb: 2036
   ram_total_kb: 511
 legend_threshold_kb: 8
-stack_threads:
-  main:
-    title: Main Thread
-    kconfig: CONFIG_MAIN_STACK_SIZE
-  openthread:
-    title: OpenThread Thread
-    kconfig: CONFIG_OPENTHREAD_THREAD_STACK_SIZE
-  chip:
-    title: Matter Thread (CHIP Thread)
-    kconfig: CONFIG_CHIP_TASK_STACK_SIZE
 layouts:
+  release_internal:
+    partitions:
+    - id: boot
+      label: MCUboot
+      size_kb: 40
+      order: 1
+    - id: slot0
+      label: Application
+      size_kb: 1176
+      order: 2
+    - id: factory_data
+      label: Factory data
+      size_kb: 4
+      order: 3
+    - id: storage
+      label: Settings
+      size_kb: 48
+      order: 4
+    - id: slot1
+      label: Application DFU
+      size_kb: 768
+      order: 5
 reference_regions:
-  - id: flash_primary
-    title: Internal flash
-    total_bytes: 2084864
-    base_address: 0
-    partitions:
-      - id: boot_partition
-        label: Bootloader
-        size_bytes: 40960
-        offset_bytes: 0
-      - id: slot0_partition
-        label: Application
-        size_bytes: 1204224
-        offset_bytes: 40960
-      - id: slot1_partition
-        label: Application DFU
-        size_bytes: 786432
-        offset_bytes: 1245184
-      - id: factory_data_partition
-        label: Factory data
-        size_bytes: 4096
-        offset_bytes: 2031616
-      - id: storage_partition
-        label: Non-volatile storage
-        size_bytes: 49152
-        offset_bytes: 2035712
-  - id: sram_cpuapp_sram
-    title: Static RAM (cpuapp_sram)
-    total_bytes: 523264
-    base_address: 536870912
-    address_note_rst: SRAM is located at the address ``0x20000000`` in the memory address space of the application.
-    partitions:
-      - id: cpuapp_sram
-        label: Static RAM
-        size_bytes: 523264
-        offset_bytes: 0
-samples:
+- id: flash_primary
+  title: Internal flash
+  total_bytes: 2084864
+  base_address: 0
+  partitions:
+  - id: boot_partition
+    label: Bootloader
+    size_bytes: 40960
+    offset_bytes: 0
+  - id: slot0_partition
+    label: Application
+    size_bytes: 1204224
+    offset_bytes: 40960
+  - id: slot1_partition
+    label: Application DFU
+    size_bytes: 786432
+    offset_bytes: 1245184
+  - id: factory_data_partition
+    label: Factory data
+    size_bytes: 4096
+    offset_bytes: 2031616
+  - id: storage_partition
+    label: Non-volatile storage
+    size_bytes: 49152
+    offset_bytes: 2035712
+- id: sram_cpuapp_sram
+  title: Static RAM (cpuapp_sram)
+  total_bytes: 523264
+  base_address: 536870912
+  address_note_rst: SRAM is located at the address ``0x20000000`` in the memory address
+    space of the application.
+  partitions:
+  - id: cpuapp_sram
+    label: Static RAM
+    size_bytes: 523264
+    offset_bytes: 0
+samples: []
