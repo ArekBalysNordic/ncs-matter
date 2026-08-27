@@ -106,94 +106,94 @@ The following table lists the available triggers and their activation codes:
     - The range of ``0x00`` - ``0xFF`` is the fabric index value.
       The maximum fabric index value depends on the current device's settings.
   * - Smoke CO alarm - Smoke critical alarm
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger a smoke alarm with critical severity level.
     - ``0x005c00000000009c``
     - No additional value supported.
   * - Smoke CO alarm - Smoke alarm clean
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger an action that ceases smoke alarm.
     - ``0x005c0000000000a0``
     - No additional value supported.
   * - Smoke CO alarm - CO critical alarm
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger a CO alarm with critical severity level.
     - ``0x005c00000000009d``
     - No additional value supported.
   * - Smoke CO alarm - CO alarm clean
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger an action that ceases CO alarm.
     - ``0x005c0000000000a1``
     - No additional value supported.
   * - Smoke CO alarm - battery low level alarm
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger a battery low level alarm.
     - ``0x005c00000000009e``
     - No additional value supported.
   * - Smoke CO alarm - battery low level alarm clean
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger an action that ceases battery low level alarm.
     - ``0x005c0000000000a5``
     - No additional value supported.
   * - Smoke CO alarm - hardware fault alarm
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger a hardware fault alarm.
     - ``0x005c000000000093``
     - No additional value supported.
   * - Smoke CO alarm - hardware fault alarm clean
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger an action that ceases hardware fault alarm.
     - ``0x005c0000000000a3``
     - No additional value supported.
   * - Smoke CO alarm - end of service alarm
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger an end of service alarm.
     - ``0x005c00000000009a``
     - No additional value supported.
   * - Smoke CO alarm - end of service alarm clean
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger an action that ceases end of service alarm.
     - ``0x005c0000000000aa``
     - No additional value supported.
   * - Power source on
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger an action that changes power source state to active.
     - ``0xFFFFFFFF80000000`` - ``0xFFFFFFFF80000001``
     - The range of ``0x0`` - ``0x1`` is the endpoint ID that has power source cluster instance enabled.
       An endpoint with ID ``0x0`` uses a wired power source and endpoint with ID ``0x1`` uses a battery power source.
   * - Power source off
-    - Only for `Matter Smoke CO Alarm <Matter smoke CO alarm sample_>`_
+    - Only for :ref:`matter_smoke_co_alarm_sample`
     - Trigger an action that changes power source state to unavailable.
     - ``0xFFFFFFFF80010000`` - ``0xFFFFFFFF80010001``
     - The range of ``0x0`` - ``0x1`` is the endpoint ID that has power source cluster instance enabled.
       An endpoint with ID ``0x0`` uses a wired power source and endpoint with ID ``0x1`` uses a battery power source.
   * - Door lock jammed
-    - Only for `Matter Lock <Matter lock sample_>`_
+    - Only for :ref:`matter_lock_sample`
     - Simulate the jammed lock state.
     - ``0xFFFFFFF327740000``
     - This activation code does not contain any value.
   * - Closure control - Main state is error
-    - Only for :ref:`Matter Closure <matter_closure_sample>`
+    - Only for :ref:`matter_closure_sample`
     - Trigger a main state error.
     - ``0x0104000000000000``
     - No additional value supported.
   * - Closure control - Main state is protected
-    - Only for :ref:`Matter Closure <matter_closure_sample>`
+    - Only for :ref:`matter_closure_sample`
     - Trigger a main state protected.
     - ``0x0104000000000001``
     - No additional value supported.
   * - Closure control - Main state is disengaged
-    - Only for :ref:`Matter Closure <matter_closure_sample>`
+    - Only for :ref:`matter_closure_sample`
     - Trigger a main state disengaged.
     - ``0x0104000000000002``
     - No additional value supported.
   * - Closure control - Main state is setup required
-    - Only for :ref:`Matter Closure <matter_closure_sample>`
+    - Only for :ref:`matter_closure_sample`
     - Trigger a main state setup required.
     - ``0x0104000000000003``
     - No additional value supported.
   * - Closure control - Main state test clear
-    - Only for :ref:`Matter Closure <matter_closure_sample>`
+    - Only for :ref:`matter_closure_sample`
     - Trigger a main state test clear.
     - ``0x0104000000000004``
     - No additional value supported.

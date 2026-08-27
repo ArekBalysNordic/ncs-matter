@@ -16,6 +16,8 @@
 .. _`Connectivity Standards Alliance`: https://csa-iot.org
 .. _`How to work with build configurations`: https://docs.nordicsemi.com/bundle/nrf-connect-vscode/page/guides/ncs_configure_app.html
 .. _`Software maturity levels`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/software_maturity.html
+.. _`nRF Connect SDK v3.4.0 release notes`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/releases/release-notes-3.4.0.html
+.. _`Migration Partitions from PM`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/releases_and_maturity/migration/migration_partitions.html
 
 .. ### NCS Zephyr documentation set
 
@@ -164,6 +166,7 @@
 .. _nrf21540dk: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/nrf21540dk/doc/index.html
 .. _thingy53: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/boards/nordic/thingy53/doc/index.html
 .. _ble_peripheral_esp: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/samples/bluetooth/peripheral_esp/README.html
+.. _ble_peripheral_lbs: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/samples/bluetooth/peripheral_lbs/README.html
 .. _`Kernel API`: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/zephyr/kernel/services/index.html
 .. _Thread CSL support: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/overview/supported_features.html#thread-ug-supported-features-csl
 .. _Thread SED and SSED: https://docs.nordicsemi.com/bundle/ncs-|ncs_version|/page/nrf/protocols/thread/sed_ssed.html

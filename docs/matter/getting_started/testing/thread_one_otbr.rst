@@ -45,7 +45,7 @@ Program the sample
 ==================
 
 Program the development kit for the Matter accessory device with one of available :ref:`matter_samples`.
-It is recommended to use the `Matter light bulb <Matter light bulb sample_>`_ sample.
+It is recommended to use the :ref:`Matter light bulb <matter_light_bulb_sample>` sample.
 
 .. rst-class:: numbered-step
 

@@ -25,11 +25,11 @@ The Matter samples delivered in the |NCS| have not received official certificate
 However, they have been tested against the Works with Google Home certification test cases and have successfully passed all of them.
 The following is a full list of Matter samples that were verified to pass the Works with Google certification test cases:
 
-* `Matter Lock sample <Matter lock sample_>`_
-* `Matter light bulb sample`_
-* `Matter thermostat sample`_
-* `Matter window covering sample`_
-* `Matter weather station sample`_
+* :ref:`matter_lock_sample`
+* :ref:`matter_light_bulb_sample`
+* :ref:`matter_thermostat_sample`
+* :ref:`matter_window_covering_sample`
+* :ref:`matter_weather_station_app`
 
 .. _ug_matter_amazon_certification:
 

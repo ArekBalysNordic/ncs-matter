@@ -670,7 +670,7 @@ To prepare an example that supports factory data, add a partition called ``facto
 The partition size should be a multiple of one flash page (for nRF52 and nRF53 SoCs, a single page size equals 4 kB).
 
 See the following code snippet for an example of a factory data partition in the :file:`pm_static.yml` file.
-The snippet is based on the :file:`pm_static.yml` file from the `Matter lock sample`_ and uses the nRF52840 DK:
+The snippet is based on the :file:`pm_static.yml` file from the :ref:`matter_lock_sample` and uses the nRF52840 DK:
 
 .. parsed-literal::
    :class: highlight
@@ -704,8 +704,8 @@ Its size has been set to one flash page (4 kB).
 
    For more information on how to configure partitions using DTS and how to migrate your existing configuration to DTS, see the following pages:
 
-   * :ref:`migration_partitions`
-   * :ref:`ncs_release_notes_340`
+   * `Migration Partitions from PM`_
+   * `nRF Connect SDK v3.4.0 release notes`_
 
 Use Partition Manager's report tool to ensure you created the factory data partition correctly.
 Navigate to the example directory and run the following command:

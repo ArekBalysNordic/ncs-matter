@@ -14,17 +14,16 @@ See the following sections for more information.
 
 The following Matter samples and applications use the low power configuration by default and you can use them as reference designs:
 
-* `Matter door lock sample <Matter lock sample_>`_
-* `Matter light switch sample`_
-* `Matter smoke CO alarm <Matter smoke CO alarm sample_>`_
-* `Matter window covering sample`_
-* `Matter weather station application <Matter weather station sample_>`_
-* `Matter temperature sensor sample`_
-* `Matter contact sensor sample`_
+* :ref:`Matter door lock sample <matter_lock_sample>`
+* :ref:`matter_light_switch_sample`
+* :ref:`Matter smoke CO alarm <matter_smoke_co_alarm_sample>`
+* :ref:`matter_window_covering_sample`
+* :ref:`Matter weather station application <matter_weather_station_app>`
+* :ref:`matter_temperature_sensor_sample`
+* :ref:`matter_contact_sensor_sample`
 
 The following additional materials and tools might help you to optimize, estimate, and measure the power consumption of your device are:
 
-* `Online Power Profiler for Matter over Thread`_
 * :ref:`ug_matter_gs_tools_opp`
 
 .. _ug_matter_device_low_power_icd:
