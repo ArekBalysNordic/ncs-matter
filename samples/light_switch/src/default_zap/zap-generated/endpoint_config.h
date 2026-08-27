@@ -47,7 +47,7 @@
 	}
 
 // This is an array of EmberAfAttributeMetadata structures.
-#define GENERATED_ATTRIBUTE_COUNT 189
+#define GENERATED_ATTRIBUTE_COUNT 186
 #define GENERATED_ATTRIBUTES                                                                                                      \
 	{                                                                                                                         \
                                                                                                                                   \
@@ -489,14 +489,6 @@
 		{ ZAP_EMPTY_DEFAULT(), 0x0000FFFD, 2, ZAP_TYPE(INT16U),                                                           \
 		  ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) | ZAP_ATTRIBUTE_MASK(READABLE) }, /* ClusterRevision */                    \
                                                                                                                                   \
-		/* Endpoint: 1, Cluster: Groups (server) */                                                                       \
-		{ ZAP_EMPTY_DEFAULT(), 0x00000000, 1, ZAP_TYPE(BITMAP8), ZAP_ATTRIBUTE_MASK(READABLE) }, /* NameSupport           \
-													  */                      \
-		{ ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), ZAP_ATTRIBUTE_MASK(READABLE) }, /* FeatureMap         \
-													     */                   \
-		{ ZAP_SIMPLE_DEFAULT(4), 0x0000FFFD, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(READABLE) }, /* ClusterRevision      \
-													   */                     \
-                                                                                                                                  \
 		/* Endpoint: 1, Cluster: Descriptor (server) */                                                                   \
 		{ ZAP_EMPTY_DEFAULT(), 0x00000000, 0, ZAP_TYPE(ARRAY),                                                            \
 		  ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) | ZAP_ATTRIBUTE_MASK(READABLE) }, /* DeviceTypeList */                     \
@@ -633,27 +625,12 @@
   /*   AcceptedCommandList (index=61) */ \
   0x00000000 /* Identify */, \
   chip::kInvalidCommandId /* end of list */, \
-  /* Endpoint: 1, Cluster: Groups (server) */\
-  /*   AcceptedCommandList (index=63) */ \
-  0x00000000 /* AddGroup */, \
-  0x00000001 /* ViewGroup */, \
-  0x00000002 /* GetGroupMembership */, \
-  0x00000003 /* RemoveGroup */, \
-  0x00000004 /* RemoveAllGroups */, \
-  0x00000005 /* AddGroupIfIdentifying */, \
-  chip::kInvalidCommandId /* end of list */, \
-  /*   GeneratedCommandList (index=70)*/ \
-  0x00000000 /* AddGroupResponse */, \
-  0x00000001 /* ViewGroupResponse */, \
-  0x00000002 /* GetGroupMembershipResponse */, \
-  0x00000003 /* RemoveGroupResponse */, \
-  chip::kInvalidCommandId /* end of list */, \
 }
 
 // clang-format on
 
 // This is an array of EmberAfCluster structures.
-#define GENERATED_CLUSTER_COUNT 23
+#define GENERATED_CLUSTER_COUNT 22
 // clang-format off
 #define GENERATED_CLUSTERS { \
   { \
@@ -891,22 +868,9 @@
       .eventCount = 0, \
     },\
   { \
-      /* Endpoint: 1, Cluster: Groups (server) */ \
-      .clusterId = 0x00000004, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(177), \
-      .attributeCount = 3, \
-      .clusterSize = 7, \
-      .mask = ZAP_CLUSTER_MASK(SERVER), \
-      .functions = NULL, \
-      .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 63 ), \
-      .generatedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 70 ), \
-      .eventList = nullptr, \
-      .eventCount = 0, \
-    },\
-  { \
       /* Endpoint: 1, Cluster: On/Off (client) */ \
       .clusterId = 0x00000006, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(180), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(177), \
       .attributeCount = 0, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(CLIENT), \
@@ -919,7 +883,7 @@
   { \
       /* Endpoint: 1, Cluster: Level Control (client) */ \
       .clusterId = 0x00000008, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(180), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(177), \
       .attributeCount = 0, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(CLIENT), \
@@ -932,7 +896,7 @@
   { \
       /* Endpoint: 1, Cluster: Descriptor (server) */ \
       .clusterId = 0x0000001D, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(180), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(177), \
       .attributeCount = 6, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -945,7 +909,7 @@
   { \
       /* Endpoint: 1, Cluster: Binding (server) */ \
       .clusterId = 0x0000001E, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(186), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(183), \
       .attributeCount = 3, \
       .clusterSize = 0, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
@@ -959,13 +923,13 @@
 
 // clang-format on
 
-#define ZAP_FIXED_ENDPOINT_DATA_VERSION_COUNT 19
+#define ZAP_FIXED_ENDPOINT_DATA_VERSION_COUNT 18
 
 // This is an array of EmberAfEndpointType structures.
 #define GENERATED_ENDPOINT_TYPES                                                                                       \
 	{                                                                                                              \
 		{ ZAP_CLUSTER_INDEX(0), 16, 14 },                                                                      \
-		{ ZAP_CLUSTER_INDEX(16), 7, 7 },                                                                       \
+		{ ZAP_CLUSTER_INDEX(16), 6, 0 },                                                                       \
 	}
 
 // Largest attribute size is needed for various buffers
@@ -978,7 +942,7 @@ static_assert(ATTRIBUTE_LARGEST <= CHIP_CONFIG_MAX_ATTRIBUTE_STORE_ELEMENT_SIZE,
 #define ATTRIBUTE_SINGLETONS_SIZE (0)
 
 // Total size of attribute storage
-#define ATTRIBUTE_MAX_SIZE (21)
+#define ATTRIBUTE_MAX_SIZE (14)
 
 // Number of fixed endpoints
 #define FIXED_ENDPOINT_COUNT (2)

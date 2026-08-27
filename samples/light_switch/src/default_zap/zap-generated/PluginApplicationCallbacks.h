@@ -20,7 +20,6 @@
 #pragma once
 
 void MatterIdentifyPluginServerInitCallback();
-void MatterGroupsPluginServerInitCallback();
 void MatterDescriptorPluginServerInitCallback();
 void MatterBindingPluginServerInitCallback();
 void MatterAccessControlPluginServerInitCallback();
@@ -40,7 +39,6 @@ void MatterIcdManagementPluginServerInitCallback();
 
 #define MATTER_PLUGINS_INIT                                                                                            \
 	MatterIdentifyPluginServerInitCallback();                                                                      \
-	MatterGroupsPluginServerInitCallback();                                                                        \
 	MatterDescriptorPluginServerInitCallback();                                                                    \
 	MatterBindingPluginServerInitCallback();                                                                       \
 	MatterAccessControlPluginServerInitCallback();                                                                 \
