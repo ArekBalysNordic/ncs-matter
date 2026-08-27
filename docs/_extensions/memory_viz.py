@@ -19,6 +19,7 @@ from memory_data import (
     applicable_samples,
     board_external_total_kb,
     board_nvm_total_kb,
+    board_ram_total_kb,
     load_board_data,
     resolve_layout,
 )
@@ -492,7 +493,7 @@ def _build_ram_board_nodes(directive: SphinxDirective, board: str) -> nodes.Elem
 def _build_board_nodes(directive: SphinxDirective, board: str) -> nodes.Element:
     data = load_board_data(board)
     nvm_total_kb = board_nvm_total_kb(data)
-    ram_total_kb = float(data["board"]["ram_total_kb"])
+    ram_total_kb = board_ram_total_kb(data) or 0.0
     threshold_kb = _legend_threshold(data)
 
     samples = applicable_samples(data)

@@ -44,7 +44,7 @@ STACK_SUBHEADS = ("stack usage", "stack size")
 
 
 def applicable_samples(data: dict[str, Any]) -> list[dict[str, Any]]:
-    return [sample for sample in data.get("samples", []) if not sample.get("not_applicable")]
+    return [sample for sample in (data.get("samples") or []) if not sample.get("not_applicable")]
 
 
 def resolve_stack_threads(data: dict[str, Any]) -> dict[str, dict[str, str]]:
@@ -70,7 +70,7 @@ def stack_samples(data: dict[str, Any]) -> list[dict[str, Any]]:
     if not thread_ids:
         return []
     samples: list[dict[str, Any]] = []
-    for sample in data.get("samples", []):
+    for sample in data.get("samples") or []:
         stack = sample.get("stack")
         if stack and all(thread_id in stack for thread_id in thread_ids):
             samples.append(sample)
@@ -235,10 +235,34 @@ def layout_nvm_total_kb(layout: dict[str, Any]) -> float:
 
 
 def board_nvm_total_kb(data: dict[str, Any]) -> float:
-    board_total = data.get("board", {}).get("nvm_total_kb")
+    board_total = _optional_kb(data.get("board", {}).get("nvm_total_kb"))
     if board_total is not None:
-        return float(board_total)
-    return layout_nvm_total_kb(resolve_layout_raw(data, "release"))
+        return board_total
+    layouts = data.get("layouts") or {}
+    default_layout = "release" if "release" in layouts else next(iter(layouts), None)
+    if default_layout is None:
+        raise ValueError(f"No layouts defined for board {data.get('board', {}).get('name', 'unknown')}")
+    return layout_nvm_total_kb(resolve_layout_raw(data, default_layout))
+
+
+def board_ram_total_kb(data: dict[str, Any]) -> float | None:
+    board_total = _optional_kb(data.get("board", {}).get("ram_total_kb"))
+    if board_total is not None:
+        return board_total
+    for region in data.get("reference_regions", []):
+        region_id = str(region.get("id", ""))
+        title = str(region.get("title", ""))
+        if "sram" in region_id or "ram" in title.lower():
+            total_bytes = region.get("total_bytes")
+            if total_bytes is not None:
+                return float(total_bytes) / 1024
+    return None
+
+
+def _optional_kb(value: Any) -> float | None:
+    if value is None or value == "None":
+        return None
+    return float(value)
 
 
 def sample_layout(data: dict[str, Any], sample: dict[str, Any]) -> dict[str, Any] | None:
@@ -320,7 +344,7 @@ def sample_table_cells(
     nvm = usage.get("nvm", {})
     layout = sample_layout(data, sample)
     parts = _partition_map(layout)
-    ram_total = data.get("board", {}).get("ram_total_kb")
+    ram_total = board_ram_total_kb(data)
 
     cells: list[str] = []
 
@@ -376,8 +400,9 @@ def _header_label(data: dict[str, Any], kind: str) -> str:
             if external:
                 return f"External NVM ({_fmt_kb(external['nvm_total_kb'])} kB)"
         return "External NVM"
-    total = board.get("ram_total_kb")
-    return f"RAM ({_fmt_kb(total)} kB)" if total is not None else "RAM"
+    ram_total = board.get("ram_total_kb")
+    resolved = _optional_kb(ram_total) if "ram_total_kb" in board else board_ram_total_kb(data)
+    return f"RAM ({_fmt_kb(resolved)} kB)" if resolved is not None else "RAM"
 
 
 def _append_rst_cell(state, entry: nodes.entry, rst_text: str) -> None:
