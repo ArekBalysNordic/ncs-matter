@@ -5,6 +5,8 @@ manifest:
   remotes:
     - name: ncs
       url-base: https://github.com/nrfconnect
+    - name: ArekBalysNordic
+      url-base: https://github.com/ArekBalysNordic
 
   projects:
     - name: nrf
@@ -13,10 +15,10 @@ manifest:
       revision: v3.4.0
       import: true
     - name: matter
-      remote: ncs
+      remote: ArekBalysNordic
       path: modules/lib/matter
       repo-path: sdk-connectedhomeip
-      revision: ncs-matter-v1.0.0
+      revision: cleanup_matter_fork
       submodules:
         - name: nlio
           path: third_party/nlio/repo
