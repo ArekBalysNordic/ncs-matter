@@ -15,8 +15,6 @@
 
 #pragma once
 
-#include "../../../subsys/app/chip_project_config_native_sim.h"
-
 #define CHIP_CONFIG_LOG_MODULE_Zcl_PROGRESS 0
 #define CHIP_CONFIG_LOG_MODULE_InteractionModel_PROGRESS 0
 #define CHIP_CONFIG_LOG_MODULE_InteractionModel_DETAIL 0

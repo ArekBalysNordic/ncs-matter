@@ -39,14 +39,7 @@ netns_disable_dad() {
 	"$@" sysctl -qw "net.ipv6.conf.${iface}.accept_dad=0"
 }
 
-netns_setup() {
-	netns_require_root
-
-	if netns_exists; then
-		echo "run-in-netns: netns '${NETNS_NAME}' already exists" >&2
-		exit 2
-	fi
-
+netns_create() {
 	# Clear the trap inside the handler so a failing teardown cannot re-trigger it.
 	trap 'trap - ERR; netns_teardown' ERR
 
@@ -70,6 +63,27 @@ netns_setup() {
 	"${in_netns[@]}" ip link set "${VETH_APP}" up
 
 	trap - ERR
+}
+
+netns_setup() {
+	netns_require_root
+
+	if netns_exists; then
+		echo "run-in-netns: netns '${NETNS_NAME}' already exists" >&2
+		exit 2
+	fi
+
+	netns_create
+}
+
+netns_ensure() {
+	netns_require_root
+
+	if netns_exists; then
+		return 0
+	fi
+
+	netns_create
 }
 
 netns_teardown() {

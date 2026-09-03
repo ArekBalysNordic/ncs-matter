@@ -32,10 +32,10 @@ endif
 
 #### DFU multi-image support
 config DFU_MULTI_IMAGE_PACKAGE_BUILD
-	default y if !BOARD_NATIVE_SIM
+	default y
 
 config DFU_MULTI_IMAGE_PACKAGE_APP
-	default y if !BOARD_NATIVE_SIM
+	default y
 
 # Internal flash only for nRF54L15 tag with compression
 if BOARD_NRF54L15TAG
@@ -46,7 +46,7 @@ config MCUBOOT_COMPRESSED_IMAGE_SUPPORT
 endif
 
 choice BOOTLOADER
-	default BOOTLOADER_MCUBOOT if !BOARD_NATIVE_SIM
+	default BOOTLOADER_MCUBOOT
 endchoice
 
 #### Bootloader

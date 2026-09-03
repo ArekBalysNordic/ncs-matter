@@ -412,7 +412,7 @@ void DoInitChipServer(intptr_t /* unused */)
 	ConfigurationMgr().LogDeviceConfig();
 #if defined(CONFIG_BT)
 	PrintOnboardingCodes(RendezvousInformationFlags(chip::RendezvousInformationFlag::kBLE));
-#else
+#elif defined(CONFIG_ARCH_POSIX)
 	PrintOnboardingCodes(RendezvousInformationFlags(chip::RendezvousInformationFlag::kOnNetwork));
 #endif
 	Nrf::Matter::AppFabricTableDelegate::Init();

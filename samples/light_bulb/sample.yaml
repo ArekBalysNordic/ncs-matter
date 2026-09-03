@@ -170,6 +170,4 @@ tests:
     platform_allow:
       - native_sim/native/64
     extra_args:
-      - SB_CONFIG_BOOTLOADER_NONE=y
-      - SB_CONFIG_MATTER_ADD_ON_FACTORY_DATA_GENERATE=n
       - light_bulb_SNIPPET=native-sim

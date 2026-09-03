@@ -14,5 +14,3 @@
  */
 
 #pragma once
-
-#include "../../../subsys/app/chip_project_config_native_sim.h"

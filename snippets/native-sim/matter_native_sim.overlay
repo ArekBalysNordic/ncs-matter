@@ -1,7 +1,6 @@
-/*
- * Optional GPIO labels when DK/PWM are disabled on native_sim Matter samples.
+/* Copyright (c) 2026 Nordic Semiconductor ASA
  *
- * Enlarge storage for Matter fabric/settings (ZMS backend, 42 KiB partition).
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
  */
 
 / {

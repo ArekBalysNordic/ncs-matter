@@ -6,7 +6,7 @@
 
 cmake_minimum_required(VERSION 3.20.0)
 
-include(${CMAKE_CURRENT_LIST_DIR}/../../cmake/find_zephyr.cmake)
+find_package(Zephyr HINTS $ENV{ZEPHYR_BASE})
 
 project(matter-smoke-co-alarm)
 
