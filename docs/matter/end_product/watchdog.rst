@@ -59,7 +59,7 @@ By default, Matter samples enable the pause mode only during debugging.
 Creating a Matter watchdog source
 *********************************
 
-The Matter watchdog feature is based on the ``Nrf::WatchdogSource`` class, which is located in the :file:`samples\matter\common\src\watchdog\watchdog.h` file.
+The Matter watchdog feature is based on the ``Nrf::WatchdogSource`` class, which is located in the :local:file:`subsys/watchdog/watchdog.h` file.
 Each Matter watchdog source constructor includes two optional arguments:
 
 * ``feedingInterval`` - Specifies the duration in milliseconds for automatically calling the attached feeding callback.

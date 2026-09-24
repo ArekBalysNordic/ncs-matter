@@ -216,7 +216,7 @@ The following table lists Matter over Thread certification requirements for when
 
 Bluetooth and Thread certifications can be inherited from Nordic Semiconductor (see the :ref:`ug_matter_device_certification_reqs_dependent` section below).
 
-You can also find more information about the Bluetooth QDID in the :ref:`Bluetooth protocol section <ug_bt_qualification>`, and Thread certification in the :ref:`Thread protocol section <ug_thread_cert>`.
+You can also find more information about the Bluetooth QDID in the `Bluetooth qualification`_ section, and Thread certification in the `Thread certification`_.
 
 .. _ug_matter_device_certification_reqs_mowifi:
 
@@ -236,9 +236,9 @@ The following table lists Matter over Wi-Fi certification requirements for when 
 +-------------------------------+---------------------------+-----------------------------+----------------------------------------+
 
 Bluetooth certification can be inherited from Nordic Semiconductor (see the :ref:`ug_matter_device_certification_reqs_dependent` section below).
-:ref:`Wi-Fi certification <ug_wifi_certification>` is not yet available for inheritance from Nordic Semiconductor.
+`Wi-Fi certification`_ is not yet available for inheritance from Nordic Semiconductor.
 
-You can also find more information about the Bluetooth QDID in the :ref:`Bluetooth protocol section <ug_bt_qualification>`.
+You can also find more information about the Bluetooth QDID in the `Bluetooth qualification`_ section.
 
 .. _ug_matter_device_certification_reqs_dual:
 
@@ -260,9 +260,9 @@ The following table lists certification requirements for products that offer :re
 +-------------------------------+---------------------------+-----------------------------+----------------------------------------+
 
 Bluetooth and Thread certifications can be inherited from Nordic Semiconductor (see the :ref:`ug_matter_device_certification_reqs_dependent` section below).
-:ref:`Wi-Fi certification <ug_wifi_certification>` is not yet available for inheritance from Nordic Semiconductor.
+`Wi-Fi certification`_ is not yet available for inheritance from Nordic Semiconductor.
 
-You can also find more information about the Bluetooth QDID in the :ref:`Bluetooth protocol section <ug_bt_qualification>`, and the Thread certification in the :ref:`Thread protocol section <ug_thread_cert>`.
+You can also find more information about the Bluetooth QDID in the `Bluetooth qualification`_ section, and the Thread certification in the `Thread certification`_.
 
 .. _ug_matter_device_certification_reqs_dependent:
 

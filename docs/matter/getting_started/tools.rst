@@ -20,7 +20,7 @@ GN tool
 To build and develop Matter applications, you need the `GN`_ meta-build system.
 This system generates the Ninja files that the |NCS| uses.
 
-The GN is automatically installed with the |NCS|'s toolchain when you :ref:`install the nRF Connect SDK <install_ncs>`.
+The GN is automatically installed with the |NCS|'s toolchain when you `Installing the nRF Connect SDK`_.
 If you are updating from the |NCS| version earlier than v1.5.0, see the following GN installation instructions.
 
 .. toggle:: GN installation instructions
@@ -36,7 +36,7 @@ If you are updating from the |NCS| version earlier than v1.5.0, see the followin
 
          1. Download the latest version of the GN binary archive for Windows from the `GN website`_.
          2. Extract the :file:`zip` archive.
-         3. Ensure that the GN tool is added to your :envvar:`PATH` environment variable.
+         3. Ensure that the GN tool is added to your ``PATH`` environment variable.
             For the exact instructions, see `Zephyr environment variables`_.
 
       .. group-tab:: Linux
@@ -58,7 +58,7 @@ If you are updating from the |NCS| version earlier than v1.5.0, see the followin
                rm gn.zip
 
             The wget tool is installed when installing the required tools on Linux.
-         #. Add the location of the GN tool to the system :envvar:`PATH`.
+         #. Add the location of the GN tool to the system ``PATH``.
             For example, if you are using ``bash``, run the following commands:
 
             .. code-block:: console
@@ -97,7 +97,7 @@ If you are updating from the |NCS| version earlier than v1.5.0, see the followin
                unzip gn.zip
                rm gn.zip
 
-         #. Add the location of the GN tool to the system :envvar:`PATH`.
+         #. Add the location of the GN tool to the system ``PATH``.
 
             .. code-block:: console
 
@@ -127,7 +127,7 @@ CHIP Tool for Linux or macOS
 ============================
 
 The CHIP Tool for Linux or macOS is the default implementation of the Matter controller role, recommended for testing with the nRF Connect platform.
-You can read more about it on the `CHIP Tool Guide`_ page in the Matter documentation.
+You can read more about it on the `CHIP Tool`_ user guide in the Matter documentation.
 
 .. note::
    The CHIP Tool is recommended for testing and development purposes only.
@@ -137,7 +137,7 @@ Depending on your system, you can install the CHIP Tool in one of the following 
 
 * For Linux only - Use the prebuilt tool package from the `Matter nRF Connect releases`_ GitHub page.
   Make sure that the package is compatible with your |NCS| version.
-* For both Linux and macOS - Build it manually from the source files available in the :file:`modules/lib/matter/examples/chip-tool` directory and using the building instructions from the :doc:`matter:chip_tool_guide` page in the Matter documentation.
+* For both Linux and macOS - Build it manually from the source files available in the :external:file:`modules/lib/matter/examples/chip-tool` directory and using the building instructions from the `CHIP Tool`_ page in the Matter documentation.
 
 .. note::
    To use CHIP Tool for macOS you need to have the appropriate Apple profile installed on your macOS machine.
@@ -233,7 +233,7 @@ You can install the ZAP tool either automatically or manually:
       * Download the ZAP tool package in a compatible version manually from the Assets section in `ZCL Advanced Platform releases`_.
       * Configure the tool and manually compile it using the instructions in the official `ZCL Advanced Platform`_ documentation.
 
-      Both of these methods require you to add the ZAP tool location to the system :envvar:`PATH` environment variables.
+      Both of these methods require you to add the ZAP tool location to the system ``PATH`` environment variables.
 
 ..
 
@@ -266,7 +266,7 @@ You can also specify the path to the :file:`.zap` file explicitly.
 
 To simplify adding new custom clusters to the Matter ZCL database and generating the required C++ files, you can use the ``zap-append`` west command.
 The command converts the provided XML files with the cluster definition to JSON format and adds them to the data model definition file (:file:`zcl.json`).
-You can provide a custom :file:`zcl.json` base file or use the existing one located in :file:`<default Matter SDK location>/src/app/zap-templates/zcl`.
+You can provide a custom :file:`zcl.json` base file or use the existing one located in :external:file:`modules/lib/matter/src/app/zap-templates/zcl`.
 Depending on the provided ``--output`` argument, the command updates the base JSON file or generates a new JSON file with the appended cluster definition to the base.
 You can use the generated data model definition file as an argument to the ``zap-gui`` command to add the new cluster to the ZAP tool before launching the GUI.
 
@@ -282,7 +282,7 @@ You can use the following arguments:
 
 * ``-b`` or ``--base`` to provide an absolute path to the base :file:`zcl.json` file.
   The base file must contain the existing data model definition appropriate to the given Matter version.
-  If the argument is not provided, the :file:`<default Matter SDK location>/src/app/zap-templates/zcl/zcl.json` file will be used.
+  If the argument is not provided, the :external:file:`modules/lib/matter/src/app/zap-templates/zcl/zcl.json` file will be used.
 
 * ``-m`` or ``--matter`` to provide a path to a different Matter SDK location than the default one.
   The command will use this path to read the required ZAP tool version.
@@ -318,7 +318,7 @@ You can use the following optional arguments:
   Use this option if you invoke the ``zap-gui`` command outside the project directory.
 
 * ``-j`` or ``--zcl-json`` to provide a path to the data model definition file (:file:`zcl.json`).
-  If the argument is not provided, the :file:`<default Matter SDK location>/src/app/zap-templates/zcl/zcl.json` file will be used.
+  If the argument is not provided, the :external:file:`modules/lib/matter/src/app/zap-templates/zcl/zcl.json` file will be used.
 
 * ``-m`` or ``--matter-path`` to provide a path to a different Matter SDK location than the default one.
   The command will use this path to read the required ZAP tool version.
@@ -383,7 +383,7 @@ You can use the following optional arguments:
   Use this option if you invoke the ``zap-sync`` command outside the project directory.
 
 * ``-j`` or ``--zcl-json`` to provide a path to the data model definition file (:file:`zcl.json`).
-  If the argument is not provided, the :file:`<default Matter SDK location>/src/app/zap-templates/zcl/zcl.json` file will be used.
+  If the argument is not provided, the :external:file:`modules/lib/matter/src/app/zap-templates/zcl/zcl.json` file will be used.
 
 * ``-c`` or ``--clusters`` to provide paths to the XML files that contain the custom cluster definitions.
 
@@ -436,22 +436,22 @@ Installing CHIP Certificate Tool
 
 To install the chip-cert tool, complete the following steps:
 
-1. Navigate to the :file:`connectedhomeip` root directory.
+1. Navigate to the :external:file:`modules/lib/matter` root directory.
 #. In a terminal, run the following command to build the tool executable file:
 
    .. code-block:: console
 
       cd src/tools/chip-cert && gn gen out && ninja -C out chip-cert
 
-#. Add the chip-cert tool to the system :envvar:`PATH` environment variable when built.
+#. Add the chip-cert tool to the system ``PATH`` environment variable when built.
 
 Generating custom certificates in factory data
 ==============================================
 
-Adding the chip-cert tool to the system :envvar:`PATH` allows you to build :ref:`matter_samples`, the :ref:`matter_weather_station_app`, and the :ref:`matter_bridge_app` applications with custom certificates included in the factory data.
+Adding the chip-cert tool to the system ``PATH`` allows you to build :ref:`matter_samples`, the :ref:`matter_weather_station_app`, and the :ref:`matter_bridge_app` applications with custom certificates included in the factory data.
 This lets you for example change the test Vendor ID, Product ID, or other data.
 
-To build a Matter application in the |NCS| with custom certification data, make sure to set the :kconfig:option:`CONFIG_CHIP_FACTORY_DATA_USE_DEFAULT_CERTS` to ``n`` when :doc:`building an example with factory data <matter:nrfconnect_factory_data_configuration>`.
+To build a Matter application in the |NCS| with custom certification data, make sure to set the :kconfig:option:`CONFIG_CHIP_FACTORY_DATA_USE_DEFAULT_CERTS` to ``n`` when `Matter factory data configuration guide`_.
 
 .. _ug_matter_gs_tools_ota_provider:
 

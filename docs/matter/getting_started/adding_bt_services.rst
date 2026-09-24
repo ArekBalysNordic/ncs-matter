@@ -12,12 +12,12 @@ The Bluetooth LE services can run next to the Matter stack and the Bluetooth LE 
 
 You can add a Bluetooth LE service in one of the following ways:
 
-* Taking advantage of :ref:`Bluetooth services <lib_bluetooth_services>` and their related samples in the |NCS|.
+* Taking advantage of `Bluetooth services`_ and their related samples in the |NCS|.
   You can use the library functions for configuring services and follow the available samples to learn how to integrate the services into your application.
 * Using `Bluetooth SIG's Assigned Numbers`_ documentation with predefined characteristics to create your custom implementation.
 * Writing the custom Bluetooth LE service from scratch.
 
-This guide describes the first case and uses :ref:`nus_service_readme` as an example.
+This guide describes the first case and uses `Nordic UART Service (NUS)`_ as an example.
 
 .. _ug_matter_device_adding_bt_services_ble_arbiter:
 
@@ -48,7 +48,7 @@ Adding support for a Bluetooth LE service
 
 To add support for a Bluetooth LE service implemented in the |NCS|, complete the following steps:
 
-1. Check the documentation of the :ref:`Bluetooth service <lib_bluetooth_services>` for its characteristics and functions.
+1. Check the documentation of the `Bluetooth service`_ for its characteristics and functions.
 #. Add the application code that instantiates and fills the Bluetooth LE Arbiter's ``Request`` structure, including its ``priority`` field:
 
    .. code-block:: cpp

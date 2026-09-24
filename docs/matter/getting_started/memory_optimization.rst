@@ -73,7 +73,7 @@ Alternatively, you can enable each option separately.
 The Kconfig option enables the following functionalities on the Matter device:
 
 - :ref:`ug_matter_configuring_settings_shell` by setting the :option:`CONFIG_MATTER_SETTINGS_SHELL` Kconfig option to ``y``.
-- :doc:`Command-line interface <matter:nrfconnect_examples_cli>` by setting the :kconfig:option:`CONFIG_CHIP_LIB_SHELL` Kconfig option to ``y``.
+- `Matter CLI examples guide`_ by setting the :kconfig:option:`CONFIG_CHIP_LIB_SHELL` Kconfig option to ``y``.
 - Zephyr Kernel commands by setting the :kconfig:option:`CONFIG_KERNEL_SHELL` Kconfig option to ``y``.
 - Zephyr Settings shell by setting the :kconfig:option:`CONFIG_SETTINGS_SHELL` Kconfig option to ``y``.
 - OpenThread shell by setting the :kconfig:option:`CONFIG_OPENTHREAD_SHELL` Kconfig option to ``y`` if you build the Matter over Thread variant.
@@ -378,7 +378,7 @@ The following table presents the possible threads used in a Matter application a
 | idle                | :kconfig:option:`CONFIG_IDLE_STACK_SIZE`                         | The Idle thread that work while any other thread is not        |
 |                     |                                                                  | working.                                                       |
 +---------------------+------------------------------------------------------------------+----------------------------------------------------------------+
-| MPSL Work           | :kconfig:option:`CONFIG_MPSL_WORK_STACK_SIZE`                    | :ref:`lib_mpsl_libraries` thread stack.                        |
+| MPSL Work           | :kconfig:option:`CONFIG_MPSL_WORK_STACK_SIZE`                    | `Multiprotocol Service Layer libraries`_ thread stack.         |
 |                     |                                                                  | Switching times slots for multi-protocol purposes.             |
 +---------------------+------------------------------------------------------------------+----------------------------------------------------------------+
 | sysworkq            | :kconfig:option:`CONFIG_SYSTEM_WORKQUEUE_STACK_SIZE`             | Zephyr stack. Switching context purposes.                      |

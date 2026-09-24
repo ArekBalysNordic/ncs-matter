@@ -161,7 +161,7 @@ Matter shell commands
 You can enable the Matter shell library using the :kconfig:option:`CONFIG_CHIP_LIB_SHELL` Kconfig option.
 This option lets you use the Matter shell commands with :ref:`matter_samples`.
 
-See :doc:`matter:nrfconnect_examples_cli` in the Matter documentation for the list of available Matter shell commands.
+See `Matter CLI examples guide`_ in the Matter documentation for the list of available Matter shell commands.
 
 .. _ug_matter_configuring_settings_shell:
 
@@ -282,7 +282,7 @@ The persistent storage module allows for the application data and configuration 
 |NCS| Matter applications use one generic Persistent Storage API that can be enabled by the :option:`CONFIG_MATTER_PERSISTENT_STORAGE` Kconfig option.
 This API consists of methods with ``Secure`` and ``NonSecure`` prefixes, which handle secure (ARM Platform Security Architecture Persistent Storage) and non-secure (raw Zephyr settings) storage operations, respectively.
 
-You can learn more details about the Persistent Storage API from the :file:`subsys/persistent_storage/persistent_storage.h` header file.
+You can learn more details about the Persistent Storage API from the :local:file:`subsys/persistent_storage/persistent_storage.h` header file.
 
 The interface is implemented by two available backends.
 Both can be used simultaneously by controlling the following Kconfig options:

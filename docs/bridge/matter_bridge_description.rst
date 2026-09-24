@@ -3,7 +3,7 @@
 .. |matter_dks_thread| replace:: ``nrf52840dk/nrf52840``, ``nrf5340dk/nrf5340/cpuapp``, ``nrf54l15dk/nrf54l15/cpuapp``, ``nrf54lm20dk/nrf54lm20b/cpuapp``, and ``nrf54lm20dk/nrf54lm20a/cpuapp`` board targets
 .. |matter_dks_wifi| replace:: ``nrf54lm20dk/nrf54lm20b/cpuapp`` and ``nrf54lm20dk/nrf54lm20a/cpuapp`` board targets with the ``nrf7002eb2`` shield attached
 .. |matter_dks_internal| replace:: nRF54LM20 DK
-.. |sample path| replace:: :file:`applications/matter_bridge`
+.. |sample path| replace:: :local:file:`samples/bridge`
 .. |matter_qr_code_payload| replace:: MT:Y.K9042C00KA0648G00
 .. |matter_pairing_code| replace:: 34970112332
 .. |matter_qr_code_image| image:: /images/matter_qr_code_bridge.png
@@ -35,8 +35,8 @@ To test the Matter bridge application with the :ref:`Bluetooth® LE bridged devi
 
 * An additional development kit compatible with one of the following Bluetooth LE samples:
 
-  * `ble_peripheral_lbs`_
-  * `ble_peripheral_esp`_
+  * `Bluetooth LE LBS Peripheral sample`_
+  * `Bluetooth LE ESP Peripheral sample`_
 
 * A USB cable for every development kit to connect it to the PC.
 
@@ -78,7 +78,7 @@ To enable the On/Off Light Switch implementation, set the following configuratio
 * :kconfig:option:`CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE` to ``n`` to disable Generic Switch.
 * :kconfig:option:`CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE` to ``y`` to enable On/Off Light Switch.
 
-See :ref:`cmake_options` for instructions on how to add these options to your build.
+See `cmake_options <Providing CMake options_>`_ for instructions on how to add these options to your build.
 
 The Matter bridge device has an additional functionality, enabling it to work as a smart plug.
 This feature provides an additional endpoint with an ID equal to 2, which represents Matter on/off smart plug device type functionality.
@@ -96,9 +96,9 @@ The application supports two bridged device configurations that are mutually exc
 * Bluetooth LE bridged device - This configuration allows to connect a real peripheral Bluetooth LE device to the Matter bridge and represent its functionalities using :ref:`Matter Data Model <ug_matter_overview_data_model>`.
   The application supports the following Bluetooth LE services:
 
-  * Nordic Semiconductor's :ref:`LED Button Service <lbs_readme>` - represented by the Matter On/Off Light and Generic Switch device types.
+  * Nordic Semiconductor's `Bluetooth LE LBS Peripheral sample`_ - represented by the Matter On/Off Light and Generic Switch device types.
     The service can be configured to use the On/Off Light Switch instead of the Generic Switch device type.
-  * Zephyr's `ble_peripheral_esp`_ sample - represented by the Matter Temperature Sensor and Humidity Sensor device types.
+  * Zephyr's `Bluetooth LE ESP Peripheral sample`_ sample - represented by the Matter Temperature Sensor and Humidity Sensor device types.
 
 If the Bluetooth LE service required by your use case is not supported, you can extend the application.
 For information about how to add a new Bluetooth LE service support to the application, see the :ref:`matter_bridge_app_extending_ble_service` section.
@@ -550,7 +550,7 @@ Configuring Bluetooth LE connection and scan parameters
    - :kconfig:option:`CONFIG_BRIDGE_BT_CONNECTION_TIMEOUT` - The time since the last packet was successfully received until the devices consider the connection lost.
    - :kconfig:option:`CONFIG_BRIDGE_BT_CONNECTION_LATENCY` - Allows the peripheral to skip waking up for a certain number of connection events if it does not have any data to send.
 
-   The parameters in this application have been selected based on the :ref:`multiprotocol_bt_thread` information in the :ref:`ug_multiprotocol_support` section.
+   The parameters in this application have been selected based on the `Bluetooth LE and Thread coexistence`_ information in the `Multiprotocol support`_ section.
 
 .. _matter_bridge_app_bt_security:
 
@@ -571,7 +571,7 @@ Configuring the Bluetooth LE security
    * Security Level 3 - supports AES-CMAC communication encryption, requires device authentication and pairing.
    * Security Level 4 - supports ECDHE communication encryption, requires authentication and pairing.
 
-   To read more about the Bluetooth LE security implementation in Zephyr, see the Security section of the :ref:`bluetooth-arch` page.
+   To read more about the Bluetooth LE security implementation in Zephyr, see the Security section of the `Zephyr Bluetooth LE Security`_ page.
    By default, the Matter bridge application has SMP enabled and supports security levels 2, 3 and 4.
 
    You can disable the Bluetooth LE security mechanisms by setting the :kconfig:option:`CONFIG_BT_SMP` Kconfig option to ``n``.
@@ -675,7 +675,7 @@ Depending on the chosen bridged devices configuration, complete the steps in one
 
       #. Write down the value for the bridged device dynamic endpoint ID.
          This is going to be used in the next steps (*<bridged_device_endpoint_ID>*).
-      #. Use the :doc:`CHIP Tool <matter:chip_tool_guide>` to read the value of an attribute from the bridged device endpoint.
+      #. Use the `CHIP Tool`_ to read the value of an attribute from the bridged device endpoint.
          For example, read the value of the *on-off* attribute from the *onoff* cluster using the following command:
 
          .. parsed-literal::
@@ -687,8 +687,8 @@ Depending on the chosen bridged devices configuration, complete the steps in one
 
       1. Build and program the one of the following Bluetooth LE samples to an additional development kit compatible with the sample:
 
-         * `ble_peripheral_lbs`_
-         * `ble_peripheral_esp`_
+         * `Bluetooth LE LBS Peripheral sample`_
+         * `Bluetooth LE ESP Peripheral sample`_
 
       #. Connect the development kit that is running the Bluetooth LE sample to the PC.
       #. |connect_terminal_ANSI|
@@ -788,7 +788,7 @@ Depending on the chosen bridged devices configuration, complete the steps in one
       #. Write down the value for the bridged device dynamic endpoint ID.
          This is going to be used in the next steps (*<bridged_device_endpoint_ID>*).
 
-      #. Use the :doc:`CHIP Tool <matter:chip_tool_guide>` to read the value of an attribute from the bridged device endpoint.
+      #. Use the `CHIP Tool`_ to read the value of an attribute from the bridged device endpoint.
          For example, read the value of the *on-off* attribute from the *onoff* cluster using the following command:
 
          .. parsed-literal::
@@ -872,7 +872,7 @@ Complete the following steps to add a bridged light switch device using either a
 
       .. group-tab:: Testing with Bluetooth LE bridged light switch device
 
-         a. Build and program the :ref:`Peripheral LBS Bluetooth LE <ble_peripheral_lbs>` sample to an additional development kit.
+         a. Build and program the `Bluetooth LE LBS Peripheral sample`_ to an additional development kit.
          #. Connect the development kit that is running the Bluetooth LE sample to the PC.
          #. Using the terminal emulator connected to the bridge, run the following :ref:`Matter CLI command <matter_bridge_cli>` to scan for available Bluetooth LE devices:
 

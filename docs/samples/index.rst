@@ -60,7 +60,7 @@ The following table lists variants and extensions available out of the box for e
       - ✔
       - ✔
       - ✔
-    * - :ref:`Thread role <thread_ot_device_types>`
+    * - `Thread device types`_
       - Router
       - SED
       - MED

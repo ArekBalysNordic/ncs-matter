@@ -204,7 +204,7 @@ This provides a certified reference for the enabled features and clusters:
    west flash --recover
 
 .. note::
-   The reference data model used during platform testing can be found in :file:`samples/matter/common/src/certification`.
+   The reference data model used during platform testing can be found in :local:file:`subsys/certification/thread_platform`.
 
 This template is provided as a reference (transport, core clusters).
 You may customize your product by enabling or disabling optional clusters, attributes, and features and by building your own application data model.
@@ -231,7 +231,7 @@ What not to change (to retain inheritance)
 
 To retain test inheritance from the platform, avoid the following changes:
 
-* Upgrading :file:`modules/lib/matter` beyond the tag corresponding to the certified |NCS| tag without a coordinated platform update.
+* Upgrading :external:file:`modules/lib/matter` beyond the tag corresponding to the certified |NCS| tag without a coordinated platform update.
 * Changing radio/PHY parameters, Wi-Fi bands, or Thread version beyond the SOE.
 * Editing the platform PICS baseline or any platform test list artifacts.
 
@@ -245,7 +245,7 @@ You can safely make the following product-level changes:
 * Application configuration - Kconfig/DTS overlays for product peripherals, partitions, etc.
 * Optional clusters/features within platform scope (enable/disable) with matching PICS updates.
 * Manufacturing data and branding - Stock keeping unit (SKU), product strings, documentation, etc.
-* Changes to application clusters in :file:`modules/lib/matter` (not part of platform).
+* Changes to application clusters in :external:file:`modules/lib/matter` (not part of platform).
 
 .. rst-class:: numbered-step
 
