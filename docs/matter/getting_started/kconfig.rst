@@ -17,7 +17,7 @@ For a list of advanced Matter Kconfig options, see :ref:`ug_matter_device_advanc
 Kconfig option structure
 ************************
 
-The Kconfig options for Matter applications in the |NCS| are stored in the following files:
+The Kconfig options for Matter applications in the |addon| are stored in the following files:
 
 * :file:`prj.conf` files, which are specific to the application.
 * :file:`Kconfig.defaults` file, which is available in the :external:file:`modules/lib/matter/config/nrfconnect/chip-module` directory and is used to populate :file:`prj.conf` with Kconfig option settings common to all samples.

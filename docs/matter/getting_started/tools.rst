@@ -8,7 +8,7 @@ Matter tools
    :local:
    :depth: 2
 
-Use tools listed on this page to test :ref:`matter_samples` and develop Matter applications in the |NCS|.
+Use tools listed on this page to test :ref:`matter_samples` and develop Matter applications in the |addon|.
 
 .. _ug_matter_gs_tools_gn:
 .. _gs_installing_gn:
@@ -18,15 +18,15 @@ GN tool
 *******
 
 To build and develop Matter applications, you need the `GN`_ meta-build system.
-This system generates the Ninja files that the |NCS| uses.
+This system generates the Ninja files that the |addon| uses.
 
-The GN is automatically installed with the |NCS|'s toolchain when you `Installing the nRF Connect SDK`_.
+The GN is automatically installed with the |addon|'s toolchain when you `Installing the nRF Connect SDK`_.
 If you are updating from the |NCS| version earlier than v1.5.0, see the following GN installation instructions.
 
 .. toggle:: GN installation instructions
 
    If you want to build Matter applications with the |NCS| version earlier than v1.5.0, install the `GN`_ meta-build system.
-   This system generates the Ninja files that the |NCS| uses.
+   This system generates the Ninja files that the |addon| uses.
 
    .. tabs::
 
@@ -109,7 +109,7 @@ If you are updating from the |NCS| version earlier than v1.5.0, see the followin
 Matter controller tools
 ***********************
 
-The following figure shows the available Matter controllers in the |NCS|.
+The following figure shows the available Matter controllers in the |addon|.
 
 .. figure:: ../overview/images/matter_setup_controllers_generic.png
    :width: 600
@@ -185,7 +185,7 @@ You can use the ZAP tool for the following Matter use cases:
 All the relevant data for these use cases is stored in the ZAP file of your Matter application, which you can edit using the ZAP tool GUI.
 A ZAP file is a JSON file that contains the data model configuration of clusters, commands, and attributes that are enabled for a given application.
 It is not used directly by the application, but it is used to generate global and customized source files for handling requests enabled by the user.
-In the |NCS|, the ZAP file is provided in the :file:`src` directory for each :ref:`matter_samples`.
+In the |addon|, the ZAP file is provided in the :file:`src` directory for each :ref:`matter_samples`.
 
 For an example of how to use the ZAP tool to edit a ZAP file, see the :ref:`ug_matter_creating_accessory_edit_zap` in the :ref:`ug_matter_creating_accessory` user guide.
 For more information about the ZAP tool, see the official `ZCL Advanced Platform`_ documentation.
@@ -203,7 +203,7 @@ You can install the ZAP tool either automatically or manually:
 
       You can use the Matter west commands to automatically download and install the appropriate ZAP tool version dedicated to your current Matter revision.
       This tool checks the version of the Matter stack, which is located in the default location based on the ``ZEPHYR_BASE`` variable.
-      The ``zap-gui`` and ``zap-generate`` commands automatically install the right version of the ZAP tool in the ``.zap-install`` directory within the |NCS|.
+      The ``zap-gui`` and ``zap-generate`` commands automatically install the right version of the ZAP tool in the ``.zap-install`` directory within the |addon|.
       After the first installation, if the version of the Matter SDK did not change, the installed version will be used for all command invocations.
 
       To install the ZAP tool according to the default Matter SDK location, use the following command:
@@ -220,7 +220,7 @@ You can install the ZAP tool either automatically or manually:
 
       .. note::
 
-         Providing a path to a version of the Matter SDK that is incompatible with the |NCS| revision may cause unpredictable errors.
+         Providing a path to a version of the Matter SDK that is incompatible with the |addon| revision may cause unpredictable errors.
 
       After the installation is done, you can close the ZAP tool GUI window.
 
@@ -461,7 +461,7 @@ OTA Provider tool
 The `OTA Provider for Linux`_ tool is an example implementation of the :ref:`OTA Provider <ug_matter_overview_dfu_roles>` role available for the Linux OS.
 It responds to queries from OTA Requestor devices and serves Matter OTA software update images over the Matter operational network.
 
-You can use the OTA Provider application to test Device Firmware Upgrade (DFU) over Matter with :ref:`matter_samples` and other Matter applications built with the |NCS|.
+You can use the OTA Provider application to test Device Firmware Upgrade (DFU) over Matter with :ref:`matter_samples` and other Matter applications built with the |addon|.
 
 .. note::
    The OTA Provider application is recommended for testing and development purposes only.
@@ -475,7 +475,7 @@ For detailed step-by-step instructions on testing DFU over Matter, see the `Matt
 Matter over Thread tools
 ************************
 
-You can use the following `Thread tools`_ when working with Matter in the |NCS| using the Matter over Thread setup.
+You can use the following `Thread tools`_ when working with Matter in the |addon| using the Matter over Thread setup.
 
 Thread Border Router
 ====================

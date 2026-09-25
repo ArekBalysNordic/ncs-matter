@@ -68,7 +68,7 @@ Complete the following steps:
 1. Choose one of the following options:
 
    * Use the prebuilt tool package from the `Matter nRF Connect releases`_ GitHub page.
-     Make sure that the package is compatible with your |NCS| version.
+     Make sure that the package is compatible with your |addon| version.
    * Build manually from the source files available in the :external:file:`modules/lib/matter/examples/chip-tool` directory.
      Use the building instructions from the `CHIP Tool`_ page in the Matter documentation.
 

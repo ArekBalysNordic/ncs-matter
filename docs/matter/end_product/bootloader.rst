@@ -15,7 +15,7 @@ This page contains guidelines for configuring the MCUboot bootloader in Matter p
 Adding MCUboot to application
 *****************************
 
-Read `Immutable MCUboot`_ to learn how to add MCUboot to an |NCS| application.
+Read `Immutable MCUboot`_ to learn how to add MCUboot to an |addon| application.
 Some Matter samples include Device Firmware Update (DFU) support out of the box, as listed in the :ref:`sample feature matrix table <matter_samples>`.
 
 MCUboot minimal configuration
@@ -24,7 +24,7 @@ MCUboot minimal configuration
 MCUboot is by default configured to enable debug features, such as logs.
 You can reduce the size of the bootloader image by disabling unnecessary features.
 
-See the following files for the MCUboot minimal configuration used by :ref:`matter_samples` in the |NCS|:
+See the following files for the MCUboot minimal configuration used by :ref:`matter_samples` in the |addon|:
 
 * :file:`prj.conf` file located in each sample's :file:`sysbuild/mcuboot` directory
 * Board files located in each sample's :file:`sysbuild/mcuboot/boards` directory
@@ -50,7 +50,7 @@ Partition layout
    * `nRF Connect SDK v3.4.0 release notes`_
 
 A bootloader is a critical component in a Matter device, ensuring secure firmware updates and authenticating new application images.
-All Nordic Matter samples in the |NCS| use MCUboot as the primary bootloader, with configuration and partitioning adapted to application and device needs.
+All Nordic Matter samples in the |addon| use MCUboot as the primary bootloader, with configuration and partitioning adapted to application and device needs.
 
 .. _ug_matter_hw_requirements_partition_dts_reference:
 
@@ -203,7 +203,7 @@ To configure the number of sectors used by the backend, set the corresponding Kc
 
 For example, to cover a settings partition of 32 kB in size, you require 8 sectors.
 
-As shown in the :ref:`ncs_matter_memory_requirements_layouts` page, Matter samples in the |NCS| reserve exactly 32 kB for the ``settings_storage`` partition.
+As shown in the :ref:`ncs_matter_memory_requirements_layouts` page, Matter samples in the |addon| reserve exactly 32 kB for the ``settings_storage`` partition.
 
 Factory data partition
 ======================

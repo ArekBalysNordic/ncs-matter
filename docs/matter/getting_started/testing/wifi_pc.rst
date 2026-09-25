@@ -52,7 +52,7 @@ To use this controller type, complete the following steps:
 1. Choose one of the following options:
 
    * For Linux only - Use the prebuilt tool package from the `Matter nRF Connect releases`_ GitHub page.
-     Make sure that the package is compatible with your |NCS| version.
+     Make sure that the package is compatible with your |addon| version.
    * For both Linux and macOS - Build it manually from the source files available in the :external:file:`modules/lib/matter/examples/chip-tool` directory and using the building instructions from the `CHIP Tool`_ page in the Matter documentation.
 
 #. Configure the CHIP Tool for Linux or macOS by following the steps in the sections of the `CHIP Tool`_ in the Matter documentation:

@@ -19,7 +19,7 @@ In the following sections you will learn more details about each listed category
 Cryptography
 ************
 
-Depending on the networking backend, the |NCS| Matter samples currently use the following APIs to implement cryptographic operations:
+Depending on the networking backend, the |addon| Matter samples currently use the following APIs to implement cryptographic operations:
 
 * `PSA Crypto API configuration`_ for Thread networking.
   Both `Cryptography implementation standards`_ are supported, but using TF-M Crypto Service is only possible with Trusted Firmware-M (TF-M).
@@ -29,7 +29,7 @@ Depending on the networking backend, the |NCS| Matter samples currently use the 
 
 Both APIs are integrated through the nRF Security subsystem.
 For an overview of the PSA Crypto API, see the `Cryptography architecture`_ page.
-For an overview of the cryptography layer configuration supported for each |NCS| Matter-enabled platform, see the :ref:`matter_platforms_security_support` section.
+For an overview of the cryptography layer configuration supported for each |addon| Matter-enabled platform, see the :ref:`matter_platforms_security_support` section.
 
 Secure processing environment
 *****************************
@@ -57,11 +57,11 @@ Secure storage
 **************
 
 `Secure storage in the nRF Connect SDK`_ lets you securely store and manage sensitive data.
-Currently, all :ref:`matter_samples` in the |NCS| use the `Trusted storage`_ library as the PSA Secure Storage API implementation for all supported platforms.
-You can find an overview of the PSA Secure Storage configuration supported for each |NCS| Matter-enabled platform in the :ref:`matter_platforms_security_support` section.
+Currently, all :ref:`matter_samples` in the |addon| use the `Trusted storage`_ library as the PSA Secure Storage API implementation for all supported platforms.
+You can find an overview of the PSA Secure Storage configuration supported for each |addon| Matter-enabled platform in the :ref:`matter_platforms_security_support` section.
 
 .. note::
-   For the nRF52840 devices, in regards to :ref:`matter_samples` in |NCS|, AEAD keys are derived using hashes of entry UIDs (:kconfig:option:`CONFIG_TRUSTED_STORAGE_BACKEND_AEAD_KEY_HASH_UID`).
+   For the nRF52840 devices, in regards to :ref:`matter_samples` in |addon|, AEAD keys are derived using hashes of entry UIDs (:kconfig:option:`CONFIG_TRUSTED_STORAGE_BACKEND_AEAD_KEY_HASH_UID`).
    This approach is less secure than using the `Hardware unique key library`_ library for key derivation as it only provides integrity of sensitive material.
    It is also possible to implement a custom AEAD key generation method when the :kconfig:option:`CONFIG_TRUSTED_STORAGE_BACKEND_AEAD_KEY_CUSTOM` Kconfig option is selected.
 
@@ -72,7 +72,7 @@ For more details about AEAD key generation and backend configuration, see the `T
 Matter platforms security support
 *********************************
 
-The following table summarizes the current security configuration and features supported for Matter-enabled hardware platforms in the |NCS|.
+The following table summarizes the current security configuration and features supported for Matter-enabled hardware platforms in the |addon|.
 This is a reference configuration that can be modified in the production firmware by using proper Kconfig settings or implementing custom cryptographic backends.
 
 .. list-table:: Matter platforms security support
@@ -138,7 +138,7 @@ nRF54L Key Management Unit (KMU)
 ================================
 
 Most nRF54L Series devices include `KMU hardware peripheral`_ that can be used to store cryptographic keys in Matter.
-In this solution, the keys are stored within the available slots in the `KMU slots`_ range that are not reserved for current and future |NCS| use cases.
+In this solution, the keys are stored within the available slots in the `KMU slots`_ range that are not reserved for current and future |addon| use cases.
 
 The default slots range used for Matter is from ``100`` to ``180``, excluding the DAC private key.
 For details on the DAC private key configuration, see :ref:`matter_platforms_security_dac_priv_key_kmu`.
@@ -357,7 +357,7 @@ Enable AP-Protect
 
 Make sure to enable the AP-Protect feature for the production devices to disable the debug functionality.
 
-Several Nordic Semiconductor SoCs or SiPs supported in the |NCS| offer an implementation of the access port protection mechanism (AP-Protect).
+Several Nordic Semiconductor SoCs or SiPs supported in the |addon| offer an implementation of the access port protection mechanism (AP-Protect).
 When enabled, this mechanism blocks the debugger from read and write access to all CPU registers and memory-mapped addresses.
 Accessing these registers and addresses again requires disabling the mechanism and erasing the flash.
 

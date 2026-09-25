@@ -20,7 +20,7 @@ See the :ref:`Creating custom clusters in Matter application <ug_matter_creating
 
 
 .. note::
-   Make sure you are familiar with Matter in the |NCS| and you have tested some of the available :ref:`matter_samples` before you work with this user guide.
+   Make sure you are familiar with Matter in the |addon| and you have tested some of the available :ref:`matter_samples` before you work with this user guide.
 
 .. _ug_matter_creating_accessory_overview:
 

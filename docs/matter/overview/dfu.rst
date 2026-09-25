@@ -36,7 +36,7 @@ OTA Requestor
    Because of this, it may implement a mechanism to discover providers and query the OTA Provider periodically about new software images using the mandatory polling mechanism.
    However, it can also receive information about the OTA Providers from the commissioner during :ref:`ug_matter_overview_commissioning`.
 
-   The OTA Requestor is typically implemented on accessories (for example, embedded devices built using the |NCS|).
+   The OTA Requestor is typically implemented on accessories (for example, embedded devices built using the |addon|).
 
 OTA Provider
    The device that provides the image for the OTA update.

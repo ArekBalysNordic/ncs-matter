@@ -20,7 +20,7 @@ The following sections describe where and how you can place CD in firmware and h
 Storing Certification Declaration
 *********************************
 
-In the |NCS| implementation of Matter, you can configure CD by adding the :external:c:macro:`modules/lib/matter/src/platform/nrfconnect/CHIPDevicePlatformConfig.h#CHIP_DEVICE_CONFIG_CERTIFICATION_DECLARATION` define in the :local:file:`subsys/certification/chip_project_config.h` file.
+In the |addon| implementation of Matter, you can configure CD by adding the :external:c:macro:`modules/lib/matter/src/platform/nrfconnect/CHIPDevicePlatformConfig.h#CHIP_DEVICE_CONFIG_CERTIFICATION_DECLARATION` define in the :local:file:`subsys/certification/chip_project_config.h` file.
 You can locate the array of bytes related to CD by running the search with the following condition:
 
 .. code-block:: console

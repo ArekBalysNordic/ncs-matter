@@ -30,7 +30,7 @@ Predefined last fabric removal behaviors
 There are four predefined reactions to the last fabric removal available in the :ref:`matter_samples`.
 All behaviors are implemented as a delegation for the Fabric Table module, and the chosen reaction is run as a callback on each fabric removal.
 
-To enable the predefined behavior in your specific sample based on the :ref:`matter_samples` in the |NCS|, complete the following steps:
+To enable the predefined behavior in your specific sample based on the :ref:`matter_samples` in the |addon|, complete the following steps:
 
 1. Include the :local:file:`subsys/app/fabric_table_delegate.h` header file in the :file:`app_task.cpp` project file:
 

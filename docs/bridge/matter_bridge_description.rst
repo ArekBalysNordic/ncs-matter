@@ -78,7 +78,7 @@ To enable the On/Off Light Switch implementation, set the following configuratio
 * :kconfig:option:`CONFIG_BRIDGE_GENERIC_SWITCH_BRIDGED_DEVICE` to ``n`` to disable Generic Switch.
 * :kconfig:option:`CONFIG_BRIDGE_ONOFF_LIGHT_SWITCH_BRIDGED_DEVICE` to ``y`` to enable On/Off Light Switch.
 
-See `cmake_options <Providing CMake options_>`_ for instructions on how to add these options to your build.
+See `Providing CMake options`_ for instructions on how to add these options to your build.
 
 The Matter bridge device has an additional functionality, enabling it to work as a smart plug.
 This feature provides an additional endpoint with an ID equal to 2, which represents Matter on/off smart plug device type functionality.

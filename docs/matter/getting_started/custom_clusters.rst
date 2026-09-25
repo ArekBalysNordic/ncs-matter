@@ -699,10 +699,6 @@ For example:
 
       west zap-generate --full -j ./zcl.json
 
-.. important::
-
-   In the |NCS| versions older than 3.2.0, the :file:`zcl.json` had to be stored in the ``sample_directory/src/default_zap/`` subdirectory.
-
 After completing these steps, the following changes will be visible within your sample directory:
 
 * The new cluster description file :file:`MyCluster.xml`.

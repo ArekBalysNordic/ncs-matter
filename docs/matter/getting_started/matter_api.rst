@@ -20,7 +20,7 @@ There is no one unified, documented Matter SDK API that can be referenced when d
 Instead, to learn how to interact with the Matter library, a Matter firmware developer must peruse the source code of any of the existing Matter sample applications.
 To aid developers, Nordic Semiconductor provides a unified API that wraps initialization of Matter-specific components into more user-friendly high level code.
 
-The Matter application code in the |NCS| can be divided into the following steps:
+The Matter application code in the |addon| can be divided into the following steps:
 
 1. Initialization of application-specific components.
    This includes initialization of hardware modules and registration of proprietary Bluetooth® LE services.
@@ -133,7 +133,7 @@ Event handler API
 
 The Matter SDK provides a notification scheme based on the public events that are propagated from the Matter stack to the application layer.
 The nRF Connect Matter event handler API provides mechanisms to register and unregister custom functions that handle these events within an application.
-This module also includes a default handler that is used in |NCS| Matter samples and applications.
+This module also includes a default handler that is used in |addon| Matter samples and applications.
 
 The specific Matter events that can be handled in the application are listed in the :external:file:`ncs/modules/lib/matter/src/include/platform/CHIPDeviceEvent.h` header file.
 The nRF Connect Matter API contains of the following functions that can be used to handle events:
@@ -196,7 +196,7 @@ Combining both aforementioned nRF Connect Matter APIs, you can develop an applic
 
 Note that the ``PrepareServer()`` call may contain more fields of the :local:c:struct:`subsys/app/matter_init.h#InitData` being initialized, or can be called without any explicit argument.
 If there is no explicit argument, the default initialization will be provided.
-For more references and examples on how to leverage the nRF Connect Matter APIs, examine the source code for the :ref:`matter_samples` in the |NCS|.
+For more references and examples on how to leverage the nRF Connect Matter APIs, examine the source code for the :ref:`matter_samples` in the |addon|.
 
 Interacting with Matter Data Model
 **********************************
@@ -249,6 +249,6 @@ As an example, the ``DoorLock`` cluster server implementation defines applicatio
    Most of the Matter Data Model callback function names are prefixed with ``emberAf``.
    The reason for this is the fact that the Matter Data Model inherits extensively from the Zigbee Ember Application Framework API.
 
-In the |NCS|, all Matter samples follow the same convention and implement the described Matter Data Model callbacks in the :file:`zcl_callbacks.cpp` files which are populated as a part of the application source code.
-You can review the :file:`zcl_callbacks.cpp` file of any |NCS| Matter sample to find example implementations of various Data Model callbacks.
+In the |addon|, all Matter samples follow the same convention and implement the described Matter Data Model callbacks in the :file:`zcl_callbacks.cpp` files which are populated as a part of the application source code.
+You can review the :file:`zcl_callbacks.cpp` file of any |addon| sample to find example implementations of various Data Model callbacks.
 For instance, you can find an example implementation of the :external:c:func:`ncs/modules/lib/matter/src/app/util/generic-callbacks.h#MatterPostAttributeChangeCallback` function in the :external:file:`ncs/nrf/samples/matter/light_bulb/src/zcl_callbacks.cpp` source file.
