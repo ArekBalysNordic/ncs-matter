@@ -86,7 +86,7 @@
 .. _`MCUboot image compression`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/app_dev/bootloaders_dfu/mcuboot_image_compression.html
 .. _`Fprotect`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/libraries/security/bootloader/fprotect.html
 .. _`Using MCUboot in nRF Connect SDK`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/mcuboot/readme-ncs.html
-.. _`Developing with Thingy:53`: https://nrfconnectdocs.nordicsemi.com/ncs/|ncs_version|/nrf/app_dev/device_guides/thingy53/index.html
+.. _`Developing with Thingy:53`: https://nrfconnectdocs.nordicsemi.com/ncs/nrf/app_dev/device_guides/thingy53/index.html
 
 .. ### NCS Zephyr documentation set
 
@@ -144,15 +144,15 @@
 .. _Matter factory data Kconfig options: https://nrfconnectdocs.nordicsemi.com/ncs/latest/kconfig/index.html#!CHIP_FACTORY_DATA
 .. _Matter nRF Connect Kconfig: https://github.com/nrfconnect/sdk-connectedhomeip/blob/|sdk-connectedhomeip-revision|/config/nrfconnect/chip-module/Kconfig
 .. _Matter nRF Connect platform source files: https://github.com/nrfconnect/sdk-connectedhomeip/tree/|sdk-connectedhomeip-revision|/src/platform/nrfconnect
-.. _Matter nRF Connect scripts: https://github.com/nrfconnect/sdk-connectedhomeip/tree/|sdk-connectedhomeip-revision|/scripts/tools/nrfconnect
+.. _Matter nRF Connect scripts: https://github.com/nrfconnect/sdk-connectedhomeip/tree/scripts/tools/nrfconnect
 .. _Nordic Developer Academy: https://academy.nordicsemi.com/
-.. _Online Power Profiler for Matter over Thread: https://devzone.nordicsemi.com/power/w/opp/16/online-power-profiler-for-matter-over-thread
+.. _Online Power Profiler for Matter over Thread: https://devzone.nordicsemi.com/power/w/opp/online-power-profiler-for-matter-over-thread
 .. _OTA Provider for Linux: https://github.com/nrfconnect/sdk-connectedhomeip/tree/|sdk-connectedhomeip-revision|/examples/ota-provider-app/linux
 .. _PHP JSON Schema: https://github.com/swaggest/php-json-schema
 .. _PICS Tool: https://picstool.csa-iot.org/
 .. _Platform Security Architecture (PSA): https://www.psacertified.org/what-is-psa-certified/
 .. _SIGMA: https://link.springer.com/chapter/10.1007/978-3-540-45146-4_24
-.. _SPAKE2+: https://datatracker.ietf.org/doc/rfc9383/
+.. _SPAKE2+: https://datatracker.ietf.org/rfc9383/
 .. _Testing the nRF Connect platform with Apple, Google and Samsung ecosystems: https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/matter-testing-nrf-connect-sdk-platform-with-apple-google-and-samsung-ecosystems-218911247#mcetoc_1gkq24ojdf
 .. _Testing with Apple Devices: https://github.com/project-chip/connectedhomeip/blob/master/docs/guides/darwin.md
 .. _Thread Group's certification information: https://threadgroup.org/What-is-Thread/Certification
@@ -165,7 +165,7 @@
 .. _nRF Connect for Desktop: https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop
 .. _nRF Door Lock and Access Control Add-on: https://nrfconnectdocs.nordicsemi.com/addons/door_lock_and_access_control/latest/index.html
 .. _nRF Util: https://docs.nordicsemi.com/r/bundle/nrfutil/page/readme.html
-.. _`nRF52840 Compatibility Matrix`: https://docs.nordicsemi.com/r/bundle/comp_matrix_nrf52840/page/comp/nrf52840/nrf52840_comp_matrix.html
+.. _`nRF52840 Compatibility Matrix`: https://docs.nordicsemi.com/r/bundle/comp_matrix_nrf52840/comp/nrf52840/nrf52840_comp_matrix.html
 .. _`nRF5340 Compatibility Matrix`: https://docs.nordicsemi.com/r/bundle/comp_matrix_nrf5340/page/comp/nrf5340/nrf5340_comp_matrix.html
 .. _`nRF54LM20B Compatibility Matrix`: https://docs.nordicsemi.com/r/bundle/comp_matrix_nrf54lm20b/page/comp/nrf54lm20b/nrf54lm20b_comp_matrix.html
 .. _`nRF54LM20A Compatibility Matrix`: https://docs.nordicsemi.com/r/bundle/comp_matrix_nrf54lm20a/page/comp/nrf54lm20a/nrf54lm20a_comp_matrix.html
