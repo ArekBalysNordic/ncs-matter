@@ -5,7 +5,7 @@ on:
     branches:
       - main
       - 'v*-branch'
-
+      - '*preview-*-branch'
     paths:
       - 'samples/**'
       - 'applications/**'
