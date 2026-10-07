@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - v*-branch
+      - '*preview-*-branch'
   pull_request:
     branches:
       - main
       - v*-branch
+      - '*preview-*-branch'
 
 permissions:
   contents: read

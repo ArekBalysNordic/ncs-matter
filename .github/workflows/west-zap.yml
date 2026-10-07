@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - main
+      - 'v*-branch'
+      - '*preview-*-branch'
     paths:
       - '.github/workflows/west-zap.yml'
       - 'scripts/west/**'
