@@ -1,0 +1,605 @@
+[0;34m[1793017399.599] [166646:166646] [DL] ChipLinuxStorage::Init: Using KVS config file: /tmp/chip_kvs[0m
+[0;34m[1793017399.602] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[1;31m[1793017399.603] [166646:166646] [DL] ChipLinuxStorage::Init: Attempt to re-initialize with KVS config file: /tmp/chip_kvs, IGNORING.[0m
+[0;34m[1793017399.603] [166646:166646] [DL] ChipLinuxStorage::Init: Using KVS config file: /tmp/chip_factory.ini[0m
+[0;34m[1793017399.603] [166646:166646] [DL] ChipLinuxStorage::Init: Using KVS config file: /tmp/chip_config.ini[0m
+[0;34m[1793017399.603] [166646:166646] [DL] ChipLinuxStorage::Init: Using KVS config file: /tmp/chip_counters.ini[0m
+[0;34m[1793017399.605] [166646:166646] [DL] Wrote settings to /tmp/chip_counters.ini[0m
+[0;32m[1793017399.605] [166646:166646] [DL] NVS set: chip-counters/reboot-count = 2 (0x2)[0m
+[0;32m[1793017399.605] [166646:166646] [DL] Got Ethernet interface: enp0s31f6[0m
+[0;32m[1793017399.605] [166646:166646] [DL] Found the primary Ethernet interface:enp0s31f6[0m
+[0;32m[1793017399.606] [166646:166646] [DL] Got WiFi interface: wlp0s20f3[0m
+[1;31m[1793017399.606] [166646:166646] [DL] Failed to reset WiFi statistic counts[0m
+[0;32m[1793017399.606] [166646:166646] [PAF] WiFiPAF: WiFiPAFLayer::Init()[0m
+[1;31m[1793017399.606] [166646:166646] [-] *** WARNING: Using temporary passcode 20202021 due to no neither --passcode or --spake2p-verifier-base64 given on command line or factory configuration. This is temporary and will disappear. Please update your scripts to explicitly configure onboarding credentials. ***[0m
+[1;31m[1793017399.606] [166646:166646] [-] *** WARNING: Using temporary test discriminator 3840 due to --discriminator not given on command line or factory configuration. This is temporary and will disappear. Please update your scripts to explicitly configure onboarding credentials. ***[0m
+[0;32m[1793017399.606] [166646:166646] [SPT] LinuxCommissionableDataProvider didn't get a PASE salt, generating one.[0m
+[0;32m[1793017399.617] [166646:166646] [DL] Device Configuration:[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Serial Number: TEST_SN[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Vendor Id: 65521 (0xFFF1)[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Product Id: 32769 (0x8001)[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Product Name: TEST_PRODUCT[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Hardware Version: 0[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Setup Pin Code (0 for UNKNOWN/ERROR): 20202021[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Setup Discriminator (0xFFFF for UNKNOWN/ERROR): 3840 (0xF00)[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Manufacturing Date: (not set)[0m
+[0;32m[1793017399.617] [166646:166646] [DL]   Device Type: 65535 (0xFFFF)[0m
+[0;32m[1793017399.617] [166646:166646] [-] ==== Onboarding payload for Standard Commissioning Flow ====[0m
+[0;32m[1793017399.617] [166646:166646] [SVR] SetupQRCode: [MT:-24J042C00KA0648G00][0m
+[0;32m[1793017399.617] [166646:166646] [SVR] Copy/paste the below URL in a browser to see the QR Code:[0m
+[0;32m[1793017399.617] [166646:166646] [SVR] https://project-chip.github.io/connectedhomeip/qrcode.html?data=MT%3A-24J042C00KA0648G00[0m
+[0;32m[1793017399.617] [166646:166646] [SVR] Manual pairing code: [34970112332][0m
+[0;32m[1793017399.617] [166646:166646] [SVR] Initializing subscription resumption storage...[0m
+[0;34m[1793017399.620] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;32m[1793017399.620] [166646:166646] [SVR] Server initializing...[0m
+[0;34m[1793017399.620] [166646:166646] [FP] Initializing FabricTable from persistent storage[0m
+[0;32m[1793017399.620] [166646:166646] [TS] Last Known Good Time: [unknown][0m
+[0;32m[1793017399.620] [166646:166646] [TS] Setting Last Known Good Time to firmware build time 2023-10-14T01:16:48[0m
+[0;34m[1793017399.622] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;32m[1793017399.622] [166646:166646] [DMG] AccessControl: initializing[0m
+[0;32m[1793017399.622] [166646:166646] [DMG] Examples::AccessControlDelegate::Init[0m
+[0;32m[1793017399.622] [166646:166646] [DMG] AccessControl: setting[0m
+[0;32m[1793017399.622] [166646:166646] [DMG] DefaultAclStorage: initializing[0m
+[0;32m[1793017399.622] [166646:166646] [DMG] DefaultAclStorage: 0 entries loaded[0m
+[0;34m[1793017399.622] [166646:166646] [IN] UDP::Init bind&listen port=5540[0m
+[0;34m[1793017399.622] [166646:166646] [IN] UDP::Init bound to port=5540[0m
+[0;34m[1793017399.622] [166646:166646] [IN] UDP::Init bind&listen port=5540[0m
+[0;34m[1793017399.622] [166646:166646] [IN] UDP::Init bound to port=5540[0m
+[0;34m[1793017399.622] [166646:166646] [IN] BLEBase::Init - setting/overriding transport[0m
+[0;32m[1793017399.622] [166646:166646] [IN] TCP server listening on port 5540 for incoming connections[0m
+[0;32m[1793017399.622] [166646:166646] [IN] TCP server listening on port 5540 for incoming connections[0m
+[0;34m[1793017399.622] [166646:166646] [IN] WiFiPAFBase::Init - setting/overriding transport[0m
+[0;34m[1793017399.622] [166646:166646] [IN] TransportMgr initialized[0m
+[0;34m[1793017399.624] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017399.625] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017399.630] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;32m[1793017399.630] [166646:166646] [DMG] Ember attribute persistence requires setting up[0m
+[0;32m[1793017399.630] [166646:166646] [ZCL] Using ZAP configuration...[0m
+[0;34m[1793017399.630] [166646:166646] [EVL] LogEvent event number: 0x0000000000000000 priority: 2, endpoint id:  0x0 cluster id: 0x0000_0033 event id: 0x3 Epoch timestamp: 0x000001A1782A494E[0m
+[0;32m[1793017399.630] [166646:166646] [DMG] AccessControlCluster: initializing[0m
+[0;34m[1793017399.630] [166646:166646] [IN] SecureSession[0x558e0150b660]: Allocated Type:1 LSID:49285[0m
+[0;34m[1793017399.630] [166646:166646] [SC] Assigned local session key ID 49285[0m
+[0;34m[1793017399.630] [166646:166646] [SC] Waiting for PBKDF param request[0m
+[0;32m[1793017399.630] [166646:166646] [DIS] Updating services using commissioning mode 1[0m
+[0;32m[1793017399.633] [166646:166646] [DIS] CHIP minimal mDNS started advertising.[0m
+[0;34m[1793017399.637] [166646:166646] [DL] Using WiFi MAC for hostname[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] DNS-SD Pairing Instruction not set[0m
+[0;32m[1793017399.637] [166646:166646] [DIS] Advertise commission parameter vendorID=65521 productID=32769 discriminator=3840/15 cm=1 cp=0 jf=0[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with _matterc._udp.local[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with AD0F481BA529660D._matterc._udp.local[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with _V65521._sub._matterc._udp.local[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with _S15._sub._matterc._udp.local[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with _L3840._sub._matterc._udp.local[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with _CM._sub._matterc._udp.local[0m
+[0;34m[1793017399.637] [166646:166646] [DIS] Responding with AD0F481BA529660D._matterc._udp.local[0m
+[0;32m[1793017399.637] [166646:166646] [DIS] CHIP minimal mDNS configured as 'Commissionable node device'; instance name: AD0F481BA529660D.[0m
+[0;34m[1793017399.640] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.640] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017399.640] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.642] [166646:166646] [DIS] mDNS service published: _matterc._udp[0m
+[0;32m[1793017399.642] [166646:166646] [DIS] Updating services using commissioning mode 1[0m
+[0;32m[1793017399.645] [166646:166646] [DIS] CHIP minimal mDNS started advertising.[0m
+[0;34m[1793017399.647] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.647] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017399.648] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;34m[1793017399.651] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.651] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017399.651] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;34m[1793017399.652] [166646:166646] [DL] Using WiFi MAC for hostname[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] DNS-SD Pairing Instruction not set[0m
+[0;32m[1793017399.652] [166646:166646] [DIS] Advertise commission parameter vendorID=65521 productID=32769 discriminator=3840/15 cm=1 cp=0 jf=0[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with _matterc._udp.local[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with AD0F481BA529660D._matterc._udp.local[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with _V65521._sub._matterc._udp.local[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with _S15._sub._matterc._udp.local[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with _L3840._sub._matterc._udp.local[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with _CM._sub._matterc._udp.local[0m
+[0;34m[1793017399.652] [166646:166646] [DIS] Responding with AD0F481BA529660D._matterc._udp.local[0m
+[0;32m[1793017399.652] [166646:166646] [DIS] CHIP minimal mDNS configured as 'Commissionable node device'; instance name: AD0F481BA529660D.[0m
+[0;34m[1793017399.653] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.653] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017399.653] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.654] [166646:166646] [DIS] mDNS service published: _matterc._udp[0m
+[0;32m[1793017399.654] [166646:166646] [IN] CASE Server enabling CASE session setups[0m
+[0;34m[1793017399.654] [166646:166646] [IN] SecureSession[0x558e0150d5c0]: Allocated Type:2 LSID:49286[0m
+[0;34m[1793017399.654] [166646:166646] [SC] Allocated SecureSession (0x558e0150d5c0) - waiting for Sigma1 msg[0m
+[0;32m[1793017399.654] [166646:166646] [SVR] Joining Multicast groups[0m
+[0;34m[1793017399.654] [166646:166646] [ZCL] Emitting StartUp event[0m
+[0;34m[1793017399.654] [166646:166646] [EVL] LogEvent event number: 0x0000000000000001 priority: 2, endpoint id:  0x0 cluster id: 0x0000_0028 event id: 0x0 Epoch timestamp: 0x000001A1782A4966[0m
+[0;32m[1793017399.654] [166646:166646] [SVR] Server initialization complete[0m
+[0;32m[1793017399.654] [166646:166646] [SVR] Server Listening...[0m
+[0;32m[1793017399.654] [166646:166646] [DL] Device Configuration:[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Serial Number: TEST_SN[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Vendor Id: 65521 (0xFFF1)[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Product Id: 32769 (0x8001)[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Product Name: TEST_PRODUCT[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Hardware Version: 0[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Setup Pin Code (0 for UNKNOWN/ERROR): 20202021[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Setup Discriminator (0xFFFF for UNKNOWN/ERROR): 3840 (0xF00)[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Manufacturing Date: (not set)[0m
+[0;32m[1793017399.654] [166646:166646] [DL]   Device Type: 65535 (0xFFFF)[0m
+[0;32m[1793017399.654] [166646:166646] [SVR] SetupQRCode: [MT:-24J042C00KA0648G00][0m
+[0;32m[1793017399.654] [166646:166646] [SVR] Copy/paste the below URL in a browser to see the QR Code:[0m
+[0;32m[1793017399.654] [166646:166646] [SVR] https://project-chip.github.io/connectedhomeip/qrcode.html?data=MT%3A-24J042C00KA0648G00[0m
+[0;32m[1793017399.654] [166646:166646] [SVR] Manual pairing code: [34970112332][0m
+[0;34m[1793017399.654] [166646:166646] [SWU] Using OTA file: /home/arbl/ncs/ncs-matter/samples/template/build/matter.ota[0m
+[0;34m[1793017399.654] [166646:166646] [SWU] Using ImageList file: (none)[0m
+[0;34m[1793017399.668] [166646:166647] [DL] Creating GATT service object at /chipoble/8af6/service[0m
+[0;34m[1793017399.668] [166646:166647] [DL] Create characteristic object at /chipoble/8af6/service/c1[0m
+[0;34m[1793017399.668] [166646:166647] [DL] Create characteristic object at /chipoble/8af6/service/c2[0m
+[0;34m[1793017399.668] [166646:166647] [DL] CHIP BTP C1 /chipoble/8af6/service[0m
+[0;34m[1793017399.668] [166646:166647] [DL] CHIP BTP C2 /chipoble/8af6/service[0m
+[0;34m[1793017399.668] [166646:166647] [DL] CHIP_ENABLE_ADDITIONAL_DATA_ADVERTISING is FALSE[0m
+[0;32m[1793017399.669] [166646:166646] [DIS] Updating services using commissioning mode 1[0m
+[0;32m[1793017399.671] [166646:166646] [DIS] CHIP minimal mDNS started advertising.[0m
+[0;34m[1793017399.673] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.674] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017399.674] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;34m[1793017399.677] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.677] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017399.677] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;34m[1793017399.677] [166646:166647] [DL] GATT application registered successfully[0m
+[0;34m[1793017399.678] [166646:166646] [DL] Using WiFi MAC for hostname[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] DNS-SD Pairing Instruction not set[0m
+[0;32m[1793017399.678] [166646:166646] [DIS] Advertise commission parameter vendorID=65521 productID=32769 discriminator=3840/15 cm=1 cp=0 jf=0[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with _matterc._udp.local[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with AD0F481BA529660D._matterc._udp.local[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with _V65521._sub._matterc._udp.local[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with _S15._sub._matterc._udp.local[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with _L3840._sub._matterc._udp.local[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with _CM._sub._matterc._udp.local[0m
+[0;34m[1793017399.678] [166646:166646] [DIS] Responding with AD0F481BA529660D._matterc._udp.local[0m
+[0;32m[1793017399.678] [166646:166646] [DIS] CHIP minimal mDNS configured as 'Commissionable node device'; instance name: AD0F481BA529660D.[0m
+[0;34m[1793017399.680] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.680] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017399.680] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017399.681] [166646:166646] [DIS] mDNS service published: _matterc._udp[0m
+[0;32m[1793017399.681] [166646:166646] [IM] No subscriptions to resume[0m
+[0;34m[1793017399.681] [166646:166647] [DL] Create BLE adv object at /chipoble/8af6/advertising[0m
+[0;34m[1793017399.682] [166646:166646] [DL] SET service data to {'fff6': <[byte 0x00, 0x00, 0x0f, 0xf1, 0xff, 0x01, 0x80, 0x00]>}[0m
+[0;34m[1793017399.693] [166646:166647] [DL] BLE advertisement started successfully[0m
+[0;32m[1793017402.699] [166646:166646] [EM] >>> [E:12642r S:0 M:45129347] (U) Msg RX from 0:5D1D8F38563E3B87 [0000] to 0000000000000000 --- Type 0000:20 (SecureChannel:PBKDFParamRequest) (B:98)[0m
+[0;34m[1793017402.699] [166646:166646] [EM] Handling via exchange: 12642r, Delegate: 0x558de4a1fea8[0m
+[0;34m[1793017402.699] [166646:166646] [SC] Received PBKDF param request[0m
+[0;34m[1793017402.699] [166646:166646] [SC] Peer assigned session ID 52657[0m
+[0;34m[1793017402.699] [166646:166646] [SC] Found MRP parameters in the message[0m
+[0;32m[1793017402.699] [166646:166646] [EM] <<< [E:12642r S:0 M:67974317 (Ack:45129347)] (U) Msg TX from 0000000000000000 to 0:5D1D8F38563E3B87 [0000] [UDP:192.168.130.196:48116] --- Type 0000:21 (SecureChannel:PBKDFParamResponse) (B:174)[0m
+[0;32m[1793017402.699] [166646:166646] [EM] ??1 [E:12642r S:0 M:67974317] (U) Msg Retransmission to 0:0000000000000000 scheduled for 334ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.699] [166646:166646] [SC] Sent PBKDF param response[0m
+[0;32m[1793017402.699] [166646:166646] [SVR] Commissioning session establishment step started[0m
+[0;32m[1793017402.710] [166646:166646] [EM] >>> [E:12642r S:0 M:45129348 (Ack:67974317)] (U) Msg RX from 0:5D1D8F38563E3B87 [0000] to 0000000000000000 --- Type 0000:22 (SecureChannel:PASE_Pake1) (B:96)[0m
+[0;34m[1793017402.710] [166646:166646] [EM] Found matching exchange: 12642r, Delegate: 0x558de4a1fea8[0m
+[0;34m[1793017402.710] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:67974317 from Retrans Table on exchange 12642r[0m
+[0;34m[1793017402.710] [166646:166646] [SC] Received spake2p msg1[0m
+[0;32m[1793017402.722] [166646:166646] [EM] <<< [E:12642r S:0 M:67974318 (Ack:45129348)] (U) Msg TX from 0000000000000000 to 0:5D1D8F38563E3B87 [0000] [UDP:192.168.130.196:48116] --- Type 0000:23 (SecureChannel:PASE_Pake2) (B:131)[0m
+[0;32m[1793017402.722] [166646:166646] [EM] ??1 [E:12642r S:0 M:67974318] (U) Msg Retransmission to 0:0000000000000000 scheduled for 374ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.722] [166646:166646] [SC] Sent spake2p msg2[0m
+[0;32m[1793017402.732] [166646:166646] [EM] >>> [E:12642r S:0 M:45129349 (Ack:67974318)] (U) Msg RX from 0:5D1D8F38563E3B87 [0000] to 0000000000000000 --- Type 0000:24 (SecureChannel:PASE_Pake3) (B:63)[0m
+[0;34m[1793017402.732] [166646:166646] [EM] Found matching exchange: 12642r, Delegate: 0x558de4a1fea8[0m
+[0;34m[1793017402.732] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:67974318 from Retrans Table on exchange 12642r[0m
+[0;34m[1793017402.732] [166646:166646] [SC] Received spake2p msg3[0m
+[0;34m[1793017402.732] [166646:166646] [SC] Sending status report. Protocol code 0, exchange 12642[0m
+[0;32m[1793017402.732] [166646:166646] [EM] <<< [E:12642r S:0 M:67974319 (Ack:45129349)] (U) Msg TX from 0000000000000000 to 0:5D1D8F38563E3B87 [0000] [UDP:192.168.130.196:48116] --- Type 0000:40 (SecureChannel:StatusReport) (B:34)[0m
+[0;32m[1793017402.732] [166646:166646] [EM] ??1 [E:12642r S:0 M:67974319] (U) Msg Retransmission to 0:0000000000000000 scheduled for 372ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;32m[1793017402.732] [166646:166646] [SC] SecureSession[0x558e0150b660, LSID:49285]: State change 'kEstablishing' --> 'kActive'[0m
+[0;34m[1793017402.732] [166646:166646] [IN] SecureSession[0x558e0150b660]: Activated - Type:1 LSID:49285[0m
+[0;34m[1793017402.732] [166646:166646] [IN] New secure session activated for device <FFFFFFFB00000000, 0>, LSID:49285 PSID:52657![0m
+[0;32m[1793017402.732] [166646:166646] [SVR] Commissioning completed session establishment step[0m
+[0;32m[1793017402.732] [166646:166646] [DIS] Updating services using commissioning mode 0[0m
+[0;32m[1793017402.734] [166646:166646] [DIS] CHIP minimal mDNS started advertising.[0m
+[0;34m[1793017402.735] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017402.735] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017402.735] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;34m[1793017402.739] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017402.739] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017402.739] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017402.740] [166646:166646] [SVR] Device completed Rendezvous process[0m
+[0;32m[1793017402.741] [166646:166646] [EM] >>> [E:12643r S:49285 M:128499186] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:02 (IM:ReadRequest) (B:136)[0m
+[0;34m[1793017402.741] [166646:166646] [EM] Handling via exchange: 12643r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.741] [166646:166646] [IM] Received Read request[0m
+[0;34m[1793017402.741] [166646:166646] [DMG] IM RH moving to [CanStartReporting][0m
+[0;34m[1793017402.742] [166646:166647] [DL] BLE advertisement stopped successfully[0m
+[0;32m[1793017402.743] [166646:166646] [DL] CHIPoBLE advertising stopped[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] Building Reports for ReadHandler with LastReportGeneration = 0x0000000000000000 DirtyGeneration = 0x0000000000000000[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] <RE:Run> Cluster 28, Attribute 4 is dirty[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] Reading attribute: Cluster=0x0000_0028 Endpoint=0x0 AttributeId=0x0000_0004 (expanded=0)[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] <RE:Run> Cluster 28, Attribute 2 is dirty[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] Reading attribute: Cluster=0x0000_0028 Endpoint=0x0 AttributeId=0x0000_0002 (expanded=0)[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] <RE:Run> Cluster 30, Attribute c is dirty[0m
+[1;31m[1793017402.743] [166646:166646] [DMG] Failed to read attribute: UNSUPPORTED_ATTRIBUTE(134)[0m
+[1;31m[1793017402.743] [166646:166646] [DMG] Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0030, attributeId: 0x0000_000Cerr = src/app/data-model-provider/ActionReturnStatus.cpp:104: IM Error 0x00000586: General error: 0x86 (UNSUPPORTED_ATTRIBUTE)[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] <RE:Run> Cluster 30, Attribute 3 is dirty[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] Reading attribute: Cluster=0x0000_0030 Endpoint=0x0 AttributeId=0x0000_0003 (expanded=0)[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] <RE:Run> Cluster 30, Attribute 2 is dirty[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] Reading attribute: Cluster=0x0000_0030 Endpoint=0x0 AttributeId=0x0000_0002 (expanded=0)[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] <RE:Run> Cluster 30, Attribute 1 is dirty[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] Reading attribute: Cluster=0x0000_0030 Endpoint=0x0 AttributeId=0x0000_0001 (expanded=0)[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] <RE:Run> Cluster 30, Attribute 0 is dirty[0m
+[0;34m[1793017402.743] [166646:166646] [DMG] Reading attribute: Cluster=0x0000_0030 Endpoint=0x0 AttributeId=0x0000_0000 (expanded=0)[0m
+[0;34m[1793017402.744] [166646:166646] [DMG] <RE:Run> Cluster 30, Attribute 4 is dirty[0m
+[0;34m[1793017402.744] [166646:166646] [DMG] Reading attribute: Cluster=0x0000_0030 Endpoint=0x0 AttributeId=0x0000_0004 (expanded=0)[0m
+[0;34m[1793017402.744] [166646:166646] [DMG] <RE> Sending report (payload has 223 bytes)...[0m
+[0;32m[1793017402.744] [166646:166646] [EM] <<< [E:12643r S:49285 M:90211145 (Ack:128499186)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:05 (IM:ReportData) (B:257)[0m
+[0;32m[1793017402.744] [166646:166646] [EM] ??1 [E:12643r S:49285 M:90211145] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 349ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.744] [166646:166646] [DMG] <RE> OnReportConfirm: NumReports = 0[0m
+[0;34m[1793017402.744] [166646:166646] [DMG] <RE> ReportsInFlight = 0 with readHandler 0, RE has no more messages[0m
+[0;34m[1793017402.744] [166646:166646] [DMG] IM RH moving to [AwaitingDestruction][0m
+[0;34m[1793017402.744] [166646:166646] [DMG] All ReadHandler-s are clean, clear GlobalDirtySet[0m
+[0;32m[1793017402.744] [166646:166646] [EM] >>> [E:12642r S:0 M:45129350 (Ack:67974319)] (U) Msg RX from 0:5D1D8F38563E3B87 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)[0m
+[0;34m[1793017402.744] [166646:166646] [EM] Found matching exchange: 12642r, Delegate: (nil)[0m
+[0;34m[1793017402.744] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:67974319 from Retrans Table on exchange 12642r[0m
+[0;32m[1793017402.746] [166646:166646] [EM] >>> [E:12644r S:49285 M:128499187] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:02 (IM:ReadRequest) (B:112)[0m
+[0;34m[1793017402.746] [166646:166646] [EM] Handling via exchange: 12644r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.746] [166646:166646] [IM] Received Read request[0m
+[0;34m[1793017402.746] [166646:166646] [DMG] IM RH moving to [CanStartReporting][0m
+[0;34m[1793017402.748] [166646:166646] [DMG] Building Reports for ReadHandler with LastReportGeneration = 0x0000000000000000 DirtyGeneration = 0x0000000000000000[0m
+[0;34m[1793017402.748] [166646:166646] [DMG] <RE:Run> Cluster 46, Attribute 2 is dirty[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Read request on unknown cluster - no data version available[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Failed to read attribute: UNSUPPORTED_CLUSTER(195)[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0002err = src/app/data-model-provider/ActionReturnStatus.cpp:104: IM Error 0x000005C3: General error: 0xc3 (UNSUPPORTED_CLUSTER)[0m
+[0;34m[1793017402.748] [166646:166646] [DMG] <RE:Run> Cluster 46, Attribute 1 is dirty[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Read request on unknown cluster - no data version available[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Failed to read attribute: UNSUPPORTED_CLUSTER(195)[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0001err = src/app/data-model-provider/ActionReturnStatus.cpp:104: IM Error 0x000005C3: General error: 0xc3 (UNSUPPORTED_CLUSTER)[0m
+[0;34m[1793017402.748] [166646:166646] [DMG] <RE:Run> Cluster 46, Attribute 0 is dirty[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Read request on unknown cluster - no data version available[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Failed to read attribute: UNSUPPORTED_CLUSTER(195)[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0000err = src/app/data-model-provider/ActionReturnStatus.cpp:104: IM Error 0x000005C3: General error: 0xc3 (UNSUPPORTED_CLUSTER)[0m
+[0;34m[1793017402.748] [166646:166646] [DMG] <RE:Run> Cluster 46, Attribute 7 is dirty[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Read request on unknown cluster - no data version available[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Failed to read attribute: UNSUPPORTED_CLUSTER(195)[0m
+[1;31m[1793017402.748] [166646:166646] [DMG] Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0007err = src/app/data-model-provider/ActionReturnStatus.cpp:104: IM Error 0x000005C3: General error: 0xc3 (UNSUPPORTED_CLUSTER)[0m
+[0;34m[1793017402.749] [166646:166646] [DMG] <RE:Run> Cluster 46, Attribute 6 is dirty[0m
+[1;31m[1793017402.749] [166646:166646] [DMG] Read request on unknown cluster - no data version available[0m
+[1;31m[1793017402.749] [166646:166646] [DMG] Failed to read attribute: UNSUPPORTED_CLUSTER(195)[0m
+[1;31m[1793017402.749] [166646:166646] [DMG] Fail to retrieve data, roll back and encode status on clusterId: 0x0000_0046, attributeId: 0x0000_0006err = src/app/data-model-provider/ActionReturnStatus.cpp:104: IM Error 0x000005C3: General error: 0xc3 (UNSUPPORTED_CLUSTER)[0m
+[0;34m[1793017402.749] [166646:166646] [DMG] <RE:Run> Cluster 31, Attribute fffc is dirty[0m
+[0;34m[1793017402.749] [166646:166646] [DMG] Reading attribute: Cluster=0x0000_0031 Endpoint=0x0 AttributeId=0x0000_FFFC (expanded=1)[0m
+[0;34m[1793017402.749] [166646:166646] [DMG] <RE> Sending report (payload has 152 bytes)...[0m
+[0;32m[1793017402.749] [166646:166646] [EM] <<< [E:12644r S:49285 M:90211146 (Ack:128499187)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:05 (IM:ReportData) (B:186)[0m
+[0;32m[1793017402.749] [166646:166646] [EM] ??1 [E:12644r S:49285 M:90211146] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 368ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.749] [166646:166646] [DMG] <RE> OnReportConfirm: NumReports = 0[0m
+[0;34m[1793017402.749] [166646:166646] [DMG] <RE> ReportsInFlight = 0 with readHandler 0, RE has no more messages[0m
+[0;34m[1793017402.749] [166646:166646] [DMG] IM RH moving to [AwaitingDestruction][0m
+[0;34m[1793017402.749] [166646:166646] [DMG] All ReadHandler-s are clean, clear GlobalDirtySet[0m
+[0;32m[1793017402.749] [166646:166646] [EM] >>> [E:12643r S:49285 M:128499188 (Ack:90211145)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.749] [166646:166646] [EM] Found matching exchange: 12643r, Delegate: (nil)[0m
+[0;34m[1793017402.749] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211145 from Retrans Table on exchange 12643r[0m
+[0;32m[1793017402.750] [166646:166646] [EM] >>> [E:12645r S:49285 M:128499189] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:65)[0m
+[0;34m[1793017402.750] [166646:166646] [EM] Handling via exchange: 12645r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_0030 Command=0x0000_0000[0m
+[0;32m[1793017402.750] [166646:166646] [FS] GeneralCommissioning: Received ArmFailSafe (60s)[0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017402.750] [166646:166646] [EM] <<< [E:12645r S:49285 M:90211147 (Ack:128499189)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:70)[0m
+[0;32m[1793017402.750] [166646:166646] [EM] ??1 [E:12645r S:49285 M:90211147] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 381ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.750] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017402.750] [166646:166646] [EM] >>> [E:12644r S:49285 M:128499190 (Ack:90211146)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.750] [166646:166646] [EM] Found matching exchange: 12644r, Delegate: (nil)[0m
+[0;34m[1793017402.750] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211146 from Retrans Table on exchange 12644r[0m
+[0;32m[1793017402.752] [166646:166646] [EM] >>> [E:12646r S:49285 M:128499191] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:70)[0m
+[0;34m[1793017402.752] [166646:166646] [EM] Handling via exchange: 12646r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.752] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_0030 Command=0x0000_0002[0m
+[0;34m[1793017402.754] [166646:166646] [DL] Wrote settings to /tmp/chip_config.ini[0m
+[0;32m[1793017402.754] [166646:166646] [DL] NVS set: chip-config/regulatory-location = 0 (0x0)[0m
+[0;34m[1793017402.756] [166646:166646] [DL] Wrote settings to /tmp/chip_config.ini[0m
+[0;32m[1793017402.756] [166646:166646] [DL] NVS set: chip-config/country-code = "XX"[0m
+[0;34m[1793017402.756] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017402.756] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017402.756] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017402.756] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;34m[1793017402.756] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017402.756] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017402.756] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017402.756] [166646:166646] [EM] <<< [E:12646r S:49285 M:90211148 (Ack:128499191)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:70)[0m
+[0;32m[1793017402.756] [166646:166646] [EM] ??1 [E:12646r S:49285 M:90211148] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 331ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.756] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017402.756] [166646:166646] [EM] >>> [E:12645r S:49285 M:128499192 (Ack:90211147)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.756] [166646:166646] [EM] Found matching exchange: 12645r, Delegate: (nil)[0m
+[0;34m[1793017402.756] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211147 from Retrans Table on exchange 12645r[0m
+[0;32m[1793017402.757] [166646:166646] [EM] >>> [E:12647r S:49285 M:128499193] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:62)[0m
+[0;34m[1793017402.757] [166646:166646] [EM] Handling via exchange: 12647r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_003E Command=0x0000_0002[0m
+[0;32m[1793017402.757] [166646:166646] [ZCL] OpCreds: Certificate Chain request received for PAI[0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017402.757] [166646:166646] [EM] <<< [E:12647r S:49285 M:90211149 (Ack:128499193)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:531)[0m
+[0;32m[1793017402.757] [166646:166646] [EM] ??1 [E:12647r S:49285 M:90211149] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 359ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017402.757] [166646:166646] [EM] >>> [E:12646r S:49285 M:128499194 (Ack:90211148)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.757] [166646:166646] [EM] Found matching exchange: 12646r, Delegate: (nil)[0m
+[0;34m[1793017402.757] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211148 from Retrans Table on exchange 12646r[0m
+[0;32m[1793017402.757] [166646:166646] [EM] >>> [E:12648r S:49285 M:128499195] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:62)[0m
+[0;34m[1793017402.757] [166646:166646] [EM] Handling via exchange: 12648r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_003E Command=0x0000_0002[0m
+[0;32m[1793017402.757] [166646:166646] [ZCL] OpCreds: Certificate Chain request received for DAC[0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017402.757] [166646:166646] [EM] <<< [E:12648r S:49285 M:90211150 (Ack:128499195)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:559)[0m
+[0;32m[1793017402.757] [166646:166646] [EM] ??1 [E:12648r S:49285 M:90211150] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 336ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.757] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017402.757] [166646:166646] [EM] >>> [E:12647r S:49285 M:128499196 (Ack:90211149)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.757] [166646:166646] [EM] Found matching exchange: 12647r, Delegate: (nil)[0m
+[0;34m[1793017402.757] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211149 from Retrans Table on exchange 12647r[0m
+[0;32m[1793017402.757] [166646:166646] [EM] >>> [E:12649r S:49285 M:128499197] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:94)[0m
+[0;34m[1793017402.758] [166646:166646] [EM] Handling via exchange: 12649r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.758] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_003E Command=0x0000_0000[0m
+[0;32m[1793017402.758] [166646:166646] [ZCL] OpCreds: Received an AttestationRequest command[0m
+[0;32m[1793017402.760] [166646:166646] [ZCL] OpCreds: AttestationRequest successful.[0m
+[0;34m[1793017402.760] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017402.760] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017402.760] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017402.760] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;34m[1793017402.760] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017402.760] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017402.760] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017402.760] [166646:166646] [EM] <<< [E:12649r S:49285 M:90211151 (Ack:128499197)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:718)[0m
+[0;32m[1793017402.760] [166646:166646] [EM] ??1 [E:12649r S:49285 M:90211151] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 343ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.760] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017402.760] [166646:166646] [EM] >>> [E:12648r S:49285 M:128499198 (Ack:90211150)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.760] [166646:166646] [EM] Found matching exchange: 12648r, Delegate: (nil)[0m
+[0;34m[1793017402.760] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211150 from Retrans Table on exchange 12648r[0m
+[0;32m[1793017402.778] [166646:166646] [EM] >>> [E:12650r S:49285 M:128499199] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:94)[0m
+[0;34m[1793017402.778] [166646:166646] [EM] Handling via exchange: 12650r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.778] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_003E Command=0x0000_0004[0m
+[0;32m[1793017402.778] [166646:166646] [ZCL] OpCreds: Received a CSRRequest command[0m
+[0;32m[1793017402.783] [166646:166646] [ZCL] OpCreds: AllocatePendingOperationalKey succeeded[0m
+[0;32m[1793017402.785] [166646:166646] [ZCL] OpCreds: CSRRequest successful.[0m
+[0;34m[1793017402.785] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017402.785] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017402.785] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017402.785] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;34m[1793017402.785] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017402.785] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017402.785] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017402.785] [166646:166646] [EM] <<< [E:12650r S:49285 M:90211152 (Ack:128499199)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:377)[0m
+[0;32m[1793017402.785] [166646:166646] [EM] ??1 [E:12650r S:49285 M:90211152] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 365ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.785] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017402.785] [166646:166646] [EM] >>> [E:12649r S:49285 M:128499200 (Ack:90211151)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.785] [166646:166646] [EM] Found matching exchange: 12649r, Delegate: (nil)[0m
+[0;34m[1793017402.785] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211151 from Retrans Table on exchange 12649r[0m
+[0;32m[1793017402.795] [166646:166646] [EM] >>> [E:12651r S:49285 M:128499201] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:293)[0m
+[0;34m[1793017402.795] [166646:166646] [EM] Handling via exchange: 12651r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.795] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_003E Command=0x0000_000B[0m
+[0;32m[1793017402.795] [166646:166646] [ZCL] OpCreds: Received an AddTrustedRootCertificate command[0m
+[0;32m[1793017402.800] [166646:166646] [ZCL] OpCreds: AddTrustedRootCertificate successful.[0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017402.800] [166646:166646] [EM] <<< [E:12651r S:49285 M:90211153 (Ack:128499201)] (S) Msg TX from 0000000000000000 to 0:FFFFFFFB00000000 [0000] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:67)[0m
+[0;32m[1793017402.800] [166646:166646] [EM] ??1 [E:12651r S:49285 M:90211153] (S) Msg Retransmission to 0:FFFFFFFB00000000 scheduled for 339ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017402.800] [166646:166646] [EM] >>> [E:12650r S:49285 M:128499202 (Ack:90211152)] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.800] [166646:166646] [EM] Found matching exchange: 12650r, Delegate: (nil)[0m
+[0;34m[1793017402.800] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211152 from Retrans Table on exchange 12650r[0m
+[0;32m[1793017402.800] [166646:166646] [EM] >>> [E:12652r S:49285 M:128499203] (S) Msg RX from 0:FFFFFFFB00000000 [0000] to 0000000000000000 --- Type 0001:08 (IM:InvokeCommandRequest) (B:566)[0m
+[0;34m[1793017402.800] [166646:166646] [EM] Handling via exchange: 12652r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017402.800] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_003E Command=0x0000_0006[0m
+[0;32m[1793017402.800] [166646:166646] [ZCL] OpCreds: Received an AddNOC command[0m
+[0;32m[1793017402.800] [166646:166646] [FP] Validating NOC chain[0m
+[0;32m[1793017402.808] [166646:166646] [FP] NOC chain validation successful[0m
+[0;32m[1793017402.808] [166646:166646] [FP] Added new fabric at index: 0x1[0m
+[0;32m[1793017402.809] [166646:166646] [FP] Assigned compressed fabric ID: 0x3D65FB338964B0BC, node ID: 0x0000000000000016[0m
+[0;32m[1793017402.809] [166646:166646] [TS] Last Known Good Time: 2023-10-14T01:16:48[0m
+[0;32m[1793017402.809] [166646:166646] [TS] New proposed Last Known Good Time: 2021-01-01T00:00:00[0m
+[0;32m[1793017402.809] [166646:166646] [TS] Retaining current Last Known Good Time[0m
+[0;34m[1793017402.811] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017402.812] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017402.814] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017402.815] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017402.816] [166646:166646] [EVL] LogEvent event number: 0x0000000000000002 priority: 1, endpoint id:  0x0 cluster id: 0x0000_001F event id: 0x0 Epoch timestamp: 0x000001A1782A55C0[0m
+[0;32m[1793017402.816] [166646:166646] [ZCL] OpCreds: ACL entry created for Fabric index 0x1 CASE Admin Subject 0x000000000001B669[0m
+[0;34m[1793017402.816] [166646:166646] [DL] Using WiFi MAC for hostname[0m
+[0;32m[1793017402.816] [166646:166646] [DIS] Advertise operational node 3D65FB338964B0BC-0000000000000016[0m
+[0;34m[1793017402.816] [166646:166646] [DIS] Responding with _matter._tcp.local[0m
+[0;34m[1793017402.816] [166646:166646] [DIS] Responding with 3D65FB338964B0BC-0000000000000016._matter._tcp.local[0m
+[0;34m[1793017402.816] [166646:166646] [DIS] Responding with 3D65FB338964B0BC-0000000000000016._matter._tcp.local[0m
+[0;34m[1793017402.816] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017402.816] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017402.816] [166646:166646] [DIS] Responding with _I3D65FB338964B0BC._sub._matter._tcp.local[0m
+[0;32m[1793017402.816] [166646:166646] [DIS] CHIP minimal mDNS configured as 'Operational device'; instance name: 3D65FB338964B0BC-0000000000000016.[0m
+[0;34m[1793017402.821] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017402.821] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017402.821] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017402.824] [166646:166646] [DIS] mDNS service published: _matter._tcp[0m
+[0;34m[1793017402.824] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017402.824] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017402.824] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017402.824] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;32m[1793017402.824] [166646:166646] [ZCL] OpCreds: successfully created fabric index 0x1 via AddNOC[0m
+[0;34m[1793017402.824] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017402.824] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017402.824] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017402.824] [166646:166646] [EM] <<< [E:12652r S:49285 M:90211154 (Ack:128499203)] (S) Msg TX from 0000000000000000 to 1:FFFFFFFB00000000 [B0BC] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:70)[0m
+[0;32m[1793017402.824] [166646:166646] [EM] ??1 [E:12652r S:49285 M:90211154] (S) Msg Retransmission to 1:FFFFFFFB00000000 scheduled for 400ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017402.824] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017402.824] [166646:166646] [EM] >>> [E:12651r S:49285 M:128499204 (Ack:90211153)] (S) Msg RX from 1:FFFFFFFB00000000 [B0BC] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.824] [166646:166646] [EM] Found matching exchange: 12651r, Delegate: (nil)[0m
+[0;34m[1793017402.824] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211153 from Retrans Table on exchange 12651r[0m
+[0;32m[1793017402.826] [166646:166646] [EM] >>> [E:12652r S:49285 M:128499205 (Ack:90211154)] (S) Msg RX from 1:FFFFFFFB00000000 [B0BC] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017402.826] [166646:166646] [EM] Found matching exchange: 12652r, Delegate: (nil)[0m
+[0;34m[1793017402.826] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:90211154 from Retrans Table on exchange 12652r[0m
+[0;32m[1793017403.030] [166646:166646] [EM] >>> [E:12653r S:0 M:45129351] (U) Msg RX from 0:938C1826E9220F40 [0000] to 0000000000000000 --- Type 0000:30 (SecureChannel:CASE_Sigma1) (B:196)[0m
+[0;34m[1793017403.030] [166646:166646] [EM] Handling via exchange: 12653r, Delegate: 0x558de4a1d798[0m
+[0;32m[1793017403.030] [166646:166646] [IN] CASE Server received Sigma1 message . Starting handshake. EC 0x558e0151c8f0[0m
+[0;32m[1793017403.030] [166646:166646] [SC] Received Sigma1 msg[0m
+[0;34m[1793017403.030] [166646:166646] [SC] Found MRP parameters in the message[0m
+[0;34m[1793017403.030] [166646:166646] [SC] Peer (Initiator) assigned session ID 52658[0m
+[0;32m[1793017403.030] [166646:166646] [SC] CASE matched destination ID: fabricIndex 1, NodeID 0x0000000000000016[0m
+[0;32m[1793017403.040] [166646:166646] [EM] <<< [E:12653r S:0 M:67974320 (Ack:45129351)] (U) Msg TX from 0000000000000000 to 0:938C1826E9220F40 [0000] [UDP:192.168.130.196:48116] --- Type 0000:31 (SecureChannel:CASE_Sigma2) (B:751)[0m
+[0;32m[1793017403.040] [166646:166646] [EM] ??1 [E:12653r S:0 M:67974320] (U) Msg Retransmission to 0:0000000000000000 scheduled for 394ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;32m[1793017403.040] [166646:166646] [SC] Sent Sigma2 msg[0m
+[0;32m[1793017403.059] [166646:166646] [EM] >>> [E:12653r S:0 M:45129352 (Ack:67974320)] (U) Msg RX from 0:938C1826E9220F40 [0000] to 0000000000000000 --- Type 0000:32 (SecureChannel:CASE_Sigma3) (B:598)[0m
+[0;34m[1793017403.059] [166646:166646] [EM] Found matching exchange: 12653r, Delegate: 0x558de4a1d7d0[0m
+[0;34m[1793017403.059] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:67974320 from Retrans Table on exchange 12653r[0m
+[0;32m[1793017403.059] [166646:166646] [SC] Received Sigma3 msg[0m
+[0;34m[1793017403.084] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.086] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.088] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.088] [166646:166646] [SC] Sending status report. Protocol code 0, exchange 12653[0m
+[0;32m[1793017403.088] [166646:166646] [EM] <<< [E:12653r S:0 M:67974321 (Ack:45129352)] (U) Msg TX from 0000000000000000 to 0:938C1826E9220F40 [0000] [UDP:192.168.130.196:48116] --- Type 0000:40 (SecureChannel:StatusReport) (B:34)[0m
+[0;32m[1793017403.088] [166646:166646] [EM] ??1 [E:12653r S:0 M:67974321] (U) Msg Retransmission to 0:0000000000000000 scheduled for 348ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;32m[1793017403.088] [166646:166646] [SC] SecureSession[0x558e0150d5c0, LSID:49286]: State change 'kEstablishing' --> 'kActive'[0m
+[0;34m[1793017403.088] [166646:166646] [IN] SecureSession[0x558e0150d5c0]: Activated - Type:2 LSID:49286[0m
+[0;34m[1793017403.088] [166646:166646] [IN] New secure session activated for device <000000000001B669, 1>, LSID:49286 PSID:52658![0m
+[0;32m[1793017403.088] [166646:166646] [IN] CASE Session established to peer: <000000000001B669, 1>[0m
+[0;34m[1793017403.088] [166646:166646] [IN] SecureSession[0x558e01518740]: Allocated Type:2 LSID:49287[0m
+[0;34m[1793017403.088] [166646:166646] [SC] Allocated SecureSession (0x558e01518740) - waiting for Sigma1 msg[0m
+[0;32m[1793017403.090] [166646:166646] [EM] >>> [E:12654r S:49286 M:77701028] (S) Msg RX from 1:000000000001B669 [B0BC] to 0000000000000016 --- Type 0001:08 (IM:InvokeCommandRequest) (B:59)[0m
+[0;34m[1793017403.090] [166646:166646] [EM] Handling via exchange: 12654r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017403.090] [166646:166646] [DMG] Received command for Endpoint=0 Cluster=0x0000_0030 Command=0x0000_0004[0m
+[0;32m[1793017403.090] [166646:166646] [FS] GeneralCommissioning: Received CommissioningComplete[0m
+[0;34m[1793017403.091] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.093] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;32m[1793017403.093] [166646:166646] [FP] Metadata for Fabric 0x1 persisted to storage.[0m
+[0;34m[1793017403.094] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.096] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.098] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.100] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;32m[1793017403.100] [166646:166646] [TS] Committing Last Known Good Time to storage: 2023-10-14T01:16:48[0m
+[0;34m[1793017403.101] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.103] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;32m[1793017403.103] [166646:166646] [ZCL] OpCreds: Fabric index 0x1 was committed to storage. Compressed Fabric Id 0x3D65FB338964B0BC, FabricId 0000000000000001, NodeId 0000000000000016, VendorId 0xFFF1[0m
+[0;34m[1793017403.106] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;32m[1793017403.106] [166646:166646] [FS] GeneralCommissioning: Successfully committed pending fabric data[0m
+[0;32m[1793017403.106] [166646:166646] [FS] Fail-safe cleanly disarmed[0m
+[0;34m[1793017403.106] [166646:166646] [DMG] Command handler moving to [NewRespons][0m
+[0;34m[1793017403.106] [166646:166646] [DMG] Command handler moving to [ Preparing][0m
+[0;34m[1793017403.106] [166646:166646] [DMG] Command handler moving to [AddingComm][0m
+[0;34m[1793017403.106] [166646:166646] [DMG] Command handler moving to [AddedComma][0m
+[0;34m[1793017403.106] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 1[0m
+[0;34m[1793017403.106] [166646:166646] [DMG] Decreasing reference count for CommandHandlerImpl, remaining 0[0m
+[0;34m[1793017403.106] [166646:166646] [DMG] Command handler moving to [AwaitingDe][0m
+[0;32m[1793017403.106] [166646:166646] [EM] <<< [E:12654r S:49286 M:186738250 (Ack:77701028)] (S) Msg TX from 0000000000000016 to 1:000000000001B669 [B0BC] [UDP:192.168.130.196:48116] --- Type 0001:09 (IM:InvokeCommandResponse) (B:70)[0m
+[0;32m[1793017403.106] [166646:166646] [EM] ??1 [E:12654r S:49286 M:186738250] (S) Msg Retransmission to 1:000000000001B669 scheduled for 379ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017403.106] [166646:166646] [DMG] Command response sender moving to [AllInvokeR][0m
+[0;32m[1793017403.106] [166646:166646] [SVR] Commissioning completed successfully[0m
+[0;32m[1793017403.106] [166646:166646] [DIS] Updating services using commissioning mode 0[0m
+[0;32m[1793017403.109] [166646:166646] [DIS] CHIP minimal mDNS started advertising.[0m
+[0;34m[1793017403.113] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017403.113] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017403.113] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;34m[1793017403.118] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017403.118] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017403.118] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;34m[1793017403.120] [166646:166646] [DL] Using WiFi MAC for hostname[0m
+[0;32m[1793017403.120] [166646:166646] [DIS] Advertise operational node 3D65FB338964B0BC-0000000000000016[0m
+[0;34m[1793017403.120] [166646:166646] [DIS] Responding with _matter._tcp.local[0m
+[0;34m[1793017403.120] [166646:166646] [DIS] Responding with 3D65FB338964B0BC-0000000000000016._matter._tcp.local[0m
+[0;34m[1793017403.120] [166646:166646] [DIS] Responding with 3D65FB338964B0BC-0000000000000016._matter._tcp.local[0m
+[0;34m[1793017403.120] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017403.120] [166646:166646] [DIS] Responding with B4E9B8978A5D.local[0m
+[0;34m[1793017403.120] [166646:166646] [DIS] Responding with _I3D65FB338964B0BC._sub._matter._tcp.local[0m
+[0;32m[1793017403.120] [166646:166646] [DIS] CHIP minimal mDNS configured as 'Operational device'; instance name: 3D65FB338964B0BC-0000000000000016.[0m
+[0;34m[1793017403.122] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017403.122] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017403.122] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017403.123] [166646:166646] [DIS] mDNS service published: _matter._tcp[0m
+[0;34m[1793017403.123] [166646:166646] [IN] Expiring all PASE sessions[0m
+[0;34m[1793017403.123] [166646:166646] [IN] SecureSession[0x558e0150b660]: MarkForEviction Type:1 LSID:49285[0m
+[0;32m[1793017403.123] [166646:166646] [SC] SecureSession[0x558e0150b660, LSID:49285]: State change 'kActive' --> 'kPendingEviction'[0m
+[0;34m[1793017403.123] [166646:166646] [IN] SecureSession[0x558e0150b660]: Released - Type:1 LSID:49285[0m
+[0;32m[1793017403.123] [166646:166646] [PAF] WiFiPAF: Closing all WiFiPAF sessions to shutdown[0m
+[0;32m[1793017403.123] [166646:166646] [EM] >>> [E:12653r S:0 M:45129353 (Ack:67974321)] (U) Msg RX from 0:938C1826E9220F40 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)[0m
+[0;34m[1793017403.123] [166646:166646] [EM] Found matching exchange: 12653r, Delegate: (nil)[0m
+[0;34m[1793017403.123] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:67974321 from Retrans Table on exchange 12653r[0m
+[0;32m[1793017403.123] [166646:166646] [EM] >>> [E:12654r S:49286 M:77701029 (Ack:186738250)] (S) Msg RX from 1:000000000001B669 [B0BC] to 0000000000000016 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017403.123] [166646:166646] [EM] Found matching exchange: 12654r, Delegate: (nil)[0m
+[0;34m[1793017403.123] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:186738250 from Retrans Table on exchange 12654r[0m
+[0;32m[1793017403.397] [166646:166646] [EM] >>> [E:58717r S:0 M:80176687] (U) Msg RX from 0:D1EE00E2E649E759 [0000] to 0000000000000000 --- Type 0000:30 (SecureChannel:CASE_Sigma1) (B:196)[0m
+[0;34m[1793017403.397] [166646:166646] [EM] Handling via exchange: 58717r, Delegate: 0x558de4a1d798[0m
+[0;32m[1793017403.397] [166646:166646] [IN] CASE Server received Sigma1 message . Starting handshake. EC 0x558e0151c8f0[0m
+[0;32m[1793017403.397] [166646:166646] [SC] Received Sigma1 msg[0m
+[0;34m[1793017403.397] [166646:166646] [SC] Found MRP parameters in the message[0m
+[0;34m[1793017403.397] [166646:166646] [SC] Peer (Initiator) assigned session ID 4381[0m
+[0;32m[1793017403.398] [166646:166646] [SC] CASE matched destination ID: fabricIndex 1, NodeID 0x0000000000000016[0m
+[0;32m[1793017403.407] [166646:166646] [EM] <<< [E:58717r S:0 M:67974322 (Ack:80176687)] (U) Msg TX from 0000000000000000 to 0:D1EE00E2E649E759 [0000] [UDP:192.168.130.196:36743] --- Type 0000:31 (SecureChannel:CASE_Sigma2) (B:751)[0m
+[0;32m[1793017403.407] [166646:166646] [EM] ??1 [E:58717r S:0 M:67974322] (U) Msg Retransmission to 0:0000000000000000 scheduled for 353ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;32m[1793017403.407] [166646:166646] [SC] Sent Sigma2 msg[0m
+[0;32m[1793017403.431] [166646:166646] [EM] >>> [E:58717r S:0 M:80176688 (Ack:67974322)] (U) Msg RX from 0:D1EE00E2E649E759 [0000] to 0000000000000000 --- Type 0000:32 (SecureChannel:CASE_Sigma3) (B:598)[0m
+[0;34m[1793017403.431] [166646:166646] [EM] Found matching exchange: 58717r, Delegate: 0x558de4a1d7d0[0m
+[0;34m[1793017403.431] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:67974322 from Retrans Table on exchange 58717r[0m
+[0;32m[1793017403.431] [166646:166646] [SC] Received Sigma3 msg[0m
+[0;34m[1793017403.454] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.457] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.460] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.460] [166646:166646] [SC] Sending status report. Protocol code 0, exchange 58717[0m
+[0;32m[1793017403.460] [166646:166646] [EM] <<< [E:58717r S:0 M:67974323 (Ack:80176688)] (U) Msg TX from 0000000000000000 to 0:D1EE00E2E649E759 [0000] [UDP:192.168.130.196:36743] --- Type 0000:40 (SecureChannel:StatusReport) (B:34)[0m
+[0;32m[1793017403.460] [166646:166646] [EM] ??1 [E:58717r S:0 M:67974323] (U) Msg Retransmission to 0:0000000000000000 scheduled for 368ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;32m[1793017403.460] [166646:166646] [SC] SecureSession[0x558e01518740, LSID:49287]: State change 'kEstablishing' --> 'kActive'[0m
+[0;34m[1793017403.460] [166646:166646] [IN] SecureSession[0x558e01518740]: Activated - Type:2 LSID:49287[0m
+[0;34m[1793017403.460] [166646:166646] [IN] New secure session activated for device <000000000001B669, 1>, LSID:49287 PSID:4381![0m
+[0;32m[1793017403.460] [166646:166646] [IN] CASE Session established to peer: <000000000001B669, 1>[0m
+[0;34m[1793017403.460] [166646:166646] [IN] SecureSession[0x558e0151bf20]: Allocated Type:2 LSID:49288[0m
+[0;34m[1793017403.460] [166646:166646] [SC] Allocated SecureSession (0x558e0151bf20) - waiting for Sigma1 msg[0m
+[0;32m[1793017403.461] [166646:166646] [EM] >>> [E:58718r S:49287 M:183037496] (S) Msg RX from 1:000000000001B669 [B0BC] to 0000000000000016 --- Type 0001:06 (IM:WriteRequest) (B:91)[0m
+[0;34m[1793017403.462] [166646:166646] [EM] Handling via exchange: 58718r, Delegate: 0x558de4a27088[0m
+[0;34m[1793017403.462] [166646:166646] [IM] Received Write request[0m
+[0;34m[1793017403.462] [166646:166646] [DMG] IM WH moving to [Initialized][0m
+[0;34m[1793017403.462] [166646:166646] [DMG] Writing attribute: Cluster=0x0000_001F Endpoint=0x0 AttributeId=0x0000_0000[0m
+[0;34m[1793017403.464] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.464] [166646:166646] [EVL] LogEvent event number: 0x0000000000000003 priority: 1, endpoint id:  0x0 cluster id: 0x0000_001F event id: 0x0 Epoch timestamp: 0x000001A1782A5848[0m
+[0;34m[1793017403.467] [166646:166646] [DL] Wrote settings to /tmp/chip_kvs[0m
+[0;34m[1793017403.467] [166646:166646] [EVL] LogEvent event number: 0x0000000000000004 priority: 1, endpoint id:  0x0 cluster id: 0x0000_001F event id: 0x0 Epoch timestamp: 0x000001A1782A584B[0m
+[0;34m[1793017403.467] [166646:166646] [DMG] IM WH moving to [AddStatus][0m
+[0;32m[1793017403.467] [166646:166646] [EM] <<< [E:58718r S:49287 M:50730731 (Ack:183037496)] (S) Msg TX from 0000000000000016 to 1:000000000001B669 [B0BC] [UDP:192.168.130.196:36743] --- Type 0001:07 (IM:WriteResponse) (B:62)[0m
+[0;32m[1793017403.467] [166646:166646] [EM] ??1 [E:58718r S:49287 M:50730731] (S) Msg Retransmission to 1:000000000001B669 scheduled for 362ms from now [State:Active II:500 AI:300 AT:4000][0m
+[0;34m[1793017403.467] [166646:166646] [DMG] IM WH moving to [Sending][0m
+[0;34m[1793017403.467] [166646:166646] [DMG] IM WH moving to [Uninitialized][0m
+[0;32m[1793017403.467] [166646:166646] [EM] >>> [E:58717r S:0 M:80176689 (Ack:67974323)] (U) Msg RX from 0:D1EE00E2E649E759 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)[0m
+[0;34m[1793017403.467] [166646:166646] [EM] Found matching exchange: 58717r, Delegate: (nil)[0m
+[0;34m[1793017403.467] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:67974323 from Retrans Table on exchange 58717r[0m
+[0;32m[1793017403.468] [166646:166646] [EM] >>> [E:58718r S:49287 M:183037497 (Ack:50730731)] (S) Msg RX from 1:000000000001B669 [B0BC] to 0000000000000016 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)[0m
+[0;34m[1793017403.468] [166646:166646] [EM] Found matching exchange: 58718r, Delegate: (nil)[0m
+[0;34m[1793017403.468] [166646:166646] [EM] Rxd Ack; Removing MessageCounter:50730731 from Retrans Table on exchange 58718r[0m
+[0;34m[1793017407.680] [166646:166646] [SWU] Scheduling BdxOtaSender to ABORT TRANSFER[0m
+[0;34m[1793017407.680] [166646:166646] [ZCL] Emitting ShutDown event[0m
+[0;34m[1793017407.680] [166646:166646] [EVL] LogEvent event number: 0x0000000000000005 priority: 2, endpoint id:  0x0 cluster id: 0x0000_0028 event id: 0x1 Epoch timestamp: 0x000001A1782A68C0[0m
+[0;34m[1793017407.680] [166646:166646] [DMG] All ReadHandler-s are clean, clear GlobalDirtySet[0m
+[0;34m[1793017407.680] [166646:166646] [IN] SecureSession[0x558e0151bf20]: Released - Type:2 LSID:49288[0m
+[0;34m[1793017407.682] [166646:166646] [DIS] Warning: Attempt to mDNS broadcast failed on otbr0:  src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;32m[1793017407.682] [166646:166646] [DIS] mDNS broadcast full failed in 1 separate send attempts.[0m
+[1;31m[1793017407.682] [166646:166646] [DIS] Failed to advertise records: src/inet/UDPEndPointImplSockets.cpp:417: OS Error 0x02000065: Network is unreachable[0m
+[0;34m[1793017407.684] [166646:166646] [DMG] All ReadHandler-s are clean, clear GlobalDirtySet[0m
+[0;34m[1793017407.684] [166646:166646] [IN] SecureSession[0x558e0150d5c0]: MarkForEviction Type:2 LSID:49286[0m
+[0;32m[1793017407.684] [166646:166646] [SC] SecureSession[0x558e0150d5c0, LSID:49286]: State change 'kActive' --> 'kPendingEviction'[0m
+[0;34m[1793017407.684] [166646:166646] [IN] SecureSession[0x558e0150d5c0]: Released - Type:2 LSID:49286[0m
+[0;34m[1793017407.684] [166646:166646] [IN] SecureSession[0x558e01518740]: MarkForEviction Type:2 LSID:49287[0m
+[0;32m[1793017407.684] [166646:166646] [SC] SecureSession[0x558e01518740, LSID:49287]: State change 'kActive' --> 'kPendingEviction'[0m
+[0;34m[1793017407.684] [166646:166646] [IN] SecureSession[0x558e01518740]: Released - Type:2 LSID:49287[0m
+[0;32m[1793017407.684] [166646:166646] [DMG] AccessControl: finishing[0m
+[0;32m[1793017407.684] [166646:166646] [DMG] Examples::AccessControlDelegate::Finish[0m
+[0;34m[1793017407.714] [166646:166646] [DL] Wrote settings to /tmp/chip_counters.ini[0m
+[0;32m[1793017407.714] [166646:166646] [DL] NVS set: chip-counters/total-operational-hours = 0 (0x0)[0m
+[0;32m[1793017407.714] [166646:166646] [DL] Inet Layer shutdown[0m
+[0;32m[1793017407.714] [166646:166646] [DL] BLE Layer shutdown[0m
+[0;32m[1793017407.715] [166646:166646] [DL] WiFi-PAF Layer shutdown[0m
+[0;32m[1793017407.715] [166646:166646] [PAF] WiFiPAF: Closing all WiFiPAF sessions to shutdown[0m
+[0;32m[1793017407.715] [166646:166646] [DL] System Layer shutdown[0m
+[0;32m[1793017407.715] [166646:166646] [DMG] AccessControlCluster: shutdown[0m
+[0;32m[1793017407.715] [166646:166646] [BDX] Stop polling for messages[0m

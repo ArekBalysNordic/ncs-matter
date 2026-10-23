@@ -16,7 +16,7 @@ manifest:
       remote: ncs
       path: modules/lib/matter
       repo-path: sdk-connectedhomeip
-      revision: d92ebd4a7766806ad891957dc23ab7850f93e4d4
+      revision: 9730c52488d43f21e2b6e75e9219e9f17194278b
       submodules:
         - name: nlio
           path: third_party/nlio/repo
